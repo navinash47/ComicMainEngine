@@ -1,0 +1,66 @@
+{
+  "story": "cjp_origin",
+  "note": "Free Wikimedia Commons references for educational test comic atmosphere.",
+  "images": [
+    {
+      "id": "jantar_mantar",
+      "role": "protest_place",
+      "title": "Jantar Mantar, New Delhi",
+      "file": "Jantar Mantar New Delhi.jpg",
+      "note": "CJP gatherings were reported at Jantar Mantar \u2014 location reference.",
+      "local_path": "outputs/phase0.5/refs/jantar_mantar.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "Subeesh Balan \u0d38\u0d41\u0d2d\u0d40\u0d37\u0d4d \u0d2c\u0d3e\u0d32\u0d7b",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Jantar_Mantar_New_Delhi.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Jantar_Mantar_New_Delhi.jpg/1280px-Jantar_Mantar_New_Delhi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "jantar_mantar_detail",
+      "role": "protest_place",
+      "title": "Jantar Mantar detail",
+      "file": "Jantar Mantar Bird.jpg",
+      "note": "Architectural detail for scene mood.",
+      "local_path": "outputs/phase0.5/refs/jantar_mantar_detail.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Pallav.journo",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Jantar_Mantar_Bird.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Jantar_Mantar_Bird.jpg/1280px-Jantar_Mantar_Bird.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "india_gate",
+      "role": "delhi_atmosphere",
+      "title": "India Gate, New Delhi",
+      "file": "India Gate.jpg",
+      "note": "Delhi civic backdrop for the bedtime retelling.",
+      "local_path": "outputs/phase0.5/refs/india_gate.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:India_Gate.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/India_Gate.jpg/1280px-India_Gate.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "delhi_tricolour",
+      "role": "public_mood",
+      "title": "Delhi tricolour lamppost",
+      "file": "Delhi protests-Lamppost, with Indian tricolour.jpg",
+      "note": "Public protest atmosphere (Commons CC). Educational reference only.",
+      "local_path": "outputs/phase0.5/refs/delhi_tricolour.jpg",
+      "license": "CC BY-SA 3.0",
+      "artist": "Nilroy (Nilanjana Roy)",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Delhi_protests-Lamppost,_with_Indian_tricolour.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Delhi_protests-Lamppost%2C_with_Indian_tricolour.jpg/1280px-Delhi_protests-Lamppost%2C_with_Indian_tricolour.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    },
+    {
+      "id": "students_library",
+      "role": "students_study",
+      "title": "Jamia Millia Islamia reading hall",
+      "file": "Ibn-e-Sina Library Reading Hall, Jamia Millia Islamia, New Delhi.jpg",
+      "note": "Students preparing / studying \u2014 soft bedtime framing (Commons CC).",
+      "local_path": "outputs/phase0.5/refs/students_library.jpg",
+      "license": "CC BY-SA 4.0",
+      "artist": "Humeraraza",
+      "commons_url": "https://commons.wikimedia.org/wiki/File:Ibn-e-Sina_Library_Reading_Hall,_Jamia_Millia_Islamia,_New_Delhi.jpg",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Ibn-e-Sina_Library_Reading_Hall%2C_Jamia_Millia_Islamia%2C_New_Delhi.jpg/1280px-Ibn-e-Sina_Library_Reading_Hall%2C_Jamia_Millia_Islamia%2C_New_Delhi.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+    }
+  ]
+}

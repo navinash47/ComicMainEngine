@@ -57,6 +57,34 @@ h1 {
 .story-item.static:hover .title { color: inherit; }
 a.btn { text-decoration: none; display: inline-block; }
 button.btn:disabled { opacity: 0.5; cursor: wait; }
+.btn.tab.on { border-color: var(--accent); color: var(--accent); }
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0 2rem 2rem;
+}
+.image-card {
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+.image-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: rgba(0,0,0,0.2);
+}
+.image-card figcaption { padding: 0.55rem 0 0.2rem; }
+.image-card .title { font-size: 0.92rem; }
+.image-card .desc { color: var(--muted); font-size: 0.78rem; margin-top: 0.2rem; }
+.image-card a { color: var(--accent); font-size: 0.78rem; }
+
+@media (max-width: 800px) {
+  .image-grid { padding-left: 1rem; padding-right: 1rem; }
+}
 .dot {
   width: 0.55rem; height: 0.55rem; border-radius: 50%;
   background: var(--muted);

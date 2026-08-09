@@ -11,6 +11,8 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from comicengine.analytics import analytics
+from comicengine.config import OUTPUTS
+from comicengine.images_gallery import gallery
 from comicengine.stories import list_stories, load_story
 from comicengine.tasks import observer
 from comicengine.usage import UsageDB
@@ -21,6 +23,8 @@ tasks = observer
 app = FastAPI(title="ComicEngine Usage")
 
 app.mount("/static", StaticFiles(directory=STATIC), name="static")
+OUTPUTS.mkdir(parents=True, exist_ok=True)
+app.mount("/media", StaticFiles(directory=OUTPUTS), name="media")
 
 
 class TaskPatch(BaseModel):
@@ -39,6 +43,16 @@ def index() -> FileResponse:
 @app.get("/analytics")
 def analytics_page() -> FileResponse:
     return FileResponse(STATIC / "analytics.html")
+
+
+@app.get("/images")
+def images_page() -> FileResponse:
+    return FileResponse(STATIC / "images.html")
+
+
+@app.get("/api/images")
+def api_images() -> dict[str, Any]:
+    return gallery()
 
 
 @app.get("/api/summary")

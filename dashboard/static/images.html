@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Images</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Images</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/">Dashboard</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <a class="btn" href="/images">Images</a>
+      <span id="updated">…</span>
+    </div>
+  </header>
+
+  <section class="stories-wrap">
+    <div class="tasks-head">
+      <h2>Tabs</h2>
+      <div class="filter-row">
+        <button type="button" class="btn tab on" data-tab="generated">Generated</button>
+        <button type="button" class="btn tab" data-tab="cjp">CJP free refs</button>
+      </div>
+    </div>
+    <p id="attr" class="muted small"></p>
+  </section>
+
+  <section class="image-grid" id="grid"></section>
+
+  <script src="/static/images.js"></script>
+</body>
+</html>
