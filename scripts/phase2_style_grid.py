@@ -29,7 +29,7 @@ SCENES = [
         "ids": ["dad", "daughter"],
         "scene": (
             "Dad and Daughter sitting on a cozy bed under a warm lamp, opening a picture book "
-            "about fairness in exams; soft golden room"
+            "about fairness in exams; soft golden room, Korean manhwa webtoon framing"
         ),
     },
     {
@@ -37,7 +37,7 @@ SCENES = [
         "ids": ["abhijeet_dipke", "students"],
         "scene": (
             "Abhijeet Dipke speaking gently to a small circle of students with fair-exam placards "
-            "near rounded storybook Jantar Mantar arches at dusk"
+            "near stylized Jantar Mantar arches at dusk, manhwa crowd composition"
         ),
     },
     {
@@ -45,7 +45,7 @@ SCENES = [
         "ids": ["modiji", "amit_shah", "students"],
         "scene": (
             "Far away in a calm Delhi government hall, Prime Minister Modi and Amit Shah listen "
-            "thoughtfully as tiny messengers bring news of student concerns; dignified, not caricature"
+            "thoughtfully as tiny messengers bring news of student concerns; dignified manhwa portraiture, not caricature"
         ),
     },
     {
@@ -53,7 +53,7 @@ SCENES = [
         "ids": ["students", "daughter"],
         "scene": (
             "College students studying by lamplight with books while Daughter imagines their story "
-            "from her bedroom window; hopeful, soft gouache"
+            "from her bedroom window; hopeful Korean webtoon mood"
         ),
     },
     {
@@ -61,7 +61,7 @@ SCENES = [
         "ids": ["dad", "daughter", "abhijeet_dipke", "students"],
         "scene": (
             "Dad and Daughter dream of Abhijeet and students planting a seedling labeled Fair Exams "
-            "under a kind sunrise; peaceful picture-book ending mood"
+            "under a kind sunrise; emotional manhwa ending splash panel"
         ),
     },
 ]
@@ -217,7 +217,7 @@ def main() -> None:
             "primary_anchor": str(primary.relative_to(ROOT)) if primary.exists() else None,
             "evaluation": {"by_backend": eval_rows, "winner_by_qa": winner},
             "note": (
-                "Dramatized storybook likenesses for pipeline testing. "
+                "Dramatized Korean manhwa likenesses for pipeline testing. "
                 "Treat named leaders respectfully; not photoreal portraits."
             ),
         }

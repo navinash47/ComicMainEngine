@@ -140,7 +140,7 @@ Requirements:
 - Exactly {panel_count} panels, indices 1..{panel_count}
 - Open with Dad & Daughter at bedtime; end with gentle hope about fairness
 - Include Abhijeet Dipke, students, and brief respectful moments with Modiji and Amit Shah as leaders who hear the public
-- Keep art_prompt short (1-2 sentences) + painterly children's-storybook style
+- Keep art_prompt short (1-2 sentences) + Korean manhwa webtoon style
 - Submit via the submit_episode tool only
 """
 

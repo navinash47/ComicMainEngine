@@ -1,13 +1,17 @@
-"""Warm painterly storybook style lock (Phase 2)."""
+"""Korean manhwa / webtoon style lock (Phase 2)."""
+
+STYLE_NAME = "korean_manhwa"
 
 STYLE_SUFFIX = (
-    "warm painterly children's-storybook illustration, soft gouache textures, "
-    "golden bedtime lighting, gentle rounded shapes, cinematic picture-book composition, "
-    "NOT anime, NOT manga, NOT photorealistic"
+    "Korean manhwa webtoon illustration style, clean ink line art, soft cel shading, "
+    "expressive eyes, polished digital comic coloring, warm cinematic lighting, "
+    "vertical webtoon panel composition, all-ages gentle mood, "
+    "NOT photorealistic, NOT western cartoon, NOT chibi, NOT horror"
 )
 
 NEGATIVE_PROMPT = (
-    "anime, manga, cel shading, photorealistic, 3d render, uncanny, horror, gore, text artifacts"
+    "photorealistic, 3d render, uncanny, horror, gore, excessive violence, "
+    "blurry, low quality, text artifacts, watermark, deformed hands"
 )
 
 
