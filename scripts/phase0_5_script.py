@@ -19,7 +19,7 @@ from comicengine.tasks import observer
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--panels", type=int, default=12, help="Keep small to save tokens")
-    p.add_argument("--model", default="claude-haiku-4-5", help="Cheap default for testing")
+    p.add_argument("--model", default=None, help="Defaults to auto/cheap via OmniRoute")
     args = p.parse_args()
 
     out_dir = OUTPUTS / "phase0.5"

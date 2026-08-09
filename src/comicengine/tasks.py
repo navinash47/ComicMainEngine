@@ -262,7 +262,7 @@ class TaskObserver:
         # Phase 0: need successful hellos from anthropic + openai + google
         with self.connect() as conn:
             providers_ok = {
-                r["provider"]
+                (r["provider"].split(":")[-1] if r["provider"] else "")
                 for r in conn.execute(
                     """
                     SELECT DISTINCT provider FROM api_call

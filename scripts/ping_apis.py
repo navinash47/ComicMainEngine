@@ -15,13 +15,14 @@ from comicengine.tasks import observer
 
 
 def main() -> None:
-    observer.start("phase0", note="API hello pings")
+    observer.start("phase0", note="API hello pings via OmniRoute")
     results = ping_all(phase="phase0")
-    failed = [k for k, v in results.items() if not v.get("ok")]
+    providers = {k: v for k, v in results.items() if isinstance(v, dict)}
+    failed = [k for k, v in providers.items() if not v.get("ok")]
     if failed:
         observer.fail("phase0", f"failed: {', '.join(failed)}")
     else:
-        observer.complete("phase0", note="anthropic/openai/google ok")
+        observer.complete("phase0", note=f"ok via {results.get('route')}")
     observer.refresh_from_world()
     print(json.dumps(results, indent=2))
     if failed:

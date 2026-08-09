@@ -1,0 +1,11 @@
+---
+description: OmniRoute for coding/LLM only; images use direct .env APIs
+alwaysApply: true
+---
+
+# ComicEngine routing
+
+- **OmniRoute** (`localhost:20128`): use ONLY for coding / text LLM work (Anthropic messages, OpenAI chat, script generation via `USE_OMNIROUTE=1` + `OMNIROUTE_API_KEY`).
+- **Image generation**: ALWAYS call providers **directly** with keys from project `.env` (`GOOGLE_API_KEY`, fal, etc.). Never route Nano Banana / Flux / GPT-Image / other image models through OmniRoute.
+- Gemini text hellos / pings also stay **direct Google** (not OmniRoute).
+- Do not put real image API traffic behind Cursor’s OpenAI base-URL override.

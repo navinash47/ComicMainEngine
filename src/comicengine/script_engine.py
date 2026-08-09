@@ -5,8 +5,14 @@ from __future__ import annotations
 import json
 from typing import Any
 
+from comicengine.config import (
+    USE_OMNIROUTE,
+    env,
+    omniroute_anthropic_base,
+    omniroute_api_key,
+    routing_label,
+)
 from comicengine.characters_cjp import CHARACTERS, TOPIC_CJP_ORIGIN
-from comicengine.config import env
 from comicengine.episode_schema import Episode
 from comicengine.pricing import llm_cost_usd
 from comicengine.usage import ApiCall, TimedCall, UsageDB
@@ -94,18 +100,33 @@ def _episode_tool_schema() -> dict[str, Any]:
 def generate_cjp_test_episode(
     *,
     panel_count: int = 12,
-    model: str = "claude-haiku-4-5",
+    model: str | None = None,
     phase: str = "phase0.5",
     db: UsageDB | None = None,
 ) -> Episode:
     import anthropic
 
     db = db or UsageDB()
-    key = env("ANTHROPIC_API_KEY")
-    if not key:
-        raise RuntimeError("ANTHROPIC_API_KEY missing in .env")
+    model = model or (env("OMNIROUTE_SCRIPT_MODEL") if USE_OMNIROUTE else None) or (
+        "auto/cheap" if USE_OMNIROUTE else "claude-haiku-4-5"
+    )
 
-    client = anthropic.Anthropic(api_key=key)
+    if USE_OMNIROUTE:
+        key = omniroute_api_key()
+        if not key:
+            raise RuntimeError(
+                "OmniRoute enabled but no OMNIROUTE_API_KEY "
+                "(use same key as Cursor Models → OpenAI API Key for :20128/v1)."
+            )
+        client = anthropic.Anthropic(api_key=key, base_url=omniroute_anthropic_base())
+        provider = "omniroute:anthropic"
+    else:
+        key = env("ANTHROPIC_API_KEY")
+        if not key:
+            raise RuntimeError("ANTHROPIC_API_KEY missing in .env")
+        client = anthropic.Anthropic(api_key=key)
+        provider = "anthropic"
+
     char_json = json.dumps([c.model_dump() for c in CHARACTERS], indent=2)
     user = f"""Write a bedtime comic episode that explains how the CJP (Cockroach Janta Party) student protest started in India.
 
@@ -132,11 +153,16 @@ Requirements:
     ]
 
     call = ApiCall(
-        provider="anthropic",
+        provider=provider,
         model=model,
         purpose="script_episode",
         phase=phase,
-        meta={"panel_count": panel_count, "topic": "cjp_origin", "mode": "tool_use"},
+        meta={
+            "panel_count": panel_count,
+            "topic": "cjp_origin",
+            "mode": "tool_use",
+            "route": routing_label(),
+        },
     )
     with TimedCall(db, call):
         msg = client.messages.create(
