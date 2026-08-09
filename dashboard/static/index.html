@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Usage</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Live usage</h1>
+    </div>
+    <div class="status">
+      <span id="liveDot" class="dot"></span>
+      <span id="updated">connecting…</span>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="tasks-wrap">
+    <div class="tasks-head">
+      <h2>TaskObserver</h2>
+      <div class="tasks-meta">
+        <span id="taskPct">0%</span>
+        <button type="button" id="refreshTasks" class="btn">Refresh</button>
+      </div>
+    </div>
+    <div class="task-progress"><span id="taskBar"></span></div>
+    <div id="taskCounts" class="task-counts"></div>
+    <ul id="taskList" class="task-list"></ul>
+  </section>
+
+  <section class="grid">
+    <article>
+      <h2>By provider</h2>
+      <div id="byProvider"></div>
+    </article>
+    <article>
+      <h2>By phase</h2>
+      <div id="byPhase"></div>
+    </article>
+    <article class="wide">
+      <h2>Spend over time</h2>
+      <canvas id="chart" height="120"></canvas>
+    </article>
+    <article class="wide">
+      <h2>Recent calls</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>When</th><th>Phase</th><th>Provider</th><th>Model</th>
+              <th>In</th><th>Out</th><th>Img</th><th>$</th><th>ms</th><th>OK</th>
+            </tr>
+          </thead>
+          <tbody id="recent"></tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
