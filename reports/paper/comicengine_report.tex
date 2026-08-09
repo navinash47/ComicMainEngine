@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 9~August~2026 · Phases~0--9 (ROI cost dashboard)
+\normalsize Snapshot: 9~August~2026 · Phases~0--11 + Romance pipeline HIMYM Ep1 Steps~1--5 complete
 \vspace{-0.6em}}
 
 \author{
@@ -387,6 +387,26 @@ Engine usage snapshot still ~\$2.96 / 138 calls (dominant spend remains Phase~5 
   \item Snapshot \texttt{outputs/phase11/cost\_guardrails.json} with ROI baseline + reviewer/admin regen policy
   \item Explicit roadmap: \textbf{Version~2 begins at Phase~12}, feature work driven by exported Mom Test feedback
 \end{itemize}
+
+\subsection{Romance pipeline --- How I Met Your Mother Ep1 Infatuation (Steps~1--5 complete)}
+\textbf{Goal.} Dad$\rightarrow$daughter love-story episode (korean\_manhwa) with Maya teasing cuts and protagonist micro-feelings (butterflies, electricity, hand-hover, Limbo Date, feather).
+
+\paragraph{Steps (TaskObserver stepper).}
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+  \item \texttt{phase\_romance\_step1} --- script locked (\textbf{76 panels}) at \texttt{outputs/phase4/episode\_how\_i\_met\_your\_mother\_ep1.json}
+  \item \texttt{phase\_romance\_step2} --- manhwa character refs (8/8 cast sheets)
+  \item \texttt{phase\_romance\_step3} --- panel batch (\texttt{STYLE\_ID=korean\_manhwa}, mostly \texttt{gemini\_ref}): \textbf{76/76 ok}
+  \item \texttt{phase\_romance\_step4} --- speech bubbles / captions composed (76/76)
+  \item \texttt{phase\_romance\_step5} --- webtoon + PDF + Library (\texttt{outputs/phase7/\ldots/webtoon.png}, image-only under phase7.5)
+\end{enumerate}
+
+\paragraph{Dashboard.} Home Romance pipeline stepper + live ledger line (total spend + romance-phase spend) polled every 2s with KPIs.
+
+\paragraph{Story.} Father tells daughter how he met her mother (Rohan / Elena / Meridian Soft Bay trip).
+
+\paragraph{Cost gate.} Pre-romance ledger $\approx$\$2.96 / 138 calls.
+After Steps~1--5: romance pipeline spend $\approx$\$2.88 (refs \$0.018 + panels \$2.86; compose/assemble local \$0);
+full ledger $\approx$\$5.84 / 223 calls.
 
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).

@@ -1,0 +1,3148 @@
+{
+  "story_id": "episode_how_i_met_your_mother_ep1",
+  "source": "outputs/phase4/episode_how_i_met_your_mother_ep1.json",
+  "title": "How I Met Your Mother \u2014 Episode 1: Infatuation",
+  "panel_count": 76,
+  "ok": 76,
+  "errors": 0,
+  "refs": [
+    {
+      "char_id": "arjun",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "dad",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "daughter",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "elena",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "kabir",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "marcus",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "rohan",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "wei",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/wei_ref.png",
+      "status": "ok"
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_01.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_01.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 686432,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 118.38,
+          "variance": 4018.67,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_01.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 2,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_02.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_02.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1417527,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 69.15,
+          "variance": 1935.9,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "Gemini returned no image bytes"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_02.png",
+      "refs_used": []
+    },
+    {
+      "index": 3,
+      "characters": [],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_03.png",
+      "status": "ok",
+      "method": "text_only_fal",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_03.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 881827,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 133.66,
+          "variance": 3886.24,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "text_only_fal",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_03.png",
+      "refs_used": []
+    },
+    {
+      "index": 4,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_04.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_04.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 738691,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 152.81,
+          "variance": 4904.17,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_04.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 5,
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_05.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_05.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 806265,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 115.92,
+          "variance": 5683.9,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_05.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 6,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_06.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_06.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 730535,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 132.29,
+          "variance": 4195.45,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_06.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 7,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_07.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_07.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1368730,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 68.06,
+          "variance": 3035.66,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "Server disconnected without sending a response."
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_07.png",
+      "refs_used": []
+    },
+    {
+      "index": 8,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_08.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_08.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 679963,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 114.97,
+          "variance": 4179.26,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_08.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 9,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_09.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_09.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 658382,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 135.13,
+          "variance": 5817.22,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_09.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 10,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_10.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_10.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 648424,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 112.03,
+          "variance": 3028.6,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_10.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 11,
+      "characters": [
+        "wei",
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_11.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_11.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 787264,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 108.41,
+          "variance": 4963.83,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_11.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/wei_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png"
+      ]
+    },
+    {
+      "index": 12,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_12.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_12.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 695483,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 157.4,
+          "variance": 4424.72,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_12.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 13,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_13.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_13.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 628761,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 135.66,
+          "variance": 4587.66,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_13.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 14,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_14.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_14.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 754361,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 120.4,
+          "variance": 5992.03,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_14.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 15,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_15.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_15.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 756310,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 140.14,
+          "variance": 2660.01,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_15.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 16,
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_16.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_16.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 722803,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 140.25,
+          "variance": 5688.89,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_16.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_ref.png"
+      ]
+    },
+    {
+      "index": 17,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_17.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_17.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 640869,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 144.7,
+          "variance": 5653.71,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_17.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 18,
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_18.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_18.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 716617,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 146.03,
+          "variance": 5870.5,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_18.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_ref.png"
+      ]
+    },
+    {
+      "index": 19,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_19.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_19.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1375397,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 55.9,
+          "variance": 2808.17,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "Server disconnected without sending a response."
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_19.png",
+      "refs_used": []
+    },
+    {
+      "index": 20,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_20.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_20.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 614995,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 163.31,
+          "variance": 6958.28,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_20.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 21,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_21.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_21.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 655124,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 123.29,
+          "variance": 5130.22,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_21.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 22,
+      "characters": [
+        "elena",
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_22.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_22.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 626504,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 87.61,
+          "variance": 4010.73,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_22.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 23,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_23.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_23.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 686311,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 96.39,
+          "variance": 3356.81,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_23.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 24,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_24.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_24.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 724159,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 95.26,
+          "variance": 4660.97,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_24.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 25,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_25.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_25.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 698447,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 120.82,
+          "variance": 3646.82,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_25.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 26,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_26.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_26.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 728496,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 137.78,
+          "variance": 5595.51,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_26.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 27,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_27.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_27.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 664506,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 88.09,
+          "variance": 4067.83,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_27.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 28,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_28.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_28.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 643911,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 106.73,
+          "variance": 4732.79,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_28.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 29,
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_29.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_29.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 768326,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 107.04,
+          "variance": 4394.08,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_29.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 30,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_30.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_30.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 677275,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 119.17,
+          "variance": 4251.2,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_30.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 31,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_31.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_31.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 847064,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 124.67,
+          "variance": 3541.48,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_31.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 32,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_32.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_32.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 745856,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 128.12,
+          "variance": 4751.0,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_32.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 33,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_33.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_33.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 629989,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 128.08,
+          "variance": 4167.78,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_33.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 34,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_34.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_34.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 635878,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 116.19,
+          "variance": 3618.99,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_34.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 35,
+      "characters": [
+        "rohan",
+        "arjun"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_35.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_35.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 798056,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 146.13,
+          "variance": 5620.41,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_35.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 36,
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_36.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_36.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 789714,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 131.11,
+          "variance": 4953.13,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_36.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 37,
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_37.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_37.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 653660,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 158.74,
+          "variance": 7102.15,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_37.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 38,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_38.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_38.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 705173,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 127.32,
+          "variance": 4418.5,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_38.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 39,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_39.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_39.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 627143,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 153.2,
+          "variance": 5247.11,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_39.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 40,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_40.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_40.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 754179,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 162.72,
+          "variance": 7181.06,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_40.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 41,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_41.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_41.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 788372,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 129.36,
+          "variance": 4479.46,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_41.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 42,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_42.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_42.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 723967,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 125.98,
+          "variance": 3940.67,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_42.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 43,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_43.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_43.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 690321,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 82.24,
+          "variance": 2876.73,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_43.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 44,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_44.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_44.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 733749,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 95.75,
+          "variance": 6926.08,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_44.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 45,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_45.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_45.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 699015,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 106.55,
+          "variance": 4382.62,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_45.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 46,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_46.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_46.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 699968,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 131.32,
+          "variance": 3651.35,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_46.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 47,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_47.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_47.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 631343,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 116.42,
+          "variance": 3393.88,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_47.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 48,
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_48.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_48.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 784276,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 134.88,
+          "variance": 5968.8,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_48.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 49,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_49.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_49.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 744814,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 143.74,
+          "variance": 5012.51,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_49.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 50,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_50.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_50.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 854176,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 165.9,
+          "variance": 6828.76,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_50.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 51,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_51.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_51.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 646169,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 138.31,
+          "variance": 4686.41,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_51.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 52,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_52.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_52.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 665161,
+          "min_size": true,
+          "width": 1200,
+          "height": 896,
+          "min_dims": true,
+          "mean_brightness": 75.37,
+          "variance": 3652.62,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_52.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 53,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_53.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_53.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 746659,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 140.71,
+          "variance": 5611.58,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_53.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 54,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_54.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_54.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 758108,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 129.56,
+          "variance": 5923.12,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_54.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 55,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_55.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_55.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 817852,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 144.44,
+          "variance": 5343.15,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_55.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 56,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_56.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_56.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 724455,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 119.43,
+          "variance": 4417.49,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_56.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 57,
+      "characters": [],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_57.png",
+      "status": "ok",
+      "method": "text_only_fal",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_57.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 908687,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 144.72,
+          "variance": 4651.26,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "text_only_fal",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_57.png",
+      "refs_used": []
+    },
+    {
+      "index": 58,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_58.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_58.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 596957,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 155.25,
+          "variance": 5095.34,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_58.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 59,
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_59.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_59.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 728901,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 125.4,
+          "variance": 6824.79,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_59.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/kabir_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/arjun_ref.png"
+      ]
+    },
+    {
+      "index": 60,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_60.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_60.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 672538,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 109.4,
+          "variance": 4835.42,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_60.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 61,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_61.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_61.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 770865,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 108.68,
+          "variance": 4849.04,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_61.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 62,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_62.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_62.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 746855,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 123.14,
+          "variance": 5775.65,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_62.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 63,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_63.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_63.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 695974,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 110.44,
+          "variance": 6298.03,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_63.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 64,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_64.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_64.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 676013,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 109.83,
+          "variance": 5376.96,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_64.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 65,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_65.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_65.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 646993,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 98.28,
+          "variance": 4434.69,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_65.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 66,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_66.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_66.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 835235,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 137.37,
+          "variance": 5278.33,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_66.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 67,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_67.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_67.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 660970,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 122.56,
+          "variance": 5828.38,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_67.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 68,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_68.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_68.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 717333,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 136.19,
+          "variance": 6446.81,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_68.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 69,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_69.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_69.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 667163,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 120.52,
+          "variance": 5226.12,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_69.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 70,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_70.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_70.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 713969,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 142.03,
+          "variance": 4009.06,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_70.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 71,
+      "characters": [
+        "rohan"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_71.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_71.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 682064,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 121.33,
+          "variance": 4915.88,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_71.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png"
+      ]
+    },
+    {
+      "index": 72,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_72.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_72.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 680622,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 106.16,
+          "variance": 5533.61,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_72.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 73,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_73.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_73.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 778376,
+          "min_size": true,
+          "width": 1376,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 105.32,
+          "variance": 5541.42,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_73.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 74,
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_74.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_74.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 648477,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 91.47,
+          "variance": 4063.42,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_74.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/rohan_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/elena_ref.png"
+      ]
+    },
+    {
+      "index": 75,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_75.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_75.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 736829,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 112.48,
+          "variance": 3108.03,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_75.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 76,
+      "characters": [],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_76.png",
+      "status": "ok",
+      "method": "text_only_fal",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_76.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 794093,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 120.55,
+          "variance": 4536.67,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "text_only_fal",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_how_i_met_your_mother_ep1/panel_76.png",
+      "refs_used": []
+    }
+  ]
+}

@@ -156,6 +156,79 @@ button.btn:disabled { opacity: 0.5; cursor: wait; }
   background: linear-gradient(90deg, #c46a2e, #e8b07a);
   transition: width 0.4s ease;
 }
+.live-spend {
+  margin: -0.35rem 2rem 1rem;
+}
+.romance-wrap {
+  margin: 0 2rem 1.25rem;
+  padding: 1rem 0 1.1rem;
+  border-top: 1px solid var(--line);
+}
+.romance-stepper {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0.85rem 0 0.35rem;
+}
+@media (max-width: 900px) {
+  .romance-stepper { grid-template-columns: 1fr 1fr; }
+}
+.romance-step {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  min-height: 4.2rem;
+}
+.romance-step-num {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-family: var(--font-display);
+  border: 1px solid var(--line);
+  flex: 0 0 auto;
+  color: var(--muted);
+}
+.romance-step-title {
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.romance-step-meta {
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: capitalize;
+}
+.romance-step.completed {
+  border-color: rgba(110, 180, 120, 0.45);
+  background: rgba(110, 180, 120, 0.08);
+}
+.romance-step.completed .romance-step-num {
+  background: rgba(110, 180, 120, 0.25);
+  color: var(--ok);
+  border-color: transparent;
+}
+.romance-step.in_progress {
+  border-color: rgba(232, 176, 122, 0.55);
+  box-shadow: 0 0 0 1px rgba(232, 176, 122, 0.15);
+}
+.romance-step.in_progress .romance-step-num {
+  background: rgba(232, 176, 122, 0.22);
+  color: #e8b07a;
+  border-color: transparent;
+}
+.romance-step.failed {
+  border-color: rgba(220, 90, 90, 0.5);
+}
+.romance-bar > span {
+  background: linear-gradient(90deg, #b85c78, #e8b07a);
+}
 .task-counts {
   display: flex;
   flex-wrap: wrap;

@@ -275,13 +275,22 @@ def api_images() -> dict[str, Any]:
 def summary() -> dict[str, Any]:
     snap = tasks.snapshot()
     dash = analytics.dashboard(limit=80)
+    usage = db.summary()
     return {
-        **db.summary(),
+        **usage,
         "taskobserver": snap,
+        "romance": snap.get("romance") or tasks.romance_snapshot(),
         "stories": list_stories(),
         "analytics_preview": {
             "by_category": dash["stats"]["by_category"],
             "recommendations": dash["recommendations"][:5],
+            "totals": dash["stats"].get("totals") or usage.get("totals"),
+        },
+        "live": {
+            "total_spend_usd": (usage.get("totals") or {}).get("cost_usd"),
+            "calls": (usage.get("totals") or {}).get("calls"),
+            "romance_spend_usd": (snap.get("romance") or {}).get("spend_usd"),
+            "updated_at": snap.get("updated_at"),
         },
         "reviewers": reviewers.summary(),
         "feedback": feedback.summary(),

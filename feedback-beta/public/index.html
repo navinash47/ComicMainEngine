@@ -21,6 +21,33 @@
     </header>
     <section class="story-meta">
       <p class="lede">Pick a comic. Read for fun, open the PDF, or read &amp; rate panels to help us improve.</p>
+      <div class="library-toolbar" id="libraryToolbar">
+        <label class="tool-field">
+          <span>Genre</span>
+          <select id="genreFilter" aria-label="Filter by genre">
+            <option value="all">All genres</option>
+            <option value="romance">Romance</option>
+            <option value="politics">Politics</option>
+            <option value="history">History</option>
+          </select>
+        </label>
+        <label class="tool-field">
+          <span>Tag</span>
+          <select id="tagFilter" aria-label="Filter by tag">
+            <option value="all">All tags</option>
+          </select>
+        </label>
+        <label class="tool-field">
+          <span>Sort</span>
+          <select id="sortMode" aria-label="Sort stories">
+            <option value="featured">Featured (romance first)</option>
+            <option value="title">Title A–Z</option>
+            <option value="panels">Panel count</option>
+            <option value="genre">Genre</option>
+          </select>
+        </label>
+        <p class="muted small" id="filterCount"></p>
+      </div>
     </section>
     <section class="comic-grid" id="storyGrid"></section>
   </div>

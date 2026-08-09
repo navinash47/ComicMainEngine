@@ -1,13 +1,19 @@
 {
   "totals": {
-    "calls": 138,
-    "input_tokens": 80062,
-    "output_tokens": 117108,
-    "image_tokens": 69735,
-    "cost_usd": 2.9598708,
-    "errors": 7
+    "calls": 226,
+    "input_tokens": 130288,
+    "output_tokens": 225773,
+    "image_tokens": 178412,
+    "cost_usd": 5.8368708,
+    "errors": 10
   },
   "by_phase": [
+    {
+      "phase": "phase_romance_step3",
+      "calls": 79,
+      "cost_usd": 2.859,
+      "tokens": 267562
+    },
     {
       "phase": "phase5",
       "calls": 66,
@@ -39,6 +45,12 @@
       "tokens": 12127
     },
     {
+      "phase": "phase_romance_step2",
+      "calls": 6,
+      "cost_usd": 0.018000000000000002,
+      "tokens": 6
+    },
+    {
       "phase": "phase0",
       "calls": 13,
       "cost_usd": 0.0031688,
@@ -64,19 +76,19 @@
     },
     {
       "phase": "phase6",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0,
       "tokens": 0
     },
     {
       "phase": "phase7",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0,
       "tokens": 0
     },
     {
       "phase": "phase7.5",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0,
       "tokens": 0
     },
@@ -108,11 +120,11 @@
   "by_provider": [
     {
       "provider": "google",
-      "calls": 54,
-      "input_tokens": 34253,
-      "output_tokens": 69687,
-      "image_tokens": 69685,
-      "cost_usd": 1.794002
+      "calls": 127,
+      "input_tokens": 84479,
+      "output_tokens": 178352,
+      "image_tokens": 178350,
+      "cost_usd": 4.524002
     },
     {
       "provider": "omniroute:anthropic",
@@ -124,11 +136,11 @@
     },
     {
       "provider": "fal",
-      "calls": 50,
+      "calls": 62,
       "input_tokens": 0,
       "output_tokens": 0,
-      "image_tokens": 50,
-      "cost_usd": 0.40900000000000003
+      "image_tokens": 62,
+      "cost_usd": 0.556
     },
     {
       "provider": "anthropic",
@@ -164,7 +176,7 @@
     },
     {
       "provider": "local",
-      "calls": 9,
+      "calls": 12,
       "input_tokens": 0,
       "output_tokens": 0,
       "image_tokens": 0,
@@ -175,11 +187,11 @@
     {
       "provider": "google",
       "model": "gemini-3.1-flash-image-preview",
-      "calls": 51,
-      "input_tokens": 34241,
-      "output_tokens": 69685,
-      "image_tokens": 69685,
-      "cost_usd": 1.794
+      "calls": 124,
+      "input_tokens": 84467,
+      "output_tokens": 178350,
+      "image_tokens": 178350,
+      "cost_usd": 4.524
     },
     {
       "provider": "omniroute:anthropic",
@@ -193,20 +205,20 @@
     {
       "provider": "fal",
       "model": "fal-ai/flux-pro/kontext",
-      "calls": 7,
+      "calls": 10,
       "input_tokens": 0,
       "output_tokens": 0,
-      "image_tokens": 7,
-      "cost_usd": 0.28
+      "image_tokens": 10,
+      "cost_usd": 0.4
     },
     {
       "provider": "fal",
       "model": "fal-ai/flux/schnell",
-      "calls": 43,
+      "calls": 52,
       "input_tokens": 0,
       "output_tokens": 0,
-      "image_tokens": 43,
-      "cost_usd": 0.129
+      "image_tokens": 52,
+      "cost_usd": 0.156
     },
     {
       "provider": "omniroute:anthropic",
@@ -283,7 +295,7 @@
     {
       "provider": "local",
       "model": "cpu",
-      "calls": 9,
+      "calls": 12,
       "input_tokens": 0,
       "output_tokens": 0,
       "image_tokens": 0,
@@ -293,13 +305,13 @@
   "by_category": [
     {
       "category": "image",
-      "calls": 103,
-      "ok": 98,
-      "errors": 5,
-      "cost_usd": 2.2029999999999985,
-      "latency_ms_sum": 764427,
-      "avg_latency_ms": 7421.6,
-      "success_rate": 0.951
+      "calls": 189,
+      "ok": 181,
+      "errors": 8,
+      "cost_usd": 5.079999999999997,
+      "latency_ms_sum": 1764136,
+      "avg_latency_ms": 9334.1,
+      "success_rate": 0.958
     },
     {
       "category": "text",
@@ -313,8 +325,8 @@
     },
     {
       "category": "other",
-      "calls": 8,
-      "ok": 8,
+      "calls": 10,
+      "ok": 10,
       "errors": 0,
       "cost_usd": 0.0,
       "latency_ms_sum": 0,
@@ -325,8 +337,8 @@
   "by_purpose": [
     {
       "purpose": "panel_batch",
-      "calls": 44,
-      "cost_usd": 1.5209999999999992
+      "calls": 120,
+      "cost_usd": 4.260000000000004
     },
     {
       "purpose": "script_episode",
@@ -340,13 +352,13 @@
     },
     {
       "purpose": "panel_batch_retry",
-      "calls": 5,
-      "cost_usd": 0.2
+      "calls": 8,
+      "cost_usd": 0.32
     },
     {
       "purpose": "char_ref",
-      "calls": 25,
-      "cost_usd": 0.07500000000000002
+      "calls": 31,
+      "cost_usd": 0.09300000000000004
     },
     {
       "purpose": "style_grid",
@@ -385,17 +397,17 @@
     },
     {
       "purpose": "compose_episode",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0
     },
     {
       "purpose": "assemble_composed",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0
     },
     {
       "purpose": "assemble_image_only",
-      "calls": 1,
+      "calls": 2,
       "cost_usd": 0.0
     },
     {
@@ -427,7 +439,7 @@
   "daily": [
     {
       "day": "2026-08-09",
-      "cost_usd": 2.959871
+      "cost_usd": 5.836871
     }
   ],
   "series": [
@@ -600,25 +612,120 @@
       "minute": "2026-08-09T09:56",
       "cost_usd": 0.0,
       "tokens": 0
+    },
+    {
+      "minute": "2026-08-09T13:45",
+      "cost_usd": 0.018,
+      "tokens": 6
+    },
+    {
+      "minute": "2026-08-09T13:46",
+      "cost_usd": 0.199,
+      "tokens": 15520
+    },
+    {
+      "minute": "2026-08-09T13:47",
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "minute": "2026-08-09T13:48",
+      "cost_usd": 0.196,
+      "tokens": 15345
+    },
+    {
+      "minute": "2026-08-09T13:49",
+      "cost_usd": 0.195,
+      "tokens": 19164
+    },
+    {
+      "minute": "2026-08-09T13:50",
+      "cost_usd": 0.078,
+      "tokens": 7580
+    },
+    {
+      "minute": "2026-08-09T13:51",
+      "cost_usd": 0.118,
+      "tokens": 7346
+    },
+    {
+      "minute": "2026-08-09T13:52",
+      "cost_usd": 0.195,
+      "tokens": 18868
+    },
+    {
+      "minute": "2026-08-09T13:53",
+      "cost_usd": 0.195,
+      "tokens": 18971
+    },
+    {
+      "minute": "2026-08-09T13:54",
+      "cost_usd": 0.195,
+      "tokens": 18465
+    },
+    {
+      "minute": "2026-08-09T13:55",
+      "cost_usd": 0.195,
+      "tokens": 19519
+    },
+    {
+      "minute": "2026-08-09T13:56",
+      "cost_usd": 0.234,
+      "tokens": 22352
+    },
+    {
+      "minute": "2026-08-09T13:57",
+      "cost_usd": 0.195,
+      "tokens": 19447
+    },
+    {
+      "minute": "2026-08-09T13:58",
+      "cost_usd": 0.198,
+      "tokens": 20131
+    },
+    {
+      "minute": "2026-08-09T13:59",
+      "cost_usd": 0.156,
+      "tokens": 15527
+    },
+    {
+      "minute": "2026-08-09T14:00",
+      "cost_usd": 0.234,
+      "tokens": 22716
+    },
+    {
+      "minute": "2026-08-09T14:01",
+      "cost_usd": 0.156,
+      "tokens": 14963
+    },
+    {
+      "minute": "2026-08-09T14:02",
+      "cost_usd": 0.12,
+      "tokens": 11648
+    },
+    {
+      "minute": "2026-08-09T14:03",
+      "cost_usd": 0.0,
+      "tokens": 0
     }
   ],
   "unit_economics": {
-    "stories": 3,
-    "panels": 44,
-    "cost_per_story_usd": 0.9866,
-    "cost_per_panel_all_in_usd": 0.0673,
+    "stories": 5,
+    "panels": 132,
+    "cost_per_story_usd": 1.1674,
+    "cost_per_panel_all_in_usd": 0.0442,
     "phase5_panel_batch_usd": 1.772,
-    "phase5_cost_per_panel_usd": 0.0403,
+    "phase5_cost_per_panel_usd": 0.0134,
     "script_phase4_usd": 0.6554,
     "compose_assemble_usd": 0.0,
-    "projected_100_episodes_usd": 98.66
+    "projected_100_episodes_usd": 116.74
   },
   "insights": [
-    "Total R&D spend $2.960 across 138 API calls.",
-    "Image share \u2248 74% of spend; text \u2248 26%.",
-    "Blended all-in \u2248 $0.987/story and $0.0673/panel.",
-    "Phase 5 panel batch alone \u2248 $0.0403/panel.",
-    "Projected 100 episodes at current blend \u2248 $98.66 (scripts+images+retries).",
+    "Total R&D spend $5.837 across 226 API calls.",
+    "Image share \u2248 87% of spend; text \u2248 13%.",
+    "Blended all-in \u2248 $1.167/story and $0.0442/panel.",
+    "Phase 5 panel batch alone \u2248 $0.0134/panel.",
+    "Projected 100 episodes at current blend \u2248 $116.74 (scripts+images+retries).",
     "Highest-spend provider: google.",
     "Curation: 12 panels approved so far."
   ],
@@ -630,7 +737,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -639,7 +746,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -648,7 +755,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -706,36 +813,36 @@
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "cheapest": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "fastest": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "best_quality": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -745,39 +852,39 @@
       "category": "image",
       "purpose": "panel_batch",
       "optimal": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "cheapest": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "fastest": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "best_quality": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -790,36 +897,36 @@
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "cheapest": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "fastest": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "best_quality": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -992,10 +1099,15 @@
     ]
   },
   "library": {
-    "count": 3,
+    "count": 5,
     "stories": [
       {
         "id": "episode_cjp_origin",
+        "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+        "panels": 12
+      },
+      {
+        "id": "episodes__episode_cjp_origin",
         "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
         "panels": 12
       },
@@ -1008,9 +1120,14 @@
         "id": "episode_hitler_warning",
         "title": "The Hitler Warning: How Hate Captured a Democracy",
         "panels": 16
+      },
+      {
+        "id": "episode_how_i_met_your_mother_ep1",
+        "title": "How I Met Your Mother \u2014 Episode 1: Infatuation",
+        "panels": 76
       }
     ]
   },
-  "server_time": "2026-08-09T10:36:15.531885+00:00",
+  "server_time": "2026-08-09T14:11:24.521818+00:00",
   "db_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/usage.db"
 }

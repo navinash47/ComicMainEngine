@@ -1,0 +1,1286 @@
+{
+  "title": "How I Met Your Mother \u2014 Episode 1: Infatuation",
+  "topic": "Dad tells Maya how he met Mom \u2014 Rohan and Elena, a Meridian Soft trip to the Bay Area, nights around the Grand Oriole Hotel.",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "dad_to_daughter_love_story",
+  "disclaimer": "A dad-to-daughter love story comic. Soft romance, non-explicit.",
+  "characters": [
+    {
+      "id": "dad",
+      "display_name": "Dad (Rohan)",
+      "role": "narrator father, present day",
+      "look": "Indian dad late 30s, soft sweater, curly hair greying at temples, warm flustered smile, Korean manhwa",
+      "notes": "Sits beside Maya and tells her how he met Mom."
+    },
+    {
+      "id": "daughter",
+      "display_name": "Maya",
+      "role": "teen daughter who teases then softens",
+      "look": "Indian teen girl ~14, oversized hoodie, pajama pants, sharp curious manhwa eyes, mischievous grin",
+      "notes": "Roasts Dad hard, then leans in when story gets tender."
+    },
+    {
+      "id": "rohan",
+      "display_name": "Young Rohan",
+      "role": "Dad in the past \u2014 shy IT employee on an HQ trip",
+      "look": "27yo Indian man, curly black hair, company badge hoodie, introvert posture, manhwa face that shows every feeling",
+      "notes": "Straight-forward; cannot read flirting; brave with honesty; butterflies literal."
+    },
+    {
+      "id": "elena",
+      "display_name": "Elena Brooks",
+      "role": "Mom in the past \u2014 tall brunette colleague",
+      "look": "tall Caucasian woman mid-20s, soft brunette baby-cut bob, pretty kind eyes, sometimes Meridian Soft tee, manhwa soft glow",
+      "notes": "Quiet then warm; scared of heartbreak; more interested than she admits early."
+    },
+    {
+      "id": "kabir",
+      "display_name": "Kabir Desai",
+      "role": "F1 Indian friend \u2014 flat-hunt panic",
+      "look": "Indian guy mid-20s, neat hair, glasses, joking smile, manhwa",
+      "notes": "Rent math comic relief."
+    },
+    {
+      "id": "arjun",
+      "display_name": "Arjun Nair",
+      "role": "F2 Indian friend \u2014 reads the room",
+      "look": "Indian guy mid-20s, casual tee, easygoing manhwa smile",
+      "notes": "Anti-third-wheel wingman."
+    },
+    {
+      "id": "wei",
+      "display_name": "Wei Zhang",
+      "role": "F3 Chinese friend with the car",
+      "look": "Chinese guy mid-20s, sensible jacket, car keys energy, manhwa",
+      "notes": "Drives early week; absence triggers tram meet-cute."
+    },
+    {
+      "id": "marcus",
+      "display_name": "Marcus Hale",
+      "role": "kind team manager late 30s",
+      "look": "white man late 30s, office polo, friendly calm manhwa face",
+      "notes": "Invites Rohan to lunch."
+    }
+  ],
+  "fact_sheet": [
+    "Dad tells Maya the story of how he met Mom.",
+    "Setting: Meridian Soft Bay Area trip, Grand Oriole Hotel, Silverleaf Mall.",
+    "Cast: Rohan, Elena, Maya, Kabir, Arjun, Wei, Marcus Hale.",
+    "Beats: butterflies, tram silence, head-bonk, Limbo Date, feather talk.",
+    "Frame: Dad beside daughter on the sofa \u2014 no book."
+  ],
+  "fact_checks": [],
+  "narrative_summary": "Dad tells Maya how he met Mom: shy IT guy Rohan keeps crossing paths with Elena on a Bay Area work trip. Silence becomes cafeteria talk, long walks, a cancelled club night, and a nervously tender hotel-room movie. A Sunday movie day peaks the crush; he asks for honesty with a Limbo Date. Feelings are known by the end. To Be Continued.",
+  "panels": [
+    {
+      "index": 1,
+      "scene_description": "Living-room sofa at night, soft lamp. Dad sits beside Maya \u2014 no book \u2014 knees almost touching. Maya grins sideways; Dad already looks doomed.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: Okay. Spill. How did you actually meet Mom?\nDad: ...You sure you want the full version? It's embarrassing.\nMaya: Perfect. I live for your embarrassment.",
+      "caption": "PRESENT \u00b7 Living room \u00b7 after dinner",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Living-room sofa at night, soft lamp. Dad sits beside Maya \u2014 no book \u2014 knees almost touching. Maya grins sideways; Dad already looks doomed.",
+      "emotion": "playful, warm",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_01.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_01.png"
+    },
+    {
+      "index": 2,
+      "scene_description": "Close two-shot: Dad rubs the back of his neck; Maya leans in sparkling.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: Fine. Spring, years ago. Company sent me to the Bay Area office for two weeks.\nMaya: 'Two weeks' is always how these movies start. Continue, tragic hero.",
+      "caption": "PRESENT \u00b7 Living room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Close two-shot: Dad rubs the back of his neck; Maya leans in sparkling.",
+      "emotion": "teasing",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_02.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_02.png"
+    },
+    {
+      "index": 3,
+      "scene_description": "Elegant title card: bay dusk skyline, tiny tram lights, soft feather motif.",
+      "characters": [],
+      "dialogue": "",
+      "caption": "HOW I MET YOUR MOTHER \u00b7 Episode 1 \u2014 Infatuation",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elegant title card: bay dusk skyline, tiny tram lights, soft feather motif. Inner feeling visual: title card atmosphere, romantic dusk city.",
+      "emotion": "cinematic",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_03.png",
+      "image_method": "text_only_fal",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_03.png"
+    },
+    {
+      "index": 4,
+      "scene_description": "Young Rohan exits arrivals with suitcase; California light hits curly hair. Tiny nervous sparkles around his eyes \u2014 excited and out of place.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): First Saturday I landed \u2014 jetlagged, pretending I knew what I was doing.",
+      "caption": "SATURDAY \u00b7 March 8 \u00b7 San Jose Airport \u00b7 ~9:00 AM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Young Rohan exits arrivals with suitcase; California light hits curly hair. Tiny nervous sparkles around his eyes \u2014 excited and out of place. Inner feeling visual: stomach flutter of a new city.",
+      "emotion": "hopeful, overstimulated",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_04.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_04.png"
+    },
+    {
+      "index": 5,
+      "scene_description": "Hotel corridor: Rohan, Kabir, Arjun compare apartment listing screens; comic shock at rents.",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "dialogue": "Kabir: Bro, this rent can't be real.\nArjun: It is. Welcome to California math.\nRohan: We need a flat. And also... sleep.",
+      "caption": "SATURDAY \u00b7 March 8 \u00b7 Grand Oriole Hotel corridor \u00b7 afternoon",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Hotel corridor: Rohan, Kabir, Arjun compare apartment listing screens; comic shock at rents.",
+      "emotion": "comic overload",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_05.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_05.png"
+    },
+    {
+      "index": 6,
+      "scene_description": "Sunday: Rohan alone on hotel bed staring at ceiling; boredom lines; phone idle.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Sunday I was so bored I went downstairs just to walk in circles like a professional circle-walker.",
+      "caption": "SUNDAY \u00b7 March 9 \u00b7 Hotel room \u00b7 late morning",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Sunday: Rohan alone on hotel bed staring at ceiling; boredom lines; phone idle. Inner feeling visual: empty-room echo in his chest.",
+      "emotion": "restless loneliness",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_06.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_06.png"
+    },
+    {
+      "index": 7,
+      "scene_description": "Lobby panorama \u2014 time slows. Across the space: Elena in Meridian Soft tee, tall, baby-cut brunette, pretty \u2014 looking at her phone. Rohan freezes mid-step.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): That was the first time I saw her face.\nMaya (inset): Mom in a company tee? Immediate legend status.",
+      "caption": "SUNDAY \u00b7 March 9 \u00b7 Grand Oriole Lobby \u00b7 ~11:20 AM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Lobby panorama \u2014 time slows. Across the space: Elena in Meridian Soft tee, tall, baby-cut brunette, pretty \u2014 looking at her phone. Rohan freezes mid-step. Inner feeling visual: heart skips; soft spotlight only on her.",
+      "emotion": "love-at-first-sight jolt",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_07.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_07.png"
+    },
+    {
+      "index": 8,
+      "scene_description": "Extreme close-up of Rohan's eyes reflecting Elena; tiny butterflies hatch around his temples.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Curly-hair IT guy brain: short-circuit. Pretty. Tall. Same company shirt. Dangerous combination.",
+      "caption": "SUNDAY \u00b7 March 9 \u00b7 Lobby \u00b7 internal beat",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Extreme close-up of Rohan's eyes reflecting Elena; tiny butterflies hatch around his temples. Inner feeling visual: first butterflies swarming.",
+      "emotion": "infatuation ignition",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_08.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_08.png"
+    },
+    {
+      "index": 9,
+      "scene_description": "Rohan introduces himself awkwardly; Elena gives a cool reserved glance \u2014 could be shy or cold.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Hi\u2014 uh\u2014 same company? I'm Rohan. Meridian Soft...\nElena: Elena.\nDad (V.O.): That look. Condescending? Or did I invent it because pretty girls scramble me?",
+      "caption": "SUNDAY \u00b7 March 9 \u00b7 Lobby",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan introduces himself awkwardly; Elena gives a cool reserved glance \u2014 could be shy or cold. Inner feeling visual: dislike and liking tangled in one chest knot.",
+      "emotion": "awkward crush",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_09.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_09.png"
+    },
+    {
+      "index": 10,
+      "scene_description": "Present: Maya covers mouth laughing; Dad covers face with both hands.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: You disliked her AND liked her? Multitasking!\nDad: Don't put that on a poster.\nMaya: Mental billboard. High resolution.",
+      "caption": "PRESENT \u00b7 Living room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya covers mouth laughing; Dad covers face with both hands.",
+      "emotion": "daughter roast",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_10.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_10.png"
+    },
+    {
+      "index": 11,
+      "scene_description": "Monday curb: Wei's car; Rohan Kabir Arjun pile in; Wei confident at wheel.",
+      "characters": [
+        "wei",
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "dialogue": "Wei: Hop in. Office express.\nRohan: Wei, you are the hero of mornings.",
+      "caption": "MONDAY \u00b7 March 10 \u00b7 Hotel curb \u00b7 ~8:15 AM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Monday curb: Wei's car; Rohan Kabir Arjun pile in; Wei confident at wheel.",
+      "emotion": "grateful energy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_11.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_11.png"
+    },
+    {
+      "index": 12,
+      "scene_description": "Tuesday transit stop alone: no Wei. Soft wind. Destiny ripple lines around Rohan's shoes.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Tuesday \u2014 Wei couldn't drive us. A tiny change. Destiny wears casual clothes.",
+      "caption": "TUESDAY \u00b7 March 11 \u00b7 City light-rail stop \u00b7 ~8:05 AM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Tuesday transit stop alone: no Wei. Soft wind. Destiny ripple lines around Rohan's shoes. Inner feeling visual: uneasy empty morning that somehow matters.",
+      "emotion": "fateful quiet",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_12.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_12.png"
+    },
+    {
+      "index": 13,
+      "scene_description": "Platform: Elena in white-and-blue with a pretty hat \u2014 morning light turns cinematic. Rohan's pupils widen; sparkles.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): And there she was again. White and blue. That hat. I forgot how to be a person.",
+      "caption": "TUESDAY \u00b7 March 11 \u00b7 Light-rail platform",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Platform: Elena in white-and-blue with a pretty hat \u2014 morning light turns cinematic. Rohan's pupils widen; sparkles. Inner feeling visual: butterflies return full swarm.",
+      "emotion": "infatuation spike",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_13.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_13.png"
+    },
+    {
+      "index": 14,
+      "scene_description": "Tram interior: Rohan manages a tiny intro then becomes a statue; silence drawn as comic panels between them.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Hi... again. Rohan.\nElena: Morning.\nDad (V.O.): Then \u2014 silence. Olympic silence. My mouth filed a resignation letter.",
+      "caption": "TUESDAY \u00b7 March 11 \u00b7 Light rail \u00b7 morning commute",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Tram interior: Rohan manages a tiny intro then becomes a statue; silence drawn as comic panels between them. Inner feeling visual: heartbeat loud in his ears; words stuck behind teeth.",
+      "emotion": "nervous comedy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_14.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_14.png"
+    },
+    {
+      "index": 15,
+      "scene_description": "Present: Maya freezes face like statue Rohan; Dad groans.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: Strategy: exist silently near crush.\nDad: It was... presence.\nMaya: It was cowardice with good hair.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya freezes face like statue Rohan; Dad groans.",
+      "emotion": "playful roast",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_15.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_15.png"
+    },
+    {
+      "index": 16,
+      "scene_description": "Office day-one montage: Marcus handshake, badge scan, laptop \u2014 Rohan sweaty but trying.",
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "dialogue": "Marcus: Welcome aboard, Rohan. Lunch later?\nRohan: Thank you, sir\u2014 I mean Marcus\u2014 I mean\u2014 okay.",
+      "caption": "TUESDAY \u00b7 March 11 \u00b7 Meridian Soft Bay Campus \u00b7 daytime",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Office day-one montage: Marcus handshake, badge scan, laptop \u2014 Rohan sweaty but trying. Inner feeling visual: half his brain still on the tram hat.",
+      "emotion": "first-day nerves",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_16.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_16.png"
+    },
+    {
+      "index": 17,
+      "scene_description": "Wednesday lobby: both wait for rideshare; quiet stretches like elastic; Rohan's hands fidget.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Wednesday. Lobby again. Same quiet. Saying 'hi' felt like climbing a mountain in flip-flops.",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Hotel lobby \u00b7 morning",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Wednesday lobby: both wait for rideshare; quiet stretches like elastic; Rohan's hands fidget. Inner feeling visual: want to speak / terrified to speak.",
+      "emotion": "tense quiet",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_17.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_17.png"
+    },
+    {
+      "index": 18,
+      "scene_description": "Cafeteria: Marcus waves; Rohan arrives late with tray; table full \u2014 soft panic.",
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "dialogue": "Marcus: Rohan! We saved\u2014 wait, we filled up.\nDad (V.O.): Late again. Destiny... or bad cafeteria timing. Same thing that week.",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Office cafeteria \u00b7 lunch",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Cafeteria: Marcus waves; Rohan arrives late with tray; table full \u2014 soft panic.",
+      "emotion": "mild panic",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_18.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_18.png"
+    },
+    {
+      "index": 19,
+      "scene_description": "Rohan sits across Elena alone at small table \u2014 soft spotlight between trays.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Mind if I sit? We keep... existing near each other in lobbies.\nElena: Sure.",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Cafeteria \u00b7 lunch",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan sits across Elena alone at small table \u2014 soft spotlight between trays. Inner feeling visual: relief and terror equalized.",
+      "emotion": "first real talk",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_19.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_19.png"
+    },
+    {
+      "index": 20,
+      "scene_description": "Talk beat: Rohan animated with hands about California smiling culture; Elena listening, faint smile blooming.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: People here smile at strangers like it's a sport.\nElena: You're new. Give it a week.\nRohan: A week of smiling \u2014 or panicking?",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Cafeteria",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Talk beat: Rohan animated with hands about California smiling culture; Elena listening, faint smile blooming. Inner feeling visual: crush softens into conversation warmth.",
+      "emotion": "warming",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_20.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_20.png"
+    },
+    {
+      "index": 21,
+      "scene_description": "Feeling close-up: Rohan watching her listen more than talk \u2014 manhwa soft focus on her lashes.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): She listened more than she spoke. I liked that. Quiet isn't empty \u2014 sometimes it's careful.",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Cafeteria \u00b7 mid-lunch",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Feeling close-up: Rohan watching her listen more than talk \u2014 manhwa soft focus on her lashes. Inner feeling visual: fondness collecting like rain in a cup.",
+      "emotion": "tender observation",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_21.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_21.png"
+    },
+    {
+      "index": 22,
+      "scene_description": "Evening curb: Elena enters cab alone; Wei's text about flat hunt. Rohan torn silhouette.",
+      "characters": [
+        "elena",
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Wei left early for apartments. She rode alone. I told myself it was fine.\nMaya (inset): Your face is lying to Future You.",
+      "caption": "WEDNESDAY \u00b7 March 12 \u00b7 Office curb \u00b7 evening",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Evening curb: Elena enters cab alone; Wei's text about flat hunt. Rohan torn silhouette. Inner feeling visual: wanting to go with her / not daring.",
+      "emotion": "soft regret",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_22.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_22.png"
+    },
+    {
+      "index": 23,
+      "scene_description": "Thursday dinner: Rohan alone at hotel restaurant \u2014 introvert fortress with phone.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Thursday I sat alone. Not because I disliked people \u2014 because girls, even platonically, scrambled my confidence.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Hotel dining lobby \u00b7 ~7:10 PM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Thursday dinner: Rohan alone at hotel restaurant \u2014 introvert fortress with phone. Inner feeling visual: self-conscious walls up.",
+      "emotion": "lonely introvert",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_23.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_23.png"
+    },
+    {
+      "index": 24,
+      "scene_description": "Elena sits opposite unexpectedly \u2014 electric crackle doodles; Rohan jolts; butterflies explode.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: Hi.\nRohan: \u2014!\nDad (V.O.): She sat across from me. My heart rebooted incorrectly.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Hotel dining \u00b7 evening",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena sits opposite unexpectedly \u2014 electric crackle doodles; Rohan jolts; butterflies explode. Inner feeling visual: jolt of electricity through whole body.",
+      "emotion": "electric crush",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_24.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_24.png"
+    },
+    {
+      "index": 25,
+      "scene_description": "Present: Maya making zap sound effects with fingers; Dad smiling helplessly.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: BZZT. Crush.exe has crashed.\nDad: It crashed into a better version of me.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya making zap sound effects with fingers; Dad smiling helplessly.",
+      "emotion": "tease + soft pride",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_25.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_25.png"
+    },
+    {
+      "index": 26,
+      "scene_description": "Long dinner montage feeling: plates emptier, clocks melt ~2 hours, laughter lines, eyes soft.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Two hours. Work. Random things. Easy and terrifying \u2014 like learning to swim mid-ocean.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Hotel dining \u00b7 ~7:10\u20139:10 PM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Long dinner montage feeling: plates emptier, clocks melt ~2 hours, laughter lines, eyes soft. Inner feeling visual: time disappearing because she's interesting.",
+      "emotion": "sparkling connection",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_26.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_26.png"
+    },
+    {
+      "index": 27,
+      "scene_description": "Night street walk under lamps; Elena gestures keep walking; Rohan would walk forever.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: One more block?\nRohan: Okay.\nElena: ...Okay one more?\nDad (V.O.): She kept insisting we walk. I would've walked to Oregon.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Downtown streets \u00b7 night",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Night street walk under lamps; Elena gestures keep walking; Rohan would walk forever. Inner feeling visual: butterflies match streetlamp flicker.",
+      "emotion": "romantic stroll",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_27.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_27.png"
+    },
+    {
+      "index": 28,
+      "scene_description": "Walk feeling panel: sideways glance \u2014 is this friendship? His fingers twitch near hers and retreat.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan (thought): Don't read too much. Don't read too little. Why is there no manual?\nDad (V.O.): I wanted to know how girls think \u2014 and somehow the answer was walking beside one.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Night walk",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Walk feeling panel: sideways glance \u2014 is this friendship? His fingers twitch near hers and retreat. Inner feeling visual: hand almost reaches / pulls back.",
+      "emotion": "confused longing",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_28.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_28.png"
+    },
+    {
+      "index": 29,
+      "scene_description": "Hotel hallway: Rohan bursts into friends' room gushing; Kabir Arjun Wei roast him.",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "dialogue": "Rohan: Guys. There's a girl.\nKabir: There are many girls.\nRohan: No \u2014 a girl girl.\nArjun: Oh no. He's gone.\nWei: Destiny hours.",
+      "caption": "THURSDAY \u00b7 March 13 \u00b7 Friends' hotel room \u00b7 ~11:20 PM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Hotel hallway: Rohan bursts into friends' room gushing; Kabir Arjun Wei roast him. Inner feeling visual: happiness too big for his chest.",
+      "emotion": "comic excitement",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_29.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_29.png"
+    },
+    {
+      "index": 30,
+      "scene_description": "Rohan asleep peaceful; phone lights with Elena's follow request \u2014 unseen. Dramatic irony sparkles.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Slept like a baby at midnight. Phone got a follow request... and I \u2014 genius \u2014 had deleted the app a year ago.",
+      "caption": "THURSDAY night \u2192 FRIDAY \u00b7 12:00 AM \u00b7 Hotel room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan asleep peaceful; phone lights with Elena's follow request \u2014 unseen. Dramatic irony sparkles.",
+      "emotion": "dramatic irony",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_30.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_30.png"
+    },
+    {
+      "index": 31,
+      "scene_description": "Present: Maya facepalms so hard the couch shakes.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: You DELETED the app?\nDad: I was living pure. Offline. Philosophical.\nMaya: You were living romantic stupid. Cute stupid, but stupid.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya facepalms so hard the couch shakes.",
+      "emotion": "max roast",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_31.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_31.png"
+    },
+    {
+      "index": 32,
+      "scene_description": "Friday afternoon: Rohan glowing while getting ready; phone shows Elena invite to club Friday eve.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Elena (text): Club tonight? Friends going \u2014 come!\nRohan (text): Yes!! Excited to meet everyone!\nDad (V.O.): I got ready like it was a wedding. Heart doing cartwheels.",
+      "caption": "FRIDAY \u00b7 March 14 \u00b7 Afternoon \u2192 evening \u00b7 Hotel room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Friday afternoon: Rohan glowing while getting ready; phone shows Elena invite to club Friday eve. Inner feeling visual: anticipation butterflies manic.",
+      "emotion": "excited peak",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_32.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_32.png"
+    },
+    {
+      "index": 33,
+      "scene_description": "Phone close-up: later text \u2014 too many people, maybe skip. Rohan's face cracks; little dark rain.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Elena (text): Actually... lots of people. Maybe skip tonight?\nDad (V.O.): Cancelled. Upset. Almost angry. Thumb hovered over delete contact.",
+      "caption": "FRIDAY \u00b7 March 14 \u00b7 Evening \u00b7 Hotel room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Phone close-up: later text \u2014 too many people, maybe skip. Rohan's face cracks; little dark rain. Inner feeling visual: butterflies collapse into heavy chest stone.",
+      "emotion": "hurt",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_33.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_33.png"
+    },
+    {
+      "index": 34,
+      "scene_description": "Present careful: Dad softer; Maya quieter but still herself.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: Then I criticized myself. Acquaintance \u2014 not entitled to her Friday.\nMaya: Grown-up Dad speaking. Rare form.\nDad: I performed grown-up by lying I was 'busy' the next day.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present careful: Dad softer; Maya quieter but still herself.",
+      "emotion": "sincere",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_34.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_34.png"
+    },
+    {
+      "index": 35,
+      "scene_description": "Saturday day: Rohan with Arjun walking 'fine'; thought bubbles of Elena cancelled club.",
+      "characters": [
+        "rohan",
+        "arjun"
+      ],
+      "dialogue": "Arjun: You okay?\nRohan: Busy. Very busy. Busy with busy-ness.\nArjun: ...You're upset.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Day \u00b7 city sidewalk",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Saturday day: Rohan with Arjun walking 'fine'; thought bubbles of Elena cancelled club. Inner feeling visual: pride covering bruise.",
+      "emotion": "pretend-okay comedy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_35.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_35.png"
+    },
+    {
+      "index": 36,
+      "scene_description": "Saturday hotel dining lobby: Elena approaches Rohan + Arjun; apologetic soft eyes.",
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "dialogue": "Elena: Rohan \u2014 I'm sorry about last night. Can I make it up?\nRohan: Uh\u2014 this is Arjun.\nArjun: Hi. Friendly obstacle. Nice to meet you.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Hotel dining lobby \u00b7 evening",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Saturday hotel dining lobby: Elena approaches Rohan + Arjun; apologetic soft eyes. Inner feeling visual: bruise starts healing against his will.",
+      "emotion": "apology warmth",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_36.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_36.png"
+    },
+    {
+      "index": 37,
+      "scene_description": "Movie invite; Rohan asks Arjun; Arjun declines with subtle wink away from Elena.",
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "dialogue": "Elena: Theater nearby \u2014 want to watch something?\nRohan: Arjun, you in?\nArjun: Busy. Deeply busy. Ancient busy. You two go... as friends.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Lobby",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Movie invite; Rohan asks Arjun; Arjun declines with subtle wink away from Elena.",
+      "emotion": "wingman comedy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_37.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_37.png"
+    },
+    {
+      "index": 38,
+      "scene_description": "Rohan scrolling to invite Kabir/Wei; Elena gently places hand on his phone \u2014 softness zoom.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Wait I can ping Kabir\u2014\nElena: No need.\nDad (V.O.): Hand on my phone. Brain typed FRIENDS. Destiny typed DATE??",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Lobby",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan scrolling to invite Kabir/Wei; Elena gently places hand on his phone \u2014 softness zoom. Inner feeling visual: skin-tingle where her hand nearly brushed his.",
+      "emotion": "hint blindness",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_38.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_38.png"
+    },
+    {
+      "index": 39,
+      "scene_description": "Present roast panel \u2014 Maya pointing at imaginary whiteboard labeled 'HINTS YOU MISSED'.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: Mom said 'no need' and you still held a friendship press conference?\nDad: Allergic to implications.\nMaya: Get an epipen for romance.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present roast panel \u2014 Maya pointing at imaginary whiteboard labeled 'HINTS YOU MISSED'.",
+      "emotion": "tease",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_39.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_39.png"
+    },
+    {
+      "index": 40,
+      "scene_description": "Hallway: Rohan invents tiredness; Elena reads him; invites movie in her room \u2014 just us.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: I'm tired. Sleep. Definitely sleep.\nElena: What are you actually going to do?\nRohan: ...Watch a movie.\nElena: Then watch in my room. Just us.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Hotel hallway \u00b7 ~9:40 PM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Hallway: Rohan invents tiredness; Elena reads him; invites movie in her room \u2014 just us. Inner feeling visual: fear-and-hope lightning.",
+      "emotion": "shocked yes",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_40.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_40.png"
+    },
+    {
+      "index": 41,
+      "scene_description": "Rohan in his room grabbing iPad Pro \u2014 freeze-frame terror, sweat drops, butterfly storm.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Best part \u2014 I was terrified.\nMaya (present): Of Mom?\nDad: Of accidentally becoming a person who sits on a bed near a crush.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Rohan's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan in his room grabbing iPad Pro \u2014 freeze-frame terror, sweat drops, butterfly storm. Inner feeling visual: maximum butterfly swarm; knees soft.",
+      "emotion": "scared butterflies",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_41.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_41.png"
+    },
+    {
+      "index": 42,
+      "scene_description": "Elena's room: Rohan plants iPad on desk far away like a professional; Elena points to bed.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Desk is good. Cinema of professionalism.\nElena: Bed's better. Come on.",
+      "caption": "SATURDAY \u00b7 March 15 \u00b7 Elena's hotel room \u00b7 night",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena's room: Rohan plants iPad on desk far away like a professional; Elena points to bed. Inner feeling visual: panic disguised as logistics.",
+      "emotion": "awkward comedy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_42.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_42.png"
+    },
+    {
+      "index": 43,
+      "scene_description": "On bed edge plugging charger; Elena scoots closer for the screen \u2014 distance collapses; butterflies fill room air.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): She came closer so she could see. I froze. Every butterfly in California moved into my stomach.",
+      "caption": "SATURDAY night \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. On bed edge plugging charger; Elena scoots closer for the screen \u2014 distance collapses; butterflies fill room air. Inner feeling visual: butterflies swarming inside / warm shoulder distance shrinking.",
+      "emotion": "intense crush",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_43.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_43.png"
+    },
+    {
+      "index": 44,
+      "scene_description": "Watching soft-horror Night Watchman: jump scare; Elena jolts closer, almost head on shoulder; water bottle; comic stomach growl bubbles.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "SFX: JUMP!\nElena: \u2014!\nDad (V.O.): Every scare: closer. Almost her head on my shoulder. She drank water like dinner forgot her. Her stomach growled. Weirdly adorable.",
+      "caption": "SATURDAY night \u00b7 ~10:30 PM\u20131:00 AM \u00b7 Elena's room \u00b7 movie: Night Watchman",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Watching soft-horror Night Watchman: jump scare; Elena jolts closer, almost head on shoulder; water bottle; comic stomach growl bubbles. Inner feeling visual: soft almost-touch heaven; crush rebooting hard.",
+      "emotion": "cozy scare romance",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_44.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_44.png"
+    },
+    {
+      "index": 45,
+      "scene_description": "Rohan thought storm overlay: hints? friendship? romance? manhwa question-mark rain.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Rohan (thought): Is she giving hints?\nAm I failing Hint Class?\nIs this friendship with jump scares?\nDad (V.O.): Confused. Crushed. Still sitting like a gentleman statue.",
+      "caption": "SATURDAY night \u00b7 Elena's room \u00b7 internal",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan thought storm overlay: hints? friendship? romance? manhwa question-mark rain. Inner feeling visual: wanting meaning / fearing wrong meaning.",
+      "emotion": "internal chaos",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_45.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_45.png"
+    },
+    {
+      "index": 46,
+      "scene_description": "Present: Maya whispering like gossip show host.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: Head. Nearly. On. Shoulder.\nDad: I know.\nMaya: And you did... statues?\nDad: Elite statues.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya whispering like gossip show host.",
+      "emotion": "tease",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_46.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_46.png"
+    },
+    {
+      "index": 47,
+      "scene_description": "2AM Rohan returns; can't sleep; 4AM text from Elena can't sleep either \u2014 soft phone glow.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Elena (text, 4:01 AM): Still awake. That movie ruined me.\nDad (V.O.): Woke at seven, saw it, and thought \u2014 wait. Maybe...?",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 2:00 AM \u2192 4:01 AM \u2192 7:00 AM",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. 2AM Rohan returns; can't sleep; 4AM text from Elena can't sleep either \u2014 soft phone glow. Inner feeling visual: maybe she feels it too \u2014 fragile hope.",
+      "emotion": "hope blooming",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_47.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_47.png"
+    },
+    {
+      "index": 48,
+      "scene_description": "Flat hunting till 1PM with friends; Elena excited movie texts overlay between rental disasters.",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "dialogue": "Kabir: This closet is pretending to be a bedroom.\nElena (text): Still on for movie later??\nRohan (text): YES.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 Morning\u20131:00 PM \u00b7 apartment search",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Flat hunting till 1PM with friends; Elena excited movie texts overlay between rental disasters. Inner feeling visual: anticipation under chores.",
+      "emotion": "busy joy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_48.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_48.png"
+    },
+    {
+      "index": 49,
+      "scene_description": "Walking to Silverleaf Mall theater in sun \u2014 side by side; soft cinematic widen.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Walked to the theater. The whole afternoon felt like a scene someone wrote for me.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 ~3:00 PM \u00b7 Silverleaf Mall approach",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Walking to Silverleaf Mall theater in sun \u2014 side by side; soft cinematic widen. Inner feeling visual: every action feels romantic through his filter.",
+      "emotion": "movie-date glow",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_49.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_49.png"
+    },
+    {
+      "index": 50,
+      "scene_description": "Starbucks: tissue falls; both dive; forehead bump; shared smile \u2014 spark line through Rohan's stomach.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "SFX: bonk\nElena: Ow\u2014\nRohan: Sorry\u2014!\nBoth: ...\nDad (V.O.): That smile went straight through my stomach.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 Starbucks \u00b7 pre-movie",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Starbucks: tissue falls; both dive; forehead bump; shared smile \u2014 spark line through Rohan's stomach. Inner feeling visual: forehead-bonk electricity; butterflies explode again.",
+      "emotion": "sweet collide",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_50.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_50.png"
+    },
+    {
+      "index": 51,
+      "scene_description": "Present: Maya softens, hand over heart dramatically.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: Okay that was illegally cute.\nDad: Right? I still replay the head-bonk in 4K.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya softens, hand over heart dramatically.",
+      "emotion": "warm",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_51.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_51.png"
+    },
+    {
+      "index": 52,
+      "scene_description": "Dark theater: sitting close; Rohan's hand hovers near hers \u2014 almost \u2014 retreats.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): In the dark: Do I put my hand on hers?\nMaya (present): Dad. The answer was yes.\nDad: I know that NOW.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 Cinema \u00b7 afternoon showing",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Dark theater: sitting close; Rohan's hand hovers near hers \u2014 almost \u2014 retreats. Inner feeling visual: hand hovering / courage missing by inches.",
+      "emotion": "almost-touch tension",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_52.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_52.png"
+    },
+    {
+      "index": 53,
+      "scene_description": "Outside theater: Rohan asks for social; Elena already sent; gentle roast energy.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Can I get your... social?\nElena: I already sent it. Days ago.\nRohan: I deleted the app. Philosophically.\nElena: Reinstall philosophy, Rohan.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 Theater plaza \u00b7 late afternoon",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Outside theater: Rohan asks for social; Elena already sent; gentle roast energy. Inner feeling visual: happy embarrassment.",
+      "emotion": "cute comedy",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_53.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_53.png"
+    },
+    {
+      "index": 54,
+      "scene_description": "Evening montage: dinner, walk, second movie in her room \u2014 'best day' stamp glowing.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Dinner. Walk. Another movie in her room. Best day of the trip. Felt like a date... even while I refused the word.",
+      "caption": "SUNDAY \u00b7 March 16 \u00b7 Evening \u2192 night",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Evening montage: dinner, walk, second movie in her room \u2014 'best day' stamp glowing. Inner feeling visual: full soft glow; crush undisputed inside him.",
+      "emotion": "peak happiness",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_54.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_54.png"
+    },
+    {
+      "index": 55,
+      "scene_description": "Monday campus: lunch together, hallway waves between breaks \u2014 unlabeled couple energy.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Monday \u2014 breaks, lunch, leave together, dinner, walk. A ritual was forming.",
+      "caption": "MONDAY \u00b7 March 17 \u00b7 Campus + hotel \u00b7 day\u2013evening",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Monday campus: lunch together, hallway waves between breaks \u2014 unlabeled couple energy. Inner feeling visual: belonging sneaking in.",
+      "emotion": "comfortable closeness",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_55.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_55.png"
+    },
+    {
+      "index": 56,
+      "scene_description": "Hotel room: watching Rohan's pick \u2014 soft Indian romantic Roja vibes (tasteful); warm scenes \u2192 they glance at each other then look away.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Alternate-day rule. My choice: Roja. When warm scenes came... we looked. Silently. Then pretended the wall was fascinating.",
+      "caption": "MONDAY \u00b7 March 17 \u00b7 Night \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Hotel room: watching Rohan's pick \u2014 soft Indian romantic Roja vibes (tasteful); warm scenes \u2192 they glance at each other then look away. Inner feeling visual: mutual awareness crackling without words.",
+      "emotion": "charged silence",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_56.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_56.png"
+    },
+    {
+      "index": 57,
+      "scene_description": "Graphic: hotel checkout countdown as a ticking heart calendar.",
+      "characters": [],
+      "dialogue": "",
+      "caption": "COUNTDOWN \u00b7 Rohan checks out Thu morning (Mar 20) \u00b7 Elena Fri (Mar 21)",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Graphic: hotel checkout countdown as a ticking heart calendar. Inner feeling visual: time pressure under romance.",
+      "emotion": "ticking dread",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_57.png",
+      "image_method": "text_only_fal",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_57.png"
+    },
+    {
+      "index": 58,
+      "scene_description": "Present: Maya counting on fingers.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: So your brain: movies good / labeling feelings bad.\nDad: Accurate. Painfully accurate.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya counting on fingers.",
+      "emotion": "tease",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_58.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_58.png"
+    },
+    {
+      "index": 59,
+      "scene_description": "Tuesday: Rohan can't work; friends huddle advice \u2014 ask her clear.",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "dialogue": "Kabir: Ask. Friend or more.\nWei: Clear is kind.\nArjun: Or die of confusion \u2014 also popular.\nRohan: If I ask, it might get awkward forever.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Office break area \u00b7 daytime",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Tuesday: Rohan can't work; friends huddle advice \u2014 ask her clear. Inner feeling visual: fear of losing the soft thing by naming it.",
+      "emotion": "anxious counsel",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_59.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_59.png"
+    },
+    {
+      "index": 60,
+      "scene_description": "Rohan at desk staring at code he cannot see \u2014 Elena silhouette in thoughts.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): Whole day unproductive. Heart louder than keyboard.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Desk \u00b7 daytime",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Rohan at desk staring at code he cannot see \u2014 Elena silhouette in thoughts. Inner feeling visual: crush crowding out work.",
+      "emotion": "distracted longing",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_60.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_60.png"
+    },
+    {
+      "index": 61,
+      "scene_description": "Tuesday night Forrest Gump glow; comfortable until phone rings.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Night. Her movie \u2014 Forrest Gump. Beautiful. Then her brother called.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 ~9:30 PM \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Tuesday night Forrest Gump glow; comfortable until phone rings.",
+      "emotion": "calm before storm",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_61.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_61.png"
+    },
+    {
+      "index": 62,
+      "scene_description": "Elena on phone lies 'lots of friends' while Rohan alone beside her \u2014 hurt then courage rising.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena (on phone): Yeah, just hanging out with a bunch of friends.\nDad (V.O.): I was the only bunch. That lie opened a door. Honesty walked through.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 During call",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena on phone lies 'lots of friends' while Rohan alone beside her \u2014 hurt then courage rising. Inner feeling visual: hurt that clarifies he wants truth not limbo forever.",
+      "emotion": "soft sting \u2192 resolve",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_62.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_62.png"
+    },
+    {
+      "index": 63,
+      "scene_description": "After call: Rohan gentle confrontation \u2014 last movie as friends vs long future of movies.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Why did you lie?\nElena: ...\nRohan: Hey \u2014 this might be our last movie as friends... or the start of movies together for a long, long future.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 After call",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. After call: Rohan gentle confrontation \u2014 last movie as friends vs long future of movies. Inner feeling visual: voice shaky but true.",
+      "emotion": "heart-on-sleeve",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_63.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_63.png"
+    },
+    {
+      "index": 64,
+      "scene_description": "Elena shocked: wasn't interested at first; Rohan sad awkward; gut still whispers she cares.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: I wasn't interested in you at first.\nRohan: ...Oh.\nDad (V.O.): Sad. Awkward. Gut still whispered she cared.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena shocked: wasn't interested at first; Rohan sad awkward; gut still whispers she cares. Inner feeling visual: chest drop; refuse to believe zero.",
+      "emotion": "shock / hurt",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_64.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_64.png"
+    },
+    {
+      "index": 65,
+      "scene_description": "She says get out; he stays, takes her hand, kneels sincerely \u2014 earnest not wedding parody.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: Get out first.\nRohan: I won't. Please hear me.\nDad (V.O.): I took her hand. Knelt \u2014 not for theater. For truth.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. She says get out; he stays, takes her hand, kneels sincerely \u2014 earnest not wedding parody. Inner feeling visual: terror and sincerity fused.",
+      "emotion": "vulnerable courage",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_65.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_65.png"
+    },
+    {
+      "index": 66,
+      "scene_description": "Elena: scared of dating after friends' heartbreaks; Rohan: we pull each other up when we fight.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: I'm scared. I've watched friends shatter.\nRohan: Breakups happen when people stop pulling each other up. If we fight, we pull. We learn each other. Accept me \u2014 for dating.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena: scared of dating after friends' heartbreaks; Rohan: we pull each other up when we fight. Inner feeling visual: protectiveness without pressure theater.",
+      "emotion": "sincere negotiation",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_66.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_66.png"
+    },
+    {
+      "index": 67,
+      "scene_description": "Close-up: Rohan names LIMBO DATE \u2014 manhwa title-card energy on the phrase.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Call it a Limbo Date. Not nothing. Not everything. The honest middle \u2014 tell me how you really feel.\nElena: ...Limbo Date?",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Close-up: Rohan names LIMBO DATE \u2014 manhwa title-card energy on the phrase. Inner feeling visual: invented phrase landing like a soft bomb.",
+      "emotion": "thesis moment",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_67.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_67.png"
+    },
+    {
+      "index": 68,
+      "scene_description": "Elena admits little interest but too early; Rohan: better early than late; answer by tomorrow dinner.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: I had a little interest... but it felt too early.\nRohan: Better early than late. Bad at flirting. Good at honesty. Think tonight. Tell me at tomorrow's dinner.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Late",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Elena admits little interest but too early; Rohan: better early than late; answer by tomorrow dinner. Inner feeling visual: relief that interest exists at all.",
+      "emotion": "hopeful honesty",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_68.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_68.png"
+    },
+    {
+      "index": 69,
+      "scene_description": "Awkward hallway exit; Elena alone conflicted on bed; Rohan's silhouette walking away small.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Left awkwardly \u2014 like a man who put his heart on the carpet and hoped nobody stepped on it.",
+      "caption": "TUESDAY \u00b7 March 18 \u00b7 Hallway / her room \u00b7 late",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Awkward hallway exit; Elena alone conflicted on bed; Rohan's silhouette walking away small. Inner feeling visual: adrenaline crash; hope still glowing faint.",
+      "emotion": "aftermath hush",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_69.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_69.png"
+    },
+    {
+      "index": 70,
+      "scene_description": "Present: Maya wiped-eyed still roasting.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Maya: You KNEELED?\nDad: Respectfully!\nMaya: Mom must've thought you were proposing to the carpet.\nDad: ...Possibly.",
+      "caption": "PRESENT",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present: Maya wiped-eyed still roasting.",
+      "emotion": "soft tease",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_70.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_70.png"
+    },
+    {
+      "index": 71,
+      "scene_description": "Wednesday: Elena WFH; empty office chair; Rohan restless pacing thoughts.",
+      "characters": [
+        "rohan"
+      ],
+      "dialogue": "Dad (V.O.): She didn't come to campus. Worked from hotel. I respected space. My stomach did not.",
+      "caption": "WEDNESDAY \u00b7 March 19 \u00b7 Office daytime",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Wednesday: Elena WFH; empty office chair; Rohan restless pacing thoughts. Inner feeling visual: stomach in knots all day.",
+      "emotion": "anxious waiting",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_71.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_71.png"
+    },
+    {
+      "index": 72,
+      "scene_description": "Dinner: Elena careful \u2014 stay in contact, don't talk about yesterday; Rohan happy but senses uneven footing.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Elena: Let's stay in contact. But please \u2014 not last night's talk. Not tonight.\nRohan: Okay. I can do that.\nDad (V.O.): Happy. She looked careful. Something unfinished.",
+      "caption": "WEDNESDAY \u00b7 March 19 \u00b7 Hotel dining \u00b7 evening",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Dinner: Elena careful \u2014 stay in contact, don't talk about yesterday; Rohan happy but senses uneven footing. Inner feeling visual: joy with a hairline crack.",
+      "emotion": "bittersweet relief",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_72.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_72.png"
+    },
+    {
+      "index": 73,
+      "scene_description": "Night walk: Forrest Gump feather / opportunity speech; Elena soft-shocked.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Rohan: Forrest Gump \u2014 that feather. Great relationships are like opportunity. They float by. I didn't want to waste it. That's why I asked early.\nElena: ...You remembered that?\nDad (V.O.): Soft-shocked. The good kind.",
+      "caption": "WEDNESDAY \u00b7 March 19 \u00b7 Night walk near hotel",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Night walk: Forrest Gump feather / opportunity speech; Elena soft-shocked. Inner feeling visual: connection deepening past crush into meaning.",
+      "emotion": "tender breakthrough",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_73.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_73.png"
+    },
+    {
+      "index": 74,
+      "scene_description": "Movie night different energy \u2014 knowing glances; truth in the room; quiet victory smiles.",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "dialogue": "Dad (V.O.): Movie as usual. Different. The truth sat between us. Phase one \u2014 honesty \u2014 somehow worked. I was solitary... but willing to understand.",
+      "caption": "WEDNESDAY \u00b7 March 19 \u00b7 Night \u00b7 Elena's room",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Movie night different energy \u2014 knowing glances; truth in the room; quiet victory smiles. Inner feeling visual: crush becoming mutual knowing.",
+      "emotion": "quiet victory",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_74.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_74.png"
+    },
+    {
+      "index": 75,
+      "scene_description": "Present close: Maya leans head on Dad's shoulder; both soft lamp-lit.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: Lots happened after that...\nMaya: Part Two. Tomorrow. Non-negotiable. Bring snacks for my emotional damage.\nDad: Deal.",
+      "caption": "PRESENT \u00b7 Living room \u00b7 late",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. Present close: Maya leans head on Dad's shoulder; both soft lamp-lit.",
+      "emotion": "warm cliffhanger",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_75.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_75.png"
+    },
+    {
+      "index": 76,
+      "scene_description": "End card: white feather drifting through warm hotel hallway; To Be Continued.",
+      "characters": [],
+      "dialogue": "",
+      "caption": "END OF EPISODE 1 \u2014 INFATUATION \u00b7 TO BE CONTINUED IN PART 2",
+      "art_prompt": "Korean manhwa webtoon, expressive eyes, soft gloss highlights, romantic comedy drama, clear emotional acting, butterfly and heartbeat visual motifs when crushing, warm hotel/city palette, no text letters in art. End card: white feather drifting through warm hotel hallway; To Be Continued. Inner feeling visual: feather = opportunity floating onward.",
+      "emotion": "cinematic",
+      "image_path": "outputs/phase5/episode_how_i_met_your_mother_ep1/panel_76.png",
+      "image_method": "text_only_fal",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_how_i_met_your_mother_ep1/panel_76.png"
+    }
+  ],
+  "webtoon_path": "outputs/phase7/episode_how_i_met_your_mother_ep1/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_how_i_met_your_mother_ep1/episode.pdf",
+  "webtoon_image_only_path": null,
+  "pdf_image_only_path": null
+}

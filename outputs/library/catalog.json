@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-09T09:39:29.834809+00:00",
-  "count": 3,
+  "updated_at": "2026-08-09T14:31:08.808870+00:00",
+  "count": 5,
   "stories": [
     {
       "id": "episode_cjp_origin",
@@ -140,6 +140,50 @@
           "webtoon_path": "outputs/phase7.5/episode_cjp_origin/webtoon_image_only.png",
           "pdf_path": "outputs/phase7.5/episode_cjp_origin/episode_image_only.pdf",
           "assembled_panels": 12
+        }
+      }
+    },
+    {
+      "id": "episodes__episode_cjp_origin",
+      "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+      "topic": "How the CJP student protest started (test episode)",
+      "voice": "dad_to_daughter_bedtime",
+      "panel_count": 12,
+      "phase": "episodes",
+      "path": "outputs/phase10/site/episodes/episode_cjp_origin.json",
+      "reader_href": "/stories/episodes__episode_cjp_origin",
+      "json_href": "/api/stories/episodes__episode_cjp_origin",
+      "disclaimer": "This is a dramatized educational retelling for children ages 7\u201310. Real student protests in India during 2024 involved concerns about exam integrity in competitive entrance exams l",
+      "curation": {
+        "approved": 0,
+        "rejected": 0,
+        "pending": 0,
+        "regenerated": 0,
+        "total": 0,
+        "panels": [],
+        "avg_rating": null,
+        "episode_status": "pending"
+      },
+      "editions": {
+        "reader": {
+          "label": "Reader (bubbles + captions)",
+          "phase": "phase7",
+          "available": false,
+          "webtoon_href": null,
+          "pdf_href": null,
+          "webtoon_path": null,
+          "pdf_path": null,
+          "assembled_panels": null
+        },
+        "image_only": {
+          "label": "Only Image (no bubbles)",
+          "phase": "phase7.5",
+          "available": false,
+          "webtoon_href": null,
+          "pdf_href": null,
+          "webtoon_path": null,
+          "pdf_path": null,
+          "assembled_panels": null
         }
       }
     },
@@ -486,6 +530,50 @@
           "webtoon_path": "outputs/phase7.5/episode_hitler_warning/webtoon_image_only.png",
           "pdf_path": "outputs/phase7.5/episode_hitler_warning/episode_image_only.pdf",
           "assembled_panels": 16
+        }
+      }
+    },
+    {
+      "id": "episode_how_i_met_your_mother_ep1",
+      "title": "How I Met Your Mother \u2014 Episode 1: Infatuation",
+      "topic": "Dad tells Maya how he met Mom \u2014 Rohan and Elena, a Meridian Soft trip to the Bay Area, nights around the Grand Oriole Hotel.",
+      "voice": "dad_to_daughter_love_story",
+      "panel_count": 76,
+      "phase": "phase4",
+      "path": "outputs/phase4/episode_how_i_met_your_mother_ep1.json",
+      "reader_href": "/stories/episode_how_i_met_your_mother_ep1",
+      "json_href": "/api/stories/episode_how_i_met_your_mother_ep1",
+      "disclaimer": "A dad-to-daughter love story comic. Soft romance, non-explicit.",
+      "curation": {
+        "approved": 0,
+        "rejected": 0,
+        "pending": 0,
+        "regenerated": 0,
+        "total": 0,
+        "panels": [],
+        "avg_rating": null,
+        "episode_status": "pending"
+      },
+      "editions": {
+        "reader": {
+          "label": "Reader (bubbles + captions)",
+          "phase": "phase7",
+          "available": true,
+          "webtoon_href": "/media/phase7/episode_how_i_met_your_mother_ep1/webtoon.png",
+          "pdf_href": "/media/phase7/episode_how_i_met_your_mother_ep1/episode.pdf",
+          "webtoon_path": "outputs/phase7/episode_how_i_met_your_mother_ep1/webtoon.png",
+          "pdf_path": "outputs/phase7/episode_how_i_met_your_mother_ep1/episode.pdf",
+          "assembled_panels": 76
+        },
+        "image_only": {
+          "label": "Only Image (no bubbles)",
+          "phase": "phase7.5",
+          "available": true,
+          "webtoon_href": "/media/phase7.5/episode_how_i_met_your_mother_ep1/webtoon_image_only.png",
+          "pdf_href": "/media/phase7.5/episode_how_i_met_your_mother_ep1/episode_image_only.pdf",
+          "webtoon_path": "outputs/phase7.5/episode_how_i_met_your_mother_ep1/webtoon_image_only.png",
+          "pdf_path": "outputs/phase7.5/episode_how_i_met_your_mother_ep1/episode_image_only.pdf",
+          "assembled_panels": 76
         }
       }
     }

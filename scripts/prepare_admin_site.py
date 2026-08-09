@@ -38,6 +38,7 @@ def main() -> None:
         {"id": "phase6–7.5", "title": "Compose + assemble + library", "status": "complete"},
         {"id": "phase8–8.6", "title": "Curation + ratings + public review", "status": "complete"},
         {"id": "phase9–11", "title": "ROI + publish export + cost guardrails", "status": "complete"},
+        {"id": "romance", "title": "HIMYM Ep1 Infatuation (romance steps 1–5)", "status": "complete"},
         {"id": "phase12+", "title": "Version 2 (post-feedback features)", "status": "planned"},
     ]
 

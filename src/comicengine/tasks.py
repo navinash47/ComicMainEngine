@@ -66,6 +66,22 @@ DEFAULT_TASKS: list[dict[str, Any]] = [
      "description": "Beta cost guardrails; Version 2 starts at phase12"},
     {"id": "dashboard", "title": "Live usage + TaskObserver", "phase": "dashboard", "sort_order": 5,
      "description": "Local webpage tracking tokens/cost/tasks"},
+    # How I Met Your Mother — romance pipeline (stepper on dashboard)
+    {"id": "phase_romance_step1", "title": "Romance Step 1 — Infatuation script",
+     "phase": "phase_romance_step1", "sort_order": 200,
+     "description": "Dad→daughter HIMYM Ep1 love story (butterflies, Maya teasing)"},
+    {"id": "phase_romance_step2", "title": "Romance Step 2 — Manhwa character refs",
+     "phase": "phase_romance_step2", "sort_order": 210,
+     "description": "Rohan / Elena / Maya / Dad / friends reference sheets"},
+    {"id": "phase_romance_step3", "title": "Romance Step 3 — Manhwa panel batch",
+     "phase": "phase_romance_step3", "sort_order": 220,
+     "description": "Episode panels with gemini_ref + feeling art prompts"},
+    {"id": "phase_romance_step4", "title": "Romance Step 4 — Speech bubbles",
+     "phase": "phase_romance_step4", "sort_order": 230,
+     "description": "Compose dialogue/captions on panels"},
+    {"id": "phase_romance_step5", "title": "Romance Step 5 — Assemble + Library",
+     "phase": "phase_romance_step5", "sort_order": 240,
+     "description": "Webtoon/PDF + catalog entry"},
 ]
 
 
@@ -319,7 +335,114 @@ class TaskObserver:
                 self.start(phase, note=f"{stats['calls']} calls")
                 changes.append(f"{phase}->in_progress")
 
+        # Romance stepper: infer from artifacts
+        himym = OUTPUTS / "phase4" / "episode_how_i_met_your_mother_ep1.json"
+        if himym.is_file():
+            t1 = self.get("phase_romance_step1")
+            if t1 and t1.status != "completed":
+                self.complete("phase_romance_step1", note="episode JSON present")
+                changes.append("phase_romance_step1->completed")
+
+        refs_dir = OUTPUTS / "phase5" / "refs"
+        # Require HIMYM-unique cast (not just shared dad/daughter from other stories)
+        romance_must = ["rohan", "elena", "kabir", "arjun", "wei", "marcus"]
+        romance_ref_hits = sum(
+            1 for cid in romance_must if (refs_dir / f"{cid}_ref.png").is_file()
+        )
+        if romance_ref_hits >= 4:
+            t2 = self.get("phase_romance_step2")
+            if t2 and t2.status != "completed":
+                self.complete("phase_romance_step2", note=f"{romance_ref_hits}/6 HIMYM refs")
+                changes.append("phase_romance_step2->completed")
+            elif t2 and t2.status == "pending":
+                self.set_progress(
+                    "phase_romance_step2",
+                    romance_ref_hits / 6.0,
+                    note=f"{romance_ref_hits}/6 HIMYM refs",
+                )
+
+        himym_panels = OUTPUTS / "phase5" / "episode_how_i_met_your_mother_ep1"
+        if himym_panels.is_dir():
+            pngs = list(himym_panels.glob("panel_*.png"))
+            t3 = self.get("phase_romance_step3")
+            target = 76
+            if himym.is_file():
+                try:
+                    target = max(1, len(json.loads(himym.read_text()).get("panels") or []))
+                except (OSError, json.JSONDecodeError, TypeError, ValueError):
+                    target = 76
+            if t3 and pngs:
+                prog = min(0.99, len(pngs) / float(target))
+                if len(pngs) >= target and (t3.status != "completed"):
+                    man = himym_panels / "manifest.json"
+                    err = 0
+                    if man.is_file():
+                        try:
+                            err = int(json.loads(man.read_text()).get("errors") or 0)
+                        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+                            err = 0
+                    if err == 0:
+                        self.complete("phase_romance_step3", note=f"{len(pngs)} panels")
+                        changes.append("phase_romance_step3->completed")
+                    else:
+                        self.set_progress("phase_romance_step3", prog, note=f"{len(pngs)} panels · errors={err}")
+                elif t3.status != "completed":
+                    self.set_progress("phase_romance_step3", max(prog, 0.05), note=f"{len(pngs)}/{target} panels")
+                    changes.append(f"phase_romance_step3->{prog:.0%}")
+
         return {"changes": changes, "phase_stats": phase_stats}
+
+    def romance_snapshot(self) -> dict[str, Any]:
+        """Stepper payload for How I Met Your Mother romance pipeline."""
+        ids = [
+            "phase_romance_step1",
+            "phase_romance_step2",
+            "phase_romance_step3",
+            "phase_romance_step4",
+            "phase_romance_step5",
+        ]
+        steps = []
+        for tid in ids:
+            t = self.get(tid)
+            if t:
+                steps.append(t.as_dict())
+            else:
+                steps.append(
+                    {
+                        "id": tid,
+                        "title": tid,
+                        "status": "pending",
+                        "progress": 0.0,
+                        "description": "",
+                        "meta": {},
+                    }
+                )
+        done = sum(1 for s in steps if s.get("status") == "completed")
+        # Soft credit for partial progress on current step
+        partial = 0.0
+        for s in steps:
+            if s.get("status") == "in_progress":
+                partial = float(s.get("progress") or 0) * 0.2
+                break
+        spend = 0.0
+        with self.connect() as conn:
+            row = conn.execute(
+                """
+                SELECT COALESCE(SUM(cost_usd),0) AS cost_usd
+                FROM api_call
+                WHERE phase LIKE 'phase_romance%' AND provider != 'demo'
+                """
+            ).fetchone()
+            if row:
+                spend = float(row["cost_usd"] or 0)
+        return {
+            "steps": steps,
+            "completion_ratio": min(1.0, (done + partial) / max(len(steps), 1)),
+            "completed": done,
+            "total": len(steps),
+            "spend_usd": spend,
+            "label": "How I Met Your Mother",
+        }
 
     def snapshot(self) -> dict[str, Any]:
         # Self-heal / auto-update before every read
@@ -334,6 +457,7 @@ class TaskObserver:
             "tasks": tasks,
             "counts": counts,
             "completion_ratio": done / total,
+            "romance": self.romance_snapshot(),
             "refresh": refresh,
             "updated_at": _utcnow(),
         }

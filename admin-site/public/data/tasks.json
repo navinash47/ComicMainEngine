@@ -8,7 +8,7 @@
       "progress": 1.0,
       "sort_order": 0,
       "phase": "phase0",
-      "updated_at": "2026-08-09T10:36:15.536337+00:00",
+      "updated_at": "2026-08-09T14:11:24.526940+00:00",
       "meta": {
         "last_note": "anthropic/openai/google ok"
       }
@@ -48,7 +48,7 @@
       "progress": 1.0,
       "sort_order": 10,
       "phase": "phase1",
-      "updated_at": "2026-08-09T10:36:15.537013+00:00",
+      "updated_at": "2026-08-09T14:11:24.527635+00:00",
       "meta": {
         "last_note": "api ok"
       }
@@ -61,7 +61,7 @@
       "progress": 1.0,
       "sort_order": 20,
       "phase": "phase2",
-      "updated_at": "2026-08-09T10:36:15.537664+00:00",
+      "updated_at": "2026-08-09T14:11:24.528358+00:00",
       "meta": {
         "last_note": "5 style images"
       }
@@ -230,16 +230,157 @@
       "meta": {
         "last_note": "guardrails snapshot written; Version 2 begins at phase12"
       }
+    },
+    {
+      "id": "phase_romance_step1",
+      "title": "Romance Step 1 \u2014 Infatuation script",
+      "description": "Feelings-forward dad\u2192daughter HIMYM Ep1 (butterflies, Maya teasing)",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 200,
+      "phase": "phase_romance_step1",
+      "updated_at": "2026-08-09T13:45:25.216001+00:00",
+      "meta": {
+        "last_note": "76 panels \u2192 episode_how_i_met_your_mother_ep1.json"
+      }
+    },
+    {
+      "id": "phase_romance_step2",
+      "title": "Romance Step 2 \u2014 Manhwa character refs",
+      "description": "Rohan / Elena / Maya / Dad / friends reference sheets",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 210,
+      "phase": "phase_romance_step2",
+      "updated_at": "2026-08-09T13:45:51.177546+00:00",
+      "meta": {
+        "last_note": "8/8 refs \u00b7 manhwa"
+      }
+    },
+    {
+      "id": "phase_romance_step3",
+      "title": "Romance Step 3 \u2014 Manhwa panel batch",
+      "description": "Episode panels with gemini_ref + feeling art prompts",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 220,
+      "phase": "phase_romance_step3",
+      "updated_at": "2026-08-09T14:02:21.459425+00:00",
+      "meta": {
+        "story": "episode_how_i_met_your_mother_ep1.json",
+        "last_note": "76/76 ok \u00b7 errors=0"
+      }
+    },
+    {
+      "id": "phase_romance_step4",
+      "title": "Romance Step 4 \u2014 Speech bubbles",
+      "description": "Compose dialogue/captions on panels",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 230,
+      "phase": "phase_romance_step4",
+      "updated_at": "2026-08-09T14:03:09.067005+00:00",
+      "meta": {
+        "last_note": "ok=76 err=0"
+      }
+    },
+    {
+      "id": "phase_romance_step5",
+      "title": "Romance Step 5 \u2014 Assemble + Library",
+      "description": "Webtoon/PDF + catalog entry",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 240,
+      "phase": "phase_romance_step5",
+      "updated_at": "2026-08-09T14:03:42.633230+00:00",
+      "meta": {
+        "last_note": "webtoon=outputs/phase7/episode_how_i_met_your_mother_ep1/webtoon.png panels=76 stories=5"
+      }
     }
   ],
   "counts": {
     "pending": 0,
     "in_progress": 0,
-    "completed": 17,
+    "completed": 22,
     "failed": 0,
     "blocked": 0
   },
   "completion_ratio": 1.0,
+  "romance": {
+    "steps": [
+      {
+        "id": "phase_romance_step1",
+        "title": "Romance Step 1 \u2014 Infatuation script",
+        "description": "Feelings-forward dad\u2192daughter HIMYM Ep1 (butterflies, Maya teasing)",
+        "status": "completed",
+        "progress": 1.0,
+        "sort_order": 200,
+        "phase": "phase_romance_step1",
+        "updated_at": "2026-08-09T13:45:25.216001+00:00",
+        "meta": {
+          "last_note": "76 panels \u2192 episode_how_i_met_your_mother_ep1.json"
+        }
+      },
+      {
+        "id": "phase_romance_step2",
+        "title": "Romance Step 2 \u2014 Manhwa character refs",
+        "description": "Rohan / Elena / Maya / Dad / friends reference sheets",
+        "status": "completed",
+        "progress": 1.0,
+        "sort_order": 210,
+        "phase": "phase_romance_step2",
+        "updated_at": "2026-08-09T13:45:51.177546+00:00",
+        "meta": {
+          "last_note": "8/8 refs \u00b7 manhwa"
+        }
+      },
+      {
+        "id": "phase_romance_step3",
+        "title": "Romance Step 3 \u2014 Manhwa panel batch",
+        "description": "Episode panels with gemini_ref + feeling art prompts",
+        "status": "completed",
+        "progress": 1.0,
+        "sort_order": 220,
+        "phase": "phase_romance_step3",
+        "updated_at": "2026-08-09T14:02:21.459425+00:00",
+        "meta": {
+          "story": "episode_how_i_met_your_mother_ep1.json",
+          "last_note": "76/76 ok \u00b7 errors=0"
+        }
+      },
+      {
+        "id": "phase_romance_step4",
+        "title": "Romance Step 4 \u2014 Speech bubbles",
+        "description": "Compose dialogue/captions on panels",
+        "status": "completed",
+        "progress": 1.0,
+        "sort_order": 230,
+        "phase": "phase_romance_step4",
+        "updated_at": "2026-08-09T14:03:09.067005+00:00",
+        "meta": {
+          "last_note": "ok=76 err=0"
+        }
+      },
+      {
+        "id": "phase_romance_step5",
+        "title": "Romance Step 5 \u2014 Assemble + Library",
+        "description": "Webtoon/PDF + catalog entry",
+        "status": "completed",
+        "progress": 1.0,
+        "sort_order": 240,
+        "phase": "phase_romance_step5",
+        "updated_at": "2026-08-09T14:03:42.633230+00:00",
+        "meta": {
+          "last_note": "webtoon=outputs/phase7/episode_how_i_met_your_mother_ep1/webtoon.png panels=76 stories=5"
+        }
+      }
+    ],
+    "completion_ratio": 1.0,
+    "completed": 5,
+    "total": 5,
+    "spend_usd": 2.877,
+    "label": "How I Met Your Mother"
+  },
   "refresh": {
     "changes": [
       "phase0->completed",
@@ -303,20 +444,20 @@
       },
       "phase6": {
         "phase": "phase6",
-        "calls": 1,
-        "ok_calls": 1,
+        "calls": 2,
+        "ok_calls": 2,
         "cost_usd": 0.0
       },
       "phase7": {
         "phase": "phase7",
-        "calls": 1,
-        "ok_calls": 1,
+        "calls": 2,
+        "ok_calls": 2,
         "cost_usd": 0.0
       },
       "phase7.5": {
         "phase": "phase7.5",
-        "calls": 1,
-        "ok_calls": 1,
+        "calls": 2,
+        "ok_calls": 2,
         "cost_usd": 0.0
       },
       "phase8": {
@@ -342,8 +483,20 @@
         "calls": 1,
         "ok_calls": 1,
         "cost_usd": 0.0
+      },
+      "phase_romance_step2": {
+        "phase": "phase_romance_step2",
+        "calls": 6,
+        "ok_calls": 6,
+        "cost_usd": 0.018000000000000002
+      },
+      "phase_romance_step3": {
+        "phase": "phase_romance_step3",
+        "calls": 79,
+        "ok_calls": 76,
+        "cost_usd": 2.859
       }
     }
   },
-  "updated_at": "2026-08-09T10:36:15.539467+00:00"
+  "updated_at": "2026-08-09T14:11:24.531505+00:00"
 }

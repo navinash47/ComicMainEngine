@@ -1,0 +1,922 @@
+{
+  "story_id": "episode_how_i_met_your_mother_ep1",
+  "title": "How I Met Your Mother \u2014 Episode 1: Infatuation",
+  "ok": 76,
+  "errors": 0,
+  "panels": [
+    {
+      "index": 1,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_01.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_01.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 2,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_02.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_02.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 3,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_03.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_03.png",
+      "bubbles": 0,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 4,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_04.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_04.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 5,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_05.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_05.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 6,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_06.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_06.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 7,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_07.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_07.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 8,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_08.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_08.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 9,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_09.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_09.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 10,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_10.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_10.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 11,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_11.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_11.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 12,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_12.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_12.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 13,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_13.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_13.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 14,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_14.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_14.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 15,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_15.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_15.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 16,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_16.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_16.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 17,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_17.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_17.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 18,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_18.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_18.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 19,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_19.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_19.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 20,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_20.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_20.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 21,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_21.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_21.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 22,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_22.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_22.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 23,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_23.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_23.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 24,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_24.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_24.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 25,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_25.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_25.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 26,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_26.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_26.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 27,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_27.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_27.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 28,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_28.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_28.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 29,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_29.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_29.png",
+      "bubbles": 5,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 30,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_30.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_30.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 31,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_31.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_31.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 32,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_32.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_32.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 33,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_33.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_33.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 34,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_34.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_34.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 35,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_35.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_35.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 36,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_36.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_36.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 37,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_37.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_37.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 38,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_38.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_38.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 39,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_39.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_39.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 40,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_40.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_40.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 41,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_41.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_41.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 42,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_42.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_42.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 43,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_43.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_43.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 44,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_44.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_44.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 45,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_45.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_45.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 46,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_46.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_46.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 47,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_47.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_47.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 48,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_48.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_48.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 49,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_49.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_49.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 50,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_50.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_50.png",
+      "bubbles": 5,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 51,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_51.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_51.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 52,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_52.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_52.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 53,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_53.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_53.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 54,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_54.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_54.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 55,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_55.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_55.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 56,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_56.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_56.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 57,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_57.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_57.png",
+      "bubbles": 0,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 58,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_58.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_58.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 59,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_59.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_59.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 60,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_60.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_60.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 61,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_61.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_61.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 62,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_62.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_62.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 63,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_63.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_63.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 64,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_64.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_64.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 65,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_65.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_65.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 66,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_66.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_66.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 67,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_67.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_67.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 68,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_68.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_68.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 69,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_69.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_69.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 70,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_70.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_70.png",
+      "bubbles": 4,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 71,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_71.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_71.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 72,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_72.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_72.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 73,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_73.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_73.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 74,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_74.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_74.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 75,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_75.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_75.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 76,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_how_i_met_your_mother_ep1/panel_76.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_how_i_met_your_mother_ep1/panel_76.png",
+      "bubbles": 0,
+      "has_caption": true,
+      "status": "ok"
+    }
+  ],
+  "bridges": [
+    {
+      "before_panel": 1,
+      "text": "Dad tells Maya how he met Mom: shy Rohan keeps crossing paths with Elena on a Bay Area trip. Silence becomes cafeteria talk, long walks, a cancelled club night, and a terrifyingly tender hotel-room movie. Sunday's head-bonk movie day peaks the crush; Tuesday he confesses, invents Limbo Date, and asks for honesty. Wednesday's feather talk leaves feelings known. To Be Continued. Living-room sofa at night, soft lamp. Dad sits beside Maya \u2014 no book \u2014 knees almost touching. Maya grins sideways; Dad already looks doomed. Mood shifts: playful, warm."
+    },
+    {
+      "before_panel": 2,
+      "text": "Close two-shot: Dad rubs the back of his neck; Maya leans in sparkling. Mood shifts: teasing."
+    },
+    {
+      "before_panel": 3,
+      "text": "Elegant title card: bay dusk skyline, tiny tram lights, soft feather motif. Mood shifts: cinematic."
+    },
+    {
+      "before_panel": 4,
+      "text": "Young Rohan exits arrivals with suitcase; California light hits curly hair. Tiny nervous sparkles around his eyes \u2014 excited and out of place. Mood shifts: hopeful, overstimulated."
+    },
+    {
+      "before_panel": 5,
+      "text": "Hotel corridor: Rohan, Kabir, Arjun compare apartment listing screens; comic shock at rents. Mood shifts: comic overload."
+    },
+    {
+      "before_panel": 6,
+      "text": "Sunday: Rohan alone on hotel bed staring at ceiling; boredom lines; phone idle. Mood shifts: restless loneliness."
+    },
+    {
+      "before_panel": 7,
+      "text": "Lobby panorama \u2014 time slows. Across the space: Elena in Meridian Soft tee, tall, baby-cut brunette, pretty \u2014 looking at her phone. Rohan freezes mid-step. Mood shifts: love-at-first-sight jolt."
+    },
+    {
+      "before_panel": 8,
+      "text": "Extreme close-up of Rohan's eyes reflecting Elena; tiny butterflies hatch around his temples. Mood shifts: infatuation ignition."
+    },
+    {
+      "before_panel": 9,
+      "text": "Rohan introduces himself awkwardly; Elena gives a cool reserved glance \u2014 could be shy or cold. Mood shifts: awkward crush."
+    },
+    {
+      "before_panel": 10,
+      "text": "Present: Maya covers mouth laughing; Dad covers face with both hands. Mood shifts: daughter roast."
+    },
+    {
+      "before_panel": 11,
+      "text": "Monday curb: Wei's car; Rohan Kabir Arjun pile in; Wei confident at wheel. Mood shifts: grateful energy."
+    },
+    {
+      "before_panel": 12,
+      "text": "Tuesday transit stop alone: no Wei. Soft wind. Destiny ripple lines around Rohan's shoes. Mood shifts: fateful quiet."
+    },
+    {
+      "before_panel": 13,
+      "text": "Platform: Elena in white-and-blue with a pretty hat \u2014 morning light turns cinematic. Rohan's pupils widen; sparkles. Mood shifts: infatuation spike."
+    },
+    {
+      "before_panel": 14,
+      "text": "Tram interior: Rohan manages a tiny intro then becomes a statue; silence drawn as comic panels between them. Mood shifts: nervous comedy."
+    },
+    {
+      "before_panel": 15,
+      "text": "Present: Maya freezes face like statue Rohan; Dad groans. Mood shifts: playful roast."
+    },
+    {
+      "before_panel": 16,
+      "text": "Office day-one montage: Marcus handshake, badge scan, laptop \u2014 Rohan sweaty but trying. Mood shifts: first-day nerves."
+    },
+    {
+      "before_panel": 17,
+      "text": "Wednesday lobby: both wait for rideshare; quiet stretches like elastic; Rohan's hands fidget. Mood shifts: tense quiet."
+    },
+    {
+      "before_panel": 18,
+      "text": "Cafeteria: Marcus waves; Rohan arrives late with tray; table full \u2014 soft panic. Mood shifts: mild panic."
+    },
+    {
+      "before_panel": 19,
+      "text": "Rohan sits across Elena alone at small table \u2014 soft spotlight between trays. Mood shifts: first real talk."
+    },
+    {
+      "before_panel": 20,
+      "text": "Talk beat: Rohan animated with hands about California smiling culture; Elena listening, faint smile blooming. Mood shifts: warming."
+    },
+    {
+      "before_panel": 21,
+      "text": "Feeling close-up: Rohan watching her listen more than talk \u2014 manhwa soft focus on her lashes. Mood shifts: tender observation."
+    },
+    {
+      "before_panel": 22,
+      "text": "Evening curb: Elena enters cab alone; Wei's text about flat hunt. Rohan torn silhouette. Mood shifts: soft regret."
+    },
+    {
+      "before_panel": 23,
+      "text": "Thursday dinner: Rohan alone at hotel restaurant \u2014 introvert fortress with phone. Mood shifts: lonely introvert."
+    },
+    {
+      "before_panel": 24,
+      "text": "Elena sits opposite unexpectedly \u2014 electric crackle doodles; Rohan jolts; butterflies explode. Mood shifts: electric crush."
+    },
+    {
+      "before_panel": 25,
+      "text": "Present: Maya making zap sound effects with fingers; Dad smiling helplessly. Mood shifts: tease + soft pride."
+    },
+    {
+      "before_panel": 26,
+      "text": "Long dinner montage feeling: plates emptier, clocks melt ~2 hours, laughter lines, eyes soft. Mood shifts: sparkling connection."
+    },
+    {
+      "before_panel": 27,
+      "text": "Night street walk under lamps; Elena gestures keep walking; Rohan would walk forever. Mood shifts: romantic stroll."
+    },
+    {
+      "before_panel": 28,
+      "text": "Walk feeling panel: sideways glance \u2014 is this friendship? His fingers twitch near hers and retreat. Mood shifts: confused longing."
+    },
+    {
+      "before_panel": 29,
+      "text": "Hotel hallway: Rohan bursts into friends' room gushing; Kabir Arjun Wei roast him. Mood shifts: comic excitement."
+    },
+    {
+      "before_panel": 30,
+      "text": "Rohan asleep peaceful; phone lights with Elena's follow request \u2014 unseen. Dramatic irony sparkles. Mood shifts: dramatic irony."
+    },
+    {
+      "before_panel": 31,
+      "text": "Present: Maya facepalms so hard the couch shakes. Mood shifts: max roast."
+    },
+    {
+      "before_panel": 32,
+      "text": "Friday afternoon: Rohan glowing while getting ready; phone shows Elena invite to club Friday eve. Mood shifts: excited peak."
+    },
+    {
+      "before_panel": 33,
+      "text": "Phone close-up: later text \u2014 too many people, maybe skip. Rohan's face cracks; little dark rain. Mood shifts: hurt."
+    },
+    {
+      "before_panel": 34,
+      "text": "Present careful: Dad softer; Maya quieter but still herself. Mood shifts: sincere."
+    },
+    {
+      "before_panel": 35,
+      "text": "Saturday day: Rohan with Arjun walking 'fine'; thought bubbles of Elena cancelled club. Mood shifts: pretend-okay comedy."
+    },
+    {
+      "before_panel": 36,
+      "text": "Saturday hotel dining lobby: Elena approaches Rohan + Arjun; apologetic soft eyes. Mood shifts: apology warmth."
+    },
+    {
+      "before_panel": 37,
+      "text": "Movie invite; Rohan asks Arjun; Arjun declines with subtle wink away from Elena. Mood shifts: wingman comedy."
+    },
+    {
+      "before_panel": 38,
+      "text": "Rohan scrolling to invite Kabir/Wei; Elena gently places hand on his phone \u2014 softness zoom. Mood shifts: hint blindness."
+    },
+    {
+      "before_panel": 39,
+      "text": "Present roast panel \u2014 Maya pointing at imaginary whiteboard labeled 'HINTS YOU MISSED'. Mood shifts: tease."
+    },
+    {
+      "before_panel": 40,
+      "text": "Hallway: Rohan invents tiredness; Elena reads him; invites movie in her room \u2014 just us. Mood shifts: shocked yes."
+    },
+    {
+      "before_panel": 41,
+      "text": "Rohan in his room grabbing iPad Pro \u2014 freeze-frame terror, sweat drops, butterfly storm. Mood shifts: scared butterflies."
+    },
+    {
+      "before_panel": 42,
+      "text": "Elena's room: Rohan plants iPad on desk far away like a professional; Elena points to bed. Mood shifts: awkward comedy."
+    },
+    {
+      "before_panel": 43,
+      "text": "On bed edge plugging charger; Elena scoots closer for the screen \u2014 distance collapses; butterflies fill room air. Mood shifts: intense crush."
+    },
+    {
+      "before_panel": 44,
+      "text": "Watching soft-horror Night Watchman: jump scare; Elena jolts closer, almost head on shoulder; water bottle; comic stomach growl bubbles. Mood shifts: cozy scare romance."
+    },
+    {
+      "before_panel": 45,
+      "text": "Rohan thought storm overlay: hints? friendship? romance? manhwa question-mark rain. Mood shifts: internal chaos."
+    },
+    {
+      "before_panel": 46,
+      "text": "Present: Maya whispering like gossip show host. Mood shifts: tease."
+    },
+    {
+      "before_panel": 47,
+      "text": "2AM Rohan returns; can't sleep; 4AM text from Elena can't sleep either \u2014 soft phone glow. Mood shifts: hope blooming."
+    },
+    {
+      "before_panel": 48,
+      "text": "Flat hunting till 1PM with friends; Elena excited movie texts overlay between rental disasters. Mood shifts: busy joy."
+    },
+    {
+      "before_panel": 49,
+      "text": "Walking to Silverleaf Mall theater in sun \u2014 side by side; soft cinematic widen. Mood shifts: movie-date glow."
+    },
+    {
+      "before_panel": 50,
+      "text": "Starbucks: tissue falls; both dive; forehead bump; shared smile \u2014 spark line through Rohan's stomach. Mood shifts: sweet collide."
+    },
+    {
+      "before_panel": 51,
+      "text": "Present: Maya softens, hand over heart dramatically."
+    },
+    {
+      "before_panel": 52,
+      "text": "Dark theater: sitting close; Rohan's hand hovers near hers \u2014 almost \u2014 retreats. Mood shifts: almost-touch tension."
+    },
+    {
+      "before_panel": 53,
+      "text": "Outside theater: Rohan asks for social; Elena already sent; gentle roast energy. Mood shifts: cute comedy."
+    },
+    {
+      "before_panel": 54,
+      "text": "Evening montage: dinner, walk, second movie in her room \u2014 'best day' stamp glowing. Mood shifts: peak happiness."
+    },
+    {
+      "before_panel": 55,
+      "text": "Monday campus: lunch together, hallway waves between breaks \u2014 unlabeled couple energy. Mood shifts: comfortable closeness."
+    },
+    {
+      "before_panel": 56,
+      "text": "Hotel room: watching Rohan's pick \u2014 soft Indian romantic Roja vibes (tasteful); warm scenes \u2192 they glance at each other then look away. Mood shifts: charged silence."
+    },
+    {
+      "before_panel": 57,
+      "text": "Graphic: hotel checkout countdown as a ticking heart calendar. Mood shifts: ticking dread."
+    },
+    {
+      "before_panel": 58,
+      "text": "Present: Maya counting on fingers. Mood shifts: tease."
+    },
+    {
+      "before_panel": 59,
+      "text": "Tuesday: Rohan can't work; friends huddle advice \u2014 ask her clear. Mood shifts: anxious counsel."
+    },
+    {
+      "before_panel": 60,
+      "text": "Rohan at desk staring at code he cannot see \u2014 Elena silhouette in thoughts. Mood shifts: distracted longing."
+    },
+    {
+      "before_panel": 61,
+      "text": "Tuesday night Forrest Gump glow; comfortable until phone rings. Mood shifts: calm before storm."
+    },
+    {
+      "before_panel": 62,
+      "text": "Elena on phone lies 'lots of friends' while Rohan alone beside her \u2014 hurt then courage rising. Mood shifts: soft sting \u2192 resolve."
+    },
+    {
+      "before_panel": 63,
+      "text": "After call: Rohan gentle confrontation \u2014 last movie as friends vs long future of movies. Mood shifts: heart-on-sleeve."
+    },
+    {
+      "before_panel": 64,
+      "text": "Elena shocked: wasn't interested at first; Rohan sad awkward; gut still whispers she cares. Mood shifts: shock / hurt."
+    },
+    {
+      "before_panel": 65,
+      "text": "She says get out; he stays, takes her hand, kneels sincerely \u2014 earnest not wedding parody. Mood shifts: vulnerable courage."
+    },
+    {
+      "before_panel": 66,
+      "text": "Elena: scared of dating after friends' heartbreaks; Rohan: we pull each other up when we fight. Mood shifts: sincere negotiation."
+    },
+    {
+      "before_panel": 67,
+      "text": "Close-up: Rohan names LIMBO DATE \u2014 manhwa title-card energy on the phrase. Mood shifts: thesis moment."
+    },
+    {
+      "before_panel": 68,
+      "text": "Elena admits little interest but too early; Rohan: better early than late; answer by tomorrow dinner. Mood shifts: hopeful honesty."
+    },
+    {
+      "before_panel": 69,
+      "text": "Awkward hallway exit; Elena alone conflicted on bed; Rohan's silhouette walking away small. Mood shifts: aftermath hush."
+    },
+    {
+      "before_panel": 70,
+      "text": "Present: Maya wiped-eyed still roasting. Mood shifts: soft tease."
+    },
+    {
+      "before_panel": 71,
+      "text": "Wednesday: Elena WFH; empty office chair; Rohan restless pacing thoughts. Mood shifts: anxious waiting."
+    },
+    {
+      "before_panel": 72,
+      "text": "Dinner: Elena careful \u2014 stay in contact, don't talk about yesterday; Rohan happy but senses uneven footing. Mood shifts: bittersweet relief."
+    },
+    {
+      "before_panel": 73,
+      "text": "Night walk: Forrest Gump feather / opportunity speech; Elena soft-shocked. Mood shifts: tender breakthrough."
+    },
+    {
+      "before_panel": 74,
+      "text": "Movie night different energy \u2014 knowing glances; truth in the room; quiet victory smiles. Mood shifts: quiet victory."
+    },
+    {
+      "before_panel": 75,
+      "text": "Present close: Maya leans head on Dad's shoulder; both soft lamp-lit. Mood shifts: warm cliffhanger."
+    },
+    {
+      "before_panel": 76,
+      "text": "End card: white feather drifting through warm hotel hallway; To Be Continued. Mood shifts: cinematic."
+    }
+  ]
+}

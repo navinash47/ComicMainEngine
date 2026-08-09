@@ -20,13 +20,17 @@
     </header>
     <section class="story-meta">
       <p class="muted" id="storyTopic"></p>
+      <div class="tag-row" id="storyTags"></div>
       <p class="mode-pill" id="modePill" hidden>Just reading — no ratings on this view</p>
+      <p class="muted small" id="rateHint">Panel ratings are optional — send feedback on any panel you care about, then rate the story at the bottom when you’re done.</p>
       <div class="link-row" id="editionLinks"></div>
     </section>
     <section class="story-panels" id="panels"></section>
     <section class="feedback-form" id="feedbackForm">
-      <h2 class="fb-section">Overall for this story</h2>
-      <label class="pe-label" for="overallRating">Overall rating (1–5) *</label>
+      <h2 class="fb-section">Story feedback</h2>
+      <p class="muted small">Optional panels above. Finish with a quick story take when you can.</p>
+
+      <label class="pe-label" for="overallRating">Story rating (1–5) *</label>
       <select id="overallRating">
         <option value="">Select…</option>
         <option value="1">1 · poor</option>
@@ -35,10 +39,28 @@
         <option value="4">4</option>
         <option value="5">5 · excellent</option>
       </select>
-      <label class="pe-label" for="overallFeedback">Overall feedback</label>
-      <textarea id="overallFeedback" rows="4" placeholder="What worked or didn’t for the whole episode?"></textarea>
+
+      <label class="pe-label" for="overallFeedback">Story feedback</label>
+      <textarea id="overallFeedback" rows="3" placeholder="What worked or didn’t for the whole episode?"></textarea>
+
+      <label class="pe-label" for="charConsistency">Character consistency (1–5)</label>
+      <select id="charConsistency">
+        <option value="">Optional…</option>
+        <option value="1">1 · faces drift a lot</option>
+        <option value="2">2</option>
+        <option value="3">3 · sometimes ok</option>
+        <option value="4">4</option>
+        <option value="5">5 · stays on-model</option>
+      </select>
+      <label class="pe-label" for="charConsistencyFeedback">Character consistency notes</label>
+      <textarea id="charConsistencyFeedback" rows="2" placeholder="Did Rohan / Elena / Dad stay recognizable across panels?"></textarea>
+
+      <label class="pe-label" for="otherFeedback">Other feedback</label>
+      <textarea id="otherFeedback" rows="3" placeholder="Pacing, dialogue, art style, bugs, anything else…"></textarea>
+
       <div class="pe-foot" style="border:0;margin-top:1rem">
-        <button type="button" class="btn pe-primary" id="submitAll">Submit feedback</button>
+        <button type="button" class="btn pe-primary" id="submitAll">Submit story feedback</button>
+        <a class="btn" href="/" id="doneLink">Done — back to stories</a>
       </div>
       <p class="muted small" id="submitStatus"></p>
     </section>

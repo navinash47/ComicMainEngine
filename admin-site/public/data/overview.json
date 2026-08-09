@@ -1,5 +1,5 @@
 {
-  "exported_at": "2026-08-09T10:36:15.539678+00:00",
+  "exported_at": "2026-08-09T14:11:24.531689+00:00",
   "project": "ComicMainEngine / onceuponatime",
   "github": "https://github.com/navinash47/ComicMainEngine",
   "audience": "fellow developers + owner",
@@ -45,6 +45,11 @@
     {
       "id": "phase9\u201311",
       "title": "ROI + publish export + cost guardrails",
+      "status": "complete"
+    },
+    {
+      "id": "romance",
+      "title": "HIMYM Ep1 Infatuation (romance steps 1\u20135)",
       "status": "complete"
     },
     {

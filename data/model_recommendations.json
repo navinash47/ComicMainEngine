@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T10:52:08.250214+00:00",
+  "updated_at": "2026-08-09T15:25:50.144690+00:00",
   "recommendations": [
     {
       "category": "image",
@@ -8,7 +8,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -17,7 +17,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -26,7 +26,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -84,36 +84,36 @@
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "cheapest": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "fastest": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "best_quality": {
         "model_key": "fal::fal-ai/flux/schnell",
         "provider": "fal",
         "model": "fal-ai/flux/schnell",
-        "samples": 25,
+        "samples": 31,
         "avg_cost_usd": 0.003,
-        "avg_latency_ms": 1848,
+        "avg_latency_ms": 1846,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -123,39 +123,39 @@
       "category": "image",
       "purpose": "panel_batch",
       "optimal": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "cheapest": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "fastest": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "best_quality": {
-        "model_key": "google::gemini-3.1-flash-image-preview",
-        "provider": "google",
-        "model": "gemini-3.1-flash-image-preview",
-        "samples": 39,
-        "avg_cost_usd": 0.039,
-        "avg_latency_ms": 12484,
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1748,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -168,36 +168,36 @@
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "cheapest": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "fastest": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "best_quality": {
         "model_key": "fal::fal-ai/flux-pro/kontext",
         "provider": "fal",
         "model": "fal-ai/flux-pro/kontext",
-        "samples": 5,
+        "samples": 8,
         "avg_cost_usd": 0.04,
-        "avg_latency_ms": 12254,
+        "avg_latency_ms": 13083,
         "avg_quality": 1.0
       },
       "reason": "highest avg image QA score, then lowest cost",
@@ -330,13 +330,55 @@
       "note": "Recommendation only \u2014 scripts do not auto-switch yet."
     },
     {
+      "category": "image",
+      "purpose": "thumbnail_clean",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux-pro/kontext",
+        "provider": "fal",
+        "model": "fal-ai/flux-pro/kontext",
+        "samples": 1,
+        "avg_cost_usd": 0.04,
+        "avg_latency_ms": 12332,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux-pro/kontext",
+        "provider": "fal",
+        "model": "fal-ai/flux-pro/kontext",
+        "samples": 1,
+        "avg_cost_usd": 0.04,
+        "avg_latency_ms": 12332,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux-pro/kontext",
+        "provider": "fal",
+        "model": "fal-ai/flux-pro/kontext",
+        "samples": 1,
+        "avg_cost_usd": 0.04,
+        "avg_latency_ms": 12332,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux-pro/kontext",
+        "provider": "fal",
+        "model": "fal-ai/flux-pro/kontext",
+        "samples": 1,
+        "avg_cost_usd": 0.04,
+        "avg_latency_ms": 12332,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
       "category": "text",
       "purpose": "assemble_composed",
       "optimal": {
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -345,7 +387,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -354,7 +396,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -404,7 +446,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -413,7 +455,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null
@@ -422,7 +464,7 @@
         "model_key": "local::cpu",
         "provider": "local",
         "model": "cpu",
-        "samples": 1,
+        "samples": 2,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,
         "avg_quality": null

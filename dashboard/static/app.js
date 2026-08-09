@@ -8,7 +8,7 @@ function fmt(n) {
   return new Intl.NumberFormat().format(Number(n) || 0);
 }
 
-function renderKpis(t) {
+function renderKpis(t, live) {
   const items = [
     ["Total spend", money(t.cost_usd)],
     ["API calls", fmt(t.calls)],
@@ -20,6 +20,42 @@ function renderKpis(t) {
   $("kpis").innerHTML = items
     .map(([label, value]) => `<div class="kpi"><div class="label">${label}</div><div class="value">${value}</div></div>`)
     .join("");
+  if ($("liveSpend")) {
+    const rSpend = live && live.romance_spend_usd != null ? money(live.romance_spend_usd) : "$0.0000";
+    $("liveSpend").textContent = `Live ledger · total ${money(t.cost_usd)} · romance pipeline ${rSpend} · refreshing every 2s`;
+  }
+}
+
+function renderRomance(rom) {
+  if (!rom || !$("romanceStepper")) return;
+  const pct = Math.round((Number(rom.completion_ratio) || 0) * 100);
+  $("romancePct").textContent = `${rom.completed || 0}/${rom.total || 5} · ${pct}%`;
+  if ($("romanceSpend")) $("romanceSpend").textContent = money(rom.spend_usd);
+  if ($("romanceBar")) $("romanceBar").style.width = `${pct}%`;
+  const steps = rom.steps || [];
+  $("romanceStepper").innerHTML = steps
+    .map((s, i) => {
+      const n = i + 1;
+      const st = s.status || "pending";
+      const short = (s.title || s.id || "")
+        .replace(/^Romance Step \d+ — /, "")
+        .replace(/^phase_romance_step\d+$/, `Step ${n}`);
+      const note = (s.meta && (s.meta.last_note || s.meta.error)) || s.description || "";
+      const p = Math.round((Number(s.progress) || 0) * 100);
+      return `<div class="romance-step ${st}" title="${note}">
+        <div class="romance-step-num">${n}</div>
+        <div class="romance-step-body">
+          <div class="romance-step-title">${short}</div>
+          <div class="romance-step-meta">${st.replace("_", " ")}${st === "in_progress" ? ` · ${p}%` : ""}</div>
+        </div>
+      </div>`;
+    })
+    .join("");
+  const active = steps.find((s) => s.status === "in_progress") || steps.find((s) => s.status === "pending");
+  if ($("romanceNote") && active) {
+    const note = (active.meta && active.meta.last_note) || active.description || active.title;
+    $("romanceNote").textContent = note;
+  }
 }
 
 function renderBars(el, rows, labelKey, valueKey) {
@@ -146,7 +182,8 @@ async function tick() {
   try {
     const res = await fetch("/api/summary");
     const data = await res.json();
-    renderKpis(data.totals || {});
+    renderKpis(data.totals || {}, data.live || {});
+    renderRomance(data.romance || (data.taskobserver && data.taskobserver.romance));
     renderStories(data.stories);
     renderTasks(data.taskobserver);
     renderBars($("byProvider"), data.by_provider || [], "provider", "cost_usd");
@@ -154,7 +191,8 @@ async function tick() {
     renderRecent(data.recent || []);
     drawChart(data.series || []);
     $("liveDot").classList.add("on");
-    $("updated").textContent = `updated ${new Date().toLocaleTimeString()} · ${data.db_path || ""}`;
+    const spend = money((data.totals || {}).cost_usd);
+    $("updated").textContent = `updated ${new Date().toLocaleTimeString()} · spend ${spend} · ${data.db_path || ""}`;
   } catch (err) {
     $("liveDot").classList.remove("on");
     $("updated").textContent = `offline: ${err}`;

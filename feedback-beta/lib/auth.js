@@ -87,7 +87,12 @@ async function loginUser({ username, password }) {
     throw err;
   }
   const user = await r.get(`user:${id}`);
-  if (!user || !verifyPassword(password, user.salt, user.password_hash)) {
+  if (!user || user.is_guest || !user.password_hash) {
+    const err = new Error("invalid username or password");
+    err.status = 401;
+    throw err;
+  }
+  if (!verifyPassword(password, user.salt, user.password_hash)) {
     const err = new Error("invalid username or password");
     err.status = 401;
     throw err;
@@ -143,7 +148,63 @@ function publicUser(user) {
     last_login_at: user.last_login_at || null,
     login_count: user.login_count || 0,
     role: user.role || "reader",
+    is_guest: Boolean(user.is_guest),
+    guest_id: user.guest_id || (user.is_guest ? user.username : null),
   };
+}
+
+async function createGuestSession() {
+  const r = redis();
+  let short = crypto.randomBytes(4).toString("hex");
+  let username = `guest_${short}`;
+  // Extremely unlikely collision; retry a few times.
+  for (let i = 0; i < 5; i++) {
+    const existing = await r.get(`user:username:${username}`);
+    if (!existing) break;
+    short = crypto.randomBytes(4).toString("hex");
+    username = `guest_${short}`;
+  }
+  if (await r.get(`user:username:${username}`)) {
+    const err = new Error("could not allocate guest id");
+    err.status = 500;
+    throw err;
+  }
+  const id = crypto.randomUUID();
+  const now = new Date().toISOString();
+  const display = `Guest ${short.toUpperCase()}`;
+  const user = {
+    id,
+    name: display,
+    username,
+    guest_id: username,
+    is_guest: true,
+    salt: "",
+    password_hash: "",
+    created_at: now,
+    last_login_at: now,
+    login_count: 1,
+    role: "guest",
+  };
+  await r.set(`user:${id}`, user);
+  await r.set(`user:username:${username}`, id);
+  await r.sadd("users", id);
+  await r.sadd("guests", id);
+  await pushLoginEvent(r, {
+    action: "guest",
+    user_id: id,
+    username,
+    name: display,
+    guest_id: username,
+    at: now,
+  });
+  const token = newToken();
+  const session = {
+    token,
+    user_id: id,
+    created_at: now,
+  };
+  await r.set(`session:${token}`, session, { ex: 60 * 60 * 24 * 30 }); // 30d
+  return { token, user: publicUser(user) };
 }
 
 async function requireUser(req) {
@@ -171,6 +232,7 @@ async function destroySession(req) {
 module.exports = {
   createUser,
   loginUser,
+  createGuestSession,
   userFromAuthHeader,
   requireUser,
   publicUser,

@@ -73,12 +73,26 @@ function showPerson(id) {
         ? stories
             .map((item) => {
               const panels = (item.panels || [])
-                .map((pn) => `<li><strong>P${esc(pn.index)}</strong> ${esc(pn.rating)}★ — ${esc(pn.feedback || "—")}</li>`)
+                .map((pn) => `<li><strong>P${esc(pn.index)}</strong> ${esc(pn.rating ?? "—")}★ — ${esc(pn.feedback || "—")}</li>`)
                 .join("");
+              const kind = item.kind === "panel" ? "Panel note" : "Story rating";
+              const overall =
+                item.overall_rating != null
+                  ? `<p><strong>Overall ${esc(item.overall_rating)}/5</strong> ${stars(item.overall_rating)}</p>`
+                  : `<p class="muted">${esc(kind)}</p>`;
+              const charBit =
+                item.character_consistency != null
+                  ? `<p><strong>Char consistency ${esc(item.character_consistency)}/5</strong> ${esc(item.character_consistency_feedback || "")}</p>`
+                  : "";
+              const otherBit = item.other_feedback
+                ? `<p><strong>Other:</strong> ${esc(item.other_feedback)}</p>`
+                : "";
               return `<article class="fb-card">
-                <div class="muted small">${esc((item.created_at || "").replace("T", " ").slice(0, 19))} · ${esc(item.story_id)}</div>
-                <p><strong>Overall ${esc(item.overall_rating)}/5</strong> ${stars(item.overall_rating)}</p>
-                <p>${esc(item.overall_feedback || "(no written overall)")}</p>
+                <div class="muted small">${esc((item.created_at || "").replace("T", " ").slice(0, 19))} · ${esc(item.story_id)} · ${esc(kind)}</div>
+                ${overall}
+                <p>${esc(item.overall_feedback || (item.kind === "panel" ? "" : "(no written overall)"))}</p>
+                ${charBit}
+                ${otherBit}
                 <ul class="panel-fb">${panels || "<li class='muted'>No panel notes</li>"}</ul>
               </article>`;
             })

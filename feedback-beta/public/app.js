@@ -87,6 +87,147 @@ async function loadStories() {
   return res.json();
 }
 
+function tagPills(tags, genre) {
+  const list = [];
+  if (genre) list.push({ label: genre, kind: "genre" });
+  for (const t of tags || []) {
+    if (String(t).toLowerCase() === String(genre || "").toLowerCase()) continue;
+    list.push({ label: t, kind: "tag" });
+  }
+  if (!list.length) return "";
+  return `<div class="tag-row">${list
+    .map((t) => `<span class="tag-pill ${t.kind}">${esc(t.label)}</span>`)
+    .join("")}</div>`;
+}
+
+function sortStories(stories, mode) {
+  const out = [...stories];
+  const genreRank = { romance: 0, politics: 1, history: 2, other: 9 };
+  if (mode === "title") {
+    out.sort((a, b) => String(a.title || "").localeCompare(String(b.title || "")));
+  } else if (mode === "panels") {
+    out.sort((a, b) => (Number(b.panel_count) || 0) - (Number(a.panel_count) || 0));
+  } else if (mode === "genre") {
+    out.sort((a, b) => {
+      const ga = genreRank[a.genre] ?? 9;
+      const gb = genreRank[b.genre] ?? 9;
+      if (ga !== gb) return ga - gb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+  } else {
+    // featured — romance first via sort_rank
+    out.sort((a, b) => {
+      const ra = Number(a.sort_rank);
+      const rb = Number(b.sort_rank);
+      const sa = Number.isFinite(ra) ? ra : 100;
+      const sb = Number.isFinite(rb) ? rb : 100;
+      if (sa !== sb) return sa - sb;
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+  }
+  return out;
+}
+
+function filterStories(stories, genre, tag) {
+  return stories.filter((s) => {
+    if (genre && genre !== "all" && String(s.genre || "").toLowerCase() !== genre) return false;
+    if (tag && tag !== "all") {
+      const tags = (s.tags || []).map((t) => String(t).toLowerCase());
+      if (!tags.includes(tag) && String(s.genre || "").toLowerCase() !== tag) return false;
+    }
+    return true;
+  });
+}
+
+function renderStoryCard(s, i) {
+  const thumb = s.thumbnail || (s.panels && s.panels[0] && s.panels[0].image) || s.webtoon;
+  return `<article class="comic-card" style="--delay:${i * 60}ms" data-genre="${esc(s.genre || "")}">
+    <a class="comic-thumb-link" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">
+      <img class="comic-thumb" src="${esc(thumb)}" alt="" loading="lazy" />
+    </a>
+    <div class="comic-body">
+      <p class="eyebrow"><span class="genre-label">${esc(s.genre || "story")}</span> · ${esc(s.panel_count)} panels</p>
+      <h2 class="comic-title">${esc(s.title)}</h2>
+      ${tagPills(s.tags, s.genre)}
+      <p class="muted comic-topic">${esc(s.topic)}</p>
+      <div class="comic-actions">
+        <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">Read &amp; rate</a>
+        <a class="btn" href="${esc(s.pdf)}" target="_blank" rel="noopener">PDF</a>
+        <a class="btn" href="/story.html?id=${encodeURIComponent(s.id)}&mode=read">Just read</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+const Home = {
+  _allStories: [],
+  _catalog: null,
+
+  async init() {
+    const user = await Auth.requireLogin();
+    if (!user) return;
+    document.getElementById("whoHint").textContent = user.name || user.username;
+    if (user.is_guest || (user.guest_id && String(user.username || "").startsWith("guest_"))) {
+      const gid = user.guest_id || user.username;
+      document.getElementById("whoHint").textContent = `Guest · ${gid}`;
+    }
+    const authLink = document.getElementById("authLink");
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (authLink) {
+      authLink.hidden = true;
+      authLink.style.display = "none";
+    }
+    if (logoutBtn) {
+      logoutBtn.hidden = false;
+      logoutBtn.style.display = "";
+    }
+    logoutBtn.onclick = async () => {
+      await fetch("/api/auth/logout", {
+        method: "POST",
+        headers: Auth.headers(),
+        credentials: "include",
+      });
+      Auth.clear();
+      location.replace("/login.html");
+    };
+
+    this._catalog = await loadStories();
+    this._allStories = this._catalog.stories || [];
+
+    const tagSel = document.getElementById("tagFilter");
+    const tags = this._catalog.tags || [
+      ...new Set(this._allStories.flatMap((s) => s.tags || [])),
+    ];
+    for (const t of [...tags].sort()) {
+      const opt = document.createElement("option");
+      opt.value = String(t).toLowerCase();
+      opt.textContent = String(t);
+      tagSel.appendChild(opt);
+    }
+
+    const paint = () => this.render();
+    document.getElementById("genreFilter").onchange = paint;
+    document.getElementById("tagFilter").onchange = paint;
+    document.getElementById("sortMode").onchange = paint;
+    this.render();
+  },
+
+  render() {
+    const genre = document.getElementById("genreFilter").value;
+    const tag = document.getElementById("tagFilter").value;
+    const sort = document.getElementById("sortMode").value;
+    const filtered = sortStories(filterStories(this._allStories, genre, tag), sort);
+    const grid = document.getElementById("storyGrid");
+    const countEl = document.getElementById("filterCount");
+    if (countEl) {
+      countEl.textContent = `${filtered.length} stor${filtered.length === 1 ? "y" : "ies"}`;
+    }
+    grid.innerHTML = filtered.length
+      ? filtered.map((s, i) => renderStoryCard(s, i)).join("")
+      : `<p class="muted">No stories match these filters.</p>`;
+  },
+};
+
 const AuthPage = {
   init() {
     const loginForm = document.getElementById("loginForm");
@@ -114,6 +255,37 @@ const AuthPage = {
         /* stay */
       }
     })();
+
+    const guestBtn = document.getElementById("guestBtn");
+    if (guestBtn) {
+      guestBtn.onclick = async () => {
+        document.getElementById("authStatus").textContent = "Starting guest session…";
+        guestBtn.disabled = true;
+        try {
+          const res = await fetch("/api/auth/guest", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: "{}",
+          });
+          const data = await res.json().catch(() => ({}));
+          if (!res.ok) {
+            document.getElementById("authStatus").textContent = data.detail || "Guest login failed";
+            guestBtn.disabled = false;
+            return;
+          }
+          Auth.setSession(data.token, data.user);
+          const gid = (data.user && (data.user.guest_id || data.user.username)) || "";
+          document.getElementById("authStatus").textContent = gid
+            ? `Guest id: ${gid} — opening stories…`
+            : "Opening stories…";
+          location.replace("/");
+        } catch (err) {
+          document.getElementById("authStatus").textContent = String(err);
+          guestBtn.disabled = false;
+        }
+      };
+    }
 
     loginForm.onsubmit = async (ev) => {
       ev.preventDefault();
@@ -159,60 +331,15 @@ const AuthPage = {
   },
 };
 
-const Home = {
-  async init() {
-    const user = await Auth.requireLogin();
-    if (!user) return;
-    document.getElementById("whoHint").textContent = user.name || user.username;
-    const authLink = document.getElementById("authLink");
-    const logoutBtn = document.getElementById("logoutBtn");
-    if (authLink) {
-      authLink.hidden = true;
-      authLink.style.display = "none";
-    }
-    if (logoutBtn) {
-      logoutBtn.hidden = false;
-      logoutBtn.style.display = "";
-    }
-    logoutBtn.onclick = async () => {
-      await fetch("/api/auth/logout", {
-        method: "POST",
-        headers: Auth.headers(),
-        credentials: "include",
-      });
-      Auth.clear();
-      location.replace("/login.html");
-    };
-    const data = await loadStories();
-    const grid = document.getElementById("storyGrid");
-    grid.innerHTML = (data.stories || [])
-      .map((s, i) => {
-        const thumb = s.thumbnail || (s.panels && s.panels[0] && s.panels[0].image) || s.webtoon;
-        return `<article class="comic-card" style="--delay:${i * 60}ms">
-          <a class="comic-thumb-link" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">
-            <img class="comic-thumb" src="${esc(thumb)}" alt="" loading="lazy" />
-          </a>
-          <div class="comic-body">
-            <p class="eyebrow">${esc(s.panel_count)} panels</p>
-            <h2 class="comic-title">${esc(s.title)}</h2>
-            <p class="muted comic-topic">${esc(s.topic)}</p>
-            <div class="comic-actions">
-              <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">Read &amp; rate</a>
-              <a class="btn" href="${esc(s.pdf)}" target="_blank" rel="noopener">PDF</a>
-              <a class="btn" href="/story.html?id=${encodeURIComponent(s.id)}&mode=read">Just read</a>
-            </div>
-          </div>
-        </article>`;
-      })
-      .join("");
-  },
-};
-
 const StoryPage = {
   async init() {
     const user = await Auth.requireLogin();
     if (!user) return;
     document.getElementById("whoHint").textContent = user.name || user.username;
+    if (user.is_guest || (user.guest_id && String(user.username || "").startsWith("guest_"))) {
+      const gid = user.guest_id || user.username;
+      document.getElementById("whoHint").textContent = `Guest · ${gid}`;
+    }
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
     const mode = (params.get("mode") || "rate").toLowerCase();
@@ -226,6 +353,8 @@ const StoryPage = {
     }
     document.getElementById("storyTitle").textContent = story.title;
     document.getElementById("storyTopic").textContent = story.topic || "";
+    const tagsEl = document.getElementById("storyTags");
+    if (tagsEl) tagsEl.innerHTML = tagPills(story.tags, story.genre);
     document.getElementById("editionLinks").innerHTML = `
       <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(story.id)}&mode=rate">Read &amp; rate</a>
       <a class="btn" href="${esc(story.pdf)}" target="_blank" rel="noopener">PDF</a>
@@ -234,17 +363,25 @@ const StoryPage = {
     if (readOnly) {
       document.getElementById("modePill").hidden = false;
       document.getElementById("feedbackForm").hidden = true;
+      const hint = document.getElementById("rateHint");
+      if (hint) hint.hidden = true;
     }
 
     document.getElementById("panels").innerHTML = (story.panels || [])
       .map((p) => {
         const rateBlock = readOnly
           ? ""
-          : `<label class="pe-label">Panel rating *</label>
+          : `<div class="panel-fb-box">
+          <label class="pe-label">Panel rating <span class="muted">(optional)</span></label>
           ${rateSelect(`p-rate-${p.index}`)}
-          <label class="pe-label">Panel feedback</label>
-          <textarea id="p-fb-${p.index}" rows="2" placeholder="What was good / confusing / broken?"></textarea>`;
-        return `<article class="panel-card">
+          <label class="pe-label">Panel feedback <span class="muted">(optional)</span></label>
+          <textarea id="p-fb-${p.index}" rows="2" placeholder="Only if something stood out…"></textarea>
+          <div class="panel-fb-actions">
+            <button type="button" class="btn pe-primary panel-send" data-panel="${esc(p.index)}">Send rate &amp; feedback</button>
+            <span class="muted small panel-status" id="p-status-${p.index}"></span>
+          </div>
+        </div>`;
+        return `<article class="panel-card" id="panel-card-${esc(p.index)}">
           <div class="panel-idx">Panel ${esc(p.index)}</div>
           <h3>${esc(p.scene_description)}</h3>
           <img class="panel-img" src="${esc(p.image)}" alt="Panel ${esc(p.index)}" loading="lazy" />
@@ -256,35 +393,70 @@ const StoryPage = {
 
     if (readOnly) return;
 
+    document.querySelectorAll(".panel-send").forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const idx = Number(btn.getAttribute("data-panel"));
+        const status = document.getElementById(`p-status-${idx}`);
+        const rateEl = document.getElementById(`p-rate-${idx}`);
+        const fbEl = document.getElementById(`p-fb-${idx}`);
+        const rating = rateEl && rateEl.value ? Number(rateEl.value) : null;
+        const feedback = (fbEl && fbEl.value ? fbEl.value : "").trim();
+        if (!rating && !feedback) {
+          status.textContent = "Add a rating or a short note first.";
+          return;
+        }
+        status.textContent = "Sending…";
+        btn.disabled = true;
+        try {
+          const post = await fetch("/api/feedback", {
+            method: "POST",
+            headers: Auth.headers(),
+            credentials: "include",
+            body: JSON.stringify({
+              kind: "panel",
+              story_id: story.id,
+              panel: { index: idx, rating, feedback },
+            }),
+          });
+          const out = await post.json().catch(() => ({}));
+          if (!post.ok) {
+            status.textContent = out.detail || post.statusText;
+            btn.disabled = false;
+            return;
+          }
+          status.textContent = "Saved for this panel.";
+          btn.textContent = "Sent";
+        } catch (err) {
+          status.textContent = String(err);
+          btn.disabled = false;
+        }
+      });
+    });
+
     document.getElementById("submitAll").onclick = async () => {
       const overall = Number(document.getElementById("overallRating").value);
       if (!overall) {
-        document.getElementById("submitStatus").textContent = "Pick overall rating.";
+        document.getElementById("submitStatus").textContent = "Pick a story rating (panels can stay blank).";
         return;
       }
-      const panels = [];
-      for (const p of story.panels || []) {
-        const rating = Number(document.getElementById(`p-rate-${p.index}`).value);
-        if (!rating) {
-          document.getElementById("submitStatus").textContent = `Rate panel ${p.index}.`;
-          return;
-        }
-        panels.push({
-          index: p.index,
-          rating,
-          feedback: document.getElementById(`p-fb-${p.index}`).value.trim(),
-        });
-      }
+      const charSel = document.getElementById("charConsistency");
+      const charCon = charSel && charSel.value ? Number(charSel.value) : null;
       document.getElementById("submitStatus").textContent = "Submitting…";
       const post = await fetch("/api/feedback", {
         method: "POST",
         headers: Auth.headers(),
         credentials: "include",
         body: JSON.stringify({
+          kind: "story",
           story_id: story.id,
           overall_rating: overall,
           overall_feedback: document.getElementById("overallFeedback").value.trim(),
-          panels,
+          character_consistency: charCon,
+          character_consistency_feedback: document
+            .getElementById("charConsistencyFeedback")
+            .value.trim(),
+          other_feedback: document.getElementById("otherFeedback").value.trim(),
+          panels: [],
         }),
       });
       const out = await post.json().catch(() => ({}));
@@ -292,11 +464,12 @@ const StoryPage = {
         document.getElementById("submitStatus").textContent = out.detail || post.statusText;
         return;
       }
-      document.getElementById("submitStatus").textContent = "Thanks — saved. Opening questionnaire…";
+      document.getElementById("submitStatus").textContent =
+        "Thanks — story feedback saved. Optional questionnaire next…";
       document.getElementById("submitAll").disabled = true;
       setTimeout(() => {
         location.href = `/questionnaire.html?story=${encodeURIComponent(story.id)}`;
-      }, 600);
+      }, 700);
     };
   },
 };
@@ -306,6 +479,10 @@ const QuestionnairePage = {
     const user = await Auth.requireLogin();
     if (!user) return;
     document.getElementById("whoHint").textContent = user.name || user.username;
+    if (user.is_guest || (user.guest_id && String(user.username || "").startsWith("guest_"))) {
+      const gid = user.guest_id || user.username;
+      document.getElementById("whoHint").textContent = `Guest · ${gid}`;
+    }
     const storyId = new URLSearchParams(location.search).get("story") || "";
     const res = await fetch("/questionnaire.json");
     if (!res.ok) {

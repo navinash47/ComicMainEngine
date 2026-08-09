@@ -43,6 +43,9 @@ def main() -> None:
         "episode_hitler_warning": DEFAULT_STORIES[2],
         "hitler_warning": DEFAULT_STORIES[2],
         "hitler": DEFAULT_STORIES[2],
+        "episode_how_i_met_your_mother_ep1": OUTPUTS / "phase4" / "episode_how_i_met_your_mother_ep1.json",
+        "himym": OUTPUTS / "phase4" / "episode_how_i_met_your_mother_ep1.json",
+        "romance": OUTPUTS / "phase4" / "episode_how_i_met_your_mother_ep1.json",
     }
     if args.stories.strip() == "all":
         paths = list(DEFAULT_STORIES)

@@ -14,7 +14,7 @@
     </div>
   </header>
   <section class="story-meta" style="max-width:36rem;margin:0 auto">
-    <p class="lede">Create a username or sign in to read comics and leave panel ratings.</p>
+    <p class="lede">Create a username, sign in, or continue as guest to read comics and leave ratings.</p>
     <div class="link-row" style="margin-bottom:1rem">
       <button type="button" class="btn pe-primary" id="tabLogin">Log in</button>
       <button type="button" class="btn" id="tabRegister">Register</button>
@@ -41,6 +41,11 @@
         <button type="submit" class="btn pe-primary">Create account</button>
       </div>
     </form>
+
+    <div class="guest-box">
+      <p class="muted small">No account? Continue as guest — we assign a unique guest id so your ratings still have a reference.</p>
+      <button type="button" class="btn" id="guestBtn">Continue as guest</button>
+    </div>
     <p class="muted small" id="authStatus"></p>
   </section>
   <script src="/app.js"></script>
