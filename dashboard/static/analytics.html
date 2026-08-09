@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Analytics</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Analytics</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/">Dashboard</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <button type="button" id="rescanBtn" class="btn">Rescan image QA</button>
+      <span id="updated">…</span>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="stories-wrap">
+    <div class="tasks-head">
+      <h2>By category</h2>
+      <div class="filter-row">
+        <label>Category
+          <select id="catFilter">
+            <option value="all">all</option>
+            <option value="text">text</option>
+            <option value="image">image</option>
+            <option value="usage">usage</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div id="catStats" class="story-list"></div>
+  </section>
+
+  <section class="stories-wrap">
+    <div class="tasks-head">
+      <h2>Learned recommendations</h2>
+      <span class="muted small">From successful logs — UI only, no auto-switch</span>
+    </div>
+    <div id="recs" class="story-list"></div>
+  </section>
+
+  <section class="stories-wrap">
+    <div class="tasks-head">
+      <h2>Image quality</h2>
+    </div>
+    <div id="imageQa" class="story-list"></div>
+  </section>
+
+  <section class="grid">
+    <article class="wide">
+      <h2>All recent calls</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Category</th>
+              <th>Phase</th>
+              <th>Provider</th>
+              <th>Model</th>
+              <th>Purpose</th>
+              <th>In</th>
+              <th>Out</th>
+              <th>Img tok</th>
+              <th>Cost</th>
+              <th>Latency</th>
+              <th>Status</th>
+              <th>QA</th>
+            </tr>
+          </thead>
+          <tbody id="calls"></tbody>
+        </table>
+      </div>
+    </article>
+  </section>
+
+  <script src="/static/analytics.js"></script>
+</body>
+</html>

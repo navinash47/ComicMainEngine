@@ -162,6 +162,7 @@ Requirements:
             "topic": "cjp_origin",
             "mode": "tool_use",
             "route": routing_label(),
+            "category": "text",
         },
     )
     with TimedCall(db, call):

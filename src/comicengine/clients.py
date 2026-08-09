@@ -89,7 +89,7 @@ class TrackedClients:
             model=model,
             purpose="hello",
             phase=self.phase,
-            meta={"route": routing_label()},
+            meta={"route": routing_label(), "category": "text"},
         )
         with TimedCall(self.db, call):
             msg = client.messages.create(
@@ -114,7 +114,7 @@ class TrackedClients:
             model=model,
             purpose="hello",
             phase=self.phase,
-            meta={"route": routing_label()},
+            meta={"route": routing_label(), "category": "text"},
         )
         with TimedCall(self.db, call):
             resp = client.chat.completions.create(
@@ -190,7 +190,14 @@ class TrackedClients:
             call.cost_usd = gemini_image_cost_usd(
                 model, size=size_hint, image_tokens=call.image_tokens or None
             )
+            from comicengine.analytics import check_image_quality
+
+            qa = check_image_quality(out_path)
             call.meta["out_path"] = str(out_path)
+            call.meta["category"] = "image"
+            call.meta["image_quality"] = qa
+            if qa.get("verdict") == "fail":
+                call.meta["quality_warning"] = True
             return out_path
 
     def gemini_hello(self, model: str | None = None) -> str:
@@ -209,7 +216,7 @@ class TrackedClients:
             model=model,
             purpose="hello",
             phase=self.phase,
-            meta={"route": "direct"},
+            meta={"route": "direct", "category": "text"},
         )
         with TimedCall(self.db, call):
             resp = self._genai.models.generate_content(model=model, contents="Reply with exactly: ok")

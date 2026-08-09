@@ -44,6 +44,19 @@ h1 {
   font-size: 1.8rem;
 }
 .status { color: var(--muted); font-size: 0.85rem; display: flex; gap: 0.5rem; align-items: center; }
+.nav-links { flex-wrap: wrap; justify-content: flex-end; }
+.filter-row select {
+  margin-left: 0.35rem;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0.25rem 0.4rem;
+}
+.story-item.static { cursor: default; }
+.story-item.static:hover .title { color: inherit; }
+a.btn { text-decoration: none; display: inline-block; }
+button.btn:disabled { opacity: 0.5; cursor: wait; }
 .dot {
   width: 0.55rem; height: 0.55rem; border-radius: 50%;
   background: var(--muted);

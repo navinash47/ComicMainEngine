@@ -5,11 +5,12 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from comicengine.analytics import analytics
 from comicengine.stories import list_stories, load_story
 from comicengine.tasks import observer
 from comicengine.usage import UsageDB
@@ -35,10 +36,38 @@ def index() -> FileResponse:
     return FileResponse(STATIC / "index.html")
 
 
+@app.get("/analytics")
+def analytics_page() -> FileResponse:
+    return FileResponse(STATIC / "analytics.html")
+
+
 @app.get("/api/summary")
 def summary() -> dict[str, Any]:
     snap = tasks.snapshot()
-    return {**db.summary(), "taskobserver": snap, "stories": list_stories()}
+    dash = analytics.dashboard(limit=80)
+    return {
+        **db.summary(),
+        "taskobserver": snap,
+        "stories": list_stories(),
+        "analytics_preview": {
+            "by_category": dash["stats"]["by_category"],
+            "recommendations": dash["recommendations"][:5],
+        },
+    }
+
+
+@app.get("/api/analytics")
+def api_analytics(
+    category: str | None = Query(default=None),
+    limit: int = Query(default=200, ge=1, le=2000),
+) -> dict[str, Any]:
+    return analytics.dashboard(limit=limit, category=category)
+
+
+@app.post("/api/analytics/rescan-images")
+def api_rescan_images() -> dict[str, Any]:
+    result = analytics.rescan_image_quality()
+    return {"ok": True, **result, "dashboard": analytics.dashboard(limit=100)}
 
 
 @app.get("/api/tasks")
