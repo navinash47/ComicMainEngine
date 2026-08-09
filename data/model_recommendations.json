@@ -1,0 +1,385 @@
+{
+  "updated_at": "2026-08-09T08:20:41.863791+00:00",
+  "recommendations": [
+    {
+      "category": "image",
+      "purpose": "char_consistency",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 6,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1848,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 6,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1848,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 6,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1848,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 6,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1848,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "image",
+      "purpose": "char_ref",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1792,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1792,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1792,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1792,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "image",
+      "purpose": "phase1_single",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 1,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2423,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 1,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2423,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 1,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2423,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 1,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2423,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "image",
+      "purpose": "style_bakeoff",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1972,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1972,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1972,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 8,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 1972,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "image",
+      "purpose": "style_grid",
+      "optimal": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2122,
+        "avg_quality": 1.0
+      },
+      "cheapest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2122,
+        "avg_quality": 1.0
+      },
+      "fastest": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2122,
+        "avg_quality": 1.0
+      },
+      "best_quality": {
+        "model_key": "fal::fal-ai/flux/schnell",
+        "provider": "fal",
+        "model": "fal-ai/flux/schnell",
+        "samples": 3,
+        "avg_cost_usd": 0.003,
+        "avg_latency_ms": 2122,
+        "avg_quality": 1.0
+      },
+      "reason": "highest avg image QA score, then lowest cost",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "char_consistency_judge",
+      "optimal": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.031191,
+        "avg_latency_ms": 10920,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.031191,
+        "avg_latency_ms": 10920,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.031191,
+        "avg_latency_ms": 10920,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "hello",
+      "optimal": {
+        "model_key": "google::gemini-3.1-flash-lite",
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite",
+        "samples": 2,
+        "avg_cost_usd": 1e-06,
+        "avg_latency_ms": 502,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "google::gemini-3.1-flash-lite",
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite",
+        "samples": 2,
+        "avg_cost_usd": 1e-06,
+        "avg_latency_ms": 502,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "google::gemini-3.1-flash-lite",
+        "provider": "google",
+        "model": "gemini-3.1-flash-lite",
+        "samples": 2,
+        "avg_cost_usd": 1e-06,
+        "avg_latency_ms": 502,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "init",
+      "optimal": {
+        "model_key": "demo::smoke",
+        "provider": "demo",
+        "model": "smoke",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "demo::smoke",
+        "provider": "demo",
+        "model": "smoke",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "demo::smoke",
+        "provider": "demo",
+        "model": "smoke",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "script_episode",
+      "optimal": {
+        "model_key": "anthropic::claude-haiku-4-5",
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "samples": 2,
+        "avg_cost_usd": 0.022909,
+        "avg_latency_ms": 37674,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "anthropic::claude-haiku-4-5",
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "samples": 2,
+        "avg_cost_usd": 0.022909,
+        "avg_latency_ms": 37674,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "anthropic::claude-haiku-4-5",
+        "provider": "anthropic",
+        "model": "claude-haiku-4-5",
+        "samples": 2,
+        "avg_cost_usd": 0.022909,
+        "avg_latency_ms": 37674,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "style_bakeoff_judge",
+      "optimal": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.021276,
+        "avg_latency_ms": 20721,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.021276,
+        "avg_latency_ms": 20721,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "omniroute:anthropic::auto/cheap",
+        "provider": "omniroute:anthropic",
+        "model": "auto/cheap",
+        "samples": 1,
+        "avg_cost_usd": 0.021276,
+        "avg_latency_ms": 20721,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    }
+  ]
+}

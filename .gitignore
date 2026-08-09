@@ -40,3 +40,9 @@ models/
 *.gguf
 .idea/
 .vscode/
+
+# LaTeX build junk under outputs/reports
+outputs/reports/*.aux
+outputs/reports/*.log
+outputs/reports/*.out
+outputs/reports/missfont.log

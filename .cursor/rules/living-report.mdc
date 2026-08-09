@@ -1,0 +1,11 @@
+---
+description: Update LaTeX report after every phase gate
+alwaysApply: true
+---
+
+# Living technical report
+
+- After each phase achieves its gate (what ran / what worked / evals / costs), **update** `reports/paper/comicengine_report.tex` with concrete numbers from `data/usage.db`, bake-off locks, and QA/judge outcomes.
+- Rebuild: `python scripts/build_report.py` → `outputs/reports/comicengine_report.pdf` (dashboard `/report`).
+- Include the `.tex` + rebuilt PDF (if tracked) **in the same phase commit/merge to `master`** — do not leave the report stale across a phase merge.
+- Prefer empirical tables (cost, pass rates, judge scores) over marketing prose. Note open evaluation debt (e.g. identity vs blank-frame QA).

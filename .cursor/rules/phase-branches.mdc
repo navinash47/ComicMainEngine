@@ -7,6 +7,6 @@ alwaysApply: true
 
 - Create a **new branch for every phase**: `phase0`, `phase0.5-ai-script`, `phase1`, `phase2`, …
 - Do phase work **only on that phase branch**.
-- When a phase gate passes: **merge the phase branch into `master`**, then **push `master` and the phase branch** to `origin`.
+- When a phase gate passes: **update the living LaTeX report** (`reports/paper/comicengine_report.tex` + `python scripts/build_report.py`), include that in the phase commit, **merge the phase branch into `master`**, then **push `master` and the phase branch** to `origin`.
 - Never leave finished phase commits only on a side branch — `master` should track completed phases.
 - Do not force-push `master` unless the user explicitly asks.

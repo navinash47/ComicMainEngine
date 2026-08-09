@@ -50,6 +50,23 @@ def images_page() -> FileResponse:
     return FileResponse(STATIC / "images.html")
 
 
+@app.get("/report")
+def report_pdf() -> FileResponse:
+    """Two-column LaTeX technical report (rebuild: python scripts/build_report.py)."""
+    pdf = OUTPUTS / "reports" / "comicengine_report.pdf"
+    if not pdf.exists():
+        raise HTTPException(
+            status_code=404,
+            detail="Report PDF missing — run: python scripts/build_report.py",
+        )
+    return FileResponse(
+        pdf,
+        media_type="application/pdf",
+        filename="comicengine_report.pdf",
+        headers={"Content-Disposition": "inline; filename=comicengine_report.pdf"},
+    )
+
+
 @app.get("/api/images")
 def api_images() -> dict[str, Any]:
     return gallery()

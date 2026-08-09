@@ -1,0 +1,259 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage[margin=0.7in]{geometry}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{caption}
+\renewcommand{\ttdefault}{lmtt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue!50!black
+}
+
+\title{\vspace{-1.2em}
+\textbf{ComicEngine: A Code-First Pipeline for\\
+Consistent, Cost-Aware AI History Comics}\\[0.4em]
+\large Technical Report on the \emph{onceuponatime} System\\[0.3em]
+\normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
+\normalsize Snapshot: 9~August~2026 · Phases~0--3 complete (style human lock still pending)
+\vspace{-0.6em}}
+
+\author{
+Avinash Nandyala\\
+\textit{Independent Project / ComicMainEngine}\\
+\texttt{github.com/navinash47/ComicMainEngine}
+}
+
+\date{Report regenerate: \texttt{python scripts/build\_report.py}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+We present \textbf{ComicEngine}, a modular, code-first system for generating educational history comics with recurring characters, tracked API spend, and human-in-the-loop curation.
+Built for \emph{onceuponatime} (bedtime narratives that explain real events to children), the system separates \emph{coding/LLM} traffic (optionally via OmniRoute at \texttt{localhost:20128}) from \emph{image generation} (direct commercial APIs: fal FLUX, Google Gemini image).
+This living report records what each phase actually ran, what worked, quantitative ledger totals from SQLite (\texttt{data/usage.db}), style bake-off judge scores, and interim character-consistency findings.
+\textbf{As of this snapshot:} 52 tracked API calls, \textbf{$\approx\$0.532$} total estimated spend (Phase~3 alone $\approx\$0.387$). Style human judge still pending; interim active style \texttt{korean\_manhwa}. Phase~3 consistency bake-off finished with \textbf{0 failures} (22/22 images): winner method \texttt{gemini\_ref}; reserve \texttt{flux\_kontext} for hard Abhijeet retries; \texttt{text\_only\_fal} for cheap drafts.
+\end{abstract}
+
+\section{Introduction}
+Production AI comics need character/style consistency, predictable cost, commercially licensed image paths, and an auditable spend ledger.
+ComicEngine addresses these with phasal CLIs, Pydantic episode JSON, style presets, and a FastAPI dashboard (Tasks, Stories, Analytics, Images, and this Report PDF at \texttt{/report}).
+
+\paragraph{Test story.}
+End-to-end stress test: dramatized bedtime episode about the Cockroach Janta Party (CJP) / fair-exam student protests (characters including Abhijeet Dipke, Saurav Das, public figures portrayed respectfully for pipeline testing only).
+
+\paragraph{Living-document policy.}
+After every phase gate we (1)~append empirical results to this \texttt{.tex}, (2)~rebuild the PDF, and (3)~include the report update in the same phase merge to \texttt{master}.
+
+\section{Routing and Licensing Constraints}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \textbf{Text / coding LLMs:} OmniRoute when \texttt{USE\_OMNIROUTE=1} + \texttt{OMNIROUTE\_API\_KEY}.
+  \item \textbf{All images:} direct \texttt{.env} keys only (\texttt{FAL\_API\_KEY}/\texttt{FAL\_KEY}, \texttt{GOOGLE\_API\_KEY}) — never OmniRoute.
+  \item Local FLUX~\texttt{[dev]} / Kontext~\texttt{[dev]} remain R\&D-only under BFL non-commercial terms; production-like finals use commercial fal/Gemini APIs.
+\end{itemize}
+
+\section{Architecture (stable through Phase~3)}
+\texttt{src/comicengine/}: config, pricing, tracked clients, styles, analytics, stories, gallery, tasks.
+\texttt{scripts/}: phase CLIs. \texttt{dashboard/}: FastAPI + static UI.
+\texttt{data/usage.db}: per-call ledger. \texttt{data/style\_lock.json}: bake-off + human-judge flags.
+\texttt{outputs/}: episode JSON, images, reports.
+
+\paragraph{Evaluation stack.}
+Pillow heuristics (existence, min dims, mean brightness/variance anti-blank) write \texttt{image\_quality} into call metadata.
+Analytics derives model recommendations (\texttt{data/model\_recommendations.json}) — advisory only; scripts do not auto-switch.
+
+\section{Cumulative Ledger Snapshot}
+\label{sec:ledger}
+Source: live SQLite summary at report build time.
+
+\begin{table}[t]
+\centering
+\caption{Spend and success by phase totals (ledger).}
+\label{tab:cat}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Phase & Calls & Cost (USD) & Notes \\
+\midrule
+phase0   & 13 & 0.003 & provider pings \\
+phase0.5 &  2 & 0.046 & CJP script \\
+phase1   &  1 & 0.003 & fal schnell proof \\
+phase2   & 13 & 0.093 & style bake-off + judge \\
+phase3   & 23 & 0.387 & refs + consistency + judge \\
+\midrule
+\textbf{total} & 52 & \textbf{0.532} & 1 early Gemini text err \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering
+\caption{Top providers by estimated spend (post Phase~3).}
+\label{tab:prov}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Provider & Calls & Cost (USD) \\
+\midrule
+google & 10 & 0.273 \\
+fal & 28 & 0.158 \\
+omniroute:anthropic & 4 & 0.053 \\
+anthropic (direct) & 4 & 0.046 \\
+omniroute:openai & 3 & 0.002 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Unit costs that worked in practice.}
+fal FLUX.~\texttt{schnell}: \textbf{$\approx\$0.003$}/image, $\sim$1.5--2.4\,s.
+Gemini \texttt{gemini-3.1-flash-image-preview}: \textbf{$\approx\$0.039$}/image, $\sim$9--12\,s.
+fal FLUX.~\texttt{pro/kontext}: \textbf{$\approx\$0.040$}/image, $\sim$11--14\,s.
+Text script generation (Claude Haiku): \textbf{$\approx\$0.046$} for the CJP episode.
+
+\section{Phase Log --- What Ran and What Worked}
+
+\subsection{Phase 0 --- Environments \& pings}
+\textbf{Goal.} Authenticate providers; prove routing.
+\textbf{What worked.} Anthropic Claude Haiku, OpenAI \texttt{gpt-4.1-mini}, OmniRoute \texttt{auto/cheap} for Anthropic and OpenAI, Gemini text via \textbf{direct} Google.
+\textbf{What failed / adapted.} Older Gemini Flash IDs error under ``new user'' model restrictions; replaced with \texttt{gemini-3.1-flash-lite} (text) and later \texttt{gemini-3.1-flash-image-preview} (image).
+One logged text error remains in the ledger (Gemini model mismatch during early ping).
+\textbf{Gate.} Success when calls land in SQLite with status \texttt{ok}.
+
+\subsection{Phase 0.5 --- Script engine}
+\textbf{Goal.} Structured bedtime episode JSON for Stories UI.
+\textbf{What worked.} Claude Haiku $\rightarrow$ Pydantic episode \texttt{outputs/phase0.5/episode\_cjp\_origin.json}: title \emph{The Cockroach Janta Party: When Students Ask for Fair Exams}, \textbf{12 panels}, fact sheet + \texttt{art\_prompt}s.
+Wikimedia Commons location refs fetched into \texttt{outputs/phase0.5/refs/} with attribution manifest (place/atmosphere refs, not official CJP press kits).
+\textbf{Cost.} $\approx$\$0.046 text (2 Anthropic calls in phase tag).
+\textbf{Evaluation.} Human-readable in dashboard Stories; suitable as Phase~1--3 prompt source.
+
+\subsection{Phase 1 --- Single commercial image path}
+\textbf{Goal.} Prove fal FLUX~\texttt{schnell} with tracked image category + QA.
+\textbf{What worked.} \texttt{scripts/phase1\_generate.py --backend fal} $\rightarrow$ \texttt{outputs/phase1/flux\_schnell\_fal.png}; QA \texttt{pass}; \$0.003.
+\textbf{Evaluation.} Establishes the cheap default image backend for bake-offs.
+
+\subsection{Phase 2 --- Style bake-off (complete; human lock pending)}
+\textbf{Setup.} Four presets $\times$ two fixed beats (Abhijeet+students; dad--daughter bedtime) via fal~\texttt{schnell}:
+\texttt{korean\_manhwa}, \texttt{painterly\_storybook}, \texttt{graphic\_novel}, \texttt{watercolor\_editorial}.
+Eight bake-off images under \texttt{outputs/phase2/bakeoff/}; all QA scores \textbf{1.0 / pass}. Total image spend for 8 equal-cost styles: \textbf{\$0.024}.
+
+\begin{table}[t]
+\centering
+\caption{LLM auto-judge rubric totals (higher better; max domain score 10 each).}
+\label{tab:judge}
+\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Style & Imm. & Bed. & Civic & Cost & Total \\
+\midrule
+painterly\_storybook & 7 & 10 & 8 & 9 & \textbf{34} \\
+graphic\_novel & 8 & 7 & 10 & 9 & \textbf{34} \\
+watercolor\_editorial & 7 & 8 & 9 & 9 & 33 \\
+korean\_manhwa & 9 & 6 & 7 & 9 & 31 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Auto-judge conclusion.}
+Winner: \texttt{painterly\_storybook} (bedtime safety). Closest civic alternative: \texttt{graphic\_novel}. Cheap good-enough: \texttt{watercolor\_editorial}.
+Manhwa won immersion (9) but scored lowest bedtime safety (6).
+
+\paragraph{Human policy (current).}
+\texttt{human\_judge\_pending=true}; \texttt{preferred\_while\_judging=korean\_manhwa} so active rendering stays webtoon-like while the operator compares finals in the Images tab.
+Override anytime with \texttt{STYLE\_ID} or by editing \texttt{data/style\_lock.json}.
+
+\paragraph{Phase~2 also generated.} Style grid previews and Gemini comparison sample (\texttt{style\_gemini\_01\_\ldots}); Gemini image is $\approx$13$\times$ fal~\texttt{schnell} unit cost.
+
+\subsection{Phase 3 --- Character consistency (complete)}
+\textbf{Goal.} Expanded cast reference sheets + method bake-off for identity lock across poses.
+\textbf{Artifacts.} \texttt{outputs/phase3/consistency\_manifest.json}, \texttt{decision.json}; code: \texttt{scripts/phase3\_consistency\_bakeoff.py}, \texttt{characters\_phase3.py}, client helpers \texttt{fal\_kontext\_edit} / \texttt{gemini\_image\_with\_refs}.
+Merged to \texttt{master} as commit \texttt{5078ead}.
+
+\paragraph{What worked (22/22, 0 failures).}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \textbf{8 ref sheets} (fal~\texttt{schnell}): Abhijeet, Saurav Das, Modi, Amit Shah, Sonam Wangchuk, police, dad, daughter.
+  \item \textbf{14 consistency scenes} under interim style \texttt{korean\_manhwa}: Abhijeet $\times$2 scenes $\times$3 methods; Dad/Modi $\times$2 scenes $\times$2 methods (\texttt{text\_only\_fal}, \texttt{gemini\_ref}).
+  \item All Pillow QA verdicts \texttt{pass}; $\approx$\$0.387 phase spend (images direct fal/Google; OmniRoute used only for text judge).
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{Phase~3 method judge scores (higher better).}
+\label{tab:p3judge}
+\small
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+Method & Face & Outfit & Style & Rel. & Cost & Total \\
+\midrule
+\texttt{gemini\_ref} & 8 & 8 & 8 & 9 & 7 & \textbf{40} \\
+\texttt{flux\_kontext} & 9 & 9 & 8 & 7 & 3 & 36 \\
+\texttt{text\_only\_fal} & 3 & 3 & 7 & 9 & 10 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Decision (ship).}
+Winner: \textbf{\texttt{gemini\_ref}} (Gemini Flash Image + reference sheet) as default identity lock for hero cast.
+Reserve \textbf{\texttt{flux\_kontext}} for hard Abhijeet closeup/speak retries when face drift appears.
+Use \textbf{\texttt{text\_only\_fal}} only for cheap drafts/extras (weak cross-scene identity despite perfect blank-frame QA).
+
+\paragraph{Evaluation caveats (from decision notes).}
+Local QA checks blanks/dims/brightness---not identity; Kontext under-sampled ($n{=}2$, Abhijeet-only); Gemini aspect ratios sometimes vary (e.g.\ $848{\times}1264$).
+Human eye review on Images tab remains recommended before episode mass generation.
+\section{Dashboard Surfaces}
+Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Analytics (category filters, recommendations, image QA rescan), Images gallery (generated + Commons refs), Report PDF (\texttt{/report}).
+
+\section{What We Explicitly Learned}
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+  \item OmniRoute is excellent for LLM scripting/judging; keeping images off OmniRoute avoided opaque image billing and matched commercial-key policy.
+  \item fal~\texttt{schnell} makes wide style exploration financially trivial (\textasciitilde\$0.024 for 8 bake-off frames).
+  \item Auto style judges trade off immersion vs.\ bedtime safety; human adjudication remains mandatory for product voice.
+  \item Pillow ``pass'' is necessary but not sufficient for character consistency; the Phase~3 LLM judge correctly ranked \texttt{gemini\_ref} over cheaper text-only despite identical QA scores.
+  \item Gemini new-user model allowlists forced early Phase~0 remapping; document working model IDs in clients, not only marketing names.
+\end{enumerate}
+
+\section{Risks and Ethics}
+Dramatized civic content for ages $\sim$7--10; respectful depiction of public figures; Commons attribution for place photos; human fact-check before any public publish.
+Style and consistency locks must not be decided solely by LLM judges or blank-frame QA.
+
+\section{Next Gates}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
+  \item Panel batch generation using \texttt{gemini\_ref} defaults + Kontext retries $\rightarrow$ caption compositing $\rightarrow$ episode assembly $\rightarrow$ Cloudflare Pages+R2.
+  \item Append each gate’s numbers to \S\ref{sec:ledger} and Phase Log before merge.
+\end{itemize}
+
+\section{Conclusion}
+ComicEngine is a measurable comic factory: $\approx$\$0.53 cumulative R\&D spend covers script, style bake-off, dashboard analytics, and a shipped Phase~3 consistency decision (\texttt{gemini\_ref}).
+Binding constraints remain licensing honesty, human bedtime taste for style, and identity beyond blank-frame QA.
+
+\appendix
+\section{Reproduce}
+\begin{verbatim}
+source .venv/bin/activate
+pip install -e .
+# configure .env (never commit)
+python scripts/run_dashboard.py
+python scripts/build_report.py
+# PDF: http://127.0.0.1:8765/report
+\end{verbatim}
+
+\section{Changelog (report editions)}
+\begin{description}[style=nextline,leftmargin=0pt,font=\normalsize\bfseries]
+\item[2026-08-09 a] Initial two-column architecture draft.
+\item[2026-08-09 b] Living phase log: ledger tables, Phase~2 judge matrix, Phase~3 interim notes.
+\item[2026-08-09 c] Phase~3 gate closed: 22/22 images, winner \texttt{gemini\_ref} (judge 40), ledger \$0.532; dashboard \texttt{/report} link.
+\end{description}
+
+\end{document}
