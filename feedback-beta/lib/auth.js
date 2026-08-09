@@ -49,19 +49,32 @@ async function createUser({ name, username, password }) {
   const id = crypto.randomUUID();
   const { salt, hash } = hashPassword(password);
   const display = (name || "").trim() || normalized;
+  const now = new Date().toISOString();
   const user = {
     id,
     name: display,
     username: normalized,
     salt,
     password_hash: hash,
-    created_at: new Date().toISOString(),
+    created_at: now,
+    last_login_at: now,
+    login_count: 1,
     role: "reader",
   };
   await r.set(`user:${id}`, user);
   await r.set(`user:username:${normalized}`, id);
   await r.sadd("users", id);
+  await pushLoginEvent(r, { action: "register", user_id: id, username: normalized, name: display, at: now });
   return publicUser(user);
+}
+
+async function pushLoginEvent(r, event) {
+  try {
+    await r.lpush("login_events", event);
+    await r.ltrim("login_events", 0, 499);
+  } catch {
+    /* ignore analytics failures */
+  }
 }
 
 async function loginUser({ username, password }) {
@@ -79,11 +92,22 @@ async function loginUser({ username, password }) {
     err.status = 401;
     throw err;
   }
+  const now = new Date().toISOString();
+  user.last_login_at = now;
+  user.login_count = Number(user.login_count || 0) + 1;
+  await r.set(`user:${id}`, user);
+  await pushLoginEvent(r, {
+    action: "login",
+    user_id: user.id,
+    username: user.username,
+    name: user.name,
+    at: now,
+  });
   const token = newToken();
   const session = {
     token,
     user_id: user.id,
-    created_at: new Date().toISOString(),
+    created_at: now,
   };
   await r.set(`session:${token}`, session, { ex: 60 * 60 * 24 * 30 }); // 30d
   return { token, user: publicUser(user) };
@@ -116,6 +140,8 @@ function publicUser(user) {
     name: user.name,
     username: user.username,
     created_at: user.created_at,
+    last_login_at: user.last_login_at || null,
+    login_count: user.login_count || 0,
     role: user.role || "reader",
   };
 }

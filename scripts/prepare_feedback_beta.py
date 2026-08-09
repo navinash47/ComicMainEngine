@@ -53,6 +53,10 @@ def main() -> None:
                     shutil.copy2(c, dest)
                     copied += 1
                     break
+    # Generate evaluated library thumbnails (mutates stories.json + writes thumbnail.jpg)
+    import runpy
+
+    runpy.run_path(str(ROOT / "scripts" / "select_thumbnails.py"), run_name="__main__")
     print(json.dumps({"ok": True, "stories": man["count"], "files_copied": copied, "dest": str(DEST)}, indent=2))
 
 

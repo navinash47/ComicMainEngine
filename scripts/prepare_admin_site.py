@@ -49,10 +49,10 @@ def main() -> None:
         "local_admin": "http://127.0.0.1:8765/admin",
         "local_review": "http://127.0.0.1:8765/review",
         "notes": [
-            "This Vercel admin is a read-only engine console for sharing with fellowdevs.",
+            "Snapshot sections (spend/ROI/tasks) refresh when you re-run prepare_admin_site.py + redeploy.",
+            "Reader logins + panel/story feedback stream live from shared Upstash (Refresh live / auto 20s).",
             "Live image regen / OmniRoute scripting still run locally (or a GPU/API host).",
-            "Reader feedback appears below when prepared from SQLite, or live via shared Upstash.",
-            "Version 2 starts at Phase 12 after Mom Test / panel feedback review.",
+            "Version 2 starts at Phase 12 after reviewing reader panel/story feedback.",
         ],
         "phases": phase_notes,
         "routing": {

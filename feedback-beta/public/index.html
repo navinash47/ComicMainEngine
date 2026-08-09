@@ -7,21 +7,23 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body class="public-review">
-  <header>
-    <div>
-      <p class="brand">ComicEngine</p>
-      <h1>Stories</h1>
-    </div>
-    <div class="status nav-links">
-      <span class="muted small" id="whoHint"></span>
-      <a class="btn" href="/login.html" id="authLink">Log in</a>
-      <button type="button" class="btn" id="logoutBtn" hidden>Log out</button>
-    </div>
-  </header>
-  <section class="story-meta">
-    <p class="lede">Read a comic, rate each panel, then rate the whole story. Accounts keep your feedback tied to you.</p>
-  </section>
-  <section class="library-grid" id="storyGrid"></section>
+  <div class="page-shell">
+    <header>
+      <div>
+        <p class="brand">ComicEngine</p>
+        <h1>Stories</h1>
+      </div>
+      <div class="status nav-links">
+        <span class="muted small" id="whoHint"></span>
+        <a class="btn" href="/login.html" id="authLink">Log in</a>
+        <button type="button" class="btn" id="logoutBtn" hidden>Log out</button>
+      </div>
+    </header>
+    <section class="story-meta">
+      <p class="lede">Pick a comic. Read for fun, open the PDF, or read &amp; rate panels to help us improve.</p>
+    </section>
+    <section class="comic-grid" id="storyGrid"></section>
+  </div>
   <script src="/app.js"></script>
   <script>Home.init();</script>
 </body>

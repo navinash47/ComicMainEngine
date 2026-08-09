@@ -12,6 +12,10 @@ function esc(s) {
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 }
+function stars(n) {
+  const v = Number(n) || 0;
+  return "★".repeat(Math.round(v)) + "☆".repeat(Math.max(0, 5 - Math.round(v)));
+}
 
 function authHeaders() {
   const pw = sessionStorage.getItem("ce_admin_pw") || "";
@@ -36,22 +40,123 @@ function renderBars(el, rows) {
     : `<p class="muted">No usage yet.</p>`;
 }
 
-function renderFeedback(items, metaEl, listEl, source) {
-  metaEl.textContent = `${items.length} responses · source ${source}`;
-  listEl.innerHTML = items.length
+let peopleCache = [];
+let selectedPersonId = null;
+let pollTimer = null;
+
+function renderPeople(people) {
+  peopleCache = people || [];
+  $("peopleMeta").textContent = `${peopleCache.length} people (registered + reviewers)`;
+  $("peopleList").innerHTML = peopleCache.length
+    ? peopleCache
+        .map((p) => {
+          const active = p.id === selectedPersonId ? "on" : "";
+          return `<button type="button" class="person-chip ${active}" data-id="${esc(p.id)}">
+            <strong>${esc(p.name || p.username || "anon")}</strong>
+            <span class="muted small">@${esc(p.username || "—")} · logins ${fmt(p.login_count)} · stories ${fmt(p.stories_rated)}</span>
+          </button>`;
+        })
+        .join("")
+    : `<p class="muted">No readers yet — share the reader URL.</p>`;
+
+  $("peopleList").querySelectorAll(".person-chip").forEach((btn) => {
+    btn.onclick = () => {
+      selectedPersonId = btn.dataset.id;
+      renderPeople(peopleCache);
+      showPerson(selectedPersonId);
+    };
+  });
+  if (selectedPersonId) showPerson(selectedPersonId);
+  else if (peopleCache[0]) {
+    selectedPersonId = peopleCache[0].id;
+    renderPeople(peopleCache);
+  }
+}
+
+function showPerson(id) {
+  const p = peopleCache.find((x) => x.id === id);
+  if (!p) {
+    $("personDetail").innerHTML = `<p class="muted">Select a person.</p>`;
+    return;
+  }
+  const responses = p.responses || [];
+  $("personDetail").innerHTML = `
+    <div class="person-head">
+      <div>
+        <h3>${esc(p.name || p.username)}</h3>
+        <p class="muted small">@${esc(p.username || "—")} · joined ${esc((p.created_at || "").slice(0, 10) || "—")} · last login ${esc((p.last_login_at || "").replace("T", " ").slice(0, 19) || "—")}</p>
+      </div>
+      <div class="person-stats">
+        <div><span class="label">Logins</span><strong>${fmt(p.login_count)}</strong></div>
+        <div><span class="label">Stories rated</span><strong>${fmt(p.stories_rated)}</strong></div>
+        <div><span class="label">Avg overall</span><strong>${p.avg_overall != null ? p.avg_overall + " " + stars(p.avg_overall) : "—"}</strong></div>
+        <div><span class="label">Avg panel</span><strong>${p.avg_panel != null ? p.avg_panel : "—"}</strong></div>
+      </div>
+    </div>
+    ${
+      responses.length
+        ? responses
+            .map((item) => {
+              const panels = (item.panels || [])
+                .map(
+                  (pn) => `<li><strong>P${esc(pn.index)}</strong> ${esc(pn.rating)}★ — ${esc(pn.feedback || "—")}</li>`
+                )
+                .join("");
+              return `<article class="fb-card">
+                <div class="muted small">${esc((item.created_at || "").replace("T", " ").slice(0, 19))} · ${esc(item.story_id)}</div>
+                <p><strong>Overall ${esc(item.overall_rating)}/5</strong> ${stars(item.overall_rating)}</p>
+                <p>${esc(item.overall_feedback || "(no written overall feedback)")}</p>
+                <ul class="panel-fb">${panels || "<li class='muted'>No panel notes</li>"}</ul>
+              </article>`;
+            })
+            .join("")
+        : `<p class="muted">This person hasn’t submitted story feedback yet.</p>`
+    }`;
+}
+
+function renderLoginFeed(events) {
+  $("loginFeed").innerHTML = (events || []).length
+    ? events
+        .slice(0, 24)
+        .map((ev) => {
+          const who = esc(ev.name || ev.username || ev.user_id || "?");
+          return `<div class="feed-row"><span class="badge">${esc(ev.action || "login")}</span> <strong>${who}</strong> <span class="muted small">${esc((ev.at || "").replace("T", " ").slice(0, 19))}</span></div>`;
+        })
+        .join("")
+    : `<p class="muted">No login events yet (appear after next register/login).</p>`;
+}
+
+function renderFeedbackList(items, source) {
+  $("fbMeta").textContent = `${(items || []).length} responses · ${source}`;
+  $("feedback").innerHTML = (items || []).length
     ? items
+        .slice(0, 20)
         .map((item) => {
-          const panels = (item.panels || [])
-            .map((p) => `P${p.index}:${p.rating}★ ${esc((p.feedback || "").slice(0, 60))}`)
-            .join(" · ");
           return `<div class="fb-row">
-            <div class="muted small">${esc(item.created_at)} · <strong>${esc(item.reviewer_name || item.reviewer_username || item.reviewer_email)}</strong> · ${esc(item.story_id)}</div>
-            <p>Overall ${esc(item.overall_rating)}/5 — ${esc(item.overall_feedback || "")}</p>
-            <p class="muted small">${panels}</p>
+            <div class="muted small">${esc((item.created_at || "").replace("T", " ").slice(0, 19))} · <strong>${esc(item.reviewer_name || item.reviewer_username)}</strong> · ${esc(item.story_id)}</div>
+            <p>Overall ${esc(item.overall_rating)}/5 — ${esc((item.overall_feedback || "").slice(0, 160))}</p>
           </div>`;
         })
         .join("")
-    : `<p class="muted">No reader feedback in snapshot yet. Deploy reader site and/or re-run prepare_admin_site.py</p>`;
+    : `<p class="muted">No live feedback yet.</p>`;
+}
+
+function drawLiveCharts(charts) {
+  const hist = charts.ratings_hist || [0, 0, 0, 0, 0];
+  Charts.bar($("ratingChart"), ["1★", "2★", "3★", "4★", "5★"], hist);
+  const days = charts.logins_by_day || [];
+  Charts.line(
+    $("loginChart"),
+    days.map((d) => d.day),
+    days.map((d) => d.count)
+  );
+  const stories = charts.by_story || [];
+  Charts.bar(
+    $("storyChart"),
+    stories.map((s) => String(s.story_id).replace("episode_", "").slice(0, 10)),
+    stories.map((s) => s.avg_overall),
+    { max: 5 }
+  );
 }
 
 async function maybeGate() {
@@ -77,37 +182,50 @@ async function maybeGate() {
   });
 }
 
-async function loadLiveFeedback() {
-  const res = await fetch("/api/live-feedback", { headers: authHeaders() });
+async function loadLive() {
+  $("livePill").classList.add("pulse");
+  const res = await fetch("/api/live-customers", { headers: authHeaders() });
   const data = await res.json().catch(() => ({}));
+  $("livePill").classList.remove("pulse");
   if (!res.ok) {
-    $("fbMeta").textContent = data.detail || "live feedback unavailable";
+    $("peopleMeta").textContent = data.detail || "live unavailable";
     return;
   }
-  if ((data.items || []).length) {
-    renderFeedback(data.items, $("fbMeta"), $("feedback"), data.source || "upstash");
-  }
+  const s = data.summary || {};
+  $("readerKpis").innerHTML = [
+    ["Registered readers", fmt(s.registered_users)],
+    ["Feedback responses", fmt(s.feedback_responses)],
+    ["People with ratings", fmt(s.people_with_feedback)],
+    ["Login events tracked", fmt(s.login_events)],
+    ["Live source", esc(data.source || "—")],
+  ]
+    .map(([label, value]) => `<div class="kpi reader"><div class="label">${label}</div><div class="value">${value}</div></div>`)
+    .join("");
+
+  renderPeople(data.people || []);
+  renderLoginFeed(data.login_events || []);
+  renderFeedbackList(data.feedback || [], data.source || "live");
+  drawLiveCharts(data.charts || {});
+  $("exportedAt").dataset.liveAt = data.fetched_at || "";
+  const snap = $("exportedAt").dataset.snap || "";
+  $("exportedAt").textContent = `snapshot ${snap} · live ${esc((data.fetched_at || "").replace("T", " ").slice(0, 19))}`;
 }
 
 async function main() {
   await maybeGate();
-  const [overview, usage, roi, tasks, fbSnap] = await Promise.all([
+  const [overview, usage, roi] = await Promise.all([
     loadJson("/data/overview.json"),
     loadJson("/data/usage.json"),
     loadJson("/data/roi.json"),
-    loadJson("/data/tasks.json"),
-    loadJson("/data/story_feedback.json"),
   ]);
 
+  $("exportedAt").dataset.snap = overview.exported_at || "";
   $("exportedAt").textContent = `snapshot ${overview.exported_at || ""}`;
   if (overview.github) $("ghLink").href = overview.github;
-  $("notes").innerHTML = (overview.notes || []).map((n) => `<li>${esc(n)}</li>`).join("");
-  const rt = overview.routing || {};
-  $("routing").textContent = `Text LLM: ${rt.text_llm || "—"} · Images: ${rt.images || "—"}`;
 
   const t = usage.totals || {};
   $("kpis").innerHTML = [
-    ["Total spend", money(t.cost_usd)],
+    ["Engine spend (snapshot)", money(t.cost_usd)],
     ["API calls", fmt(t.calls)],
     ["Input tokens", fmt(t.input_tokens)],
     ["Output tokens", fmt(t.output_tokens)],
@@ -122,29 +240,24 @@ async function main() {
 
   renderBars($("byPhase"), usage.by_phase || []);
 
-  $("tasks").innerHTML = (tasks.tasks || [])
-    .slice(0, 20)
-    .map(
-      (task) =>
-        `<div class="task"><span>${esc(task.title)}</span><span class="status ${esc(task.status)}">${esc(task.status)}</span></div>`
-    )
+  const unit = roi.unit_economics || {};
+  $("roiCards").innerHTML = [
+    ["$/story", money(unit.cost_per_story_usd)],
+    ["$/panel", money(unit.cost_per_panel_all_in_usd)],
+    ["100 eps", money(unit.projected_100_episodes_usd)],
+  ]
+    .map(([label, value]) => `<div class="unit-card"><div class="label">${label}</div><div class="value">${value}</div></div>`)
+    .join("");
+  $("roiInsights").innerHTML = (roi.insights || [])
+    .slice(0, 6)
+    .map((i) => `<li>${esc(i)}</li>`)
     .join("");
 
-  const unit = roi.unit_economics || {};
-  $("roi").textContent = JSON.stringify(
-    {
-      cost_per_story_usd: unit.cost_per_story_usd,
-      cost_per_panel_all_in_usd: unit.cost_per_panel_all_in_usd,
-      projected_100_episodes_usd: unit.projected_100_episodes_usd,
-      insights: (roi.insights || []).slice(0, 5),
-    },
-    null,
-    2
-  );
-
-  renderFeedback(fbSnap.items || [], $("fbMeta"), $("feedback"), "snapshot");
-  $("refreshLive").onclick = () => loadLiveFeedback();
-  loadLiveFeedback();
+  $("refreshLive").onclick = () => loadLive();
+  await loadLive();
+  clearInterval(pollTimer);
+  pollTimer = setInterval(loadLive, 20000);
+  window.addEventListener("resize", () => loadLive());
 }
 
 main().catch((err) => {

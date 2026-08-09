@@ -7,6 +7,7 @@
       "panel_count": 12,
       "pdf": "/comics/episode_cjp_origin/episode.pdf",
       "webtoon": "/comics/episode_cjp_origin/webtoon.png",
+      "thumbnail": "/comics/episode_cjp_origin/thumbnail.jpg",
       "panels": [
         {
           "index": 1,
@@ -92,7 +93,8 @@
           "caption": "Sweet dreams: A father and daughter rest, knowing that fairness begins with courage.",
           "image": "/comics/episode_cjp_origin/panel_12.png"
         }
-      ]
+      ],
+      "thumbnail_panel": 5
     },
     {
       "id": "episode_et_tu_brutus",
@@ -101,6 +103,7 @@
       "panel_count": 16,
       "pdf": "/comics/episode_et_tu_brutus/episode.pdf",
       "webtoon": "/comics/episode_et_tu_brutus/webtoon.png",
+      "thumbnail": "/comics/episode_et_tu_brutus/thumbnail.jpg",
       "panels": [
         {
           "index": 1,
@@ -214,7 +217,8 @@
           "caption": "Rome fell into empire not in one stab, but in a thousand cheers. Democracies die when we stop guarding the rules - and stay saved when we don't.",
           "image": "/comics/episode_et_tu_brutus/panel_16.png"
         }
-      ]
+      ],
+      "thumbnail_panel": 11
     },
     {
       "id": "episode_hitler_warning",
@@ -223,6 +227,7 @@
       "panel_count": 16,
       "pdf": "/comics/episode_hitler_warning/episode.pdf",
       "webtoon": "/comics/episode_hitler_warning/webtoon.png",
+      "thumbnail": "/comics/episode_hitler_warning/thumbnail.jpg",
       "panels": [
         {
           "index": 1,
@@ -336,7 +341,8 @@
           "caption": "Close the book\u2014not the duty.",
           "image": "/comics/episode_hitler_warning/panel_16.png"
         }
-      ]
+      ],
+      "thumbnail_panel": 1
     }
   ],
   "count": 3

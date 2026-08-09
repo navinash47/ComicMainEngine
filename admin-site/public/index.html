@@ -3,68 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ComicEngine · Admin (fellowdevs)</title>
+  <title>ComicEngine · Admin</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body class="admin-shell">
   <div id="gate" class="gate" hidden>
     <div class="gate-card">
       <p class="brand">ComicEngine</p>
       <h1>Admin access</h1>
-      <p class="muted">Shared with fellowdevs working on the engine. Enter the deploy password.</p>
-      <input id="gatePw" type="password" placeholder="ADMIN_SITE_PASSWORD" />
-      <button type="button" class="btn primary" id="gateGo">Enter</button>
-      <p class="muted small" id="gateErr"></p>
+      <p class="muted">Shared with fellowdevs. Enter the deploy password.</p>
+      <input id="gatePw" type="password" placeholder="ADMIN_SITE_PASSWORD" autocomplete="current-password" />
+      <button type="button" class="btn pe-primary" id="gateGo">Enter</button>
+      <p class="error small" id="gateErr"></p>
     </div>
   </div>
 
-  <header>
+  <header class="admin-header">
     <div>
       <p class="brand">ComicEngine</p>
-      <h1>Admin · Engine console</h1>
+      <h1>Admin · Live console</h1>
       <p class="muted small" id="exportedAt">loading…</p>
     </div>
     <div class="nav">
       <a class="btn" id="ghLink" href="https://github.com/navinash47/ComicMainEngine" target="_blank" rel="noopener">GitHub</a>
-      <button type="button" class="btn" id="refreshLive">Refresh live feedback</button>
+      <button type="button" class="btn pe-primary" id="refreshLive">Refresh live</button>
+      <span class="live-pill" id="livePill">LIVE</span>
     </div>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>For fellow developers</h2>
-      <ul id="notes"></ul>
-      <p class="muted small" id="routing"></p>
+  <main class="admin-main">
+    <section class="callout">
+      <h2>Why some numbers look “static”</h2>
+      <p class="muted" id="staticExplain">
+        Engine spend / ROI / TaskObserver are <strong>snapshots</strong> baked at deploy
+        (<code>prepare_admin_site.py</code>). Reader logins + panel/story feedback are <strong>live from Upstash</strong>
+        and refresh automatically every 20s.
+      </p>
     </section>
 
     <section class="kpis" id="kpis"></section>
+    <section class="kpis" id="readerKpis"></section>
 
     <section class="grid">
+      <article class="card wide">
+        <h2>Reader ratings (live)</h2>
+        <canvas id="ratingChart" height="160"></canvas>
+      </article>
+      <article class="card">
+        <h2>Logins by day (live)</h2>
+        <canvas id="loginChart" height="160"></canvas>
+      </article>
+      <article class="card">
+        <h2>Avg score by story (live)</h2>
+        <canvas id="storyChart" height="160"></canvas>
+      </article>
+      <article class="card">
+        <h2>API spend by phase (snapshot)</h2>
+        <div id="byPhase"></div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card wide">
+        <h2>People — who signed in &amp; what they said</h2>
+        <p class="muted small" id="peopleMeta">—</p>
+        <div class="people-layout">
+          <div id="peopleList" class="people-list"></div>
+          <div id="personDetail" class="person-detail">
+            <p class="muted">Select a person to see their ratings and written feedback.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Recent login activity</h2>
+        <div id="loginFeed"></div>
+      </article>
+      <article class="card">
+        <h2>Recent feedback</h2>
+        <p class="muted small" id="fbMeta">—</p>
+        <div id="feedback"></div>
+      </article>
       <article class="card">
         <h2>Phases</h2>
         <div id="phases"></div>
       </article>
       <article class="card">
-        <h2>API spend by phase</h2>
-        <div id="byPhase"></div>
-      </article>
-      <article class="card">
-        <h2>TaskObserver</h2>
-        <div id="tasks"></div>
-      </article>
-      <article class="card">
         <h2>ROI snapshot</h2>
-        <pre id="roi" class="pre"></pre>
+        <div id="roiCards" class="unit-grid"></div>
+        <ul class="insight-list" id="roiInsights"></ul>
       </article>
-    </section>
-
-    <section class="card">
-      <h2>Reader feedback</h2>
-      <p class="muted small" id="fbMeta">—</p>
-      <div id="feedback"></div>
     </section>
   </main>
 
+  <script src="/charts.js"></script>
   <script src="/app.js"></script>
 </body>
 </html>

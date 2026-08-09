@@ -52,7 +52,6 @@ const Auth = {
         location.replace("/login.html");
         return null;
       }
-      // Network / odd response — keep a fresh local session so we don't bounce to login
       if (cached) return cached;
     } catch {
       if (cached) return cached;
@@ -101,7 +100,6 @@ const AuthPage = {
       registerForm.hidden = false;
     };
 
-    // If already signed in (cookie or local token), go home — but verify first
     (async () => {
       if (!Auth.getToken() && !Auth.getUser()) return;
       try {
@@ -111,11 +109,9 @@ const AuthPage = {
           cache: "no-store",
         });
         const data = await res.json().catch(() => null);
-        if (data && data.authenticated) {
-          location.replace("/");
-        }
+        if (data && data.authenticated) location.replace("/");
       } catch {
-        /* stay on login */
+        /* stay */
       }
     })();
 
@@ -180,18 +176,26 @@ const Home = {
       location.replace("/login.html");
     };
     const data = await loadStories();
-    document.getElementById("storyGrid").innerHTML = (data.stories || [])
-      .map(
-        (s) => `<article class="library-card">
-          <p class="eyebrow">${esc(s.panel_count)} panels</p>
-          <h2>${esc(s.title)}</h2>
-          <p class="muted">${esc(s.topic)}</p>
-          <div class="link-row">
-            <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(s.id)}">Read &amp; rate</a>
-            <a class="btn" href="${esc(s.pdf)}" target="_blank" rel="noopener">PDF</a>
+    const grid = document.getElementById("storyGrid");
+    grid.innerHTML = (data.stories || [])
+      .map((s, i) => {
+        const thumb = s.thumbnail || (s.panels && s.panels[0] && s.panels[0].image) || s.webtoon;
+        return `<article class="comic-card" style="--delay:${i * 60}ms">
+          <a class="comic-thumb-link" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">
+            <img class="comic-thumb" src="${esc(thumb)}" alt="" loading="lazy" />
+          </a>
+          <div class="comic-body">
+            <p class="eyebrow">${esc(s.panel_count)} panels</p>
+            <h2 class="comic-title">${esc(s.title)}</h2>
+            <p class="muted comic-topic">${esc(s.topic)}</p>
+            <div class="comic-actions">
+              <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(s.id)}&mode=rate">Read &amp; rate</a>
+              <a class="btn" href="${esc(s.pdf)}" target="_blank" rel="noopener">PDF</a>
+              <a class="btn" href="/story.html?id=${encodeURIComponent(s.id)}&mode=read">Just read</a>
+            </div>
           </div>
-        </article>`
-      )
+        </article>`;
+      })
       .join("");
   },
 };
@@ -201,7 +205,11 @@ const StoryPage = {
     const user = await Auth.requireLogin();
     if (!user) return;
     document.getElementById("whoHint").textContent = user.name || user.username;
-    const id = new URLSearchParams(location.search).get("id");
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const mode = (params.get("mode") || "rate").toLowerCase();
+    const readOnly = mode === "read" || mode === "just" || mode === "readonly";
+
     const data = await loadStories();
     const story = (data.stories || []).find((s) => s.id === id);
     if (!story) {
@@ -211,22 +219,34 @@ const StoryPage = {
     document.getElementById("storyTitle").textContent = story.title;
     document.getElementById("storyTopic").textContent = story.topic || "";
     document.getElementById("editionLinks").innerHTML = `
-      <a class="btn" href="${esc(story.webtoon)}" target="_blank" rel="noopener">Webtoon</a>
-      <a class="btn" href="${esc(story.pdf)}" target="_blank" rel="noopener">PDF</a>`;
+      <a class="btn pe-primary" href="/story.html?id=${encodeURIComponent(story.id)}&mode=rate">Read &amp; rate</a>
+      <a class="btn" href="${esc(story.pdf)}" target="_blank" rel="noopener">PDF</a>
+      <a class="btn" href="/story.html?id=${encodeURIComponent(story.id)}&mode=read">Just read</a>`;
+
+    if (readOnly) {
+      document.getElementById("modePill").hidden = false;
+      document.getElementById("feedbackForm").hidden = true;
+    }
+
     document.getElementById("panels").innerHTML = (story.panels || [])
-      .map(
-        (p) => `<article class="panel-card">
+      .map((p) => {
+        const rateBlock = readOnly
+          ? ""
+          : `<label class="pe-label">Panel rating *</label>
+          ${rateSelect(`p-rate-${p.index}`)}
+          <label class="pe-label">Panel feedback</label>
+          <textarea id="p-fb-${p.index}" rows="2" placeholder="What was good / confusing / broken?"></textarea>`;
+        return `<article class="panel-card">
           <div class="panel-idx">Panel ${esc(p.index)}</div>
           <h3>${esc(p.scene_description)}</h3>
           <img class="panel-img" src="${esc(p.image)}" alt="Panel ${esc(p.index)}" loading="lazy" />
-          ${p.dialogue ? `<p>${esc(p.dialogue)}</p>` : ""}
-          <label class="pe-label">Panel rating *</label>
-          ${rateSelect(`p-rate-${p.index}`)}
-          <label class="pe-label">Panel feedback</label>
-          <textarea id="p-fb-${p.index}" rows="2" placeholder="What was good / confusing / broken?"></textarea>
-        </article>`
-      )
+          ${p.dialogue ? `<p class="dialogue">${esc(p.dialogue)}</p>` : ""}
+          ${rateBlock}
+        </article>`;
+      })
       .join("");
+
+    if (readOnly) return;
 
     document.getElementById("submitAll").onclick = async () => {
       const overall = Number(document.getElementById("overallRating").value);

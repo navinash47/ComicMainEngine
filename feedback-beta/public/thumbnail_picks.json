@@ -1,0 +1,41 @@
+{
+  "episode_cjp_origin": {
+    "source_panel": 5,
+    "thumbnail": "/comics/episode_cjp_origin/thumbnail.jpg",
+    "score_ranked": [
+      5,
+      7,
+      12,
+      2,
+      6
+    ],
+    "reason": "Clear hero + action beat; highest score among positive campaign panels.",
+    "bytes": 174338
+  },
+  "episode_et_tu_brutus": {
+    "source_panel": 11,
+    "thumbnail": "/comics/episode_et_tu_brutus/thumbnail.jpg",
+    "score_ranked": [
+      11,
+      5,
+      4,
+      7,
+      13
+    ],
+    "reason": "Instantly recognizable climax with strong contrast and faces.",
+    "bytes": 139316
+  },
+  "episode_hitler_warning": {
+    "source_panel": 1,
+    "thumbnail": "/comics/episode_hitler_warning/thumbnail.jpg",
+    "score_ranked": [
+      9,
+      3,
+      10,
+      7,
+      1
+    ],
+    "reason": "Framed as cautionary study; suitable library card vs violent spectacle panels.",
+    "bytes": 166134
+  }
+}

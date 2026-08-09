@@ -3,43 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Story feedback · ComicEngine</title>
+  <title>Story · ComicEngine</title>
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body class="public-review">
-  <header>
-    <div>
-      <p class="brand">ComicEngine</p>
-      <h1 id="storyTitle">Story</h1>
-    </div>
-    <div class="status nav-links">
-      <a class="btn" href="/">All stories</a>
-      <span class="muted small" id="whoHint"></span>
-    </div>
-  </header>
-  <section class="story-meta">
-    <p class="muted" id="storyTopic"></p>
-    <div class="link-row" id="editionLinks"></div>
-  </section>
-  <section class="story-panels" id="panels"></section>
-  <section class="feedback-form">
-    <h2 class="fb-section">Overall for this story</h2>
-    <label class="pe-label" for="overallRating">Overall rating (1–5) *</label>
-    <select id="overallRating">
-      <option value="">Select…</option>
-      <option value="1">1 · poor</option>
-      <option value="2">2</option>
-      <option value="3">3 · ok</option>
-      <option value="4">4</option>
-      <option value="5">5 · excellent</option>
-    </select>
-    <label class="pe-label" for="overallFeedback">Overall feedback</label>
-    <textarea id="overallFeedback" rows="4" placeholder="What worked or didn’t for the whole episode?"></textarea>
-    <div class="pe-foot" style="border:0;margin-top:1rem">
-      <button type="button" class="btn pe-primary" id="submitAll">Submit feedback</button>
-    </div>
-    <p class="muted small" id="submitStatus"></p>
-  </section>
+  <div class="page-shell">
+    <header>
+      <div>
+        <p class="brand">ComicEngine</p>
+        <h1 id="storyTitle">Story</h1>
+      </div>
+      <div class="status nav-links">
+        <a class="btn" href="/">All stories</a>
+        <span class="muted small" id="whoHint"></span>
+      </div>
+    </header>
+    <section class="story-meta">
+      <p class="muted" id="storyTopic"></p>
+      <p class="mode-pill" id="modePill" hidden>Just reading — no ratings on this view</p>
+      <div class="link-row" id="editionLinks"></div>
+    </section>
+    <section class="story-panels" id="panels"></section>
+    <section class="feedback-form" id="feedbackForm">
+      <h2 class="fb-section">Overall for this story</h2>
+      <label class="pe-label" for="overallRating">Overall rating (1–5) *</label>
+      <select id="overallRating">
+        <option value="">Select…</option>
+        <option value="1">1 · poor</option>
+        <option value="2">2</option>
+        <option value="3">3 · ok</option>
+        <option value="4">4</option>
+        <option value="5">5 · excellent</option>
+      </select>
+      <label class="pe-label" for="overallFeedback">Overall feedback</label>
+      <textarea id="overallFeedback" rows="4" placeholder="What worked or didn’t for the whole episode?"></textarea>
+      <div class="pe-foot" style="border:0;margin-top:1rem">
+        <button type="button" class="btn pe-primary" id="submitAll">Submit feedback</button>
+      </div>
+      <p class="muted small" id="submitStatus"></p>
+    </section>
+  </div>
   <script src="/app.js"></script>
   <script>StoryPage.init();</script>
 </body>

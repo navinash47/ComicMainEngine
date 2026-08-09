@@ -79,6 +79,7 @@ def write_vercel_manifest(dest: Path) -> dict[str, Any]:
                 "panel_count": len(panels),
                 "pdf": f"/comics/{sid}/episode.pdf",
                 "webtoon": f"/comics/{sid}/webtoon.png",
+                "thumbnail": f"/comics/{sid}/thumbnail.jpg",
                 "panels": panels,
             }
         )

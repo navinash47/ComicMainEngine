@@ -346,9 +346,9 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
 \paragraph{What worked.}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
   \item Local FastAPI: open admin console (\texttt{/admin}); public review at \texttt{/review} (name + panel/story ratings)
-  \item Vercel \textbf{comicengine-reader}: username/password (HttpOnly session cookie + Upstash Redis)
-  \item Vercel \textbf{comicengine-admin}: shareable read-only engine snapshot + optional live Upstash feedback
-  \item Shared Upstash Redis; prepare scripts for comics (\texttt{prepare\_feedback\_beta.py}) and admin JSON (\texttt{prepare\_admin\_site.py})
+  \item Vercel \textbf{comicengine-reader}: username/password (HttpOnly session cookie + Upstash Redis); library cards with scored thumbnails; Read\&rate / PDF / Just~read
+  \item Vercel \textbf{comicengine-admin}: snapshot engine KPIs + \textbf{live} people/logins/feedback charts from Upstash (20s poll)
+  \item Thumbnail pick script \texttt{scripts/select\_thumbnails.py} (heuristic + visual override); prepare scripts for comics/admin JSON
   \item Hosting runbook \texttt{docs/HOSTING.md}
 \end{itemize}
 
