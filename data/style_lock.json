@@ -1,0 +1,140 @@
+{
+  "winner_style_id": "korean_manhwa",
+  "cheaper_good_enough_style_id": "watercolor_editorial",
+  "backend_image": "fal",
+  "fal_model": "fal-ai/flux/schnell",
+  "gemini_model": null,
+  "anchor_path": "outputs/phase2/style_anchor.png",
+  "candidates": [
+    {
+      "style_id": "korean_manhwa",
+      "label": "Korean manhwa webtoon",
+      "vibe": "immersive webtoon drama with clear character emotion, modern youth energy",
+      "backend": "fal",
+      "samples": 2,
+      "avg_cost_usd": 0.003,
+      "total_cost_usd": 0.006,
+      "avg_qa": 1.0,
+      "pass_rate": 1.0,
+      "scene_ids": [
+        "abhijeet_students",
+        "bedtime_frame"
+      ],
+      "images": [
+        "outputs/phase2/bakeoff/korean_manhwa__abhijeet_students__fal.png",
+        "outputs/phase2/bakeoff/korean_manhwa__bedtime_frame__fal.png"
+      ]
+    },
+    {
+      "style_id": "painterly_storybook",
+      "label": "Painterly bedtime storybook",
+      "vibe": "cozy bedtime dad-to-daughter warmth, soft and safe",
+      "backend": "fal",
+      "samples": 2,
+      "avg_cost_usd": 0.003,
+      "total_cost_usd": 0.006,
+      "avg_qa": 1.0,
+      "pass_rate": 1.0,
+      "scene_ids": [
+        "abhijeet_students",
+        "bedtime_frame"
+      ],
+      "images": [
+        "outputs/phase2/bakeoff/painterly_storybook__abhijeet_students__fal.png",
+        "outputs/phase2/bakeoff/painterly_storybook__bedtime_frame__fal.png"
+      ]
+    },
+    {
+      "style_id": "graphic_novel",
+      "label": "Soft graphic novel",
+      "vibe": "serious civic storytelling with human dignity",
+      "backend": "fal",
+      "samples": 2,
+      "avg_cost_usd": 0.003,
+      "total_cost_usd": 0.006,
+      "avg_qa": 1.0,
+      "pass_rate": 1.0,
+      "scene_ids": [
+        "abhijeet_students",
+        "bedtime_frame"
+      ],
+      "images": [
+        "outputs/phase2/bakeoff/graphic_novel__abhijeet_students__fal.png",
+        "outputs/phase2/bakeoff/graphic_novel__bedtime_frame__fal.png"
+      ]
+    },
+    {
+      "style_id": "watercolor_editorial",
+      "label": "Watercolor editorial",
+      "vibe": "reflective documentary emotion, thoughtful and calm",
+      "backend": "fal",
+      "samples": 2,
+      "avg_cost_usd": 0.003,
+      "total_cost_usd": 0.006,
+      "avg_qa": 1.0,
+      "pass_rate": 1.0,
+      "scene_ids": [
+        "abhijeet_students",
+        "bedtime_frame"
+      ],
+      "images": [
+        "outputs/phase2/bakeoff/watercolor_editorial__abhijeet_students__fal.png",
+        "outputs/phase2/bakeoff/watercolor_editorial__bedtime_frame__fal.png"
+      ]
+    }
+  ],
+  "judge": {
+    "rankings": [
+      {
+        "style_id": "painterly_storybook",
+        "total": 34,
+        "immersive_storytelling": 7,
+        "bedtime_safety": 10,
+        "civic_dignity": 8,
+        "cost_efficiency": 9,
+        "why": "Best bedtime lock: soft dad\u2013daughter warmth, gentle leaders, safe for all ages; civic beats stay kind if framed carefully."
+      },
+      {
+        "style_id": "graphic_novel",
+        "total": 34,
+        "immersive_storytelling": 8,
+        "bedtime_safety": 7,
+        "civic_dignity": 10,
+        "cost_efficiency": 9,
+        "why": "Strongest respectful civic/leader gravity and comic clarity; a bit heavier for pure bedtime coziness."
+      },
+      {
+        "style_id": "watercolor_editorial",
+        "total": 33,
+        "immersive_storytelling": 7,
+        "bedtime_safety": 8,
+        "civic_dignity": 9,
+        "cost_efficiency": 9,
+        "why": "Calm documentary dignity; readable and safe, slightly less webtoon immersion than comic/manhwa looks."
+      },
+      {
+        "style_id": "korean_manhwa",
+        "total": 31,
+        "immersive_storytelling": 9,
+        "bedtime_safety": 6,
+        "civic_dignity": 7,
+        "cost_efficiency": 9,
+        "why": "Peak youth emotion/webtoon immersion; drama energy risks sharper leader stylization for bedtime civic scenes."
+      }
+    ],
+    "winner_style_id": "painterly_storybook",
+    "cheaper_good_enough_style_id": "watercolor_editorial",
+    "recommendation": "Lock painterly_storybook for the full bedtime book\u2014soft warmth keeps students and leaders respectful and age-safe at the same low fal cost. Use watercolor_editorial for calmer reflective civic mid-beats when you want documentary quiet without changing spend."
+  },
+  "recommendation": "Lock painterly_storybook for the full bedtime book\u2014soft warmth keeps students and leaders respectful and age-safe at the same low fal cost. Use watercolor_editorial for calmer reflective civic mid-beats when you want documentary quiet without changing spend. HUMAN JUDGE: compare Images tab bakeoff finals; set STYLE_ID=korean_manhwa|painterly_storybook|... or edit data/style_lock.json winner_style_id and set human_judge_pending=false.",
+  "note": "Active style via comicengine.style.active_style()/build_prompt().",
+  "human_judge_pending": true,
+  "preferred_while_judging": "korean_manhwa",
+  "finalists": [
+    "korean_manhwa",
+    "painterly_storybook",
+    "graphic_novel",
+    "watercolor_editorial"
+  ],
+  "auto_judge_winner_style_id": "painterly_storybook"
+}

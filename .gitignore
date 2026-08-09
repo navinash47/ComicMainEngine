@@ -22,6 +22,8 @@ outputs/**/*.json
 !outputs/phase0.5/**/*.json
 data/*
 !data/.gitkeep
+!data/style_lock.json
+!data/model_recommendations.json
 *.egg-info/
 dist/
 build/

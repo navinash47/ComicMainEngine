@@ -1,26 +1,31 @@
-"""Korean manhwa / webtoon style lock (Phase 2)."""
+"""Active style helpers — prefer baked-off lock / STYLE_ID env, else Korean manhwa."""
 
-STYLE_NAME = "korean_manhwa"
+from __future__ import annotations
 
-STYLE_SUFFIX = (
-    "Korean manhwa webtoon illustration style, clean ink line art, soft cel shading, "
-    "expressive eyes, polished digital comic coloring, warm cinematic lighting, "
-    "vertical webtoon panel composition, all-ages gentle mood, "
-    "NOT photorealistic, NOT western cartoon, NOT chibi, NOT horror"
-)
+import os
 
-NEGATIVE_PROMPT = (
-    "photorealistic, 3d render, uncanny, horror, gore, excessive violence, "
-    "blurry, low quality, text artifacts, watermark, deformed hands"
-)
+from comicengine.styles import PRESETS, active_style as _active_from_lock
+from comicengine.styles import build_prompt_for, get_preset, load_lock
+
+
+def active_style():
+    env_id = (os.getenv("STYLE_ID") or "").strip()
+    if env_id in PRESETS:
+        return PRESETS[env_id]
+    lock = load_lock()
+    if lock and lock.get("human_judge_pending"):
+        # User is comparing finals; default to Korean manhwa unless STYLE_ID set
+        preferred = lock.get("preferred_while_judging") or "korean_manhwa"
+        if preferred in PRESETS:
+            return PRESETS[preferred]
+    return _active_from_lock()
+
+
+_style = active_style()
+STYLE_NAME = _style.id
+STYLE_SUFFIX = _style.suffix
+NEGATIVE_PROMPT = _style.negative
 
 
 def build_prompt(scene: str, *, characters: str | None = None, negative: bool = False) -> str:
-    parts = [scene.strip()]
-    if characters:
-        parts.append(f"Characters: {characters.strip()}")
-    parts.append(STYLE_SUFFIX)
-    text = ". ".join(parts)
-    if negative:
-        text = f"{text}. Avoid: {NEGATIVE_PROMPT}"
-    return text
+    return build_prompt_for(active_style(), scene, characters=characters, negative=negative)

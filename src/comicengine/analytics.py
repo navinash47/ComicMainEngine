@@ -17,6 +17,7 @@ IMAGE_PURPOSE_HINTS = {
     "image",
     "phase1_single",
     "style_grid",
+    "style_bakeoff",
     "panel",
     "cover",
     "thumbnail",
