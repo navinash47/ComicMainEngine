@@ -1,0 +1,739 @@
+{
+  "story_id": "episode_hitler_warning",
+  "source": "outputs/phase4/episode_hitler_warning.json",
+  "title": "The Hitler Warning: How Hate Captured a Democracy",
+  "panel_count": 16,
+  "ok": 16,
+  "errors": 0,
+  "refs": [
+    {
+      "char_id": "adolf_eichmann",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/adolf_eichmann_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "adolf_hitler",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/adolf_hitler_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "anne_frank_symbol",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/anne_frank_symbol_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "dad",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "daughter",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "german_neighbor",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/german_neighbor_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "heinrich_himmler",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/heinrich_himmler_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "joseph_goebbels",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/joseph_goebbels_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "resistance_voice",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/resistance_voice_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "weimar_citizen",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/weimar_citizen_ref.png",
+      "status": "ok"
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_01.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_01.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 790824,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 106.28,
+          "variance": 4141.85,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_01.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 2,
+      "characters": [
+        "weimar_citizen",
+        "dad"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_02.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_02.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 655769,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 114.12,
+          "variance": 2890.37,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_02.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/weimar_citizen_ref.png"
+      ]
+    },
+    {
+      "index": 3,
+      "characters": [
+        "adolf_hitler",
+        "dad"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_03.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_03.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1538479,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 113.52,
+          "variance": 6269.0,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "Gemini returned no image bytes"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_03.png",
+      "refs_used": []
+    },
+    {
+      "index": 4,
+      "characters": [
+        "daughter",
+        "dad",
+        "adolf_hitler"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_04.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_04.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1450666,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 61.15,
+          "variance": 2815.45,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "Gemini returned no image bytes"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_04.png",
+      "refs_used": []
+    },
+    {
+      "index": 5,
+      "characters": [
+        "adolf_hitler",
+        "german_neighbor",
+        "dad"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_05.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_05.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1576524,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 88.52,
+          "variance": 2621.31,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "'NoneType' object is not iterable"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_05.png",
+      "refs_used": []
+    },
+    {
+      "index": 6,
+      "characters": [
+        "joseph_goebbels",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_06.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_06.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 573874,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 176.9,
+          "variance": 6059.34,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_06.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/joseph_goebbels_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 7,
+      "characters": [
+        "dad",
+        "daughter",
+        "joseph_goebbels"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_07.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_07.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 783305,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 116.64,
+          "variance": 4992.04,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_07.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/joseph_goebbels_ref.png"
+      ]
+    },
+    {
+      "index": 8,
+      "characters": [
+        "anne_frank_symbol",
+        "german_neighbor"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_08.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_08.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 743953,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 118.34,
+          "variance": 3991.86,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_08.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/anne_frank_symbol_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/german_neighbor_ref.png"
+      ]
+    },
+    {
+      "index": 9,
+      "characters": [
+        "german_neighbor",
+        "dad",
+        "anne_frank_symbol"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_09.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_09.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 655642,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 101.02,
+          "variance": 6448.27,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_09.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/anne_frank_symbol_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/german_neighbor_ref.png"
+      ]
+    },
+    {
+      "index": 10,
+      "characters": [
+        "heinrich_himmler",
+        "dad"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_10.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_10.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 663831,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 116.29,
+          "variance": 6117.06,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_10.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/heinrich_himmler_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png"
+      ]
+    },
+    {
+      "index": 11,
+      "characters": [
+        "adolf_eichmann",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_11.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_11.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 729634,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 128.1,
+          "variance": 4037.87,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_11.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/adolf_eichmann_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 12,
+      "characters": [
+        "dad",
+        "adolf_eichmann",
+        "anne_frank_symbol"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_12.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_12.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 690623,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 115.22,
+          "variance": 3609.11,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_12.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/adolf_eichmann_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/anne_frank_symbol_ref.png"
+      ]
+    },
+    {
+      "index": 13,
+      "characters": [
+        "resistance_voice",
+        "joseph_goebbels"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_13.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_13.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1241579,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 20.44,
+          "variance": 714.31,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "'NoneType' object is not iterable"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_13.png",
+      "refs_used": []
+    },
+    {
+      "index": 14,
+      "characters": [
+        "dad",
+        "daughter",
+        "german_neighbor"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_14.png",
+      "status": "ok",
+      "method": "flux_kontext",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_14.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1479897,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 106.03,
+          "variance": 3448.49,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "ok": false,
+          "error": "'NoneType' object is not iterable"
+        },
+        {
+          "method": "flux_kontext",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_14.png",
+      "refs_used": []
+    },
+    {
+      "index": 15,
+      "characters": [
+        "daughter",
+        "dad",
+        "anne_frank_symbol"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_15.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_15.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 677704,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 124.99,
+          "variance": 2847.2,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_15.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/anne_frank_symbol_ref.png"
+      ]
+    },
+    {
+      "index": 16,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_16.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_16.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 756274,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 120.53,
+          "variance": 5303.91,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_hitler_warning/panel_16.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    }
+  ]
+}

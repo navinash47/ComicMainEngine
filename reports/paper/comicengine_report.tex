@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 9~August~2026 · Phases~0--3 complete (style human lock still pending)
+\normalsize Snapshot: 9~August~2026 · Phases~0--9 (ROI cost dashboard)
 \vspace{-0.6em}}
 
 \author{
@@ -44,7 +44,7 @@ Avinash Nandyala\\
 We present \textbf{ComicEngine}, a modular, code-first system for generating educational history comics with recurring characters, tracked API spend, and human-in-the-loop curation.
 Built for \emph{onceuponatime} (bedtime narratives that explain real events to children), the system separates \emph{coding/LLM} traffic (optionally via OmniRoute at \texttt{localhost:20128}) from \emph{image generation} (direct commercial APIs: fal FLUX, Google Gemini image).
 This living report records what each phase actually ran, what worked, quantitative ledger totals from SQLite (\texttt{data/usage.db}), style bake-off judge scores, and interim character-consistency findings.
-\textbf{As of this snapshot:} 52 tracked API calls, \textbf{$\approx\$0.532$} total estimated spend (Phase~3 alone $\approx\$0.387$). Style human judge still pending; interim active style \texttt{korean\_manhwa}. Phase~3 consistency bake-off finished with \textbf{0 failures} (22/22 images): winner method \texttt{gemini\_ref}; reserve \texttt{flux\_kontext} for hard Abhijeet retries; \texttt{text\_only\_fal} for cheap drafts.
+\textbf{As of this snapshot:} Phase~9 adds an ROI dashboard at \texttt{/roi} with unit economics (\$/story, \$/panel, 100-episode projection), spend breakdowns by phase/provider/category/purpose, charts, and model recommendations from the live ledger ($\approx$\$2.96 R\&D so far).
 \end{abstract}
 
 \section{Introduction}
@@ -92,8 +92,10 @@ phase0.5 &  2 & 0.046 & CJP script \\
 phase1   &  1 & 0.003 & fal schnell proof \\
 phase2   & 13 & 0.093 & style bake-off + judge \\
 phase3   & 23 & 0.387 & refs + consistency + judge \\
+phase4   & 11 & 0.655 & Caesar + Hitler scripts \\
+phase5   & 66 & 1.772 & refs + 44 panels \\
 \midrule
-\textbf{total} & 52 & \textbf{0.532} & 1 early Gemini text err \\
+\textbf{total} & 129 & \textbf{2.960} & incl.\ retries \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -211,8 +213,145 @@ Use \textbf{\texttt{text\_only\_fal}} only for cheap drafts/extras (weak cross-s
 \paragraph{Evaluation caveats (from decision notes).}
 Local QA checks blanks/dims/brightness---not identity; Kontext under-sampled ($n{=}2$, Abhijeet-only); Gemini aspect ratios sometimes vary (e.g.\ $848{\times}1264$).
 Human eye review on Images tab remains recommended before episode mass generation.
+
+\subsection{Phase 4 --- Multi-topic scripts (complete for gate)}
+\textbf{Goal.} Generalize Topic$\rightarrow$episode JSON beyond CJP; ship two hard-history episodes written \emph{through character lenses} with modern-affairs analogies (teen/young-adult didactic, user-selected framing).
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Character bibles: \texttt{characters\_caesar.py}, \texttt{characters\_hitler.py} (ideology/thinking in \texttt{notes}).
+  \item Generalized \texttt{generate\_episode(story\_key)} + registry \texttt{STORIES} (\texttt{cjp}, \texttt{et\_tu\_brutus}, \texttt{hitler\_warning}).
+  \item CLI \texttt{scripts/phase4\_scripts.py}; OmniRoute default model \texttt{auto} ( \texttt{auto/cheap} often skipped \texttt{tool\_use}).
+  \item Robustness: retries, JSON-only fallback, normalize panels (speaker lists $\rightarrow$ dialogue strings; verdict aliases).
+\end{itemize}
+
+\paragraph{Stories now in dashboard (beside CJP).}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{episode\_cjp\_origin} (phase0.5, 12 panels) --- fair exams / youth protest.
+  \item \texttt{episode\_et\_tu\_brutus} (phase4, 16) --- Caesar, Brutus, Cassius, Antony, People; analogies: fragile republic, personality cult, assassination is not a liberty reset.
+  \item \texttt{episode\_hitler\_warning} (phase4, 16) --- Hitler/Goebbels/Eichmann ideology \emph{exposed then condemned}; Jewish teen + resistance + bystander; analogies: propaganda, minority hate, bureaucracy of atrocity, legal demolition of democracy.
+\end{itemize}
+
+\paragraph{Cost.} Phase~4 script spend $\approx$\$0.655 (11 text calls incl.\ retries). Cumulative ledger $\approx$\$1.19.
+
+\paragraph{Ethics evaluation.} Hitler episode is explicitly anti-fascist education (no gore; no Nazi glamour). Character POV is used so propaganda patterns are recognizable; Dad/victims close the frame. Requires human fact-check before any public publish.
+
+\subsection{Phase 5 --- Panel batch generator (complete)}
+\textbf{Goal.} Episode JSON $\rightarrow$ panel PNGs with Phase~3 consistency defaults + retries + cost ledger.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{comicengine.panel\_batch} + \texttt{scripts/phase5\_panel\_batch.py}
+  \item Ref sheets under \texttt{outputs/phase5/refs/} (reuse Phase~3 when present; else fal~\texttt{schnell})
+  \item Default render: \texttt{gemini\_ref} (up to 3 cast refs) $\rightarrow$ QA-fail/error falls back to \texttt{flux\_kontext} then \texttt{text\_only\_fal}
+  \item Writes \texttt{image\_path}/\texttt{image\_method}/\texttt{image\_qa} into episode JSON; Stories UI shows \texttt{/media/...} images
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{Phase~5 full-batch results (all QA pass).}
+\label{tab:p5}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Story & Panels ok & Errors & Primary methods \\
+\midrule
+episode\_cjp\_origin & 12/12 & 0 & gemini\_ref $\times$12 \\
+episode\_et\_tu\_brutus & 16/16 & 0 & gemini\_ref $\times$16 \\
+episode\_hitler\_warning & 16/16 & 0 & gemini\_ref $\times$11 + kontext $\times$5 \\
+\midrule
+\textbf{total} & \textbf{44/44} & \textbf{0} & Phase spend $\approx$\$1.77 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Evaluation.} Perfect pipeline success rate for this batch. Kontext retries concentrated on Hitler-era panels (likely safety/policy or identity hardness) --- validates the Phase~3 ship rule: gemini default, Kontext for hard retries. Human visual review still required for identity drift and historical care (especially atrocity education frames).
+
+\subsection{Phase 6 --- Speech bubble compositor + story reader (complete)}
+\textbf{Goal.} Readable on-image dialogue/captions and a webpage that feels like reading a comic (not only a dump of PNGs).
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Pillow compositor (\texttt{comicengine.compositor}): rounded speech bubbles (speaker labels + wrapped lines), caption bar, local Arial font.
+  \item CLI \texttt{scripts/phase6\_compose.py} wrote \texttt{outputs/phase6/<story>/panel\_XX.png} and \texttt{composed\_image\_path} on each panel.
+  \item \textbf{44/44} panels composed, 0 errors (offline, no API cost).
+  \item Stories UI: cast list, fact sheet intro, ``Opening/Meanwhile'' bridge narration between panels, composed images via \texttt{/media/...}, dialogue + caption text beneath each panel, closing fact checks.
+\end{itemize}
+
+\subsection{Phase 7 --- Episode assembler (complete)}
+\textbf{Goal.} One readable artifact per episode: long vertical webtoon + printable PDF.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{comicengine.assembler} + \texttt{scripts/phase7\_assemble.py}
+  \item Cover strip + composed Phase~6 panels stacked at width 900 with gutter; multi-page PDF via Pillow.
+  \item Outputs: \texttt{outputs/phase7/<story>/webtoon.png}, \texttt{episode.pdf}, \texttt{manifest.json}
+  \item Stories pages expose webtoon preview + PDF/webtoon buttons.
+\end{itemize}
+
+\begin{table}[t]
+\centering
+\caption{Phase~7 assembly outputs.}
+\label{tab:p7}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Story & Panels assembled & Artifacts \\
+\midrule
+episode\_cjp\_origin & 12 & webtoon + PDF \\
+episode\_et\_tu\_brutus & 16 & webtoon + PDF \\
+episode\_hitler\_warning & 16 & webtoon + PDF \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Phase 7.5 --- Only Image + Story Library (complete)}
+\textbf{Goal.} Store UI stories centrally; also ship bubble-free visual editions.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{edition='image\_only'} assembler path $\rightarrow$ \texttt{outputs/phase7.5/<story>/webtoon\_image\_only.png} + \texttt{episode\_image\_only.pdf}
+  \item CLI \texttt{scripts/phase7\_5\_image\_only.py} for all three stories
+  \item \texttt{comicengine.library} catalog at \texttt{outputs/library/catalog.json}
+  \item Dashboard \texttt{/library} with Reader vs Only-Image editions; nav link sitewide
+\end{itemize}
+
+\subsection{Phase 8 --- Curation CLI + SQLite (complete)}
+\textbf{Goal.} Human gate: approve / reject / regenerate panels and episodes with durable status.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item SQLite table \texttt{curation\_item} in \texttt{data/usage.db} via \texttt{comicengine.curation}
+  \item CLI \texttt{scripts/phase8\_curate.py} (\texttt{seed|list|summary|approve|reject|regenerate})
+  \item Seeded 47 rows (3 episodes + 44 panels)
+  \item Library UI chips + episode approve/reject; Alt-click regenerates panel (re-render + recompose)
+  \item APIs: \texttt{/api/curation}, \texttt{/api/curation/seed}, \texttt{/api/curation/\{id\}}, regenerate endpoint
+\end{itemize}
+
+\subsection{Phase 8.5 --- Panel rating + prompt editor (complete)}
+\textbf{Goal.} Every reject/regen opens an editable art prompt; panels carry a human rating and free-text suggestions so quality is visible on the site and refreshes after regen.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Extended \texttt{curation\_item} with \texttt{rating} (1--5) and \texttt{suggestions}
+  \item \texttt{panel\_editor\_payload} + \texttt{regenerate\_panel(..., prompt=, rating=, suggestions=)}; phase tagged \texttt{phase8.5}; edited \texttt{art\_prompt} persisted into episode JSON
+  \item \texttt{render\_panel(..., prompt\_override=)} uses the user-edited scene text
+  \item Library + Story reader modal: stars, suggestions, prompt textarea; reject/regen refresh images via cache-busting \texttt{?v=}
+  \item CLI \texttt{scripts/phase8\_5\_panel\_editor.py}; APIs for panel editor GET and JSON regenerate body
+\end{itemize}
+
+\subsection{Phase 9 --- ROI dashboard (complete)}
+\textbf{Goal.} Make spend actionable: unit economics + charts from the SQLite ledger.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{comicengine.roi.roi\_dashboard()} aggregates category/purpose/daily spend + \$/story and \$/panel
+  \item Dashboard page \texttt{/roi} + \texttt{/api/roi}; nav link sitewide
+  \item Snapshot JSON \texttt{outputs/phase9/roi\_snapshot.json} via \texttt{scripts/phase9\_roi.py}
+\end{itemize}
+
 \section{Dashboard Surfaces}
-Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Analytics (category filters, recommendations, image QA rescan), Images gallery (generated + Commons refs), Report PDF (\texttt{/report}).
+Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Story Library, \textbf{ROI}, Analytics, Images gallery, Report PDF (\texttt{/report}).
 
 \section{What We Explicitly Learned}
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
@@ -220,24 +359,24 @@ Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader
   \item fal~\texttt{schnell} makes wide style exploration financially trivial (\textasciitilde\$0.024 for 8 bake-off frames).
   \item Auto style judges trade off immersion vs.\ bedtime safety; human adjudication remains mandatory for product voice.
   \item Pillow ``pass'' is necessary but not sufficient for character consistency; the Phase~3 LLM judge correctly ranked \texttt{gemini\_ref} over cheaper text-only despite identical QA scores.
-  \item Gemini new-user model allowlists forced early Phase~0 remapping; document working model IDs in clients, not only marketing names.
+  \item OmniRoute model routing matters: prefer \texttt{auto} (or provider-prefixed Claude) when \texttt{auto/cheap} returns thinking text without \texttt{tool\_use}.
 \end{enumerate}
 
 \section{Risks and Ethics}
-Dramatized civic content for ages $\sim$7--10; respectful depiction of public figures; Commons attribution for place photos; human fact-check before any public publish.
+CJP bedtime lane remains ages $\sim$7--10; Phase~4 hard-history lane is teen didactic ($\sim$13--17).
+Hitler content must never romanticize Nazism; Caesar content must not romanticize political murder.
+Respectful depiction of public figures; Commons attribution for place photos; human fact-check before any public publish.
 Style and consistency locks must not be decided solely by LLM judges or blank-frame QA.
 
 \section{Next Gates}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
-  \item Panel batch generation using \texttt{gemini\_ref} defaults + Kontext retries $\rightarrow$ caption compositing $\rightarrow$ episode assembly $\rightarrow$ Cloudflare Pages+R2.
-  \item Append each gate’s numbers to \S\ref{sec:ledger} and Phase Log before merge.
+  \item Phase~10 Cloudflare Pages + R2 publish of approved Library editions.
 \end{itemize}
 
 \section{Conclusion}
-ComicEngine is a measurable comic factory: $\approx$\$0.53 cumulative R\&D spend covers script, style bake-off, dashboard analytics, and a shipped Phase~3 consistency decision (\texttt{gemini\_ref}).
-Binding constraints remain licensing honesty, human bedtime taste for style, and identity beyond blank-frame QA.
-
+ComicEngine now covers script$\rightarrow$render$\rightarrow$compose$\rightarrow$assemble$\rightarrow$curate$\rightarrow$ROI visibility.
+Remaining work is publish packaging and continued human taste gates on hard-history frames.
 \appendix
 \section{Reproduce}
 \begin{verbatim}
@@ -254,6 +393,13 @@ python scripts/build_report.py
 \item[2026-08-09 a] Initial two-column architecture draft.
 \item[2026-08-09 b] Living phase log: ledger tables, Phase~2 judge matrix, Phase~3 interim notes.
 \item[2026-08-09 c] Phase~3 gate closed: 22/22 images, winner \texttt{gemini\_ref} (judge 40), ledger \$0.532; dashboard \texttt{/report} link.
+\item[2026-08-09 d] Phase~4 scripts: Et tu Brutus + Hitler warning (teen didactic, character POV) beside CJP; ledger $\approx$\$1.19.
+\item[2026-08-09 e] Phase~5: 44/44 panels rendered (\texttt{gemini\_ref}/Kontext); Stories show images; ledger $\approx$\$2.96.
+\item[2026-08-09 f] Phase~6: speech bubbles/captions on 44 panels; reader bridges + cast/facts on Stories pages.
+\item[2026-08-09 g] Phase~7: vertical webtoon + PDF for all three stories; Stories download/preview links.
+\item[2026-08-09 h] Phase~7.5: Only Image editions + Story Library (\texttt{/library}) catalog.
+\item[2026-08-09 i] Phase~8: curation SQLite + CLI + Library approve/reject/regenerate.
+\item[2026-08-09 j] Phase~9: ROI dashboard (\texttt{/roi}) unit economics + spend charts.
 \end{description}
 
 \end{document}

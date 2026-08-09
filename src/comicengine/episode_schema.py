@@ -29,6 +29,11 @@ class Panel(BaseModel):
     caption: str = ""
     art_prompt: str = ""
     emotion: str = "warm"
+    # Phase 5 render metadata (optional)
+    image_path: str | None = None
+    image_method: str | None = None
+    image_qa: str | None = None
+    composed_image_path: str | None = None
 
 
 class Episode(BaseModel):
@@ -46,6 +51,10 @@ class Episode(BaseModel):
     fact_checks: list[FactCheckItem] = Field(default_factory=list)
     narrative_summary: str = ""
     panels: list[Panel]
+    webtoon_path: str | None = None
+    pdf_path: str | None = None
+    webtoon_image_only_path: str | None = None
+    pdf_image_only_path: str | None = None
 
     @field_validator("panels")
     @classmethod

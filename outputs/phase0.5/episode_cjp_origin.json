@@ -124,7 +124,11 @@
       "dialogue": "Dad: 'Tonight, beta, I want to tell you a true story about brave young people in India who asked for something fair. Are you ready?'\n\nDaughter: 'Yes, Papa! I love true stories.'",
       "caption": "A bedtime tale begins: A father tells his daughter about courage and fairness.",
       "art_prompt": "Soft warm light, cozy bedroom with stars visible through window, Dad with gentle smile holding storybook, Daughter in pajamas listening intently.",
-      "emotion": "calm, cozy, curious"
+      "emotion": "calm, cozy, curious",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_01.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_01.png"
     },
     {
       "index": 2,
@@ -137,7 +141,11 @@
       "dialogue": "Dad: 'You know, in India there are very big, important tests called entrance exams. Millions of students take them to get into good colleges.'\n\nDaughter: 'That sounds really hard, Papa.'",
       "caption": "Understanding the challenge: Many students compete in entrance exams across India.",
       "art_prompt": "Thought-bubble shows diverse Indian students seated at desks with exam papers, nervous but focused expressions, classroom feeling.",
-      "emotion": "thoughtful, slightly worried"
+      "emotion": "thoughtful, slightly worried",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_02.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_02.png"
     },
     {
       "index": 3,
@@ -149,7 +157,11 @@
       "dialogue": "Dad: 'But one day, something troubling happened. News said some exam papers had leaked out before the test. Families felt the system wasn't being fair.'\n\nDaughter: 'Oh no! That's not right, Papa!'",
       "caption": "When fairness breaks: News of exam irregularities worries students and families.",
       "art_prompt": "Families looking concerned at phones and papers, questioning expressions, soft pastels to avoid alarming tone.",
-      "emotion": "concerned, serious but calm"
+      "emotion": "concerned, serious but calm",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_03.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_03.png"
     },
     {
       "index": 4,
@@ -162,7 +174,11 @@
       "dialogue": "Dad: 'Then, a brave young man named Abhijeet Dipke, who had been studying in America, came back to India. He thought: \"We must ask our leaders to fix this!\"'",
       "caption": "A young leader returns: Abhijeet Dipke comes back to help students.",
       "art_prompt": "Young man arriving with hopeful determination, airplane or street background, warm colors suggesting return home.",
-      "emotion": "hopeful, determined"
+      "emotion": "hopeful, determined",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_04.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_04.png"
     },
     {
       "index": 5,
@@ -174,7 +190,11 @@
       "dialogue": "Abhijeet (in thought-bubble): 'Let's bring students together peacefully and ask for fairness. We'll ask leaders to listen to us.'\n\nDad (narrating): 'And the students said: \"Yes, we will speak up!\"'",
       "caption": "A spark of courage: Abhijeet gathers students to organize peacefully.",
       "art_prompt": "Young organizer speaking to attentive students in circle, earnest faces, suggestion of early movement forming, warm earth tones.",
-      "emotion": "inspiring, unified"
+      "emotion": "inspiring, unified",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_05.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_05.png"
     },
     {
       "index": 6,
@@ -185,7 +205,11 @@
       "dialogue": "Dad (narrating): 'Soon, students gathered at a famous place in Delhi called Jantar Mantar. They came together peacefully, with signs and kind voices asking for fairness.'",
       "caption": "Voices rise: Students gather peacefully at Jantar Mantar to ask for fair exams.",
       "art_prompt": "Jantar Mantar monument with crowds of diverse students holding gentle placards, peaceful crowd, bright daylight, rainbow of student faces.",
-      "emotion": "determined, peaceful, united"
+      "emotion": "determined, peaceful, united",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_06.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_06.png"
     },
     {
       "index": 7,
@@ -198,7 +222,11 @@
       "dialogue": "Dad: 'Now here's something funny, beta. The students called their movement the \"Cockroach Janta Party\"—or CJP. Do you know why?'\n\nDaughter: 'Why, Papa?'",
       "caption": "A funny, clever name: Students use satire to show they are ordinary people.",
       "art_prompt": "Students with playful confidence, signs showing 'CJP' name, gentle humor in their faces, lighthearted despite serious cause.",
-      "emotion": "playful, clever, earnest"
+      "emotion": "playful, clever, earnest",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_07.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_07.png"
     },
     {
       "index": 8,
@@ -210,7 +238,11 @@
       "dialogue": "Dad: 'Because \"Janta\" means ordinary people—like shopkeepers, farmers, and students. They were saying: \"We are not fancy politicians. We are normal people asking for fairness!\"'\n\nDaughter: 'Oh! I like that, Papa.'",
       "caption": "Janta means people: The movement spoke for everyone who wanted fairness.",
       "art_prompt": "Everyday Indian people—shopkeeper, farmer, student, teacher—in gentle watercolor style, showing diversity and ordinariness.",
-      "emotion": "warm, inclusive, humble"
+      "emotion": "warm, inclusive, humble",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_08.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_08.png"
     },
     {
       "index": 9,
@@ -222,7 +254,11 @@
       "dialogue": "Dad (narrating): 'When Prime Minister Modi and the government leaders heard what the students were asking, they listened. Leaders have a responsibility to hear what people care about.'",
       "caption": "Leaders listen: The Prime Minister and government hear the students' voices.",
       "art_prompt": "Modi in dignified office setting receiving reports, listening expression, Amit Shah in background also engaged, institutional but respectful tone.",
-      "emotion": "serious, respectful, institutional"
+      "emotion": "serious, respectful, institutional",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_09.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_09.png"
     },
     {
       "index": 10,
@@ -233,7 +269,11 @@
       "dialogue": "Dad (narrating): 'The Education Ministry began looking at how to make exams more fair and secure. They knew students deserved honesty and trust.'",
       "caption": "Working toward change: The government addresses student concerns about exam integrity.",
       "art_prompt": "Education Minister at desk reviewing exam procedures and reforms, papers showing checkmarks and improvements, focused expression.",
-      "emotion": "thoughtful, constructive"
+      "emotion": "thoughtful, constructive",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_10.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_10.png"
     },
     {
       "index": 11,
@@ -244,7 +284,11 @@
       "dialogue": "Dad (narrating): 'The students learned something important: when you speak peacefully about what's right, people listen. Change takes time, but it begins with courage.'",
       "caption": "A lesson in speaking up: Students discover the power of peaceful voices.",
       "art_prompt": "Students looking hopeful and proud, some studying with renewed focus, some mentoring younger ones, warm satisfied expressions.",
-      "emotion": "hopeful, proud, peaceful"
+      "emotion": "hopeful, proud, peaceful",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_11.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_11.png"
     },
     {
       "index": 12,
@@ -256,7 +300,15 @@
       "dialogue": "Dad: 'And so, beta, remember: fairness matters. When you see something unfair, you can speak up kindly and bravely. The world listens to gentle, strong voices.'\n\nDaughter: 'I will, Papa. Thank you for the story.' (yawns softly)\n\nDad: 'Sleep well, my dear. Dream of a fair and kind India.'",
       "caption": "Sweet dreams: A father and daughter rest, knowing that fairness begins with courage.",
       "art_prompt": "Cozy bedroom at night, Dad closing storybook gently, Daughter tucked in blankets looking sleepy and peaceful, stars and moonlight through window, bedtime warmth.",
-      "emotion": "peaceful, loving, hopeful"
+      "emotion": "peaceful, loving, hopeful",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_12.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_12.png"
     }
-  ]
+  ],
+  "webtoon_path": "outputs/phase7/episode_cjp_origin/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_cjp_origin/episode.pdf",
+  "webtoon_image_only_path": "outputs/phase7.5/episode_cjp_origin/webtoon_image_only.png",
+  "pdf_image_only_path": "outputs/phase7.5/episode_cjp_origin/episode_image_only.pdf"
 }

@@ -13,6 +13,9 @@ from pydantic import BaseModel, Field
 from comicengine.analytics import analytics
 from comicengine.config import OUTPUTS
 from comicengine.images_gallery import gallery
+from comicengine.curation import curation, panel_editor_payload, regenerate_panel
+from comicengine.library import load_catalog, rebuild_catalog
+from comicengine.roi import roi_dashboard
 from comicengine.stories import list_stories, load_story
 from comicengine.tasks import observer
 from comicengine.usage import UsageDB
@@ -48,6 +51,31 @@ def analytics_page() -> FileResponse:
 @app.get("/images")
 def images_page() -> FileResponse:
     return FileResponse(STATIC / "images.html")
+
+
+@app.get("/library")
+def library_page() -> FileResponse:
+    return FileResponse(STATIC / "library.html")
+
+
+@app.get("/roi")
+def roi_page() -> FileResponse:
+    return FileResponse(STATIC / "roi.html")
+
+
+@app.get("/api/roi")
+def api_roi() -> dict[str, Any]:
+    return roi_dashboard(db)
+
+
+@app.get("/api/library")
+def api_library(refresh: bool = Query(default=False)) -> dict[str, Any]:
+    return load_catalog(refresh=refresh)
+
+
+@app.post("/api/library/refresh")
+def api_library_refresh() -> dict[str, Any]:
+    return {"ok": True, "catalog": rebuild_catalog()}
 
 
 @app.get("/report")
@@ -126,6 +154,97 @@ def patch_task(task_id: str, body: TaskPatch) -> dict[str, Any]:
         kwargs["meta"] = {"last_note": body.note}
     task = tasks.upsert(task_id, **kwargs)
     return {"ok": True, "task": task.as_dict(), "snapshot": tasks.snapshot()}
+
+
+class CurationPatch(BaseModel):
+    status: str | None = None
+    note: str | None = None
+    panel: int | None = None
+    rating: int | None = None
+    suggestions: str | None = None
+
+
+class CurationRegenBody(BaseModel):
+    panel: int
+    note: str = ""
+    prompt: str | None = None
+    rating: int | None = None
+    suggestions: str | None = None
+    mark_rejected_first: bool = False
+
+
+@app.get("/api/curation")
+def api_curation(
+    story_id: str | None = Query(default=None),
+    status: str | None = Query(default=None),
+) -> dict[str, Any]:
+    return {
+        "summary": curation.summary(),
+        "items": curation.list(story_id=story_id, status=status),
+    }
+
+
+@app.post("/api/curation/seed")
+def api_curation_seed() -> dict[str, Any]:
+    out = curation.seed_from_stories()
+    return {"ok": True, **out, "catalog": rebuild_catalog()}
+
+
+@app.get("/api/curation/{story_id}/panel/{panel}")
+def api_curation_panel_editor(story_id: str, panel: int) -> dict[str, Any]:
+    try:
+        return panel_editor_payload(story_id, panel)
+    except FileNotFoundError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+
+
+@app.post("/api/curation/{story_id}")
+def api_curation_upsert(story_id: str, body: CurationPatch) -> dict[str, Any]:
+    if body.status is not None and body.status not in {
+        "pending",
+        "approved",
+        "rejected",
+        "regenerating",
+        "regenerated",
+    }:
+        raise HTTPException(status_code=400, detail="invalid status")
+    if body.rating is not None and not (1 <= int(body.rating) <= 5):
+        raise HTTPException(status_code=400, detail="rating must be 1–5")
+    item = curation.upsert(
+        story_id=story_id,
+        panel_index=body.panel,
+        status=body.status,  # type: ignore[arg-type]
+        note=body.note,
+        rating=body.rating,
+        suggestions=body.suggestions,
+    )
+    return {"ok": True, "item": item, "catalog": rebuild_catalog()}
+
+
+@app.post("/api/curation/{story_id}/regenerate")
+def api_curation_regen(story_id: str, body: CurationRegenBody) -> dict[str, Any]:
+    try:
+        result = regenerate_panel(
+            story_id,
+            body.panel,
+            note=body.note or "",
+            prompt=body.prompt,
+            rating=body.rating,
+            suggestions=body.suggestions,
+            mark_rejected_first=body.mark_rejected_first,
+        )
+    except Exception as e:  # noqa: BLE001
+        raise HTTPException(status_code=500, detail=str(e)) from e
+    return {
+        "ok": True,
+        "item": result["item"],
+        "method": result["render"].get("method"),
+        "art_prompt": result.get("art_prompt"),
+        "image_href": result.get("image_href"),
+        "catalog": rebuild_catalog(),
+    }
 
 
 @app.get("/api/stories")

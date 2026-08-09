@@ -1,0 +1,28 @@
+{
+  "stories": [
+    {
+      "story_id": "episode_cjp_origin",
+      "status": "ok",
+      "edition": "image_only",
+      "webtoon": "outputs/phase7.5/episode_cjp_origin/webtoon_image_only.png",
+      "pdf": "outputs/phase7.5/episode_cjp_origin/episode_image_only.pdf",
+      "assembled": 12
+    },
+    {
+      "story_id": "episode_et_tu_brutus",
+      "status": "ok",
+      "edition": "image_only",
+      "webtoon": "outputs/phase7.5/episode_et_tu_brutus/webtoon_image_only.png",
+      "pdf": "outputs/phase7.5/episode_et_tu_brutus/episode_image_only.pdf",
+      "assembled": 16
+    },
+    {
+      "story_id": "episode_hitler_warning",
+      "status": "ok",
+      "edition": "image_only",
+      "webtoon": "outputs/phase7.5/episode_hitler_warning/webtoon_image_only.png",
+      "pdf": "outputs/phase7.5/episode_hitler_warning/episode_image_only.pdf",
+      "assembled": 16
+    }
+  ]
+}

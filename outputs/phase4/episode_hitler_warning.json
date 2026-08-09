@@ -1,0 +1,359 @@
+{
+  "title": "The Hitler Warning: How Hate Captured a Democracy",
+  "topic": "Hitler, propaganda, and how democracy can die — teen warning episode",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "dad_to_daughter_teen_history",
+  "disclaimer": "Educational historical fiction for teens. Dialogue and interior thoughts are dramatized to teach recognizable propaganda and bystander patterns. They do not endorse Nazi ideology. Violence is suggested only through symbols (broken glass, lists, trains, empty shoes)—never graphic. Six million Jews were murdered in the Holocaust, among millions of other victims. Patterns are linked to civic warnings about propaganda and minority hate; no living politicians are accused of crimes.",
+  "characters": [
+    {
+      "id": "dad",
+      "display_name": "Dad",
+      "role": "narrator parent / moral guide",
+      "look": "kind Indian father in soft sweater, solemn manhwa expression, holding history book",
+      "notes": "Explains democracy's collapse and genocide warning clearly for teens. Always counters Nazi worldview; never leaves hate unchallenged."
+    },
+    {
+      "id": "daughter",
+      "display_name": "Daughter",
+      "role": "teen listener / conscience questions",
+      "look": "Indian teen girl in pajamas, worried thoughtful manhwa eyes, notebook open",
+      "notes": "Asks: How do ordinary people become bystanders? Why blame minorities? Could this pattern happen again?"
+    },
+    {
+      "id": "adolf_hitler",
+      "display_name": "Adolf Hitler",
+      "role": "Nazi dictator / propagandist — antagonist of history",
+      "look": "Historical likeness restrained: dark suit or brown-era coat, intense eyes, manhwa documentary style — NEVER heroic lighting, no awe composition",
+      "notes": "THINKING/IDEOLOGY (to EXPOSE, not endorse): Racial hierarchy myth; antisemitic conspiracy fantasies; Führerprinzip (blind obedience); Lebensraum aggression; scapegoats Jews, Roma, disabled people, political opponents, LGBTQ people, and more for Germany's crises. Believes democracy is weak and must be destroyed from inside then crushed. Speaks of 'the people' while stripping rights. SCRIPT RULE: when he speaks, panels must immediately or next show victims/Dad naming the lie."
+    },
+    {
+      "id": "joseph_goebbels",
+      "display_name": "Joseph Goebbels",
+      "role": "propaganda minister",
+      "look": "Thin bespectacled Nazi official at microphones/posters, cold manhwa documentary styling",
+      "notes": "THINKING: Repeating a lie makes it feel true; control film, radio, newspapers; turn neighbors into enemies. Modern analogy: coordinated hate memes and state-aligned media ecosystems."
+    },
+    {
+      "id": "adolf_eichmann",
+      "display_name": "Adolf Eichmann",
+      "role": "bureaucratic organizer of deportations — banality of evil",
+      "look": "Ordinary-looking mid-level official with briefcase/lists/train schedules, gray office lighting, unsettlingly normal manhwa face",
+      "notes": "THINKING: 'Just following orders / logistics' — turns mass murder into paperwork. Hannah Arendt later described this pattern as banality of evil. Analogy: atrocity enabled by clerks, code, and careerism."
+    },
+    {
+      "id": "heinrich_himmler",
+      "display_name": "Heinrich Himmler",
+      "role": "SS leader / terror apparatus",
+      "look": "SS officer silhouette in cold office, not glamorous, manhwa historical restraint",
+      "notes": "THINKING: Police state + racial purity cult; terror as policy instrument."
+    },
+    {
+      "id": "anne_frank_symbol",
+      "display_name": "Jewish Teen (composite / Anne-like witness)",
+      "role": "persecuted youth voice",
+      "look": "Composite young Jewish girl with diary notebook in cramped attic light — inspired by survivor teens / Anne Frank archetype, NOT claimed as photo-real Anne",
+      "notes": "Represents millions targeted: hopes, fear, stolen childhood. Never reduce to statistic only."
+    },
+    {
+      "id": "german_neighbor",
+      "display_name": "Ordinary German Neighbor",
+      "role": "bystander / sometimes collaborator public",
+      "look": "1930s Berlin apartment neighbor, plain clothes, looking away from a broken shop window",
+      "notes": "THINKING: Fear, peer pressure, career, belief in lies, 'not my business'. Shows how democracy dies when neighbors stop defending neighbors."
+    },
+    {
+      "id": "weimar_citizen",
+      "display_name": "Weimar Voter / Worker",
+      "role": "crisis voter who wants order",
+      "look": "1930s German worker with unemployment notice, listening to street rally",
+      "notes": "THINKING: Inflation, humiliation after WWI, unemployment → craving strong hand. Analogy: economic pain + humiliation myths make demagogues look like medicine."
+    },
+    {
+      "id": "resistance_voice",
+      "display_name": "Resister / White Rose echo",
+      "role": "courage against the regime",
+      "look": "Young students distributing forbidden leaflets at night, tense manhwa shadows",
+      "notes": "THINKING: Truth is worth risk; silence is a choice. Courage is rare and precious."
+    }
+  ],
+  "fact_sheet": [
+    "After World War I and during the Great Depression, extreme crisis and humiliation myths helped demagogues sell scapegoats and 'strongman order' as false medicine.",
+    "In 1933 Adolf Hitler was appointed Chancellor; the Enabling Act and terror against opponents helped dismantle democracy through legal forms plus intimidation.",
+    "Joseph Goebbels built a propaganda state controlling radio, film, press, schools, and rallies; lies repeated loudly were meant to feel like truth.",
+    "Nuremberg Laws and Kristallnacht stripped rights and normalized public violence against Jews; persecution expanded to Roma, disabled people, political opponents, LGBTQ people, and more.",
+    "The Holocaust was industrial genocide: roughly six million Jews were murdered, among millions of other victims; organizers like Eichmann turned atrocity into schedules and paperwork.",
+    "'Never again' needs more than memory: free press, independent courts, voting, media literacy, and neighbors defending minorities—not silence."
+  ],
+  "fact_checks": [],
+  "narrative_summary": "Dad and Daughter frame a warning comic: how economic fear, antisemitic lies, and propaganda helped Nazis destroy democracy from inside, then run a genocide machine. Panels rotate through Hitler’s hate mythology, Goebbels’s media craft, a Weimar voter’s craving for order, a neighbor’s bystander silence, Eichmann’s paperwork cruelty, a Jewish teen’s stolen childhood, Himmler’s terror state, and resistance courage—each Nazi or bystander thought immediately challenged. They close by mapping patterns (not conspiracy claims about living leaders) to today’s minority hate, strongman promises, and social-media rumor dynamics, ending with Daughter refusing the bystander role.",
+  "panels": [
+    {
+      "index": 1,
+      "scene_description": "Night study. A history book open between them. The lesson is a warning, not a spectacle.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "dad: Tonight we study how a democracy can be talked into dying—and how propaganda turns neighbors into targets.\ndaughter: Dad… how do ordinary people become bystanders? Could a pattern like that happen again?",
+      "caption": "Night study. A history book open between them. The lesson is a warning, not a spectacle.",
+      "art_prompt": "Korean manhwa webtoon, documentary mood: kind Indian father in soft sweater with history book beside Indian teen daughter in pajamas with notebook, solemn lamplight, no hero posing.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_01.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_01.png"
+    },
+    {
+      "index": 2,
+      "scene_description": "Early 1930s Germany: unemployment lines, worthless savings stories, and politicians selling rage as strength.",
+      "characters": [
+        "weimar_citizen",
+        "dad"
+      ],
+      "dialogue": "weimar_citizen: Prices, jobs, shame after the war… maybe a hard fist will save us.\ndad: Pain was real. The demagogue’s medicine was a lie: blame minorities instead of rebuilding justice.",
+      "caption": "Early 1930s Germany: unemployment lines, worthless savings stories, and politicians selling rage as strength.",
+      "art_prompt": "Korean manhwa webtoon, muted street-rally light: 1930s German worker clutching unemployment notice while a distant podium silhouette looms; restrained documentary tone.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_02.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_02.png"
+    },
+    {
+      "index": 3,
+      "scene_description": "Hitler sells a fake story of national rebirth built on racial hierarchy and conspiracy fantasies.",
+      "characters": [
+        "adolf_hitler",
+        "dad"
+      ],
+      "dialogue": "adolf_hitler: Democracy is weak. Follow one will. Remove the 'poison' I name—and Germany rises.\ndad: Listen carefully: racial hatred and genocide ideology are evil and false. Scapegoating Jews and other minorities never 'heals' a country.",
+      "caption": "Hitler sells a fake story of national rebirth built on racial hierarchy and conspiracy fantasies.",
+      "art_prompt": "Korean manhwa webtoon documentary restraint: historical Hitler likeness in dark suit under flat unheroic light, intense eyes, never awe composition or glorious beams.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_03.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_03.png"
+    },
+    {
+      "index": 4,
+      "scene_description": "Daughter names the trick before it hardens into 'common sense.'",
+      "characters": [
+        "daughter",
+        "dad",
+        "adolf_hitler"
+      ],
+      "dialogue": "daughter: So he speaks for 'the people' while planning to strip people’s rights?\ndad: Exactly. Authoritarians borrow the word 'people' to erase persons. That is the warning.",
+      "caption": "Daughter names the trick before it hardens into 'common sense.'",
+      "art_prompt": "Korean manhwa webtoon: daughter circling words in a notebook—people, rights, obedience—while Dad points to a textbook page; cool serious indoor lighting.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_04.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_04.png"
+    },
+    {
+      "index": 5,
+      "scene_description": "1933: appointed Chancellor; emergency powers and the Enabling Act hollow out the republic. Opposition vanishes into prisons and camps.",
+      "characters": [
+        "adolf_hitler",
+        "german_neighbor",
+        "dad"
+      ],
+      "dialogue": "adolf_hitler: We’ll use the law—then the law will kneel.\ndad: Dictatorship can walk in through legal doors if courts, parties, and citizens stop defending pluralism.",
+      "caption": "1933: appointed Chancellor; emergency powers and the Enabling Act hollow out the republic. Opposition vanishes into prisons and camps.",
+      "art_prompt": "Korean manhwa webtoon: Reichstag shadows and stamped decree papers in gray office light; neighbor turning away—no glorious Nazi pageantry.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_05.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_05.png"
+    },
+    {
+      "index": 6,
+      "scene_description": "Gleichschaltung: press, radio, film, and schools pulled into one loud story. Book burnings teach fear of questions.",
+      "characters": [
+        "joseph_goebbels",
+        "daughter"
+      ],
+      "dialogue": "joseph_goebbels: Repeat the lie until it feels familiar. Fill every speaker and classroom. Make doubt look traitorous.\ndaughter: That’s not debate—that’s drowning people so they can’t hear truth.",
+      "caption": "Gleichschaltung: press, radio, film, and schools pulled into one loud story. Book burnings teach fear of questions.",
+      "art_prompt": "Korean manhwa webtoon cold documentary look: thin bespectacled Goebbels at microphones beside stacked radios and torn book pages; no glamour.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_06.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_06.png"
+    },
+    {
+      "index": 7,
+      "scene_description": "Dad maps the craft to modern pattern language—without inventing private crimes about living leaders.",
+      "characters": [
+        "dad",
+        "daughter",
+        "joseph_goebbels"
+      ],
+      "dialogue": "dad: Same gears today: coordinated hate memes, rumor floods, and media ecosystems that reward outrage against immigrants or minorities.\ndaughter: So social media can become a modern Forum if we share before we check?\ndad: Yes. Propaganda trains reflexes. Literacy slows the reflex.",
+      "caption": "Dad maps the craft to modern pattern language—without inventing private crimes about living leaders.",
+      "art_prompt": "Korean manhwa webtoon: Dad and Daughter beside a darkened vintage radio dissolving into faint phone-screen glow; serious educational mood.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_07.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_07.png"
+    },
+    {
+      "index": 8,
+      "scene_description": "Nuremberg Laws: citizenship and dignity cut away with paperwork and badges of exclusion.",
+      "characters": [
+        "anne_frank_symbol",
+        "german_neighbor"
+      ],
+      "dialogue": "anne_frank_symbol: Yesterday I was a classmate. Today a law says I am less than a neighbor.\ngerman_neighbor: …I don’t want trouble.",
+      "caption": "Nuremberg Laws: citizenship and dignity cut away with paperwork and badges of exclusion.",
+      "art_prompt": "Korean manhwa webtoon attic-soft light on a composite Jewish teen girl with diary; downstairs, a neighbor averts eyes—respectful, non-graphic, no spectacle.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_08.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_08.png"
+    },
+    {
+      "index": 9,
+      "scene_description": "Kristallnacht: broken glass in the street—public violence taught as normal.",
+      "characters": [
+        "german_neighbor",
+        "dad",
+        "anne_frank_symbol"
+      ],
+      "dialogue": "dad: When windows shatter and people cheer or shrug, democracy’s moral backbone is already cracking.\nanne_frank_symbol: Please—see me. Not a rumor. A person.",
+      "caption": "Kristallnacht: broken glass in the street—public violence taught as normal.",
+      "art_prompt": "Korean manhwa webtoon night street: broken shop glass reflecting pale light, neighbor mid-stride looking away; no blood, no bodies—somber documentary framing.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_09.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_09.png"
+    },
+    {
+      "index": 10,
+      "scene_description": "Terror as policy: secret police, camps for opponents, a racial-purity cult wearing uniforms of order.",
+      "characters": [
+        "heinrich_himmler",
+        "dad"
+      ],
+      "dialogue": "heinrich_himmler: Fear will organize the nation. Purity is the excuse; the boot is the method.\ndad: A police state is not 'safety.' It is power without mercy—and it always needs an internal enemy.",
+      "caption": "Terror as policy: secret police, camps for opponents, a racial-purity cult wearing uniforms of order.",
+      "art_prompt": "Korean manhwa webtoon: SS officer silhouette in a cold office, file cabinets and keys, antiseptic gray light—anti-glamour historical restraint.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_10.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_10.png"
+    },
+    {
+      "index": 11,
+      "scene_description": "War accelerates genocide. Deportations become timetables. Murder hides inside logistics language.",
+      "characters": [
+        "adolf_eichmann",
+        "daughter"
+      ],
+      "dialogue": "adolf_eichmann: Trains, lists, quotas. I don’t decide—I deliver. Orders are orders.\ndaughter: That’s still choosing. Paperwork doesn’t wash blood off a decision.",
+      "caption": "War accelerates genocide. Deportations become timetables. Murder hides inside logistics language.",
+      "art_prompt": "Korean manhwa webtoon unsettlingly ordinary office: mid-level official with briefcase, typed lists, train silhouette through a window; gray fluorescent mood, no gore.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_11.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_11.png"
+    },
+    {
+      "index": 12,
+      "scene_description": "Dad names the history Hannah Arendt later helped the world confront: the banality of evil.",
+      "characters": [
+        "dad",
+        "adolf_eichmann",
+        "anne_frank_symbol"
+      ],
+      "dialogue": "dad: Six million Jews were murdered in the Holocaust—among millions of other victims. Industry and bureaucracy made cruelty efficient.\nanne_frank_symbol: We were not numbers first. We had birthdays. Jokes. Future plans.",
+      "caption": "Dad names the history Hannah Arendt later helped the world confront: the banality of evil.",
+      "art_prompt": "Korean manhwa webtoon respectful symbolism: empty shoes and a closed diary under soft memorial light; no corpses, no torture visuals—quiet grief.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_12.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_12.png"
+    },
+    {
+      "index": 13,
+      "scene_description": "A White Rose echo: students risk everything so truth can still circulate in the dark.",
+      "characters": [
+        "resistance_voice",
+        "joseph_goebbels"
+      ],
+      "dialogue": "resistance_voice: Silence is a choice. Truth is worth the risk—pass it on.\njoseph_goebbels: Crush the leaflets. Call courage 'treason.'",
+      "caption": "A White Rose echo: students risk everything so truth can still circulate in the dark.",
+      "art_prompt": "Korean manhwa webtoon tense night shadows: young students sliding forbidden leaflets under doors; documentary suspense, not action-hero gloss.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_13.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_13.png"
+    },
+    {
+      "index": 14,
+      "scene_description": "Aftermath classroom: institutions matter—and so do habits of courage.",
+      "characters": [
+        "dad",
+        "daughter",
+        "german_neighbor"
+      ],
+      "dialogue": "dad: Never again is a verb: protect minorities, defend a free press, keep courts independent, and vote against strongman shortcuts after economic fear.\ndaughter: And refuse the sentence 'not my business' when a classmate is mocked as less human.",
+      "caption": "Aftermath classroom: institutions matter—and so do habits of courage.",
+      "art_prompt": "Korean manhwa webtoon: Dad and Daughter at the table with news clippings about propaganda patterns; neighbor figure faded at margin as a lesson, serious soft light.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_14.png",
+      "image_method": "flux_kontext",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_14.png"
+    },
+    {
+      "index": 15,
+      "scene_description": "They translate history into present civic radar—patterns, not conspiracy fan-fiction about living politicians.",
+      "characters": [
+        "daughter",
+        "dad",
+        "anne_frank_symbol"
+      ],
+      "dialogue": "daughter: When leaders praise 'order' while attacking free reporters… when memes smear immigrants as an infestation… I should hear the 1930s echo.\ndad: Yes. Ask: Who is being dehumanized? Who benefits if we stop checking facts? Democracy dies of neglected alarms.",
+      "caption": "They translate history into present civic radar—patterns, not conspiracy fan-fiction about living politicians.",
+      "art_prompt": "Korean manhwa webtoon: Daughter underlining questions in her notebook while a faint attic-diary motif watches like memory; calm educational atmosphere.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_15.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_15.png"
+    },
+    {
+      "index": 16,
+      "scene_description": "Close the book—not the duty.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "daughter: I won’t be a bystander. If hate targets a minority, I speak, I check sources, I stand with them.\ndad: That’s the Hitler warning: refuse the lie, protect your neighbors, guard votes and a free press—so genocide ideology finds no open door.",
+      "caption": "Close the book—not the duty.",
+      "art_prompt": "Korean manhwa webtoon warm solemn finish: Indian Dad and Daughter closing the history book together, steady eye contact, quiet resolve, documentary-soft bedroom light.",
+      "emotion": "serious",
+      "image_path": "outputs/phase5/episode_hitler_warning/panel_16.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_hitler_warning/panel_16.png"
+    }
+  ],
+  "webtoon_path": "outputs/phase7/episode_hitler_warning/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_hitler_warning/episode.pdf",
+  "webtoon_image_only_path": "outputs/phase7.5/episode_hitler_warning/webtoon_image_only.png",
+  "pdf_image_only_path": "outputs/phase7.5/episode_hitler_warning/episode_image_only.pdf"
+}

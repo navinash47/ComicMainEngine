@@ -1,0 +1,154 @@
+{
+  "story_id": "episode_cjp_origin",
+  "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+  "ok": 12,
+  "errors": 0,
+  "panels": [
+    {
+      "index": 1,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_01.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_01.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 2,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_02.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_02.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 3,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_03.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_03.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 4,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_04.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_04.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 5,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_05.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_05.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 6,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_06.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_06.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 7,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_07.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_07.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 8,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_08.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_08.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 9,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_09.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_09.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 10,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_10.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_10.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 11,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_11.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_11.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 12,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_12.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_cjp_origin/panel_12.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    }
+  ],
+  "bridges": [
+    {
+      "before_panel": 1,
+      "text": "On a gentle bedtime night, Dad sits with his Daughter and tells her the true story of how young people in India stood up for fairness. He explains that many students compete in huge entrance exams, and when families heard that some exams had problems\u2014like papers leaking or unfair surprises\u2014they felt worried. A young organizer named Abhijeet Dipke, who had lived in the United States, came back to India and helped brin Dad and Daughter at bedtime, cozy room with soft lamplight. Dad sits on the edge of the bed, holding a picture book, while Daughter snuggles under a warm blanket with curious eyes. Mood shifts: calm, cozy, curious."
+    },
+    {
+      "before_panel": 2,
+      "text": "Dad gestures kindly while explaining. A thought-bubble shows many Indian students sitting at desks with large exam papers, looking nervous and hopeful. Mood shifts: thoughtful, slightly worried."
+    },
+    {
+      "before_panel": 3,
+      "text": "Dad's face becomes gentle but serious. Another thought-bubble shows worried families reading news on phones and newspapers about exam problems. Mood shifts: concerned, serious but calm."
+    },
+    {
+      "before_panel": 4,
+      "text": "Dad's eyes light up warmly. In the thought-bubble, a young man (Abhijeet Dipke) steps off a plane or arrives with a determined, kind expression. Mood shifts: hopeful, determined."
+    },
+    {
+      "before_panel": 5,
+      "text": "Thought-bubble shows Abhijeet speaking kindly to a small gathering of students, explaining his idea. Students nod and listen intently. Mood shifts: inspiring, unified."
+    },
+    {
+      "before_panel": 6,
+      "text": "Thought-bubble shows a beautiful, famous landmark\u2014Jantar Mantar in Delhi\u2014surrounded by hundreds of peaceful students holding signs about fair exams. The signs are clear and kind: 'Fair Exams for All,' 'Listen to Students,' 'Fairness Now.' Mood shifts: determined, peaceful, united."
+    },
+    {
+      "before_panel": 7,
+      "text": "Dad leans in with a warm, knowing smile. A thought-bubble shows the students with a funny, silly name written on some signs: 'Cockroach Janta Party.' Students are smiling\u2014it's a bit of gentle humor amid seriousness. Mood shifts: playful, clever, earnest."
+    },
+    {
+      "before_panel": 8,
+      "text": "Dad smiles warmly, explaining. A thought-bubble shows ordinary everyday scenes: a shopkeeper, a farmer, students, a teacher\u2014all kinds of regular people. Mood shifts: warm, inclusive, humble."
+    },
+    {
+      "before_panel": 9,
+      "text": "Thought-bubble shows Prime Minister Modi in formal attire, in his office, receiving reports about the students' concerns. He listens respectfully. Nearby, Amit Shah, the Home Minister, is also shown reading about the protests. Mood shifts: serious, respectful, institutional."
+    },
+    {
+      "before_panel": 10,
+      "text": "A thought-bubble shows the Education Minister at a desk with papers about exam reforms, looking thoughtful and focused on improving the system. Mood shifts: thoughtful, constructive."
+    },
+    {
+      "before_panel": 11,
+      "text": "Thought-bubble shows students celebrating gently\u2014not with wild parties, but with quiet pride. Some are back at their studies, looking more hopeful. Others are speaking to younger students about fairness. Mood shifts: hopeful, proud, peaceful."
+    },
+    {
+      "before_panel": 12,
+      "text": "Dad and Daughter are back in the cozy bedroom. Dad closes the storybook gently while Daughter snuggles deeper into blankets, eyes growing sleepy and content. Stars twinkle outside the window. Mood shifts: peaceful, loving, hopeful."
+    }
+  ]
+}

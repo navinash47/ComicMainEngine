@@ -1,0 +1,30 @@
+{
+  "story_id": "episode_cjp_origin",
+  "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+  "status": "ok",
+  "webtoon_path": "outputs/phase7/episode_cjp_origin/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_cjp_origin/episode.pdf",
+  "webtoon_href": "/media/phase7/episode_cjp_origin/webtoon.png",
+  "pdf_href": "/media/phase7/episode_cjp_origin/episode.pdf",
+  "panel_count": 12,
+  "assembled_panels": 12,
+  "missing_panels": [],
+  "sources": [
+    "outputs/phase6/episode_cjp_origin/panel_01.png",
+    "outputs/phase6/episode_cjp_origin/panel_02.png",
+    "outputs/phase6/episode_cjp_origin/panel_03.png",
+    "outputs/phase6/episode_cjp_origin/panel_04.png",
+    "outputs/phase6/episode_cjp_origin/panel_05.png",
+    "outputs/phase6/episode_cjp_origin/panel_06.png",
+    "outputs/phase6/episode_cjp_origin/panel_07.png",
+    "outputs/phase6/episode_cjp_origin/panel_08.png",
+    "outputs/phase6/episode_cjp_origin/panel_09.png",
+    "outputs/phase6/episode_cjp_origin/panel_10.png",
+    "outputs/phase6/episode_cjp_origin/panel_11.png",
+    "outputs/phase6/episode_cjp_origin/panel_12.png"
+  ],
+  "webtoon_size": [
+    900,
+    12122
+  ]
+}

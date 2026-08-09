@@ -1,0 +1,106 @@
+{
+  "totals": {
+    "calls": 129,
+    "input_tokens": 80062,
+    "output_tokens": 117108,
+    "image_tokens": 69735,
+    "cost_usd": 2.9598708,
+    "errors": 7
+  },
+  "unit_economics": {
+    "stories": 3,
+    "panels": 44,
+    "cost_per_story_usd": 0.9866,
+    "cost_per_panel_all_in_usd": 0.0673,
+    "phase5_panel_batch_usd": 1.772,
+    "phase5_cost_per_panel_usd": 0.0403,
+    "script_phase4_usd": 0.6554,
+    "compose_assemble_usd": 0.0,
+    "projected_100_episodes_usd": 98.66
+  },
+  "insights": [
+    "Total R&D spend $2.960 across 129 API calls.",
+    "Image share \u2248 74% of spend; text \u2248 26%.",
+    "Blended all-in \u2248 $0.987/story and $0.0673/panel.",
+    "Phase 5 panel batch alone \u2248 $0.0403/panel.",
+    "Projected 100 episodes at current blend \u2248 $98.66 (scripts+images+retries).",
+    "Highest-spend provider: google.",
+    "Curation: 1 panels approved so far."
+  ],
+  "by_phase": [
+    {
+      "phase": "phase5",
+      "calls": 66,
+      "cost_usd": 1.772,
+      "tokens": 150644
+    },
+    {
+      "phase": "phase4",
+      "calls": 11,
+      "cost_usd": 0.655416,
+      "tokens": 70884
+    },
+    {
+      "phase": "phase3",
+      "calls": 23,
+      "cost_usd": 0.387191,
+      "tokens": 27475
+    },
+    {
+      "phase": "phase2",
+      "calls": 13,
+      "cost_usd": 0.093276,
+      "tokens": 5242
+    },
+    {
+      "phase": "phase0.5",
+      "calls": 2,
+      "cost_usd": 0.045819,
+      "tokens": 12127
+    },
+    {
+      "phase": "phase0",
+      "calls": 13,
+      "cost_usd": 0.0031688,
+      "tokens": 532
+    },
+    {
+      "phase": "phase1",
+      "calls": 1,
+      "cost_usd": 0.003,
+      "tokens": 1
+    }
+  ],
+  "by_category": [
+    {
+      "category": "image",
+      "calls": 101,
+      "ok": 96,
+      "errors": 5,
+      "cost_usd": 2.2029999999999985,
+      "latency_ms_sum": 764427,
+      "avg_latency_ms": 7568.6,
+      "success_rate": 0.95
+    },
+    {
+      "category": "text",
+      "calls": 27,
+      "ok": 25,
+      "errors": 2,
+      "cost_usd": 0.7568707999999998,
+      "latency_ms_sum": 469982,
+      "avg_latency_ms": 17406.7,
+      "success_rate": 0.926
+    },
+    {
+      "category": "other",
+      "calls": 1,
+      "ok": 1,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "latency_ms_sum": 0,
+      "avg_latency_ms": 0.0,
+      "success_rate": 1.0
+    }
+  ]
+}

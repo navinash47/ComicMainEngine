@@ -1,0 +1,35 @@
+{
+  "story_id": "episode_et_tu_brutus",
+  "title": "Et tu, Brute? How a Republic Dies",
+  "edition": "image_only",
+  "status": "ok",
+  "webtoon_path": "outputs/phase7.5/episode_et_tu_brutus/webtoon_image_only.png",
+  "pdf_path": "outputs/phase7.5/episode_et_tu_brutus/episode_image_only.pdf",
+  "webtoon_href": "/media/phase7.5/episode_et_tu_brutus/webtoon_image_only.png",
+  "pdf_href": "/media/phase7.5/episode_et_tu_brutus/episode_image_only.pdf",
+  "panel_count": 16,
+  "assembled_panels": 16,
+  "missing_panels": [],
+  "sources": [
+    "outputs/phase5/episode_et_tu_brutus/panel_01.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_02.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_03.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_04.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_05.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_06.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_07.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_08.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_09.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_10.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_11.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_12.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_13.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_14.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_15.png",
+    "outputs/phase5/episode_et_tu_brutus/panel_16.png"
+  ],
+  "webtoon_size": [
+    900,
+    17125
+  ]
+}

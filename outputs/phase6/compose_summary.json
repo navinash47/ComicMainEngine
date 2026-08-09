@@ -1,0 +1,19 @@
+{
+  "stories": [
+    {
+      "story_id": "episode_cjp_origin",
+      "ok": 12,
+      "errors": 0
+    },
+    {
+      "story_id": "episode_et_tu_brutus",
+      "ok": 16,
+      "errors": 0
+    },
+    {
+      "story_id": "episode_hitler_warning",
+      "ok": 16,
+      "errors": 0
+    }
+  ]
+}

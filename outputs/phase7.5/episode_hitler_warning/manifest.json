@@ -1,0 +1,35 @@
+{
+  "story_id": "episode_hitler_warning",
+  "title": "The Hitler Warning: How Hate Captured a Democracy",
+  "edition": "image_only",
+  "status": "ok",
+  "webtoon_path": "outputs/phase7.5/episode_hitler_warning/webtoon_image_only.png",
+  "pdf_path": "outputs/phase7.5/episode_hitler_warning/episode_image_only.pdf",
+  "webtoon_href": "/media/phase7.5/episode_hitler_warning/webtoon_image_only.png",
+  "pdf_href": "/media/phase7.5/episode_hitler_warning/episode_image_only.pdf",
+  "panel_count": 16,
+  "assembled_panels": 16,
+  "missing_panels": [],
+  "sources": [
+    "outputs/phase5/episode_hitler_warning/panel_01.png",
+    "outputs/phase5/episode_hitler_warning/panel_02.png",
+    "outputs/phase5/episode_hitler_warning/panel_03.png",
+    "outputs/phase5/episode_hitler_warning/panel_04.png",
+    "outputs/phase5/episode_hitler_warning/panel_05.png",
+    "outputs/phase5/episode_hitler_warning/panel_06.png",
+    "outputs/phase5/episode_hitler_warning/panel_07.png",
+    "outputs/phase5/episode_hitler_warning/panel_08.png",
+    "outputs/phase5/episode_hitler_warning/panel_09.png",
+    "outputs/phase5/episode_hitler_warning/panel_10.png",
+    "outputs/phase5/episode_hitler_warning/panel_11.png",
+    "outputs/phase5/episode_hitler_warning/panel_12.png",
+    "outputs/phase5/episode_hitler_warning/panel_13.png",
+    "outputs/phase5/episode_hitler_warning/panel_14.png",
+    "outputs/phase5/episode_hitler_warning/panel_15.png",
+    "outputs/phase5/episode_hitler_warning/panel_16.png"
+  ],
+  "webtoon_size": [
+    900,
+    17625
+  ]
+}

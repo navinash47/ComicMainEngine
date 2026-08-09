@@ -1,0 +1,202 @@
+{
+  "story_id": "episode_hitler_warning",
+  "title": "The Hitler Warning: How Hate Captured a Democracy",
+  "ok": 16,
+  "errors": 0,
+  "panels": [
+    {
+      "index": 1,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_01.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_01.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 2,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_02.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_02.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 3,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_03.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_03.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 4,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_04.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_04.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 5,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_05.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_05.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 6,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_06.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_06.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 7,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_07.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_07.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 8,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_08.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_08.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 9,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_09.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_09.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 10,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_10.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_10.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 11,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_11.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_11.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 12,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_12.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_12.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 13,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_13.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_13.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 14,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_14.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_14.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 15,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_15.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_15.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 16,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_hitler_warning/panel_16.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_hitler_warning/panel_16.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    }
+  ],
+  "bridges": [
+    {
+      "before_panel": 1,
+      "text": "Dad and Daughter frame a warning comic: how economic fear, antisemitic lies, and propaganda helped Nazis destroy democracy from inside, then run a genocide machine. Panels rotate through Hitler\u2019s hate mythology, Goebbels\u2019s media craft, a Weimar voter\u2019s craving for order, a neighbor\u2019s bystander silence, Eichmann\u2019s paperwork cruelty, a Jewish teen\u2019s stolen childhood, Himmler\u2019s terror state, and resistance courage\u2014each  Night study. A history book open between them. The lesson is a warning, not a spectacle."
+    },
+    {
+      "before_panel": 2,
+      "text": "Early 1930s Germany: unemployment lines, worthless savings stories, and politicians selling rage as strength."
+    },
+    {
+      "before_panel": 3,
+      "text": "Hitler sells a fake story of national rebirth built on racial hierarchy and conspiracy fantasies."
+    },
+    {
+      "before_panel": 4,
+      "text": "Daughter names the trick before it hardens into 'common sense.'"
+    },
+    {
+      "before_panel": 5,
+      "text": "1933: appointed Chancellor; emergency powers and the Enabling Act hollow out the republic. Opposition vanishes into prisons and camps."
+    },
+    {
+      "before_panel": 6,
+      "text": "Gleichschaltung: press, radio, film, and schools pulled into one loud story. Book burnings teach fear of questions."
+    },
+    {
+      "before_panel": 7,
+      "text": "Dad maps the craft to modern pattern language\u2014without inventing private crimes about living leaders."
+    },
+    {
+      "before_panel": 8,
+      "text": "Nuremberg Laws: citizenship and dignity cut away with paperwork and badges of exclusion."
+    },
+    {
+      "before_panel": 9,
+      "text": "Kristallnacht: broken glass in the street\u2014public violence taught as normal."
+    },
+    {
+      "before_panel": 10,
+      "text": "Terror as policy: secret police, camps for opponents, a racial-purity cult wearing uniforms of order."
+    },
+    {
+      "before_panel": 11,
+      "text": "War accelerates genocide. Deportations become timetables. Murder hides inside logistics language."
+    },
+    {
+      "before_panel": 12,
+      "text": "Dad names the history Hannah Arendt later helped the world confront: the banality of evil."
+    },
+    {
+      "before_panel": 13,
+      "text": "A White Rose echo: students risk everything so truth can still circulate in the dark."
+    },
+    {
+      "before_panel": 14,
+      "text": "Aftermath classroom: institutions matter\u2014and so do habits of courage."
+    },
+    {
+      "before_panel": 15,
+      "text": "They translate history into present civic radar\u2014patterns, not conspiracy fan-fiction about living politicians."
+    },
+    {
+      "before_panel": 16,
+      "text": "Close the book\u2014not the duty."
+    }
+  ]
+}

@@ -1,0 +1,539 @@
+{
+  "story_id": "episode_cjp_origin",
+  "source": "outputs/phase0.5/episode_cjp_origin.json",
+  "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+  "panel_count": 12,
+  "ok": 12,
+  "errors": 0,
+  "refs": [
+    {
+      "char_id": "abhijeet_dipke",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/abhijeet_dipke_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "amit_shah",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/amit_shah_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "dad",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "daughter",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "education_minister",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/education_minister_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "modiji",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/modiji_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "students",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png",
+      "status": "ok"
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_01.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_01.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 733689,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 105.16,
+          "variance": 3006.14,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_01.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 2,
+      "characters": [
+        "dad",
+        "daughter",
+        "students"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_02.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_02.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 724017,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 172.83,
+          "variance": 7042.59,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_02.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png"
+      ]
+    },
+    {
+      "index": 3,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_03.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_03.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 694296,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 156.7,
+          "variance": 4436.6,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_03.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 4,
+      "characters": [
+        "dad",
+        "daughter",
+        "abhijeet_dipke"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_04.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_04.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 690803,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 84.06,
+          "variance": 2355.25,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_04.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/abhijeet_dipke_ref.png"
+      ]
+    },
+    {
+      "index": 5,
+      "characters": [
+        "abhijeet_dipke",
+        "students"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_05.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_05.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 802041,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 120.37,
+          "variance": 6204.74,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_05.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/abhijeet_dipke_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png"
+      ]
+    },
+    {
+      "index": 6,
+      "characters": [
+        "students"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_06.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_06.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 755381,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 143.22,
+          "variance": 5548.59,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_06.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png"
+      ]
+    },
+    {
+      "index": 7,
+      "characters": [
+        "dad",
+        "daughter",
+        "students"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_07.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_07.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 690454,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 141.92,
+          "variance": 5937.27,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_07.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png"
+      ]
+    },
+    {
+      "index": 8,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_08.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_08.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 855354,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 157.06,
+          "variance": 3569.88,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_08.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 9,
+      "characters": [
+        "modiji",
+        "amit_shah"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_09.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_09.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 757367,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 140.57,
+          "variance": 3688.79,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_09.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/modiji_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/amit_shah_ref.png"
+      ]
+    },
+    {
+      "index": 10,
+      "characters": [
+        "education_minister"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_10.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_10.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 680981,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 152.87,
+          "variance": 5387.55,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_10.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/education_minister_ref.png"
+      ]
+    },
+    {
+      "index": 11,
+      "characters": [
+        "students"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_11.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_11.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 779248,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 147.61,
+          "variance": 5277.47,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_11.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/students_ref.png"
+      ]
+    },
+    {
+      "index": 12,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_12.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_cjp_origin/panel_12.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 705385,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 100.83,
+          "variance": 3573.22,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_cjp_origin/panel_12.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    }
+  ]
+}

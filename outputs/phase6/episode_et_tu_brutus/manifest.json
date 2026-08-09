@@ -1,0 +1,202 @@
+{
+  "story_id": "episode_et_tu_brutus",
+  "title": "Et tu, Brute? How a Republic Dies",
+  "ok": 16,
+  "errors": 0,
+  "panels": [
+    {
+      "index": 1,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_01.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_01.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 2,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_02.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_02.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 3,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_03.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_03.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 4,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_04.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_04.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 5,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_05.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_05.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 6,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_06.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_06.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 7,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_07.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_07.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 8,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_08.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_08.png",
+      "bubbles": 1,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 9,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_09.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_09.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 10,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_10.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_10.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 11,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_11.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_11.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 12,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_12.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_12.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 13,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_13.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_13.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 14,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_14.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_14.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 15,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_15.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_15.png",
+      "bubbles": 2,
+      "has_caption": true,
+      "status": "ok"
+    },
+    {
+      "index": 16,
+      "source": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_16.png",
+      "composed": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase6/episode_et_tu_brutus/panel_16.png",
+      "bubbles": 3,
+      "has_caption": true,
+      "status": "ok"
+    }
+  ],
+  "bridges": [
+    {
+      "before_panel": 1,
+      "text": "A father and daughter read the fall of the Roman Republic. Through shifting first-person voices - Caesar's reformer pride, Brutus's tortured idealism, Cassius's cold urgency, Antony's weaponized grief, and the hungry, steerable crowd - they trace how a republic hollows out around a beloved strongman. The Ides of March is shown as a shock silhouette, and the aftermath makes the hard point: the dagger did not bring lib Nighttime bedroom, warm lamp. Dad sits on the edge of the bed, daughter cross-legged with a thick history book open to a map of Rome. Mood shifts: curious, intimate."
+    },
+    {
+      "before_panel": 2,
+      "text": "Dad gestures; behind him a faded vision of the Roman Forum with togaed figures voting and arguing. Mood shifts: explanatory."
+    },
+    {
+      "before_panel": 3,
+      "text": "Battlefield flashback: Caesar in crimson-edged toga over armor, standing tall, laurel light around him, legions behind. Mood shifts: proud, commanding."
+    },
+    {
+      "before_panel": 4,
+      "text": "Wide river at dawn; Caesar on horseback at the water's edge, army waiting, Senate scroll trampled in mud. Mood shifts: defiant, fateful."
+    },
+    {
+      "before_panel": 5,
+      "text": "Split panel: on one side a triumph parade with banners of Caesar's face; on the other, senators in shadow watching uneasily. Mood shifts: celebratory vs uneasy."
+    },
+    {
+      "before_panel": 6,
+      "text": "Daughter interrupts, pointing at the book; Dad half-turned. Mood shifts: challenging, thoughtful."
+    },
+    {
+      "before_panel": 7,
+      "text": "Dim colonnade. Cassius, lean and sharp, grips Brutus's arm; Brutus looks tormented. Mood shifts: urgent, calculating."
+    },
+    {
+      "before_panel": 8,
+      "text": "Brutus alone, moonlight, holding a small bust of an ancestor; conflict on his face. Mood shifts: anguished, resolved."
+    },
+    {
+      "before_panel": 9,
+      "text": "Calpurnia at a window at dawn, clutching Caesar's cloak, storm outside; Caesar dressing to leave. Mood shifts: fearful, foreboding."
+    },
+    {
+      "before_panel": 10,
+      "text": "Interior of the Theatre of Pompey's Curia. Caesar enters among senators; conspirators drift closer, hands hidden in togas. Mood shifts: tense, closing in."
+    },
+    {
+      "before_panel": 11,
+      "text": "Stark shock beat: silhouette of the crowd of daggers rising against a bright window; Caesar's shadow buckling. No gore, high contrast. Mood shifts: shock, betrayal."
+    },
+    {
+      "before_panel": 12,
+      "text": "Brutus stands over the aftermath (off-panel body), raising a bloodless hand to a stunned, silent Senate. Doubt flickers. Mood shifts: expectant, dawning doubt."
+    },
+    {
+      "before_panel": 13,
+      "text": "The Forum. Antony in a vivid red cloak before a vast crowd, gesturing at Caesar's covered bier, tears becoming fire. Mood shifts: grief weaponized, rising fury."
+    },
+    {
+      "before_panel": 14,
+      "text": "Montage of chaos: conspirators fleeing Rome, armies massing, smoke over the city. Mood shifts: despair, ruin."
+    },
+    {
+      "before_panel": 15,
+      "text": "Back in the bedroom, daughter frowning at the book, Dad watching her think. Mood shifts: reflective, sobered."
+    },
+    {
+      "before_panel": 16,
+      "text": "Dad closes the book gently; daughter looks resolved. Faint modern city skyline reflected in the window behind them. Mood shifts: warm, resolved, hopeful."
+    }
+  ]
+}

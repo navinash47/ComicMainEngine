@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Story Library</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Story Library</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/">Dashboard</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <a class="btn" href="/images">Images</a>
+      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/roi">ROI</a>
+      <a class="btn" href="/report" target="_blank" rel="noopener">Report</a>
+      <button type="button" id="seedCurate" class="btn">Seed curation</button>
+      <button type="button" id="refreshLib" class="btn">Refresh catalog</button>
+      <span id="updated">…</span>
+    </div>
+  </header>
+
+  <section class="story-meta">
+    <p class="lede">
+      Stored UI stories with two editions each: <strong>Reader</strong> (Phase 7 bubbles/captions)
+      and <strong>Only Image</strong> (Phase 7.5 raw panels). Phase 8.5: rate panels, leave suggestions, edit prompts on reject/regen — site refreshes automatically.
+    </p>
+    <p class="muted small" id="libMeta">loading…</p>
+  </section>
+
+  <section class="library-grid" id="libraryGrid"></section>
+
+  <script src="/static/curation_editor.js"></script>
+  <script src="/static/library.js"></script>
+</body>
+</html>

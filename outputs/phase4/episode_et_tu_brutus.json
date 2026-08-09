@@ -1,0 +1,367 @@
+{
+  "title": "Et tu, Brute? How a Republic Dies",
+  "topic": "Et tu, Brute? — Julius Caesar and the fragile Roman Republic",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "dad_to_daughter_teen_history",
+  "disclaimer": "Educational teen comic. History is dramatized and compressed; some famous lines (like \"Et tu, Brute?\") come from later literary tradition, not verified transcripts. Violence is shown non-graphically. No living politicians are depicted as villains.",
+  "characters": [
+    {
+      "id": "dad",
+      "display_name": "Dad",
+      "role": "narrator parent / modern guide",
+      "look": "kind Indian father in soft sweater, Korean manhwa design, thoughtful bedtime expression",
+      "notes": "Frames Rome for a curious teen daughter. Connects Senate, crowd, and power to fragile democracy today without lecturing."
+    },
+    {
+      "id": "daughter",
+      "display_name": "Daughter",
+      "role": "teen listener who asks hard questions",
+      "look": "Indian teen girl in pajamas with a history book, sharp curious manhwa eyes",
+      "notes": "Pushes Dad: Was Brutus a hero or a traitor? Does killing a strongman save freedom?"
+    },
+    {
+      "id": "julius_caesar",
+      "display_name": "Julius Caesar",
+      "role": "general → dictator, charisma and ambition",
+      "look": "Middle-aged Roman statesman-general, laurel crown optional, crimson-edged toga, assured gaze, manhwa historical portrait — dignified not cartoonish",
+      "notes": "THINKING/IDEOLOGY: Believes Rome needs decisive personal command after civil war; presents victory and reforms as 'for the people' while accumulating lifelong power. Sees opposition as envy and delay. Pride; clemency used as political tool. Does not think of himself as 'villain' — thinks history will thank the strong hand."
+    },
+    {
+      "id": "marcus_brutus",
+      "display_name": "Marcus Junius Brutus",
+      "role": "senator / idealist republican / assassin",
+      "look": "Younger Roman noble, pale serious face, simple toga, restless eyes — manhwa tragic hero look",
+      "notes": "THINKING/IDEOLOGY: Worships the idea of Res Publica (public thing / shared rule). Fears one-man rule more than chaos. Persuaded that killing Caesar is civic duty, not personal hate — yet wounded by friendship with Caesar. Blind spot: assumes Romans will cheer republic restoration after the dagger."
+    },
+    {
+      "id": "cassius",
+      "display_name": "Gaius Cassius Longinus",
+      "role": "conspirator / hard realist",
+      "look": "Lean sharp-featured Roman senator, darker toga edges, calculating manhwa expression",
+      "notes": "THINKING: Distrusts Caesar's megalomania; mixes republican language with personal resentment. Recruits Brutus as the 'noble face' the public will accept."
+    },
+    {
+      "id": "mark_antony",
+      "display_name": "Mark Antony",
+      "role": "Caesar's ally / master of public emotion",
+      "look": "Athletic Roman commander, vivid red cloak, charismatic intense eyes, manhwa orator pose",
+      "notes": "THINKING: Loyal to Caesar's person and faction. After the murder, uses grief and rhetoric (funeral speech tradition) to turn the crowd against the conspirators — proves narrative + emotion can outrun 'constitutional' arguments."
+    },
+    {
+      "id": "calpurnia",
+      "display_name": "Calpurnia",
+      "role": "Caesar's wife / private conscience",
+      "look": "Roman noblewoman in draped stola, worried eyes, elegant manhwa historical design",
+      "notes": "Voices fear and omens; humanizes the cost of power games in the household."
+    },
+    {
+      "id": "roman_people",
+      "display_name": "Roman People (Plebs)",
+      "role": "crowd — cheers today, chants tomorrow",
+      "look": "Diverse Roman crowd in Forum: workers, veterans, women, children with banners",
+      "notes": "THINKING: Want bread, games, glory, stability. Love a winner who pays them attention. Can be steered by spectacle and speeches. Analog for modern publics under propaganda."
+    },
+    {
+      "id": "senate",
+      "display_name": "Roman Senators",
+      "role": "elite institutional chorus",
+      "look": "Cluster of togaed senators in Curia / Theatre of Pompey, marble columns, tense faces",
+      "notes": "Some defend aristocratic privilege; some fear tyranny; many protect their own status."
+    }
+  ],
+  "fact_sheet": [
+    "The Roman Republic (c. 509-27 BCE) shared power among elected magistrates, the Senate, and popular assemblies, deliberately avoiding one-man rule after expelling its early kings.",
+    "Julius Caesar crossed the Rubicon river with his army in 49 BCE, an illegal act that started civil war against Pompey and the Senate; 'crossing the Rubicon' still means a point of no return.",
+    "After winning, Caesar was named dictator perpetuo (dictator for life) in early 44 BCE, concentrating honors and power that many senators saw as monarchy returning.",
+    "Caesar was assassinated on the Ides of March (March 15), 44 BCE, stabbed by a group of senators led by Marcus Brutus and Gaius Cassius, at a Senate meeting held in the Theatre of Pompey.",
+    "Mark Antony's funeral oration helped turn the Roman crowd against the assassins, sparking more civil war rather than restoring the Republic.",
+    "The Republic did not return: Caesar's heir Octavian eventually became Augustus, Rome's first emperor, completing the shift from Republic to Empire."
+  ],
+  "fact_checks": [
+    {
+      "claim": "Caesar said 'Et tu, Brute?' as he was stabbed.",
+      "verdict": "dramatized",
+      "source_note": "This exact Latin line is from Shakespeare's play (1599). Ancient sources like Suetonius report Caesar was mostly silent, or possibly said in Greek 'kai su, teknon?' ('you too, child?') to Brutus - and even that is uncertain."
+    },
+    {
+      "claim": "Caesar was killed in the Senate house / Curia.",
+      "verdict": "simplified",
+      "source_note": "The Senate was meeting that day in the Curia of Pompey, part of the Theatre of Pompey complex, because the usual Senate house was under repair. Popular retellings just say 'the Senate.'"
+    },
+    {
+      "claim": "Brutus and the conspirators killed Caesar purely to restore the Republic.",
+      "verdict": "disputed",
+      "source_note": "Ancient sources present mixed motives: genuine republican ideology (especially attributed to Brutus), plus personal rivalry, resentment, and fear of losing status (attributed more to Cassius and others)."
+    },
+    {
+      "claim": "Caesar was offered a crown and refused it in public.",
+      "verdict": "supported",
+      "source_note": "Sources (e.g. Plutarch, Suetonius) describe Antony offering Caesar a diadem at the Lupercalia festival, which Caesar publicly declined - though many read it as staged political theater."
+    }
+  ],
+  "narrative_summary": "A father and daughter read the fall of the Roman Republic. Through shifting first-person voices - Caesar's reformer pride, Brutus's tortured idealism, Cassius's cold urgency, Antony's weaponized grief, and the hungry, steerable crowd - they trace how a republic hollows out around a beloved strongman. The Ides of March is shown as a shock silhouette, and the aftermath makes the hard point: the dagger did not bring liberty back, only more war and, finally, empire. Dad's closing lesson to his daughter is that freedom is kept by institutions and awake citizens, not by heroes with knives.",
+  "panels": [
+    {
+      "index": 1,
+      "scene_description": "Nighttime bedroom, warm lamp. Dad sits on the edge of the bed, daughter cross-legged with a thick history book open to a map of Rome.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Daughter: 'Et tu, Brute?' Dad, was Brutus a hero or a traitor?\nDad: That question has outlived him by two thousand years. Tonight we watch a republic die - slowly, then all at once.",
+      "caption": "Rome, before the emperors. A state built so no single man could rule it all.",
+      "art_prompt": "Korean manhwa webtoon, cozy lamp-lit bedroom, Indian father and teen daughter over a history book, soft warm tones.",
+      "emotion": "curious, intimate",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_01.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_01.png"
+    },
+    {
+      "index": 2,
+      "scene_description": "Dad gestures; behind him a faded vision of the Roman Forum with togaed figures voting and arguing.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: The Republic shared power - elected officials, a Senate, popular assemblies. They'd thrown out their kings and swore: never again one master.\nDaughter: So it was like... a democracy with rules?",
+      "caption": "Res Publica - 'the public thing.' Power on loan, never owned.",
+      "art_prompt": "Korean manhwa webtoon, translucent Forum vision behind Dad, marble columns, crowds debating.",
+      "emotion": "explanatory",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_02.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_02.png"
+    },
+    {
+      "index": 3,
+      "scene_description": "Battlefield flashback: Caesar in crimson-edged toga over armor, standing tall, laurel light around him, legions behind.",
+      "characters": [
+        "julius_caesar",
+        "roman_people"
+      ],
+      "dialogue": "Caesar: I gave Rome Gaul, order, and glory. Let the timid Senate debate while I win. History thanks the strong hand, not the slow committee.\nRoman People: Caesar! Caesar feeds us! Caesar wins!",
+      "caption": "Caesar (I): Rome bled for a century. I am the cure it is too proud to swallow.",
+      "art_prompt": "Korean manhwa webtoon, dignified Roman general in crimson toga, cheering legions and plebs, golden light.",
+      "emotion": "proud, commanding",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_03.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_03.png"
+    },
+    {
+      "index": 4,
+      "scene_description": "Wide river at dawn; Caesar on horseback at the water's edge, army waiting, Senate scroll trampled in mud.",
+      "characters": [
+        "julius_caesar"
+      ],
+      "dialogue": "Caesar: The Senate orders me to disband my army and come home powerless. I cross this river instead.",
+      "caption": "49 BCE. The Rubicon. A general brings his private army against his own state. There is no crossing back.",
+      "art_prompt": "Korean manhwa webtoon, lone commander on horseback at a misty river at dawn, legion behind, tense stillness.",
+      "emotion": "defiant, fateful",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_04.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_04.png"
+    },
+    {
+      "index": 5,
+      "scene_description": "Split panel: on one side a triumph parade with banners of Caesar's face; on the other, senators in shadow watching uneasily.",
+      "characters": [
+        "senate",
+        "roman_people"
+      ],
+      "dialogue": "Roman People: Dictator for life! Long life to Caesar!\nSenate: Banners with one man's face. Statues. 'For life.' We fought kings for this?",
+      "caption": "Victory made him beloved - and permanent. Dictator perpetuo. To some, freedom. To others, a crown by another name.",
+      "art_prompt": "Korean manhwa webtoon split panel, jubilant crowd with Caesar banners versus grim senators in marble shadow.",
+      "emotion": "celebratory vs uneasy",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_05.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_05.png"
+    },
+    {
+      "index": 6,
+      "scene_description": "Daughter interrupts, pointing at the book; Dad half-turned.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Daughter: But the people LOVED him. If they voted for him, isn't that democracy?\nDad: Careful. A crowd cheering one man is not the same as a people keeping their rules. That's the whole trap.",
+      "caption": "Dad: Popularity can hollow out a republic from the inside - with applause.",
+      "art_prompt": "Korean manhwa webtoon, daughter leaning in sharply, Dad gentle but serious, lamp glow.",
+      "emotion": "challenging, thoughtful",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_06.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_06.png"
+    },
+    {
+      "index": 7,
+      "scene_description": "Dim colonnade. Cassius, lean and sharp, grips Brutus's arm; Brutus looks tormented.",
+      "characters": [
+        "cassius",
+        "marcus_brutus"
+      ],
+      "dialogue": "Cassius: While we talk of laws, he becomes a god with an army. I need a name Rome trusts. I need you, Brutus.\nBrutus: You mix Rome's freedom with your own grudges, Cassius.",
+      "caption": "Cassius (I): Ideals are lovely. But someone must count the swords. Brutus is the noble face the people will forgive.",
+      "art_prompt": "Korean manhwa webtoon, shadowed colonnade, sharp-featured Cassius urging conflicted Brutus, cold blue light.",
+      "emotion": "urgent, calculating",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_07.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_07.png"
+    },
+    {
+      "index": 8,
+      "scene_description": "Brutus alone, moonlight, holding a small bust of an ancestor; conflict on his face.",
+      "characters": [
+        "marcus_brutus"
+      ],
+      "dialogue": "Brutus: I love Caesar the man. But I love the Republic more than any man. If one Roman may become king, then no Roman is free.",
+      "caption": "Brutus (I): Not from hate. From duty. Rome must outlive her heroes - even the one I call friend.",
+      "art_prompt": "Korean manhwa webtoon, tragic young noble alone in moonlight holding an ancestral bust, restless eyes.",
+      "emotion": "anguished, resolved",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_08.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_08.png"
+    },
+    {
+      "index": 9,
+      "scene_description": "Calpurnia at a window at dawn, clutching Caesar's cloak, storm outside; Caesar dressing to leave.",
+      "characters": [
+        "calpurnia",
+        "julius_caesar"
+      ],
+      "dialogue": "Calpurnia: I dreamed your blood on the marble. Stay home today. Please.\nCaesar: If I hide from every whisper of fear, I am not Caesar. The Senate waits.",
+      "caption": "Calpurnia: Power costs the house first. I am the fear he cannot afford to hear.",
+      "art_prompt": "Korean manhwa webtoon, worried Roman noblewoman at a stormy window, Caesar turning away toward the door.",
+      "emotion": "fearful, foreboding",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_09.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_09.png"
+    },
+    {
+      "index": 10,
+      "scene_description": "Interior of the Theatre of Pompey's Curia. Caesar enters among senators; conspirators drift closer, hands hidden in togas.",
+      "characters": [
+        "julius_caesar",
+        "senate",
+        "marcus_brutus",
+        "cassius"
+      ],
+      "dialogue": "Senate: A petition, Caesar - just here, come closer.\nCaesar: Speak, then. I have a Rome to govern.",
+      "caption": "The Ides of March, 44 BCE. They meet in Pompey's hall - the Senate house was under repair. The circle closes.",
+      "art_prompt": "Korean manhwa webtoon, marble hall, Caesar surrounded by senators pressing near, tension coiled, hidden hands.",
+      "emotion": "tense, closing in",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_10.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_10.png"
+    },
+    {
+      "index": 11,
+      "scene_description": "Stark shock beat: silhouette of the crowd of daggers rising against a bright window; Caesar's shadow buckling. No gore, high contrast.",
+      "characters": [
+        "julius_caesar",
+        "marcus_brutus"
+      ],
+      "dialogue": "Caesar: You too, Brutus?\nBrutus: For Rome, old friend. For Rome.",
+      "caption": "The wound was in the body of one man - and in the body of the state.",
+      "art_prompt": "Korean manhwa webtoon, dramatic silhouette of raised daggers against a bright window, falling shadow, no blood shown.",
+      "emotion": "shock, betrayal",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_11.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_11.png"
+    },
+    {
+      "index": 12,
+      "scene_description": "Brutus stands over the aftermath (off-panel body), raising a bloodless hand to a stunned, silent Senate. Doubt flickers.",
+      "characters": [
+        "marcus_brutus",
+        "senate"
+      ],
+      "dialogue": "Brutus: Romans! The tyrant is dead - the Republic lives again! Rejoice!\nSenate: ...silence.",
+      "caption": "Brutus (II): I assumed they'd cheer liberty. That was my blindest wound of all.",
+      "art_prompt": "Korean manhwa webtoon, Brutus with raised hand before frozen silent senators in marble hall, hollow triumph.",
+      "emotion": "expectant, dawning doubt",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_12.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_12.png"
+    },
+    {
+      "index": 13,
+      "scene_description": "The Forum. Antony in a vivid red cloak before a vast crowd, gesturing at Caesar's covered bier, tears becoming fire.",
+      "characters": [
+        "mark_antony",
+        "roman_people"
+      ],
+      "dialogue": "Antony: They call themselves honorable men. Look - he left his gardens to YOU, the people. Is THIS your reward to him?\nRoman People: Traitors! Burn the murderers' houses!",
+      "caption": "Antony: Their daggers had reasons. I have his cloak, his will, and your grief. Watch which one moves a crowd.",
+      "art_prompt": "Korean manhwa webtoon, charismatic orator in red cloak over a bier, huge crowd turning from grief to rage.",
+      "emotion": "grief weaponized, rising fury",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_13.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_13.png"
+    },
+    {
+      "index": 14,
+      "scene_description": "Montage of chaos: conspirators fleeing Rome, armies massing, smoke over the city.",
+      "characters": [
+        "roman_people",
+        "cassius",
+        "marcus_brutus"
+      ],
+      "dialogue": "Cassius: We killed the man and multiplied the war. The crowd never wanted a republic. It wanted a father.\nBrutus: What have we freed, Cassius? Only more knives.",
+      "caption": "No liberty returned. Only civil war - and soon, an emperor named Augustus to end all doubt.",
+      "art_prompt": "Korean manhwa webtoon, conspirators fleeing, armies gathering, smoke over Rome, bleak montage.",
+      "emotion": "despair, ruin",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_14.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_14.png"
+    },
+    {
+      "index": 15,
+      "scene_description": "Back in the bedroom, daughter frowning at the book, Dad watching her think.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Daughter: So Brutus wasn't a hero OR a traitor. He was... wrong about people.\nDad: He thought one dagger could restart freedom. Freedom isn't a machine you reset by killing a man. Political violence usually just opens the next war.",
+      "caption": "The strongman fell. The Republic did not rise. That gap is the lesson.",
+      "art_prompt": "Korean manhwa webtoon, daughter deep in thought over book, Dad attentive, warm lamp light.",
+      "emotion": "reflective, sobered",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_15.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_15.png"
+    },
+    {
+      "index": 16,
+      "scene_description": "Dad closes the book gently; daughter looks resolved. Faint modern city skyline reflected in the window behind them.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: Watch for the pattern, not the toga: banners with one face, 'for the people' from every mouth, rules bent for a winner everyone loves.\nDaughter: So freedom isn't the hero. It's... us staying awake.\nDad: And the institutions we refuse to hollow out. Heroes and knives don't save republics. Awake citizens do.",
+      "caption": "Rome fell into empire not in one stab, but in a thousand cheers. Democracies die when we stop guarding the rules - and stay saved when we don't.",
+      "art_prompt": "Korean manhwa webtoon, Dad closing book, daughter resolute, faint modern skyline in the window, hopeful tone.",
+      "emotion": "warm, resolved, hopeful",
+      "image_path": "outputs/phase5/episode_et_tu_brutus/panel_16.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_et_tu_brutus/panel_16.png"
+    }
+  ],
+  "webtoon_path": "outputs/phase7/episode_et_tu_brutus/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_et_tu_brutus/episode.pdf",
+  "webtoon_image_only_path": "outputs/phase7.5/episode_et_tu_brutus/webtoon_image_only.png",
+  "pdf_image_only_path": "outputs/phase7.5/episode_et_tu_brutus/episode_image_only.pdf"
+}

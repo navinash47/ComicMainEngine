@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · ROI</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>ROI / cost</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/">Dashboard</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <a class="btn" href="/images">Images</a>
+      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/roi">ROI</a>
+      <a class="btn" href="/report" target="_blank" rel="noopener">Report</a>
+      <span id="updated">…</span>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="story-meta">
+    <h2>Insights</h2>
+    <ul id="insights" class="insight-list"></ul>
+    <div class="unit-grid" id="units"></div>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h2>Spend by phase</h2>
+      <div id="byPhase" class="bars"></div>
+      <canvas id="phaseChart" height="140"></canvas>
+    </div>
+    <div>
+      <h2>Spend by provider</h2>
+      <div id="byProvider" class="bars"></div>
+      <canvas id="providerChart" height="140"></canvas>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h2>Spend by category</h2>
+      <div id="byCategory" class="bars"></div>
+    </div>
+    <div>
+      <h2>Top purposes</h2>
+      <div id="byPurpose" class="bars"></div>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h2>Daily spend</h2>
+      <canvas id="dailyChart" height="140"></canvas>
+    </div>
+    <div>
+      <h2>Model recommendations</h2>
+      <div id="recs" class="recs"></div>
+    </div>
+  </section>
+
+  <script src="/static/roi.js"></script>
+</body>
+</html>

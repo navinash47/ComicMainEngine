@@ -1,0 +1,714 @@
+{
+  "story_id": "episode_et_tu_brutus",
+  "source": "outputs/phase4/episode_et_tu_brutus.json",
+  "title": "Et tu, Brute? How a Republic Dies",
+  "panel_count": 16,
+  "ok": 16,
+  "errors": 0,
+  "refs": [
+    {
+      "char_id": "calpurnia",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/calpurnia_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "cassius",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/cassius_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "dad",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "daughter",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "julius_caesar",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "marcus_brutus",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "mark_antony",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/mark_antony_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "roman_people",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/roman_people_ref.png",
+      "status": "ok"
+    },
+    {
+      "char_id": "senate",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/senate_ref.png",
+      "status": "ok"
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_01.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_01.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 812916,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 104.23,
+          "variance": 3906.55,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_01.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 2,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_02.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_02.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 758467,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 128.33,
+          "variance": 3957.16,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_02.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 3,
+      "characters": [
+        "julius_caesar",
+        "roman_people"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_03.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_03.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 792247,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 119.33,
+          "variance": 3945.05,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_03.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/roman_people_ref.png"
+      ]
+    },
+    {
+      "index": 4,
+      "characters": [
+        "julius_caesar"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_04.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_04.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 710229,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 118.77,
+          "variance": 4866.65,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_04.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png"
+      ]
+    },
+    {
+      "index": 5,
+      "characters": [
+        "senate",
+        "roman_people"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_05.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_05.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 818852,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 135.09,
+          "variance": 6699.29,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_05.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/senate_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/roman_people_ref.png"
+      ]
+    },
+    {
+      "index": 6,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_06.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_06.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 703433,
+          "min_size": true,
+          "width": 896,
+          "height": 1200,
+          "min_dims": true,
+          "mean_brightness": 127.6,
+          "variance": 3524.34,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_06.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 7,
+      "characters": [
+        "cassius",
+        "marcus_brutus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_07.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_07.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 722478,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 99.9,
+          "variance": 4343.14,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_07.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/cassius_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png"
+      ]
+    },
+    {
+      "index": 8,
+      "characters": [
+        "marcus_brutus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_08.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_08.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 757601,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 84.28,
+          "variance": 2643.49,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_08.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png"
+      ]
+    },
+    {
+      "index": 9,
+      "characters": [
+        "calpurnia",
+        "julius_caesar"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_09.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_09.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 747943,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 78.34,
+          "variance": 2943.95,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_09.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/calpurnia_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png"
+      ]
+    },
+    {
+      "index": 10,
+      "characters": [
+        "julius_caesar",
+        "senate",
+        "marcus_brutus",
+        "cassius"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_10.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_10.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 781378,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 155.28,
+          "variance": 5779.35,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_10.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/cassius_ref.png"
+      ]
+    },
+    {
+      "index": 11,
+      "characters": [
+        "julius_caesar",
+        "marcus_brutus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_11.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_11.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 685605,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 117.32,
+          "variance": 7262.07,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_11.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/julius_caesar_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png"
+      ]
+    },
+    {
+      "index": 12,
+      "characters": [
+        "marcus_brutus",
+        "senate"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_12.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_12.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 809339,
+          "min_size": true,
+          "width": 768,
+          "height": 1376,
+          "min_dims": true,
+          "mean_brightness": 148.43,
+          "variance": 4360.92,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_12.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/senate_ref.png"
+      ]
+    },
+    {
+      "index": 13,
+      "characters": [
+        "mark_antony",
+        "roman_people"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_13.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_13.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 848497,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 144.81,
+          "variance": 5612.32,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_13.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/mark_antony_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/roman_people_ref.png"
+      ]
+    },
+    {
+      "index": 14,
+      "characters": [
+        "roman_people",
+        "cassius",
+        "marcus_brutus"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_14.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_14.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 751116,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 107.54,
+          "variance": 4108.21,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_14.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/cassius_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/marcus_brutus_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/roman_people_ref.png"
+      ]
+    },
+    {
+      "index": 15,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_15.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_15.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 769078,
+          "min_size": true,
+          "width": 1376,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 100.96,
+          "variance": 2670.5,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_15.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    },
+    {
+      "index": 16,
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_16.png",
+      "status": "ok",
+      "method": "gemini_ref",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/episode_et_tu_brutus/panel_16.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 690629,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 141.35,
+          "variance": 4103.48,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      },
+      "attempts": [
+        {
+          "method": "gemini_ref",
+          "qa": "pass",
+          "ok": true
+        }
+      ],
+      "href": "/media/phase5/episode_et_tu_brutus/panel_16.png",
+      "refs_used": [
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/dad_ref.png",
+        "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/refs/daughter_ref.png"
+      ]
+    }
+  ]
+}
