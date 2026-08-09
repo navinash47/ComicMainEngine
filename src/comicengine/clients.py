@@ -13,12 +13,13 @@ from typing import Any
 from comicengine.config import (
     USE_OMNIROUTE,
     env,
+    fal_api_key,
     omniroute_anthropic_base,
     omniroute_api_key,
     omniroute_openai_base,
     routing_label,
 )
-from comicengine.pricing import gemini_image_cost_usd, llm_cost_usd
+from comicengine.pricing import fal_image_cost_usd, gemini_image_cost_usd, llm_cost_usd
 from comicengine.usage import ApiCall, TimedCall, UsageDB
 
 
@@ -226,8 +227,93 @@ class TrackedClients:
                 call.output_tokens = int(getattr(um, "candidates_token_count", 0) or 0)
             call.cost_usd = llm_cost_usd(model, call.input_tokens, call.output_tokens)
             text = (resp.text or "").strip()
-            call.meta = {"preview": text[:80], "route": "direct"}
+            call.meta = {"preview": text[:80], "route": "direct", "category": "text"}
             return text
+
+    def fal_flux_image(
+        self,
+        prompt: str,
+        *,
+        out_path: Path,
+        model: str = "fal-ai/flux/schnell",
+        purpose: str = "phase1_single",
+        image_size: str = "square_hd",
+        num_inference_steps: int = 4,
+        seed: int | None = None,
+    ) -> Path:
+        """FLUX via fal.ai — direct image API (never OmniRoute)."""
+        import os
+
+        import fal_client
+        import httpx
+
+        from comicengine.analytics import check_image_quality
+
+        key = fal_api_key()
+        if not key:
+            raise RuntimeError("FAL_API_KEY (or FAL_KEY) missing in .env")
+        # fal_client reads FAL_KEY
+        os.environ["FAL_KEY"] = key
+
+        out_path = Path(out_path)
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+
+        args: dict[str, Any] = {
+            "prompt": prompt,
+            "image_size": image_size,
+            "num_inference_steps": num_inference_steps,
+            "num_images": 1,
+            "enable_safety_checker": True,
+            "output_format": "png",
+        }
+        if seed is not None:
+            args["seed"] = seed
+
+        call = ApiCall(
+            provider="fal",
+            model=model,
+            purpose=purpose,
+            phase=self.phase,
+            meta={"category": "image", "route": "direct", "prompt_chars": len(prompt)},
+        )
+        with TimedCall(self.db, call):
+            result = fal_client.subscribe(model, arguments=args)
+            # fal_client may return dict or object with images
+            if hasattr(result, "get"):
+                data = result
+            elif hasattr(result, "data"):
+                data = result.data if isinstance(result.data, dict) else dict(result.data)
+            else:
+                data = dict(result)
+
+            images = data.get("images") or []
+            if not images:
+                raise RuntimeError(f"fal returned no images: {data!r}")
+            first = images[0]
+            url = first.get("url") if isinstance(first, dict) else getattr(first, "url", None)
+            if not url:
+                raise RuntimeError(f"fal image missing url: {first!r}")
+
+            resp = httpx.get(url, timeout=120.0, follow_redirects=True)
+            resp.raise_for_status()
+            out_path.write_bytes(resp.content)
+
+            used_seed = data.get("seed")
+            call.image_tokens = 1
+            call.cost_usd = fal_image_cost_usd(model, num_images=1)
+            qa = check_image_quality(out_path)
+            call.meta.update(
+                {
+                    "out_path": str(out_path),
+                    "image_url": url,
+                    "seed": used_seed,
+                    "image_quality": qa,
+                    "fal_request": {"image_size": image_size, "steps": num_inference_steps},
+                }
+            )
+            if qa.get("verdict") == "fail":
+                call.meta["quality_warning"] = True
+            return out_path
 
 
 def ping_all(phase: str = "phase0") -> dict[str, Any]:

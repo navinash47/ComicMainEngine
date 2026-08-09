@@ -52,3 +52,15 @@ def gemini_image_cost_usd(model: str, size: str = "2K", image_tokens: int | None
     if image_tokens:
         return image_tokens * 0.00012
     return 0.134
+
+
+# fal FLUX point-in-time estimates (re-check fal pricing page)
+FAL_IMAGE_COST = {
+    "fal-ai/flux/schnell": 0.003,
+    "fal-ai/flux-1/schnell": 0.003,
+}
+
+
+def fal_image_cost_usd(model: str, num_images: int = 1) -> float:
+    unit = FAL_IMAGE_COST.get(model, 0.003)
+    return float(unit) * max(1, num_images)

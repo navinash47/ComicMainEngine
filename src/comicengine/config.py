@@ -43,3 +43,8 @@ def omniroute_anthropic_base() -> str:
 
 def routing_label() -> str:
     return "omniroute" if USE_OMNIROUTE else "direct"
+
+
+def fal_api_key() -> str | None:
+    """fal.ai key — SDK reads FAL_KEY; project .env may use FAL_API_KEY."""
+    return env("FAL_KEY") or env("FAL_API_KEY")
