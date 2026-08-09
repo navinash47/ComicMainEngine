@@ -53,7 +53,7 @@ function renderPeople(people) {
           const active = p.id === selectedPersonId ? "on" : "";
           return `<button type="button" class="person-chip ${active}" data-id="${esc(p.id)}">
             <strong>${esc(p.name || p.username || "anon")}</strong>
-            <span class="muted small">@${esc(p.username || "—")} · logins ${fmt(p.login_count)} · stories ${fmt(p.stories_rated)}</span>
+            <span class="muted small">@${esc(p.username || "—")} · logins ${fmt(p.login_count)} · stories ${fmt(p.stories_rated)} · Q ${fmt(p.questionnaire_count || 0)}</span>
           </button>`;
         })
         .join("")
@@ -80,6 +80,7 @@ function showPerson(id) {
     return;
   }
   const responses = p.responses || [];
+  const questionnaires = p.questionnaires || [];
   $("personDetail").innerHTML = `
     <div class="person-head">
       <div>
@@ -90,9 +91,10 @@ function showPerson(id) {
         <div><span class="label">Logins</span><strong>${fmt(p.login_count)}</strong></div>
         <div><span class="label">Stories rated</span><strong>${fmt(p.stories_rated)}</strong></div>
         <div><span class="label">Avg overall</span><strong>${p.avg_overall != null ? p.avg_overall + " " + stars(p.avg_overall) : "—"}</strong></div>
-        <div><span class="label">Avg panel</span><strong>${p.avg_panel != null ? p.avg_panel : "—"}</strong></div>
+        <div><span class="label">Mom Test</span><strong>${fmt(questionnaires.length)}</strong></div>
       </div>
     </div>
+    <h3 class="fb-section">Story ratings</h3>
     ${
       responses.length
         ? responses
@@ -110,7 +112,27 @@ function showPerson(id) {
               </article>`;
             })
             .join("")
-        : `<p class="muted">This person hasn’t submitted story feedback yet.</p>`
+        : `<p class="muted">No story ratings yet.</p>`
+    }
+    <h3 class="fb-section">Mom Test questionnaire</h3>
+    ${
+      questionnaires.length
+        ? questionnaires
+            .map((item) => {
+              const answers = item.answers || {};
+              const rows = Object.entries(answers)
+                .map(
+                  ([k, v]) =>
+                    `<div class="q-ans"><div class="muted small">${esc(k)}</div><p>${esc(v)}</p></div>`
+                )
+                .join("");
+              return `<article class="fb-card">
+                <div class="muted small">${esc((item.created_at || "").replace("T", " ").slice(0, 19))} · story ${esc(item.story_id || "—")}</div>
+                ${rows || "<p class='muted'>Empty answers</p>"}
+              </article>`;
+            })
+            .join("")
+        : `<p class="muted">No Mom Test questionnaire submitted yet.</p>`
     }`;
 }
 
@@ -230,8 +252,8 @@ async function loadLive() {
   $("readerKpis").innerHTML = [
     ["Registered readers", fmt(s.registered_users)],
     ["Feedback responses", fmt(s.feedback_responses)],
+    ["Mom Test forms", fmt(s.questionnaire_responses)],
     ["People with ratings", fmt(s.people_with_feedback)],
-    ["Login events tracked", fmt(s.login_events)],
     ["Live source", esc(data.source || "—")],
   ]
     .map(([label, value]) => `<div class="kpi reader"><div class="label">${label}</div><div class="value">${value}</div></div>`)

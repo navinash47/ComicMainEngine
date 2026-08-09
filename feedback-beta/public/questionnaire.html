@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Questionnaire · ComicEngine</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="public-review">
+  <div class="page-shell">
+    <header>
+      <div>
+        <p class="brand"><span class="brand-name">ComicEngine</span> <span class="beta-pill">Beta</span></p>
+        <h1>Mom Test questionnaire</h1>
+      </div>
+      <div class="status nav-links">
+        <a class="btn" href="/">Stories</a>
+        <span class="muted small" id="whoHint"></span>
+      </div>
+    </header>
+    <section class="story-meta">
+      <p class="lede" id="intro">Loading questions…</p>
+      <p class="muted small" id="storyHint"></p>
+    </section>
+    <form class="feedback-form" id="qForm" hidden></form>
+    <p class="muted small" id="qStatus" style="padding:0 2rem"></p>
+  </div>
+  <script src="/app.js"></script>
+  <script>QuestionnairePage.init();</script>
+  <footer class="site-footer">
+    <p>© 2026 Avinash Nandyala · ComicEngine</p>
+    <p class="muted small">AI comic pipeline — beta preview. Built by Avinash (<a href="https://github.com/navinash47" target="_blank" rel="noopener">@navinash47</a>).</p>
+  </footer>
+</body>
+</html>

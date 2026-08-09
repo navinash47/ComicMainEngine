@@ -1,0 +1,151 @@
+{
+  "method": "mom_test",
+  "title": "Quick Mom Test questionnaire",
+  "intro": "Please answer from real past moments — what you and kids / students actually do — and what happened while you read today. Skip flattery; concrete details help Version 2 more than compliments.",
+  "question_count": 14,
+  "questions": [
+    {
+      "id": "q01_role_context",
+      "kind": "choice",
+      "required": true,
+      "section": "Your world",
+      "prompt": "In the last month, which role were you actually in when history or bedtime stories came up?",
+      "choices": [
+        "parent / guardian at home",
+        "teacher / tutor with students",
+        "older sibling / relative",
+        "student learning history myself",
+        "none — I don’t do this regularly",
+        "other"
+      ]
+    },
+    {
+      "id": "q02_last_time",
+      "kind": "text",
+      "required": true,
+      "section": "Your world",
+      "prompt": "Tell me about the last time you tried to explain a hard history topic to a kid or learner.",
+      "hint": "When was it, who was there, what topic, what did you use?"
+    },
+    {
+      "id": "q03_what_broke",
+      "kind": "text",
+      "required": true,
+      "section": "Your world",
+      "prompt": "In that attempt (or a similar recent one), what went wrong or felt hardest?",
+      "hint": "Attention dropped? Too scary? You didn’t know enough? No good material?"
+    },
+    {
+      "id": "q04_current_tools",
+      "kind": "text",
+      "required": true,
+      "section": "Your world",
+      "prompt": "What do you already use today for history / morals / bedtime explainers?",
+      "hint": "Apps, channels, books, comics — or “nothing reliable.”"
+    },
+    {
+      "id": "q05_sought_before",
+      "kind": "choice",
+      "required": true,
+      "section": "Your world",
+      "prompt": "Before today, had you searched for or paid for something like an illustrated history comic for kids/teens?",
+      "choices": [
+        "yes — paid for something",
+        "yes — searched but didn’t buy",
+        "yes — used free stuff only",
+        "no — never looked",
+        "not sure"
+      ]
+    },
+    {
+      "id": "q06_when_need",
+      "kind": "choice",
+      "required": true,
+      "section": "Your world",
+      "prompt": "When does this need usually show up in your week?",
+      "choices": [
+        "bedtime / wind-down",
+        "homework / school project",
+        "classroom period",
+        "random curiosity moment",
+        "rarely / never",
+        "other"
+      ]
+    },
+    {
+      "id": "q08_how_far",
+      "kind": "choice",
+      "required": true,
+      "section": "This session",
+      "prompt": "How far did you get in the story you just rated before you stopped or switched away?",
+      "choices": [
+        "never started reading panels",
+        "stopped in the first few panels",
+        "about halfway",
+        "finished (or almost finished)",
+        "finished more than one story"
+      ]
+    },
+    {
+      "id": "q09_minutes",
+      "kind": "choice",
+      "required": true,
+      "section": "This session",
+      "prompt": "About how many minutes did you spend reading (not including filling forms)?",
+      "choices": ["under 3", "3–10", "10–20", "20–40", "over 40"]
+    },
+    {
+      "id": "q10_first_stop",
+      "kind": "text",
+      "required": true,
+      "section": "This session",
+      "prompt": "Where did you first stop, skim, or feel the urge to leave? What was on screen?",
+      "hint": "Panel / scene if you remember — “don’t remember stopping” is fine."
+    },
+    {
+      "id": "q12_visual_break",
+      "kind": "text",
+      "required": true,
+      "section": "This session",
+      "prompt": "Name one visual moment that broke immersion (face swap, weird hands, unreadably small text…).",
+      "hint": "If nothing broke it, write “nothing broke immersion.”"
+    },
+    {
+      "id": "q13_flinch",
+      "kind": "text",
+      "required": true,
+      "section": "This session",
+      "prompt": "Was there a moment you flinched for a child’s sake — too intense, confusing, or off-tone? Describe it.",
+      "hint": "If no flinch, write “no flinch.”"
+    },
+    {
+      "id": "q15_showed_anyone",
+      "kind": "choice",
+      "required": true,
+      "section": "Commitment signals",
+      "prompt": "Since opening this beta, have you already shown a panel or mentioned it to anyone else?",
+      "choices": [
+        "yes — showed a screen to someone",
+        "yes — told someone about it (no screen)",
+        "not yet, but I know who I’d show",
+        "no"
+      ]
+    },
+    {
+      "id": "q17_compared_to",
+      "kind": "text",
+      "required": true,
+      "section": "Commitment signals",
+      "prompt": "Compared to the last tool you used for this job, what did this comic do better or worse in practice today?",
+      "hint": "Talk about what happened, not what might happen later."
+    },
+    {
+      "id": "q18_still_missing",
+      "kind": "text",
+      "required": true,
+      "section": "Commitment signals",
+      "prompt": "What job is still unfinished for you after reading?",
+      "hint": "e.g. kid still bored, I still can’t answer a question, need audio…"
+    }
+  ]
+}

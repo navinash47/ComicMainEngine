@@ -292,8 +292,94 @@ const StoryPage = {
         document.getElementById("submitStatus").textContent = out.detail || post.statusText;
         return;
       }
-      document.getElementById("submitStatus").textContent = "Thanks — saved to your account.";
+      document.getElementById("submitStatus").textContent = "Thanks — saved. Opening questionnaire…";
       document.getElementById("submitAll").disabled = true;
+      setTimeout(() => {
+        location.href = `/questionnaire.html?story=${encodeURIComponent(story.id)}`;
+      }, 600);
+    };
+  },
+};
+
+const QuestionnairePage = {
+  async init() {
+    const user = await Auth.requireLogin();
+    if (!user) return;
+    document.getElementById("whoHint").textContent = user.name || user.username;
+    const storyId = new URLSearchParams(location.search).get("story") || "";
+    const res = await fetch("/questionnaire.json");
+    if (!res.ok) {
+      document.getElementById("intro").textContent = "Questionnaire missing.";
+      return;
+    }
+    const meta = await res.json();
+    document.getElementById("intro").textContent = meta.intro || "";
+    document.getElementById("storyHint").textContent = storyId
+      ? `Linked to the story you just rated: ${storyId}`
+      : "Thanks for rating — a few questions about your real habits and this session.";
+
+    const form = document.getElementById("qForm");
+    form.hidden = false;
+    let lastSection = "";
+    const bits = [];
+    for (const q of meta.questions || []) {
+      if (q.section && q.section !== lastSection) {
+        lastSection = q.section;
+        bits.push(`<h2 class="fb-section">${esc(q.section)}</h2>`);
+      }
+      bits.push(`<div class="fb-q" data-qid="${esc(q.id)}">`);
+      bits.push(`<label class="pe-label" for="ans-${esc(q.id)}">${esc(q.prompt)}${q.required ? " *" : ""}</label>`);
+      if (q.hint) bits.push(`<p class="muted small">${esc(q.hint)}</p>`);
+      if (q.kind === "choice") {
+        bits.push(`<select id="ans-${esc(q.id)}" ${q.required ? "required" : ""}>`);
+        bits.push(`<option value="">Select…</option>`);
+        for (const c of q.choices || []) {
+          bits.push(`<option value="${esc(c)}">${esc(c)}</option>`);
+        }
+        bits.push(`</select>`);
+      } else {
+        bits.push(
+          `<textarea id="ans-${esc(q.id)}" rows="3" ${q.required ? "required" : ""} placeholder="Write a concrete answer…"></textarea>`
+        );
+      }
+      bits.push(`</div>`);
+    }
+    bits.push(`<div class="pe-foot" style="border:0;margin-top:1.25rem">
+      <button type="submit" class="btn pe-primary">Submit questionnaire</button>
+      <a class="btn" href="/">Skip to stories</a>
+    </div>`);
+    form.innerHTML = bits.join("");
+
+    form.onsubmit = async (ev) => {
+      ev.preventDefault();
+      const answers = {};
+      for (const q of meta.questions || []) {
+        const el = document.getElementById(`ans-${q.id}`);
+        const val = (el && el.value ? el.value : "").trim();
+        if (q.required && !val) {
+          document.getElementById("qStatus").textContent = `Please answer: ${q.prompt}`;
+          el && el.focus();
+          return;
+        }
+        if (val) answers[q.id] = val;
+      }
+      document.getElementById("qStatus").textContent = "Saving…";
+      const post = await fetch("/api/questionnaire", {
+        method: "POST",
+        headers: Auth.headers(),
+        credentials: "include",
+        body: JSON.stringify({ story_id: storyId, answers }),
+      });
+      const out = await post.json().catch(() => ({}));
+      if (!post.ok) {
+        document.getElementById("qStatus").textContent = out.detail || "Save failed";
+        return;
+      }
+      document.getElementById("qStatus").textContent = "Saved — thank you. This helps Version 2.";
+      form.querySelector('button[type="submit"]').disabled = true;
+      setTimeout(() => {
+        location.href = "/";
+      }, 1200);
     };
   },
 };
@@ -302,3 +388,4 @@ window.Auth = Auth;
 window.AuthPage = AuthPage;
 window.Home = Home;
 window.StoryPage = StoryPage;
+window.QuestionnairePage = QuestionnairePage;

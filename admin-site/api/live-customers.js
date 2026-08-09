@@ -40,12 +40,19 @@ module.exports = async (req, res) => {
       const row = await r.get(`story_feedback:${id}`);
       if (row) feedback.push(row);
     }
+    const qIds = (await r.lrange("questionnaire_ids", 0, 499)) || [];
+    const questionnaires = [];
+    for (const id of qIds) {
+      const row = await r.get(`questionnaire:${id}`);
+      if (row) questionnaires.push(row);
+    }
 
     const byUser = {};
     for (const u of users) {
       byUser[u.id] = {
         ...u,
         responses: [],
+        questionnaires: [],
         avg_overall: null,
         stories_rated: 0,
         panel_ratings: 0,
@@ -62,12 +69,32 @@ module.exports = async (req, res) => {
           last_login_at: null,
           login_count: 0,
           responses: [],
+          questionnaires: [],
           avg_overall: null,
           stories_rated: 0,
           panel_ratings: 0,
         };
       }
       byUser[key].responses.push(item);
+    }
+    for (const item of questionnaires) {
+      const key = item.reviewer_key;
+      if (!byUser[key]) {
+        byUser[key] = {
+          id: key,
+          username: item.reviewer_username || null,
+          name: item.reviewer_name || "unknown",
+          created_at: null,
+          last_login_at: null,
+          login_count: 0,
+          responses: [],
+          questionnaires: [],
+          avg_overall: null,
+          stories_rated: 0,
+          panel_ratings: 0,
+        };
+      }
+      byUser[key].questionnaires.push(item);
     }
     const people = Object.values(byUser).map((p) => {
       const overalls = p.responses.map((x) => Number(x.overall_rating)).filter((n) => n >= 1);
@@ -76,6 +103,7 @@ module.exports = async (req, res) => {
         ...p,
         stories_rated: p.responses.length,
         panel_ratings: panels.length,
+        questionnaire_count: (p.questionnaires || []).length,
         avg_overall: overalls.length
           ? Math.round((overalls.reduce((a, b) => a + b, 0) / overalls.length) * 100) / 100
           : null,
@@ -97,11 +125,13 @@ module.exports = async (req, res) => {
         registered_users: users.length,
         login_events: login_events.length,
         feedback_responses: feedback.length,
+        questionnaire_responses: questionnaires.length,
         people_with_feedback: people.filter((p) => p.stories_rated > 0).length,
       },
       people,
       login_events,
       feedback,
+      questionnaires,
       charts,
     });
   } catch (e) {
