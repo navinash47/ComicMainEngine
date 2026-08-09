@@ -721,9 +721,11 @@ main { padding: 1rem 2rem 2rem; max-width: 1100px; }
 }
 .card canvas {
   width: 100% !important;
+  height: 160px !important;
   max-width: 100%;
   background: rgba(0,0,0,0.15);
   border-radius: 4px;
+  display: block;
 }
 .people-layout {
   display: grid;

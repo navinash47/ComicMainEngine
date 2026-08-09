@@ -141,16 +141,19 @@ function renderFeedbackList(items, source) {
     : `<p class="muted">No live feedback yet.</p>`;
 }
 
+let lastCharts = null;
+
 function drawLiveCharts(charts) {
-  const hist = charts.ratings_hist || [0, 0, 0, 0, 0];
+  lastCharts = charts || lastCharts || {};
+  const hist = lastCharts.ratings_hist || [0, 0, 0, 0, 0];
   Charts.bar($("ratingChart"), ["1★", "2★", "3★", "4★", "5★"], hist);
-  const days = charts.logins_by_day || [];
+  const days = lastCharts.logins_by_day || [];
   Charts.line(
     $("loginChart"),
     days.map((d) => d.day),
     days.map((d) => d.count)
   );
-  const stories = charts.by_story || [];
+  const stories = lastCharts.by_story || [];
   Charts.bar(
     $("storyChart"),
     stories.map((s) => String(s.story_id).replace("episode_", "").slice(0, 10)),
@@ -289,7 +292,15 @@ async function main() {
   await loadLive();
   clearInterval(pollTimer);
   pollTimer = setInterval(loadLive, 20000);
-  window.addEventListener("resize", () => loadLive());
+
+  // Redraw charts only on resize — do not re-fetch (avoids canvas height compounding)
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (lastCharts) drawLiveCharts(lastCharts);
+    }, 150);
+  });
 }
 
 main().catch((err) => {
