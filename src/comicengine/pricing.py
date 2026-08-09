@@ -58,6 +58,7 @@ def gemini_image_cost_usd(model: str, size: str = "2K", image_tokens: int | None
 FAL_IMAGE_COST = {
     "fal-ai/flux/schnell": 0.003,
     "fal-ai/flux-1/schnell": 0.003,
+    "fal-ai/flux-pro/kontext": 0.04,
 }
 
 

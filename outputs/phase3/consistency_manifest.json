@@ -1,0 +1,784 @@
+{
+  "phase": "phase3",
+  "created_at": "2026-08-09T08:18:38.963277+00:00",
+  "style_id": "korean_manhwa",
+  "expected_images": 22,
+  "ok_or_skipped": 22,
+  "failures": 0,
+  "ref_sheet_ids": [
+    "dad",
+    "daughter",
+    "abhijeet_dipke",
+    "saurav_das",
+    "sonam_wangchuk",
+    "modiji",
+    "amit_shah",
+    "police"
+  ],
+  "priority_ids": [
+    "abhijeet_dipke",
+    "dad",
+    "modiji"
+  ],
+  "jobs": [
+    {
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_speak",
+      "scene": "Abhijeet Dipke speaks calmly to students with fair-exam placards near stylized Jantar Mantar at soft dusk; hopeful civic moment",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref",
+        "flux_kontext"
+      ]
+    },
+    {
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_closeup",
+      "scene": "medium close-up of Abhijeet Dipke listening carefully, soft outdoor light, same outfit energy as reference, determined kind expression",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref",
+        "flux_kontext"
+      ]
+    },
+    {
+      "char_id": "dad",
+      "scene_id": "dad_bedtime",
+      "scene": "Dad sits on edge of bed telling a bedtime story, warm lamp light, gentle smile, cozy Indian home interior",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref"
+      ]
+    },
+    {
+      "char_id": "dad",
+      "scene_id": "dad_doorway",
+      "scene": "Dad in doorway of child's room, soft night light, kind parting look, same cream sweater / father look as reference",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref"
+      ]
+    },
+    {
+      "char_id": "modiji",
+      "scene_id": "modi_listen",
+      "scene": "Prime Minister Modi listens respectfully in a quiet dignified Delhi hall, composed posture, no caricature, institutional respect",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref"
+      ]
+    },
+    {
+      "char_id": "modiji",
+      "scene_id": "modi_window",
+      "scene": "Prime Minister Modi by a tall window in soft daylight, thoughtful expression, saffron or formal kurta-jacket matching reference identity",
+      "methods": [
+        "text_only_fal",
+        "gemini_ref"
+      ]
+    }
+  ],
+  "refs": [
+    {
+      "kind": "ref_sheet",
+      "char_id": "dad",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 804555,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 200.79,
+          "variance": 2866.66,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "daughter",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/daughter_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/daughter_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 711129,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 187.58,
+          "variance": 6225.74,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "abhijeet_dipke",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 661811,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 156.71,
+          "variance": 7226.86,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "saurav_das",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/saurav_das_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/saurav_das_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 646954,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 207.14,
+          "variance": 6210.63,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "sonam_wangchuk",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/sonam_wangchuk_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/sonam_wangchuk_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 884294,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 166.52,
+          "variance": 7875.69,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "modiji",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 978506,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 203.61,
+          "variance": 2310.69,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "amit_shah",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/amit_shah_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/amit_shah_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 860423,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 180.48,
+          "variance": 5347.22,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "ref_sheet",
+      "char_id": "police",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/police_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/police_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 809160,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 195.5,
+          "variance": 3849.55,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_speak",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 784557,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 113.67,
+          "variance": 4249.18,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_speak",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 688701,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 127.92,
+          "variance": 4949.38,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_speak",
+      "method": "flux_kontext",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__flux_kontext.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_speak__flux_kontext.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1381932,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 60.14,
+          "variance": 2048.2,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_closeup",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 765251,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 105.63,
+          "variance": 2796.89,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_closeup",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 482730,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 97.89,
+          "variance": 3457.76,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "abhijeet_dipke",
+      "scene_id": "abhijeet_closeup",
+      "method": "flux_kontext",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__flux_kontext.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/abhijeet_dipke_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/abhijeet_closeup__flux_kontext.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 1503131,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 102.77,
+          "variance": 4974.18,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "dad",
+      "scene_id": "dad_bedtime",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_bedtime__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_bedtime__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 773090,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 130.24,
+          "variance": 2332.46,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "dad",
+      "scene_id": "dad_bedtime",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_bedtime__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_bedtime__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 779737,
+          "min_size": true,
+          "width": 848,
+          "height": 1264,
+          "min_dims": true,
+          "mean_brightness": 117.75,
+          "variance": 4145.89,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "dad",
+      "scene_id": "dad_doorway",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_doorway__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_doorway__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 686776,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 139.25,
+          "variance": 2137.0,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "dad",
+      "scene_id": "dad_doorway",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_doorway__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/dad_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/dad_doorway__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 580804,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 96.79,
+          "variance": 3471.71,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "modiji",
+      "scene_id": "modi_listen",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_listen__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_listen__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 993982,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 115.09,
+          "variance": 4289.0,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "modiji",
+      "scene_id": "modi_listen",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_listen__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_listen__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 612542,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 127.13,
+          "variance": 6482.42,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "modiji",
+      "scene_id": "modi_window",
+      "method": "text_only_fal",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_window__text_only_fal.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_window__text_only_fal.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 727613,
+          "min_size": true,
+          "width": 1024,
+          "height": 768,
+          "min_dims": true,
+          "mean_brightness": 158.46,
+          "variance": 4575.78,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    },
+    {
+      "kind": "consistency_scene",
+      "char_id": "modiji",
+      "scene_id": "modi_window",
+      "method": "gemini_ref",
+      "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_window__gemini_ref.png",
+      "ref_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/refs/modiji_ref.png",
+      "status": "ok",
+      "qa": {
+        "path": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase3/scenes/modi_window__gemini_ref.png",
+        "exists": true,
+        "score": 1.0,
+        "checks": {
+          "exists": true,
+          "bytes": 649827,
+          "min_size": true,
+          "width": 1024,
+          "height": 1024,
+          "min_dims": true,
+          "mean_brightness": 144.75,
+          "variance": 4505.72,
+          "not_blank": true,
+          "not_pure_white": true,
+          "not_pure_black": true
+        },
+        "verdict": "pass"
+      }
+    }
+  ],
+  "decision": {
+    "winner_method": "gemini_ref",
+    "production_recommendation": "Ship gemini_ref as default for korean_manhwa character lock across Abhijeet/Dad/Modi. Reserve flux_kontext for hard Abhijeet closeup/speak retries when face drift appears.",
+    "local_method_scores": {
+      "text_only_fal": {
+        "n": 6,
+        "avg_qa_score": 1.0,
+        "pass_rate": 1.0,
+        "chars": [
+          "abhijeet_dipke",
+          "dad",
+          "modiji"
+        ],
+        "scenes": [
+          "abhijeet_closeup",
+          "abhijeet_speak",
+          "dad_bedtime",
+          "dad_doorway",
+          "modi_listen",
+          "modi_window"
+        ]
+      },
+      "gemini_ref": {
+        "n": 6,
+        "avg_qa_score": 1.0,
+        "pass_rate": 1.0,
+        "chars": [
+          "abhijeet_dipke",
+          "dad",
+          "modiji"
+        ],
+        "scenes": [
+          "abhijeet_closeup",
+          "abhijeet_speak",
+          "dad_bedtime",
+          "dad_doorway",
+          "modi_listen",
+          "modi_window"
+        ]
+      },
+      "flux_kontext": {
+        "n": 2,
+        "avg_qa_score": 1.0,
+        "pass_rate": 1.0,
+        "chars": [
+          "abhijeet_dipke"
+        ],
+        "scenes": [
+          "abhijeet_closeup",
+          "abhijeet_speak"
+        ]
+      }
+    },
+    "judge": {
+      "rankings": [
+        {
+          "method": "gemini_ref",
+          "total": 40,
+          "face_identity_lock": 8,
+          "outfit_stability": 8,
+          "style_match_to_manhwa_lock": 8,
+          "reliability": 9,
+          "cost_efficiency": 7,
+          "why": "Ref-sheet conditioning + full 3-char/6-scene perfect QA; best identity/cost balance for manhwa."
+        },
+        {
+          "method": "flux_kontext",
+          "total": 36,
+          "face_identity_lock": 9,
+          "outfit_stability": 9,
+          "style_match_to_manhwa_lock": 8,
+          "reliability": 7,
+          "cost_efficiency": 3,
+          "why": "Strongest Abhijeet bake-off lock by design; n=2 Abhijeet-only + $$ hurts production rank."
+        },
+        {
+          "method": "text_only_fal",
+          "total": 32,
+          "face_identity_lock": 3,
+          "outfit_stability": 3,
+          "style_match_to_manhwa_lock": 7,
+          "reliability": 9,
+          "cost_efficiency": 10,
+          "why": "Cheapest/most stable pipeline QA, but no ref \u2192 weak cross-scene face/outfit lock."
+        }
+      ],
+      "winner_method": "gemini_ref",
+      "production_recommendation": "Ship gemini_ref as default for korean_manhwa character lock across Abhijeet/Dad/Modi. Reserve flux_kontext for hard Abhijeet closeup/speak retries when face drift appears.",
+      "notes": "Local QA only checks blank/dims/brightness\u2014not identity; kontext under-sampled vs other methods; gemini aspect ratios vary (e.g. 848x1264)."
+    },
+    "style_id": "korean_manhwa",
+    "priority_chars": [
+      "abhijeet_dipke",
+      "dad",
+      "modiji"
+    ],
+    "decided_at": "2026-08-09T08:18:38.963271+00:00"
+  },
+  "analytics_note": "All image gens logged with category=image, phase=phase3, purposes char_ref / char_consistency. LLM judge category=text via OmniRoute."
+}

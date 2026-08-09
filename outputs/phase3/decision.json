@@ -1,0 +1,98 @@
+{
+  "winner_method": "gemini_ref",
+  "production_recommendation": "Ship gemini_ref as default for korean_manhwa character lock across Abhijeet/Dad/Modi. Reserve flux_kontext for hard Abhijeet closeup/speak retries when face drift appears.",
+  "local_method_scores": {
+    "text_only_fal": {
+      "n": 6,
+      "avg_qa_score": 1.0,
+      "pass_rate": 1.0,
+      "chars": [
+        "abhijeet_dipke",
+        "dad",
+        "modiji"
+      ],
+      "scenes": [
+        "abhijeet_closeup",
+        "abhijeet_speak",
+        "dad_bedtime",
+        "dad_doorway",
+        "modi_listen",
+        "modi_window"
+      ]
+    },
+    "gemini_ref": {
+      "n": 6,
+      "avg_qa_score": 1.0,
+      "pass_rate": 1.0,
+      "chars": [
+        "abhijeet_dipke",
+        "dad",
+        "modiji"
+      ],
+      "scenes": [
+        "abhijeet_closeup",
+        "abhijeet_speak",
+        "dad_bedtime",
+        "dad_doorway",
+        "modi_listen",
+        "modi_window"
+      ]
+    },
+    "flux_kontext": {
+      "n": 2,
+      "avg_qa_score": 1.0,
+      "pass_rate": 1.0,
+      "chars": [
+        "abhijeet_dipke"
+      ],
+      "scenes": [
+        "abhijeet_closeup",
+        "abhijeet_speak"
+      ]
+    }
+  },
+  "judge": {
+    "rankings": [
+      {
+        "method": "gemini_ref",
+        "total": 40,
+        "face_identity_lock": 8,
+        "outfit_stability": 8,
+        "style_match_to_manhwa_lock": 8,
+        "reliability": 9,
+        "cost_efficiency": 7,
+        "why": "Ref-sheet conditioning + full 3-char/6-scene perfect QA; best identity/cost balance for manhwa."
+      },
+      {
+        "method": "flux_kontext",
+        "total": 36,
+        "face_identity_lock": 9,
+        "outfit_stability": 9,
+        "style_match_to_manhwa_lock": 8,
+        "reliability": 7,
+        "cost_efficiency": 3,
+        "why": "Strongest Abhijeet bake-off lock by design; n=2 Abhijeet-only + $$ hurts production rank."
+      },
+      {
+        "method": "text_only_fal",
+        "total": 32,
+        "face_identity_lock": 3,
+        "outfit_stability": 3,
+        "style_match_to_manhwa_lock": 7,
+        "reliability": 9,
+        "cost_efficiency": 10,
+        "why": "Cheapest/most stable pipeline QA, but no ref \u2192 weak cross-scene face/outfit lock."
+      }
+    ],
+    "winner_method": "gemini_ref",
+    "production_recommendation": "Ship gemini_ref as default for korean_manhwa character lock across Abhijeet/Dad/Modi. Reserve flux_kontext for hard Abhijeet closeup/speak retries when face drift appears.",
+    "notes": "Local QA only checks blank/dims/brightness\u2014not identity; kontext under-sampled vs other methods; gemini aspect ratios vary (e.g. 848x1264)."
+  },
+  "style_id": "korean_manhwa",
+  "priority_chars": [
+    "abhijeet_dipke",
+    "dad",
+    "modiji"
+  ],
+  "decided_at": "2026-08-09T08:18:38.963271+00:00"
+}

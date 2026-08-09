@@ -20,6 +20,10 @@ outputs/**/*.json
 !outputs/**/.gitkeep
 !outputs/phase0.5/
 !outputs/phase0.5/**/*.json
+!outputs/phase3/
+!outputs/phase3/**/*.json
+!outputs/phase3/refs/
+!outputs/phase3/refs/**
 data/*
 !data/.gitkeep
 !data/style_lock.json
