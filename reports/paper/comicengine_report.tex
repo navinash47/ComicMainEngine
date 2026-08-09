@@ -341,16 +341,22 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
 \end{itemize}
 
 \subsection{Phase 8.6 --- Reader auth + dual Vercel hosting (complete)}
-\textbf{Goal.} Separable reader vs admin surfaces; reviewers rate panels/stories without seeing engine stats.
+\textbf{Goal.} Separable reader vs admin surfaces; reviewers rate panels/stories without seeing engine stats; ship a shareable beta without putting image regen on Vercel.
 
-\paragraph{What worked.}
+\paragraph{What shipped.}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
-  \item Local FastAPI: open admin console (\texttt{/admin}); public review at \texttt{/review} (name + panel/story ratings)
-  \item Vercel \textbf{comicengine-reader}: username/password (HttpOnly session cookie + Upstash Redis); library cards with scored thumbnails; Read\&rate / PDF / Just~read
-  \item Vercel \textbf{comicengine-admin}: snapshot engine KPIs + \textbf{live} people/logins/feedback charts from Upstash (20s poll)
-  \item Thumbnail pick script \texttt{scripts/select\_thumbnails.py} (heuristic + visual override); prepare scripts for comics/admin JSON
-  \item Hosting runbook \texttt{docs/HOSTING.md}
+  \item Local FastAPI: open owner console (\texttt{/admin}, \texttt{/stats}); public comics review at \texttt{/review} (panel + overall story ratings)
+  \item Vercel \textbf{comicengine-reader} (\texttt{https://comicengine-reader.vercel.app}): username/password (scrypt + HttpOnly \texttt{ce\_session} cookie + Upstash Redis)
+  \item Library cards: evaluated 3{:}2 thumbnails, title, three actions --- \textbf{Read \& rate} / \textbf{PDF} / \textbf{Just read}
+  \item Thumbnail picks (\texttt{scripts/select\_thumbnails.py}): CJP panel~5, Et~tu panel~11, Hitler-warning panel~1 (visual override away from spectacle beats)
+  \item Vercel \textbf{comicengine-admin} (\texttt{https://comicengine-admin.vercel.app}): password gate; snapshot spend/ROI/tasks + \textbf{live} Upstash people/logins/feedback + canvas charts (20\,s poll)
+  \item Branding: \textbf{ComicEngine} + \textbf{Beta} pill; footer \copyright~2026 Avinash Nandyala (reader, admin, local dashboard)
+  \item Hosting runbook \texttt{docs/HOSTING.md}; shared Upstash resource on both projects
 \end{itemize}
+
+\paragraph{Ledger at gate (snapshot).}
+Engine usage snapshot still ~\$2.96 / 138 calls (dominant spend remains Phase~5 image batch). Hosted reader/admin traffic is Upstash + static Vercel --- not counted as OmniRoute/image ledger cost.
+
 
 \subsection{Phase 9 --- ROI dashboard (complete)}
 \textbf{Goal.} Make spend actionable: unit economics + charts from the SQLite ledger.
@@ -382,7 +388,9 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
 \end{itemize}
 
 \section{Dashboard Surfaces}
-Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Story Library, Feedback (Mom Test), Reviewers, \textbf{ROI}, Analytics, Images gallery, Report PDF (\texttt{/report}).
+\textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
+
+\textbf{Hosted beta:} reader \texttt{https://comicengine-reader.vercel.app}; fellowdev admin \texttt{https://comicengine-admin.vercel.app} (password-gated). Live image regen / OmniRoute scripting remain on the laptop (or a GPU/API host).
 
 \section{What We Explicitly Learned}
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
@@ -391,6 +399,8 @@ Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader
   \item Auto style judges trade off immersion vs.\ bedtime safety; human adjudication remains mandatory for product voice.
   \item Pillow ``pass'' is necessary but not sufficient for character consistency; the Phase~3 LLM judge correctly ranked \texttt{gemini\_ref} over cheaper text-only despite identical QA scores.
   \item OmniRoute model routing matters: prefer \texttt{auto} (or provider-prefixed Claude) when \texttt{auto/cheap} returns thinking text without \texttt{tool\_use}.
+  \item Vercel serverless session UX needs HttpOnly cookies (Bearer-only + aggressive \texttt{/me} clears caused login loops); CSS \texttt{display} on \texttt{.btn} overrides HTML \texttt{[hidden]}.
+  \item Admin canvas charts must lock CSS height --- reading \texttt{canvas.height} after DPR resize compounds every live poll.
 \end{enumerate}
 
 \section{Risks and Ethics}
@@ -398,16 +408,18 @@ CJP bedtime lane remains ages $\sim$7--10; Phase~4 hard-history lane is teen did
 Hitler content must never romanticize Nazism; Caesar content must not romanticize political murder.
 Respectful depiction of public figures; Commons attribution for place photos; human fact-check before any public publish.
 Style and consistency locks must not be decided solely by LLM judges or blank-frame QA.
+Public beta URLs expose comics widely --- keep admin password private; Upstash holds reader hashes/sessions/feedback.
 
 \section{Next Gates}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
-  \item Complete Google OAuth + Cloudflare Tunnel/Pages credentials for public beta URL.
-  \item Version~2 / Phase~12+: prioritize features from Mom Test exports.
+  \item Collect panel/story ratings from beta readers; harvest admin live people analytics for Version~2 priorities.
+  \item Re-run \texttt{prepare\_admin\_site.py} (+ redeploy) whenever ledger/ROI snapshot must refresh.
+  \item Version~2 / Phase~12+: feature work driven by real reader feedback (not vanity NPS).
 \end{itemize}
 
 \section{Conclusion}
-ComicEngine now covers script$\rightarrow$render$\rightarrow$compose$\rightarrow$assemble$\rightarrow$curate$\rightarrow$ROI$\rightarrow$reader feedback hosting$\rightarrow$publish packaging.
+ComicEngine now covers script$\rightarrow$render$\rightarrow$compose$\rightarrow$assemble$\rightarrow$curate$\rightarrow$ROI$\rightarrow$hosted reader/admin beta$\rightarrow$publish packaging.
 Version~2 starts at Phase~12 using logged panel/story feedback from beta readers.
 \appendix
 \section{Reproduce}
@@ -432,6 +444,8 @@ python scripts/build_report.py
 \item[2026-08-09 h] Phase~7.5: Only Image editions + Story Library (\texttt{/library}) catalog.
 \item[2026-08-09 i] Phase~8: curation SQLite + CLI + Library approve/reject/regenerate.
 \item[2026-08-09 j] Phase~9: ROI dashboard (\texttt{/roi}) unit economics + spend charts.
+\item[2026-08-09 k] Phase~8.5: panel rating + editable art prompt on reject/regen.
+\item[2026-08-09 l] Phase~8.6: dual Vercel reader/admin + Upstash auth; thumbnails; live people analytics; Beta branding; ledger snapshot still $\approx$\$2.96 / 138 calls.
 \end{description}
 
 \end{document}
