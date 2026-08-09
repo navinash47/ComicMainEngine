@@ -164,9 +164,17 @@ const Home = {
     const user = await Auth.requireLogin();
     if (!user) return;
     document.getElementById("whoHint").textContent = user.name || user.username;
-    document.getElementById("authLink").hidden = true;
-    document.getElementById("logoutBtn").hidden = false;
-    document.getElementById("logoutBtn").onclick = async () => {
+    const authLink = document.getElementById("authLink");
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (authLink) {
+      authLink.hidden = true;
+      authLink.style.display = "none";
+    }
+    if (logoutBtn) {
+      logoutBtn.hidden = false;
+      logoutBtn.style.display = "";
+    }
+    logoutBtn.onclick = async () => {
       await fetch("/api/auth/logout", {
         method: "POST",
         headers: Auth.headers(),
