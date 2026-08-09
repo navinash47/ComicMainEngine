@@ -121,11 +121,33 @@ function drawChart(series) {
   ctx.stroke();
 }
 
+function renderStories(stories) {
+  const list = stories || [];
+  $("storyCount").textContent = `${list.length} script${list.length === 1 ? "" : "s"}`;
+  if (!list.length) {
+    $("storyList").innerHTML = `<p class="muted">No episode JSON yet — run <code>python scripts/phase0_5_script.py</code>.</p>`;
+    return;
+  }
+  $("storyList").innerHTML = list
+    .map((s) => {
+      return `<a class="story-item" href="${s.href}">
+        <div class="story-phase">${s.phase || "story"}</div>
+        <div>
+          <div class="title">${s.title}</div>
+          <div class="desc">${s.topic || s.path || ""}</div>
+        </div>
+        <div class="pct">${s.panel_count || 0} panels →</div>
+      </a>`;
+    })
+    .join("");
+}
+
 async function tick() {
   try {
     const res = await fetch("/api/summary");
     const data = await res.json();
     renderKpis(data.totals || {});
+    renderStories(data.stories);
     renderTasks(data.taskobserver);
     renderBars($("byProvider"), data.by_provider || [], "provider", "cost_usd");
     renderBars($("byPhase"), data.by_phase || [], "phase", "cost_usd");

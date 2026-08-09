@@ -153,6 +153,61 @@ h1 {
 .task-item .desc { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
 .task-item .pct { font-family: var(--font-display); color: var(--muted); font-size: 0.9rem; }
 
+.stories-wrap {
+  margin: 0 2rem 1rem;
+  padding: 1rem 0 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.story-list {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.story-item {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr auto;
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+}
+.story-item:hover .title { color: var(--accent); }
+.story-phase {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+.story-meta, .story-panels {
+  padding: 1rem 2rem 2rem;
+}
+.story-meta p { max-width: 46rem; line-height: 1.5; }
+.panel-card {
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+  max-width: 46rem;
+}
+.panel-idx {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.panel-card h3 {
+  margin: 0.35rem 0;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.caption { color: var(--ink); line-height: 1.5; }
+.dialogue { color: #e8b07a; font-style: italic; }
+.muted { color: var(--muted); }
+.muted.small, .small { font-size: 0.82rem; }
+a.btn { text-decoration: none; display: inline-block; }
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -185,7 +240,7 @@ canvas { width: 100%; background: rgba(0,0,0,0.15); border-radius: 4px; }
 
 @media (max-width: 800px) {
   .grid { grid-template-columns: 1fr; }
-  header, .kpis, .grid, .tasks-wrap { padding-left: 1rem; padding-right: 1rem; }
-  .task-item { grid-template-columns: 5.5rem 1fr; }
-  .task-item .pct { display: none; }
+  header, .kpis, .grid, .tasks-wrap, .stories-wrap, .story-meta, .story-panels { padding-left: 1rem; padding-right: 1rem; }
+  .task-item, .story-item { grid-template-columns: 5.5rem 1fr; }
+  .task-item .pct, .story-item .pct { display: none; }
 }

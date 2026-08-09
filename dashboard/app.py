@@ -1,15 +1,16 @@
-"""Live usage analytics + TaskObserver. Polls SQLite every few seconds."""
+"""Live usage analytics + TaskObserver + Stories. Polls SQLite every few seconds."""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
+from comicengine.stories import list_stories, load_story
 from comicengine.tasks import observer
 from comicengine.usage import UsageDB
 
@@ -37,7 +38,7 @@ def index() -> FileResponse:
 @app.get("/api/summary")
 def summary() -> dict[str, Any]:
     snap = tasks.snapshot()
-    return {**db.summary(), "taskobserver": snap}
+    return {**db.summary(), "taskobserver": snap, "stories": list_stories()}
 
 
 @app.get("/api/tasks")
@@ -65,3 +66,21 @@ def patch_task(task_id: str, body: TaskPatch) -> dict[str, Any]:
         kwargs["meta"] = {"last_note": body.note}
     task = tasks.upsert(task_id, **kwargs)
     return {"ok": True, "task": task.as_dict(), "snapshot": tasks.snapshot()}
+
+
+@app.get("/api/stories")
+def api_stories() -> dict[str, Any]:
+    return {"stories": list_stories()}
+
+
+@app.get("/api/stories/{story_id}")
+def api_story(story_id: str) -> dict[str, Any]:
+    story = load_story(story_id)
+    if not story:
+        raise HTTPException(status_code=404, detail="story not found")
+    return story
+
+
+@app.get("/stories/{story_id}", response_class=HTMLResponse)
+def story_page(story_id: str) -> HTMLResponse:
+    return HTMLResponse((STATIC / "story.html").read_text())
