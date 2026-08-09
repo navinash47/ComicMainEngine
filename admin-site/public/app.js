@@ -160,24 +160,56 @@ function drawLiveCharts(charts) {
 }
 
 async function maybeGate() {
-  const gateInfo = await fetch("/api/gate").then((r) => r.json()).catch(() => ({ password_required: false }));
+  const probe0 = await fetch("/api/gate");
+  const gateInfo = await probe0.json().catch(() => ({ password_required: false }));
   if (!gateInfo.password_required) return true;
+
   if (sessionStorage.getItem("ce_admin_pw")) {
     const probe = await fetch("/api/gate", { headers: authHeaders() });
-    if (probe.ok) return true;
+    if (probe.ok) {
+      const ok = await probe.json().catch(() => ({}));
+      if (ok.ok) return true;
+    }
+    sessionStorage.removeItem("ce_admin_pw");
   }
+
   $("gate").hidden = false;
+  $("gateErr").textContent = "";
+  $("gatePw").focus();
+
   return new Promise((resolve) => {
-    $("gateGo").onclick = async () => {
-      const pw = $("gatePw").value;
-      sessionStorage.setItem("ce_admin_pw", pw);
-      const probe = await fetch("/api/gate", { headers: authHeaders() });
-      if (!probe.ok) {
-        $("gateErr").textContent = "Wrong password";
+    const submit = async () => {
+      const pw = ($("gatePw").value || "").trim();
+      if (!pw) {
+        $("gateErr").textContent = "Enter the admin password";
         return;
       }
-      $("gate").hidden = true;
-      resolve(true);
+      $("gateErr").textContent = "Checking…";
+      $("gateGo").disabled = true;
+      sessionStorage.setItem("ce_admin_pw", pw);
+      try {
+        const probe = await fetch("/api/gate", { headers: authHeaders() });
+        const body = await probe.json().catch(() => ({}));
+        if (!probe.ok || !body.ok) {
+          sessionStorage.removeItem("ce_admin_pw");
+          $("gateErr").textContent = body.detail || "Wrong password";
+          $("gateGo").disabled = false;
+          return;
+        }
+        $("gate").hidden = true;
+        $("gateGo").disabled = false;
+        resolve(true);
+      } catch (e) {
+        $("gateErr").textContent = String(e.message || e);
+        $("gateGo").disabled = false;
+      }
+    };
+    $("gateGo").onclick = submit;
+    $("gatePw").onkeydown = (ev) => {
+      if (ev.key === "Enter") {
+        ev.preventDefault();
+        submit();
+      }
     };
   });
 }

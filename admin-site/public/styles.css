@@ -645,6 +645,7 @@ main { padding: 1rem 2rem 2rem; max-width: 1100px; }
   background: rgba(10, 8, 6, 0.85);
   padding: 1rem;
 }
+.gate[hidden] { display: none !important; }
 .gate-card {
   width: min(28rem, 100%);
   border: 1px solid var(--line);
