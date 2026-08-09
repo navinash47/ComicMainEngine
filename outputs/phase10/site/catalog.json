@@ -1,0 +1,147 @@
+{
+  "updated_at": "2026-08-09T09:39:29.851388+00:00",
+  "stories": [
+    {
+      "id": "episode_cjp_origin",
+      "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+      "topic": "How the CJP student protest started (test episode)",
+      "voice": "dad_to_daughter_bedtime",
+      "panel_count": 12,
+      "phase": "phase0.5",
+      "path": "outputs/phase0.5/episode_cjp_origin.json",
+      "reader_href": "/stories/episode_cjp_origin",
+      "json_href": "/api/stories/episode_cjp_origin",
+      "disclaimer": "This is a dramatized educational retelling for children ages 7\u201310. Real student protests in India during 2024 involved concerns about exam integrity in competitive entrance exams l",
+      "curation": {
+        "approved": 13,
+        "rejected": 0,
+        "pending": 0,
+        "regenerated": 0,
+        "total": 13,
+        "panels": [
+          {
+            "index": 1,
+            "status": "approved",
+            "note": "phase8.5 smoke rate",
+            "rating": 4,
+            "suggestions": "face slightly softer for bedtime",
+            "updated_at": "2026-08-09T09:22:24.051950+00:00"
+          },
+          {
+            "index": 2,
+            "status": "approved",
+            "note": "api smoke",
+            "rating": 3,
+            "suggestions": "composition tighter",
+            "updated_at": "2026-08-09T09:22:35.559193+00:00"
+          },
+          {
+            "index": 3,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:08.916636+00:00"
+          },
+          {
+            "index": 4,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:09.464629+00:00"
+          },
+          {
+            "index": 5,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:10.065616+00:00"
+          },
+          {
+            "index": 6,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:10.599048+00:00"
+          },
+          {
+            "index": 7,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:11.548789+00:00"
+          },
+          {
+            "index": 8,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:12.415676+00:00"
+          },
+          {
+            "index": 9,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:13.731056+00:00"
+          },
+          {
+            "index": 10,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:14.417777+00:00"
+          },
+          {
+            "index": 11,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:15.251207+00:00"
+          },
+          {
+            "index": 12,
+            "status": "approved",
+            "note": "approved in library",
+            "rating": null,
+            "suggestions": "",
+            "updated_at": "2026-08-09T09:16:17.000701+00:00"
+          }
+        ],
+        "avg_rating": 3.5,
+        "episode_status": "approved"
+      },
+      "editions": {
+        "reader": {
+          "label": "Reader (bubbles + captions)",
+          "phase": "phase7",
+          "available": true,
+          "webtoon_href": "/media/phase7/episode_cjp_origin/webtoon.png",
+          "pdf_href": "/media/phase7/episode_cjp_origin/episode.pdf",
+          "webtoon_path": "outputs/phase7/episode_cjp_origin/webtoon.png",
+          "pdf_path": "outputs/phase7/episode_cjp_origin/episode.pdf",
+          "assembled_panels": 12
+        },
+        "image_only": {
+          "label": "Only Image (no bubbles)",
+          "phase": "phase7.5",
+          "available": true,
+          "webtoon_href": "/media/phase7.5/episode_cjp_origin/webtoon_image_only.png",
+          "pdf_href": "/media/phase7.5/episode_cjp_origin/episode_image_only.pdf",
+          "webtoon_path": "outputs/phase7.5/episode_cjp_origin/webtoon_image_only.png",
+          "pdf_path": "outputs/phase7.5/episode_cjp_origin/episode_image_only.pdf",
+          "assembled_panels": 12
+        }
+      }
+    }
+  ],
+  "beta": true
+}

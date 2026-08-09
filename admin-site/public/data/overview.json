@@ -1,0 +1,60 @@
+{
+  "exported_at": "2026-08-09T10:14:55.798290+00:00",
+  "project": "ComicMainEngine / onceuponatime",
+  "github": "https://github.com/navinash47/ComicMainEngine",
+  "audience": "fellow developers + owner",
+  "local_admin": "http://127.0.0.1:8765/admin",
+  "local_review": "http://127.0.0.1:8765/review",
+  "notes": [
+    "This Vercel admin is a read-only engine console for sharing with fellowdevs.",
+    "Live image regen / OmniRoute scripting still run locally (or a GPU/API host).",
+    "Reader feedback appears below when prepared from SQLite, or live via shared Upstash.",
+    "Version 2 starts at Phase 12 after Mom Test / panel feedback review."
+  ],
+  "phases": [
+    {
+      "id": "phase0",
+      "title": "API pings",
+      "status": "complete"
+    },
+    {
+      "id": "phase0.5",
+      "title": "AI scripts",
+      "status": "complete"
+    },
+    {
+      "id": "phase1\u20133",
+      "title": "fal + style + consistency",
+      "status": "complete"
+    },
+    {
+      "id": "phase4\u20135",
+      "title": "Multi-story scripts + panel batch",
+      "status": "complete"
+    },
+    {
+      "id": "phase6\u20137.5",
+      "title": "Compose + assemble + library",
+      "status": "complete"
+    },
+    {
+      "id": "phase8\u20138.6",
+      "title": "Curation + ratings + public review",
+      "status": "complete"
+    },
+    {
+      "id": "phase9\u201311",
+      "title": "ROI + publish export + cost guardrails",
+      "status": "complete"
+    },
+    {
+      "id": "phase12+",
+      "title": "Version 2 (post-feedback features)",
+      "status": "planned"
+    }
+  ],
+  "routing": {
+    "text_llm": "OmniRoute localhost:20128 (coding/scripts only)",
+    "images": "Direct GOOGLE_API_KEY / fal from .env \u2014 never OmniRoute"
+  }
+}

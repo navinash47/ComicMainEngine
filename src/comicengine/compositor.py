@@ -306,4 +306,15 @@ def compose_episode(
         __import__("json").dumps(manifest, indent=2),
         encoding="utf-8",
     )
+    try:
+        from comicengine.usage import UsageDB
+
+        UsageDB().log_local(
+            phase="phase6",
+            purpose="compose_episode",
+            note=f"composed {manifest['ok']} panels for {story_id}",
+            meta={"story_id": story_id, "ok": manifest["ok"], "errors": manifest["errors"]},
+        )
+    except Exception:  # noqa: BLE001
+        pass
     return manifest

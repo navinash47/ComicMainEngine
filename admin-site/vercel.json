@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/((?!api/|data/|styles.css|app.js).*)", "destination": "/index.html" }
+  ]
+}

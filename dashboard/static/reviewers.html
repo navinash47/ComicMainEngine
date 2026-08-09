@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Reviewers & feedback</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Reviewer feedback log</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/admin">Admin stats</a>
+      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/review">Public review</a>
+      <button type="button" class="btn" id="exportBtn">Export JSON</button>
+    </div>
+  </header>
+
+  <section class="story-meta">
+    <p class="lede">Name-based panel + story ratings from `/review` (and Vercel). No login on this admin page.</p>
+    <p class="muted small" id="rvMeta">loading…</p>
+  </section>
+
+  <section class="grid">
+    <article class="wide">
+      <h2>Reviewers</h2>
+      <div id="reviewerList"></div>
+    </article>
+    <article class="wide">
+      <h2>Feedback responses</h2>
+      <div id="feedbackList"></div>
+    </article>
+  </section>
+
+  <script src="/static/reviewers.js"></script>
+</body>
+</html>

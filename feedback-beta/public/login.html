@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Reader login</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="public-review">
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Reader sign-in</h1>
+    </div>
+  </header>
+  <section class="story-meta" style="max-width:36rem">
+    <p class="lede">Create a username or sign in to read comics and leave panel ratings.</p>
+    <div class="link-row" style="margin-bottom:1rem">
+      <button type="button" class="btn pe-primary" id="tabLogin">Log in</button>
+      <button type="button" class="btn" id="tabRegister">Register</button>
+    </div>
+
+    <form id="loginForm">
+      <label class="pe-label" for="loginUsername">Username</label>
+      <input id="loginUsername" type="text" required minlength="3" maxlength="32" autocomplete="username" pattern="[A-Za-z0-9_]+" title="Letters, numbers, underscore" />
+      <label class="pe-label" for="loginPassword">Password</label>
+      <input id="loginPassword" type="password" required minlength="6" autocomplete="current-password" />
+      <div class="link-row" style="margin-top:1rem">
+        <button type="submit" class="btn pe-primary">Log in</button>
+      </div>
+    </form>
+
+    <form id="registerForm" hidden>
+      <label class="pe-label" for="regUsername">Username</label>
+      <input id="regUsername" type="text" required minlength="3" maxlength="32" autocomplete="username" pattern="[A-Za-z0-9_]+" title="Letters, numbers, underscore" />
+      <label class="pe-label" for="regName">Display name (optional)</label>
+      <input id="regName" type="text" maxlength="80" autocomplete="nickname" />
+      <label class="pe-label" for="regPassword">Password (min 6)</label>
+      <input id="regPassword" type="password" required minlength="6" autocomplete="new-password" />
+      <div class="link-row" style="margin-top:1rem">
+        <button type="submit" class="btn pe-primary">Create account</button>
+      </div>
+    </form>
+    <p class="muted small" id="authStatus"></p>
+  </section>
+  <script src="/app.js"></script>
+  <script>AuthPage.init();</script>
+</body>
+</html>

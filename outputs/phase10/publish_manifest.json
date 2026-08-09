@@ -1,0 +1,42 @@
+{
+  "phase": "phase10",
+  "exported_at": "2026-08-09T09:39:29.851606+00:00",
+  "approved_only": true,
+  "story_count": 1,
+  "stories": [
+    {
+      "id": "episode_cjp_origin",
+      "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+      "files": [
+        {
+          "edition": "reader",
+          "path": "media/phase7/episode_cjp_origin/webtoon.png"
+        },
+        {
+          "edition": "reader",
+          "path": "media/phase7/episode_cjp_origin/episode.pdf"
+        },
+        {
+          "edition": "image_only",
+          "path": "media/phase7.5/episode_cjp_origin/webtoon_image_only.png"
+        },
+        {
+          "edition": "image_only",
+          "path": "media/phase7.5/episode_cjp_origin/episode_image_only.pdf"
+        },
+        {
+          "edition": "json",
+          "path": "episodes/episode_cjp_origin.json"
+        }
+      ]
+    }
+  ],
+  "site_dir": "outputs/phase10/site",
+  "cloudflare": {
+    "account_id_set": false,
+    "r2_bucket": "comicengine-beta",
+    "pages_project": "comicengine-beta",
+    "r2_creds_set": false
+  },
+  "notes": "Static mirror for Pages/R2. Live Google login + Mom Test feedback require the FastAPI app (tunnel or host) \u2014 see docs/BETA_SETUP.md."
+}

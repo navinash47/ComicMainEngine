@@ -1,0 +1,1219 @@
+{
+  "totals": {
+    "calls": 138,
+    "input_tokens": 80062,
+    "output_tokens": 117108,
+    "image_tokens": 69735,
+    "cost_usd": 2.9598708,
+    "errors": 7
+  },
+  "by_provider": [
+    {
+      "provider": "google",
+      "calls": 54,
+      "input_tokens": 34253,
+      "output_tokens": 69687,
+      "image_tokens": 69685,
+      "cost_usd": 1.794002
+    },
+    {
+      "provider": "omniroute:anthropic",
+      "calls": 15,
+      "input_tokens": 41880,
+      "output_tokens": 38876,
+      "image_tokens": 0,
+      "cost_usd": 0.70878
+    },
+    {
+      "provider": "fal",
+      "calls": 50,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 50,
+      "cost_usd": 0.40900000000000003
+    },
+    {
+      "provider": "anthropic",
+      "calls": 4,
+      "input_tokens": 3728,
+      "output_tokens": 8431,
+      "image_tokens": 0,
+      "cost_usd": 0.045883
+    },
+    {
+      "provider": "omniroute:openai",
+      "calls": 3,
+      "input_tokens": 176,
+      "output_tokens": 111,
+      "image_tokens": 0,
+      "cost_usd": 0.002193
+    },
+    {
+      "provider": "openai",
+      "calls": 2,
+      "input_tokens": 24,
+      "output_tokens": 2,
+      "image_tokens": 0,
+      "cost_usd": 1.2800000000000001e-05
+    },
+    {
+      "provider": "demo",
+      "calls": 1,
+      "input_tokens": 1,
+      "output_tokens": 1,
+      "image_tokens": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "provider": "local",
+      "calls": 9,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0
+    }
+  ],
+  "by_phase": [
+    {
+      "phase": "phase5",
+      "calls": 66,
+      "cost_usd": 1.772,
+      "tokens": 150644
+    },
+    {
+      "phase": "phase4",
+      "calls": 11,
+      "cost_usd": 0.655416,
+      "tokens": 70884
+    },
+    {
+      "phase": "phase3",
+      "calls": 23,
+      "cost_usd": 0.387191,
+      "tokens": 27475
+    },
+    {
+      "phase": "phase2",
+      "calls": 13,
+      "cost_usd": 0.093276,
+      "tokens": 5242
+    },
+    {
+      "phase": "phase0.5",
+      "calls": 2,
+      "cost_usd": 0.045819,
+      "tokens": 12127
+    },
+    {
+      "phase": "phase0",
+      "calls": 13,
+      "cost_usd": 0.0031688,
+      "tokens": 532
+    },
+    {
+      "phase": "phase1",
+      "calls": 1,
+      "cost_usd": 0.003,
+      "tokens": 1
+    },
+    {
+      "phase": "phase10",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase11",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase6",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase7",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase7.5",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase8",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase8.5",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase8.6",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    },
+    {
+      "phase": "phase9",
+      "calls": 1,
+      "cost_usd": 0.0,
+      "tokens": 0
+    }
+  ],
+  "by_model": [
+    {
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "calls": 51,
+      "input_tokens": 34241,
+      "output_tokens": 69685,
+      "image_tokens": 69685,
+      "cost_usd": 1.794
+    },
+    {
+      "provider": "omniroute:anthropic",
+      "model": "auto",
+      "calls": 10,
+      "input_tokens": 31017,
+      "output_tokens": 33585,
+      "image_tokens": 0,
+      "cost_usd": 0.596826
+    },
+    {
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "calls": 7,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 7,
+      "cost_usd": 0.28
+    },
+    {
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "calls": 43,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 43,
+      "cost_usd": 0.129
+    },
+    {
+      "provider": "omniroute:anthropic",
+      "model": "auto/cheap",
+      "calls": 5,
+      "input_tokens": 10863,
+      "output_tokens": 5291,
+      "image_tokens": 0,
+      "cost_usd": 0.111954
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5",
+      "calls": 4,
+      "input_tokens": 3728,
+      "output_tokens": 8431,
+      "image_tokens": 0,
+      "cost_usd": 0.045883
+    },
+    {
+      "provider": "omniroute:openai",
+      "model": "auto/gemini",
+      "calls": 1,
+      "input_tokens": 64,
+      "output_tokens": 72,
+      "image_tokens": 0,
+      "cost_usd": 0.001272
+    },
+    {
+      "provider": "omniroute:openai",
+      "model": "auto/cheap",
+      "calls": 2,
+      "input_tokens": 112,
+      "output_tokens": 39,
+      "image_tokens": 0,
+      "cost_usd": 0.0009209999999999999
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "calls": 2,
+      "input_tokens": 24,
+      "output_tokens": 2,
+      "image_tokens": 0,
+      "cost_usd": 1.2800000000000001e-05
+    },
+    {
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite",
+      "calls": 2,
+      "input_tokens": 12,
+      "output_tokens": 2,
+      "image_tokens": 0,
+      "cost_usd": 2e-06
+    },
+    {
+      "provider": "demo",
+      "model": "smoke",
+      "calls": 1,
+      "input_tokens": 1,
+      "output_tokens": 1,
+      "image_tokens": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "calls": 1,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "provider": "local",
+      "model": "cpu",
+      "calls": 9,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0
+    }
+  ],
+  "recent": [
+    {
+      "id": 138,
+      "ts": "2026-08-09T09:56:45.126537+00:00",
+      "phase": "phase11",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "cost_guardrails",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 137,
+      "ts": "2026-08-09T09:56:45.125774+00:00",
+      "phase": "phase10",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "export_beta_site",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 136,
+      "ts": "2026-08-09T09:56:45.124995+00:00",
+      "phase": "phase9",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "roi_snapshot",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 135,
+      "ts": "2026-08-09T09:56:45.124025+00:00",
+      "phase": "phase8.6",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "public_review",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 134,
+      "ts": "2026-08-09T09:56:45.123144+00:00",
+      "phase": "phase8.5",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "panel_editor",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 133,
+      "ts": "2026-08-09T09:56:45.122166+00:00",
+      "phase": "phase8",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "curation_seed",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 132,
+      "ts": "2026-08-09T09:56:45.121285+00:00",
+      "phase": "phase7.5",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "assemble_image_only",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 131,
+      "ts": "2026-08-09T09:56:45.120284+00:00",
+      "phase": "phase7",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "assemble_composed",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 130,
+      "ts": "2026-08-09T09:56:45.118916+00:00",
+      "phase": "phase6",
+      "provider": "local",
+      "model": "cpu",
+      "purpose": "compose_episode",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 0,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 129,
+      "ts": "2026-08-09T08:53:59.421958+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 671,
+      "output_tokens": 1493,
+      "image_tokens": 1493,
+      "cost_usd": 0.039,
+      "latency_ms": 10901,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 128,
+      "ts": "2026-08-09T08:53:48.510996+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 964,
+      "output_tokens": 1445,
+      "image_tokens": 1445,
+      "cost_usd": 0.039,
+      "latency_ms": 11879,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 127,
+      "ts": "2026-08-09T08:53:36.613683+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "purpose": "panel_batch_retry",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.04,
+      "latency_ms": 12190,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 126,
+      "ts": "2026-08-09T08:53:24.421677+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 953,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 5329,
+      "ok": 0,
+      "error": "TypeError: 'NoneType' object is not iterable"
+    },
+    {
+      "id": 125,
+      "ts": "2026-08-09T08:53:19.072000+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "purpose": "panel_batch_retry",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.04,
+      "latency_ms": 13104,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 124,
+      "ts": "2026-08-09T08:53:05.964300+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 674,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 14378,
+      "ok": 0,
+      "error": "TypeError: 'NoneType' object is not iterable"
+    },
+    {
+      "id": 123,
+      "ts": "2026-08-09T08:52:51.575103+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 979,
+      "output_tokens": 1498,
+      "image_tokens": 1498,
+      "cost_usd": 0.039,
+      "latency_ms": 10487,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 122,
+      "ts": "2026-08-09T08:52:41.078765+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 684,
+      "output_tokens": 1520,
+      "image_tokens": 1520,
+      "cost_usd": 0.039,
+      "latency_ms": 10992,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 121,
+      "ts": "2026-08-09T08:52:30.076660+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 671,
+      "output_tokens": 1651,
+      "image_tokens": 1651,
+      "cost_usd": 0.039,
+      "latency_ms": 10318,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 120,
+      "ts": "2026-08-09T08:52:19.748167+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 977,
+      "output_tokens": 1723,
+      "image_tokens": 1723,
+      "cost_usd": 0.039,
+      "latency_ms": 12421,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 119,
+      "ts": "2026-08-09T08:52:07.315537+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 704,
+      "output_tokens": 1478,
+      "image_tokens": 1478,
+      "cost_usd": 0.039,
+      "latency_ms": 46982,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 118,
+      "ts": "2026-08-09T08:51:20.322161+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 947,
+      "output_tokens": 1479,
+      "image_tokens": 1479,
+      "cost_usd": 0.039,
+      "latency_ms": 11218,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 117,
+      "ts": "2026-08-09T08:51:09.093600+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 675,
+      "output_tokens": 1533,
+      "image_tokens": 1533,
+      "cost_usd": 0.039,
+      "latency_ms": 13066,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 116,
+      "ts": "2026-08-09T08:50:56.005142+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "purpose": "panel_batch_retry",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.04,
+      "latency_ms": 10601,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 115,
+      "ts": "2026-08-09T08:50:45.400097+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 963,
+      "output_tokens": 0,
+      "image_tokens": 0,
+      "cost_usd": 0.0,
+      "latency_ms": 10251,
+      "ok": 0,
+      "error": "TypeError: 'NoneType' object is not iterable"
+    },
+    {
+      "id": 114,
+      "ts": "2026-08-09T08:50:35.133540+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "purpose": "panel_batch_retry",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.04,
+      "latency_ms": 11287,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 113,
+      "ts": "2026-08-09T08:50:23.843930+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 960,
+      "output_tokens": 12,
+      "image_tokens": 12,
+      "cost_usd": 0.0,
+      "latency_ms": 2288,
+      "ok": 0,
+      "error": "RuntimeError: Gemini returned no image bytes"
+    },
+    {
+      "id": 112,
+      "ts": "2026-08-09T08:50:21.539531+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux-pro/kontext",
+      "purpose": "panel_batch_retry",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.04,
+      "latency_ms": 14089,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 111,
+      "ts": "2026-08-09T08:50:07.447627+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 684,
+      "output_tokens": 94,
+      "image_tokens": 94,
+      "cost_usd": 0.0,
+      "latency_ms": 3071,
+      "ok": 0,
+      "error": "RuntimeError: Gemini returned no image bytes"
+    },
+    {
+      "id": 110,
+      "ts": "2026-08-09T08:50:04.367050+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 677,
+      "output_tokens": 1524,
+      "image_tokens": 1524,
+      "cost_usd": 0.039,
+      "latency_ms": 12415,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 109,
+      "ts": "2026-08-09T08:49:51.943273+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 675,
+      "output_tokens": 1453,
+      "image_tokens": 1453,
+      "cost_usd": 0.039,
+      "latency_ms": 11065,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 108,
+      "ts": "2026-08-09T08:49:40.847502+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1888,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 107,
+      "ts": "2026-08-09T08:49:38.939962+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1648,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 106,
+      "ts": "2026-08-09T08:49:37.271956+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 2108,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 105,
+      "ts": "2026-08-09T08:49:35.151919+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1710,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 104,
+      "ts": "2026-08-09T08:49:33.423307+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1670,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 103,
+      "ts": "2026-08-09T08:49:31.737955+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1830,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 102,
+      "ts": "2026-08-09T08:49:29.891683+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1749,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 101,
+      "ts": "2026-08-09T08:49:28.127139+00:00",
+      "phase": "phase5",
+      "provider": "fal",
+      "model": "fal-ai/flux/schnell",
+      "purpose": "char_ref",
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "image_tokens": 1,
+      "cost_usd": 0.003,
+      "latency_ms": 1961,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 100,
+      "ts": "2026-08-09T08:49:26.152670+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 667,
+      "output_tokens": 1585,
+      "image_tokens": 1585,
+      "cost_usd": 0.039,
+      "latency_ms": 11687,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 99,
+      "ts": "2026-08-09T08:49:14.455202+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 663,
+      "output_tokens": 1506,
+      "image_tokens": 1506,
+      "cost_usd": 0.039,
+      "latency_ms": 11642,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 98,
+      "ts": "2026-08-09T08:49:02.802862+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 956,
+      "output_tokens": 1675,
+      "image_tokens": 1675,
+      "cost_usd": 0.039,
+      "latency_ms": 10697,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 97,
+      "ts": "2026-08-09T08:48:52.096438+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 676,
+      "output_tokens": 1502,
+      "image_tokens": 1502,
+      "cost_usd": 0.039,
+      "latency_ms": 12585,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 96,
+      "ts": "2026-08-09T08:48:39.500681+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 679,
+      "output_tokens": 1500,
+      "image_tokens": 1500,
+      "cost_usd": 0.039,
+      "latency_ms": 11012,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 95,
+      "ts": "2026-08-09T08:48:28.477782+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 689,
+      "output_tokens": 1538,
+      "image_tokens": 1538,
+      "cost_usd": 0.039,
+      "latency_ms": 11501,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 94,
+      "ts": "2026-08-09T08:48:16.966180+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 992,
+      "output_tokens": 1539,
+      "image_tokens": 1539,
+      "cost_usd": 0.039,
+      "latency_ms": 10280,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 93,
+      "ts": "2026-08-09T08:48:06.675381+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 685,
+      "output_tokens": 1488,
+      "image_tokens": 1488,
+      "cost_usd": 0.039,
+      "latency_ms": 11233,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 92,
+      "ts": "2026-08-09T08:47:55.429749+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 395,
+      "output_tokens": 1486,
+      "image_tokens": 1486,
+      "cost_usd": 0.039,
+      "latency_ms": 9517,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 91,
+      "ts": "2026-08-09T08:47:45.903756+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 679,
+      "output_tokens": 1567,
+      "image_tokens": 1567,
+      "cost_usd": 0.039,
+      "latency_ms": 12005,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 90,
+      "ts": "2026-08-09T08:47:33.887156+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 661,
+      "output_tokens": 1551,
+      "image_tokens": 1551,
+      "cost_usd": 0.039,
+      "latency_ms": 14759,
+      "ok": 1,
+      "error": null
+    },
+    {
+      "id": 89,
+      "ts": "2026-08-09T08:47:19.114008+00:00",
+      "phase": "phase5",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "purpose": "panel_batch",
+      "input_tokens": 673,
+      "output_tokens": 1683,
+      "image_tokens": 1683,
+      "cost_usd": 0.039,
+      "latency_ms": 11550,
+      "ok": 1,
+      "error": null
+    }
+  ],
+  "series": [
+    {
+      "minute": "2026-08-09T07:13",
+      "cost_usd": 0.0,
+      "tokens": 2
+    },
+    {
+      "minute": "2026-08-09T07:19",
+      "cost_usd": 3.8e-05,
+      "tokens": 29
+    },
+    {
+      "minute": "2026-08-09T07:20",
+      "cost_usd": 3.9e-05,
+      "tokens": 36
+    },
+    {
+      "minute": "2026-08-09T07:25",
+      "cost_usd": 0.024032,
+      "tokens": 6032
+    },
+    {
+      "minute": "2026-08-09T07:27",
+      "cost_usd": 0.021787,
+      "tokens": 6095
+    },
+    {
+      "minute": "2026-08-09T07:36",
+      "cost_usd": 0.002175,
+      "tokens": 301
+    },
+    {
+      "minute": "2026-08-09T07:41",
+      "cost_usd": 0.000916,
+      "tokens": 164
+    },
+    {
+      "minute": "2026-08-09T07:55",
+      "cost_usd": 0.003,
+      "tokens": 1
+    },
+    {
+      "minute": "2026-08-09T08:00",
+      "cost_usd": 0.009,
+      "tokens": 3
+    },
+    {
+      "minute": "2026-08-09T08:01",
+      "cost_usd": 0.039,
+      "tokens": 2943
+    },
+    {
+      "minute": "2026-08-09T08:07",
+      "cost_usd": 0.045276,
+      "tokens": 2296
+    },
+    {
+      "minute": "2026-08-09T08:16",
+      "cost_usd": 0.027,
+      "tokens": 9
+    },
+    {
+      "minute": "2026-08-09T08:17",
+      "cost_usd": 0.206,
+      "tokens": 9926
+    },
+    {
+      "minute": "2026-08-09T08:18",
+      "cost_usd": 0.154191,
+      "tokens": 17540
+    },
+    {
+      "minute": "2026-08-09T08:31",
+      "cost_usd": 0.05859,
+      "tokens": 6282
+    },
+    {
+      "minute": "2026-08-09T08:32",
+      "cost_usd": 0.058629,
+      "tokens": 6295
+    },
+    {
+      "minute": "2026-08-09T08:33",
+      "cost_usd": 0.113238,
+      "tokens": 12602
+    },
+    {
+      "minute": "2026-08-09T08:34",
+      "cost_usd": 0.057339,
+      "tokens": 6349
+    },
+    {
+      "minute": "2026-08-09T08:37",
+      "cost_usd": 0.059904,
+      "tokens": 6520
+    },
+    {
+      "minute": "2026-08-09T08:38",
+      "cost_usd": 0.118836,
+      "tokens": 12820
+    },
+    {
+      "minute": "2026-08-09T08:39",
+      "cost_usd": 0.061464,
+      "tokens": 6624
+    },
+    {
+      "minute": "2026-08-09T08:40",
+      "cost_usd": 0.127416,
+      "tokens": 13392
+    },
+    {
+      "minute": "2026-08-09T08:43",
+      "cost_usd": 0.045,
+      "tokens": 3638
+    },
+    {
+      "minute": "2026-08-09T08:44",
+      "cost_usd": 0.156,
+      "tokens": 14728
+    },
+    {
+      "minute": "2026-08-09T08:45",
+      "cost_usd": 0.195,
+      "tokens": 18524
+    },
+    {
+      "minute": "2026-08-09T08:46",
+      "cost_usd": 0.216,
+      "tokens": 18124
+    },
+    {
+      "minute": "2026-08-09T08:47",
+      "cost_usd": 0.195,
+      "tokens": 18280
+    },
+    {
+      "minute": "2026-08-09T08:48",
+      "cost_usd": 0.195,
+      "tokens": 18855
+    },
+    {
+      "minute": "2026-08-09T08:49",
+      "cost_usd": 0.18,
+      "tokens": 15407
+    },
+    {
+      "minute": "2026-08-09T08:50",
+      "cost_usd": 0.159,
+      "tokens": 6547
+    },
+    {
+      "minute": "2026-08-09T08:51",
+      "cost_usd": 0.078,
+      "tokens": 7646
+    },
+    {
+      "minute": "2026-08-09T08:52",
+      "cost_usd": 0.195,
+      "tokens": 19755
+    },
+    {
+      "minute": "2026-08-09T08:53",
+      "cost_usd": 0.158,
+      "tokens": 9140
+    },
+    {
+      "minute": "2026-08-09T09:56",
+      "cost_usd": 0.0,
+      "tokens": 0
+    }
+  ],
+  "db_path": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/usage.db",
+  "server_time": "2026-08-09T10:14:55.788861+00:00"
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Admin (fellowdevs)</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="gate" class="gate" hidden>
+    <div class="gate-card">
+      <p class="brand">ComicEngine</p>
+      <h1>Admin access</h1>
+      <p class="muted">Shared with fellowdevs working on the engine. Enter the deploy password.</p>
+      <input id="gatePw" type="password" placeholder="ADMIN_SITE_PASSWORD" />
+      <button type="button" class="btn primary" id="gateGo">Enter</button>
+      <p class="muted small" id="gateErr"></p>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Admin · Engine console</h1>
+      <p class="muted small" id="exportedAt">loading…</p>
+    </div>
+    <div class="nav">
+      <a class="btn" id="ghLink" href="https://github.com/navinash47/ComicMainEngine" target="_blank" rel="noopener">GitHub</a>
+      <button type="button" class="btn" id="refreshLive">Refresh live feedback</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>For fellow developers</h2>
+      <ul id="notes"></ul>
+      <p class="muted small" id="routing"></p>
+    </section>
+
+    <section class="kpis" id="kpis"></section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>Phases</h2>
+        <div id="phases"></div>
+      </article>
+      <article class="card">
+        <h2>API spend by phase</h2>
+        <div id="byPhase"></div>
+      </article>
+      <article class="card">
+        <h2>TaskObserver</h2>
+        <div id="tasks"></div>
+      </article>
+      <article class="card">
+        <h2>ROI snapshot</h2>
+        <pre id="roi" class="pre"></pre>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Reader feedback</h2>
+      <p class="muted small" id="fbMeta">—</p>
+      <div id="feedback"></div>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

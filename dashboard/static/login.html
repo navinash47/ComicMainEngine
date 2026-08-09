@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Sign in</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Beta review sign-in</h1>
+    </div>
+  </header>
+
+  <section class="story-meta" style="max-width:36rem">
+    <p class="lede">
+      Sign in with Google so we can log reviewers and Mom Test feedback for Version&nbsp;2.
+      We store your name/email with responses — not for ads.
+    </p>
+    <p class="muted small" id="authMeta">checking auth…</p>
+    <p class="error" id="authError" hidden></p>
+    <div class="link-row" style="margin-top:1rem">
+      <a class="btn pe-primary" id="googleBtn" href="/auth/login?next=/library">Continue with Google</a>
+      <a class="btn" id="devBtn" href="/auth/dev-login?next=/library" hidden>Dev login (local)</a>
+    </div>
+    <p class="muted small" style="margin-top:1.25rem">
+      Google OAuth setup: see <code>docs/BETA_SETUP.md</code>.
+    </p>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const err = params.get("error");
+    if (err) {
+      const el = document.getElementById("authError");
+      el.hidden = false;
+      el.textContent = "Sign-in error: " + err;
+    }
+    const next = params.get("next") || "/library";
+    document.getElementById("googleBtn").href = "/auth/login?next=" + encodeURIComponent(next);
+    document.getElementById("devBtn").href = "/auth/dev-login?next=" + encodeURIComponent(next);
+
+    fetch("/api/me").then(r => r.json()).then((me) => {
+      const meta = document.getElementById("authMeta");
+      if (me.authenticated) {
+        meta.textContent = `Signed in as ${me.user.email} — redirecting…`;
+        location.href = next;
+        return;
+      }
+      meta.textContent = me.oauth_configured
+        ? "Google OAuth ready."
+        : "Google OAuth not configured yet — use Dev login locally or add credentials.";
+      if (me.auth_dev_bypass) {
+        document.getElementById("devBtn").hidden = false;
+      }
+    }).catch(() => {
+      document.getElementById("authMeta").textContent = "Could not reach /api/me";
+    });
+  </script>
+</body>
+</html>

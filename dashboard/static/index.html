@@ -10,14 +10,17 @@
   <header>
     <div>
       <p class="brand">ComicEngine</p>
-      <h1>Live usage</h1>
+      <h1>Admin · Live stats</h1>
     </div>
     <div class="status nav-links">
+      <a class="btn" href="/admin">Stats</a>
       <a class="btn" href="/analytics">Analytics</a>
       <a class="btn" href="/images">Images</a>
       <a class="btn" href="/library">Library</a>
       <a class="btn" href="/roi">ROI</a>
+      <a class="btn" href="/reviewers">Reviewer log</a>
       <a class="btn" href="/report" target="_blank" rel="noopener">Report</a>
+      <a class="btn" href="/review">Public review →</a>
       <span id="liveDot" class="dot"></span>
       <span id="updated">connecting…</span>
     </div>
@@ -56,7 +59,8 @@
       <div id="byProvider"></div>
     </article>
     <article>
-      <h2>By phase</h2>
+      <h2>API spend by phase</h2>
+      <p class="muted small" style="margin:0 0 0.5rem">Phases 6+ are mostly local ($0). They appear when compose/assemble/export/feedback runs.</p>
       <div id="byPhase"></div>
     </article>
     <article class="wide">

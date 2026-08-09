@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Mom Test feedback</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1>Beta feedback</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/feedback">Feedback</a>
+      <span id="authChrome"></span>
+    </div>
+  </header>
+
+  <section class="story-meta">
+    <p class="eyebrow">Phase 8.6 · Mom Test</p>
+    <p class="lede" id="fbIntro">Loading questionnaire…</p>
+    <p class="muted small">
+      Ask about real past moments and what happened while reading — not compliments or hypotheticals.
+    </p>
+  </section>
+
+  <form id="fbForm" class="feedback-form" hidden></form>
+  <p class="muted" id="fbStatus" style="padding:0 2rem"></p>
+
+  <script src="/static/auth.js"></script>
+  <script src="/static/feedback.js"></script>
+</body>
+</html>

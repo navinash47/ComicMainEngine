@@ -1,0 +1,14 @@
+{
+  "name": "comicengine-admin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ComicEngine admin console for owner + fellowdevs (Vercel)",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "prepare-data": "cd .. && PYTHONPATH=src python scripts/prepare_admin_site.py"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.34.3"
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "title": "The Cockroach Janta Party: When Students Ask for Fair Exams",
+  "topic": "How the CJP student protest started (test episode)",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "dad_to_daughter_bedtime",
+  "disclaimer": "This is a dramatized educational retelling for children ages 7–10. Real student protests in India during 2024 involved concerns about exam integrity in competitive entrance exams like NEET-UG. This story simplifies complex events and is told as a gentle bedtime narrative. Leaders and institutions are shown respectfully. Some details are combined or softened for bedtime listening.",
+  "characters": [
+    {
+      "id": "dad",
+      "display_name": "Dad",
+      "role": "narrator parent",
+      "look": "kind Indian father, soft bedtime sweater, warm smile, storybook proportions",
+      "notes": "Frames the story gently for his daughter."
+    },
+    {
+      "id": "daughter",
+      "display_name": "Daughter",
+      "role": "curious child listener",
+      "look": "young Indian girl in pajamas, big curious eyes, holding a picture book",
+      "notes": "Asks simple questions; keeps tone age-appropriate."
+    },
+    {
+      "id": "abhijeet_dipke",
+      "display_name": "Abhijeet Dipke",
+      "role": "youth organizer / CJP founder",
+      "look": "young Indian man, simple kurta or jacket, earnest face, protest-stage presence",
+      "notes": "Public figure in news reports about CJP student protests."
+    },
+    {
+      "id": "students",
+      "display_name": "Students",
+      "role": "crowd of exam aspirants",
+      "look": "diverse Indian college students with backpacks, placards about fair exams",
+      "notes": "Represent many real students; keep sympathetic and non-violent in art."
+    },
+    {
+      "id": "modiji",
+      "display_name": "Prime Minister Modi",
+      "role": "India's prime minister (background institutional figure)",
+      "look": "recognizable white beard elder statesman silhouette, formal attire, dignified",
+      "notes": "Show respectfully as a national leader hearing about public issues — no mockery."
+    },
+    {
+      "id": "amit_shah",
+      "display_name": "Amit Shah",
+      "role": "senior government minister (background)",
+      "look": "senior Indian politician in formal attire, composed, distant government hall",
+      "notes": "Institutional figure only; no invented private dialogue claiming malice."
+    },
+    {
+      "id": "education_minister",
+      "display_name": "Education Minister",
+      "role": "union education minister (institutional)",
+      "look": "Indian cabinet minister in formal clothes at a Delhi office",
+      "notes": "Generic/office role in the bedtime retelling; avoid cartoonish villainy."
+    }
+  ],
+  "fact_sheet": [
+    "Many Indian students compete in huge entrance exams like NEET-UG to get into medical colleges and universities.",
+    "In mid-2024, news reports said there were concerns about exam paper leaks and irregularities in some entrance exams.",
+    "Students and families felt worried that the exam system wasn't being fair to everyone.",
+    "Abhijeet Dipke, a youth organizer who had studied in the United States, returned to India around June 2024.",
+    "Abhijeet helped bring students together to ask for fair exams and accountability from authorities.",
+    "Students gathered in Delhi, particularly at Jantar Mantar, with signs and peaceful speeches.",
+    "The movement used the name 'Cockroach Janta Party' (CJP) as a satirical way to say: 'We are ordinary people standing up for fairness.'",
+    "The CJP described itself as a youth pressure group, asking leaders and institutions to listen to students' concerns.",
+    "Prime Minister Modi and other government leaders received reports about students' worries.",
+    "The movement emphasized peaceful protest and fair exams, not political party-building at first.",
+    "Similar student concerns arose in other states like Jharkhand about recruitment exam integrity.",
+    "The story shows how young people can peacefully speak up when they feel something is unfair."
+  ],
+  "fact_checks": [
+    {
+      "claim": "Many Indian students compete in entrance exams like NEET-UG.",
+      "verdict": "supported",
+      "source_note": "NEET-UG (National Eligibility cum Entrance Test - Undergraduate) is India's primary gateway exam for medical college admissions, taken by millions of students annually."
+    },
+    {
+      "claim": "In mid-2024, there were reports of exam paper leaks and irregularities.",
+      "verdict": "supported",
+      "source_note": "News reports in June-July 2024 documented concerns about breaches in exam security and fairness in competitive entrance tests across India."
+    },
+    {
+      "claim": "Abhijeet Dipke returned from the United States around June 2024 and helped lead student gatherings.",
+      "verdict": "supported",
+      "source_note": "News coverage identified Abhijeet Dipke as a youth organizer who returned from the US and helped mobilize students for the CJP movement in June 2024."
+    },
+    {
+      "claim": "Students gathered peacefully at Jantar Mantar in Delhi with placards and speeches.",
+      "verdict": "supported",
+      "source_note": "Multiple news reports documented student protests at Jantar Mantar in Delhi with peaceful demonstrations and signs calling for fair exams."
+    },
+    {
+      "claim": "The movement called itself the Cockroach Janta Party (CJP).",
+      "verdict": "supported",
+      "source_note": "News reports and social media coverage confirm the movement adopted the satirical name 'Cockroach Janta Party' to represent ordinary citizens demanding fairness."
+    },
+    {
+      "claim": "CJP described itself as a youth pressure group, not initially a traditional political party.",
+      "verdict": "supported",
+      "source_note": "Early statements and news coverage described CJP as a grassroots pressure group focused on exam integrity rather than electoral politics."
+    },
+    {
+      "claim": "Similar concerns about exam integrity arose in other states like Jharkhand.",
+      "verdict": "supported",
+      "source_note": "News reports mentioned that student concerns about recruitment exam fairness extended to multiple states including Jharkhand."
+    },
+    {
+      "claim": "The story emphasizes peaceful, non-violent student advocacy.",
+      "verdict": "dramatized",
+      "source_note": "This bedtime narrative simplifies complex real events and focuses on peaceful aspects of student organizing for clarity and age-appropriateness."
+    }
+  ],
+  "narrative_summary": "\nOn a gentle bedtime night, Dad sits with his Daughter and tells her the true story of how young people in India stood up for fairness. He explains that many students compete in huge entrance exams, and when families heard that some exams had problems—like papers leaking or unfair surprises—they felt worried. A young organizer named Abhijeet Dipke, who had lived in the United States, came back to India and helped bring students together. These students gathered peacefully in Delhi at a famous place called Jantar Mantar, holding signs and speaking kindly but firmly about what they believed: that exams should be fair for everyone. To show they were ordinary people standing up for something right, they used a funny, silly name: the Cockroach Janta Party, which means \"ordinary people's party.\" Prime Minister Modi and other leaders heard what the students were saying. Dad explains to his Daughter that this story teaches us that when something feels unfair, brave young people can speak up peacefully, and that listening to each other is how we make things better. The comic closes with hope: that fairness in exams matters, and that listening to students' voices helps build a better India.\n",
+  "panels": [
+    {
+      "index": 1,
+      "scene_description": "Dad and Daughter at bedtime, cozy room with soft lamplight. Dad sits on the edge of the bed, holding a picture book, while Daughter snuggles under a warm blanket with curious eyes.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: 'Tonight, beta, I want to tell you a true story about brave young people in India who asked for something fair. Are you ready?'\n\nDaughter: 'Yes, Papa! I love true stories.'",
+      "caption": "A bedtime tale begins: A father tells his daughter about courage and fairness.",
+      "art_prompt": "Soft warm light, cozy bedroom with stars visible through window, Dad with gentle smile holding storybook, Daughter in pajamas listening intently.",
+      "emotion": "calm, cozy, curious",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_01.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_01.png"
+    },
+    {
+      "index": 2,
+      "scene_description": "Dad gestures kindly while explaining. A thought-bubble shows many Indian students sitting at desks with large exam papers, looking nervous and hopeful.",
+      "characters": [
+        "dad",
+        "daughter",
+        "students"
+      ],
+      "dialogue": "Dad: 'You know, in India there are very big, important tests called entrance exams. Millions of students take them to get into good colleges.'\n\nDaughter: 'That sounds really hard, Papa.'",
+      "caption": "Understanding the challenge: Many students compete in entrance exams across India.",
+      "art_prompt": "Thought-bubble shows diverse Indian students seated at desks with exam papers, nervous but focused expressions, classroom feeling.",
+      "emotion": "thoughtful, slightly worried",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_02.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_02.png"
+    },
+    {
+      "index": 3,
+      "scene_description": "Dad's face becomes gentle but serious. Another thought-bubble shows worried families reading news on phones and newspapers about exam problems.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: 'But one day, something troubling happened. News said some exam papers had leaked out before the test. Families felt the system wasn't being fair.'\n\nDaughter: 'Oh no! That's not right, Papa!'",
+      "caption": "When fairness breaks: News of exam irregularities worries students and families.",
+      "art_prompt": "Families looking concerned at phones and papers, questioning expressions, soft pastels to avoid alarming tone.",
+      "emotion": "concerned, serious but calm",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_03.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_03.png"
+    },
+    {
+      "index": 4,
+      "scene_description": "Dad's eyes light up warmly. In the thought-bubble, a young man (Abhijeet Dipke) steps off a plane or arrives with a determined, kind expression.",
+      "characters": [
+        "dad",
+        "daughter",
+        "abhijeet_dipke"
+      ],
+      "dialogue": "Dad: 'Then, a brave young man named Abhijeet Dipke, who had been studying in America, came back to India. He thought: \"We must ask our leaders to fix this!\"'",
+      "caption": "A young leader returns: Abhijeet Dipke comes back to help students.",
+      "art_prompt": "Young man arriving with hopeful determination, airplane or street background, warm colors suggesting return home.",
+      "emotion": "hopeful, determined",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_04.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_04.png"
+    },
+    {
+      "index": 5,
+      "scene_description": "Thought-bubble shows Abhijeet speaking kindly to a small gathering of students, explaining his idea. Students nod and listen intently.",
+      "characters": [
+        "abhijeet_dipke",
+        "students"
+      ],
+      "dialogue": "Abhijeet (in thought-bubble): 'Let's bring students together peacefully and ask for fairness. We'll ask leaders to listen to us.'\n\nDad (narrating): 'And the students said: \"Yes, we will speak up!\"'",
+      "caption": "A spark of courage: Abhijeet gathers students to organize peacefully.",
+      "art_prompt": "Young organizer speaking to attentive students in circle, earnest faces, suggestion of early movement forming, warm earth tones.",
+      "emotion": "inspiring, unified",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_05.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_05.png"
+    },
+    {
+      "index": 6,
+      "scene_description": "Thought-bubble shows a beautiful, famous landmark—Jantar Mantar in Delhi—surrounded by hundreds of peaceful students holding signs about fair exams. The signs are clear and kind: 'Fair Exams for All,' 'Listen to Students,' 'Fairness Now.'",
+      "characters": [
+        "students"
+      ],
+      "dialogue": "Dad (narrating): 'Soon, students gathered at a famous place in Delhi called Jantar Mantar. They came together peacefully, with signs and kind voices asking for fairness.'",
+      "caption": "Voices rise: Students gather peacefully at Jantar Mantar to ask for fair exams.",
+      "art_prompt": "Jantar Mantar monument with crowds of diverse students holding gentle placards, peaceful crowd, bright daylight, rainbow of student faces.",
+      "emotion": "determined, peaceful, united",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_06.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_06.png"
+    },
+    {
+      "index": 7,
+      "scene_description": "Dad leans in with a warm, knowing smile. A thought-bubble shows the students with a funny, silly name written on some signs: 'Cockroach Janta Party.' Students are smiling—it's a bit of gentle humor amid seriousness.",
+      "characters": [
+        "dad",
+        "daughter",
+        "students"
+      ],
+      "dialogue": "Dad: 'Now here's something funny, beta. The students called their movement the \"Cockroach Janta Party\"—or CJP. Do you know why?'\n\nDaughter: 'Why, Papa?'",
+      "caption": "A funny, clever name: Students use satire to show they are ordinary people.",
+      "art_prompt": "Students with playful confidence, signs showing 'CJP' name, gentle humor in their faces, lighthearted despite serious cause.",
+      "emotion": "playful, clever, earnest",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_07.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_07.png"
+    },
+    {
+      "index": 8,
+      "scene_description": "Dad smiles warmly, explaining. A thought-bubble shows ordinary everyday scenes: a shopkeeper, a farmer, students, a teacher—all kinds of regular people.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: 'Because \"Janta\" means ordinary people—like shopkeepers, farmers, and students. They were saying: \"We are not fancy politicians. We are normal people asking for fairness!\"'\n\nDaughter: 'Oh! I like that, Papa.'",
+      "caption": "Janta means people: The movement spoke for everyone who wanted fairness.",
+      "art_prompt": "Everyday Indian people—shopkeeper, farmer, student, teacher—in gentle watercolor style, showing diversity and ordinariness.",
+      "emotion": "warm, inclusive, humble",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_08.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_08.png"
+    },
+    {
+      "index": 9,
+      "scene_description": "Thought-bubble shows Prime Minister Modi in formal attire, in his office, receiving reports about the students' concerns. He listens respectfully. Nearby, Amit Shah, the Home Minister, is also shown reading about the protests.",
+      "characters": [
+        "modiji",
+        "amit_shah"
+      ],
+      "dialogue": "Dad (narrating): 'When Prime Minister Modi and the government leaders heard what the students were asking, they listened. Leaders have a responsibility to hear what people care about.'",
+      "caption": "Leaders listen: The Prime Minister and government hear the students' voices.",
+      "art_prompt": "Modi in dignified office setting receiving reports, listening expression, Amit Shah in background also engaged, institutional but respectful tone.",
+      "emotion": "serious, respectful, institutional",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_09.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_09.png"
+    },
+    {
+      "index": 10,
+      "scene_description": "A thought-bubble shows the Education Minister at a desk with papers about exam reforms, looking thoughtful and focused on improving the system.",
+      "characters": [
+        "education_minister"
+      ],
+      "dialogue": "Dad (narrating): 'The Education Ministry began looking at how to make exams more fair and secure. They knew students deserved honesty and trust.'",
+      "caption": "Working toward change: The government addresses student concerns about exam integrity.",
+      "art_prompt": "Education Minister at desk reviewing exam procedures and reforms, papers showing checkmarks and improvements, focused expression.",
+      "emotion": "thoughtful, constructive",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_10.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_10.png"
+    },
+    {
+      "index": 11,
+      "scene_description": "Thought-bubble shows students celebrating gently—not with wild parties, but with quiet pride. Some are back at their studies, looking more hopeful. Others are speaking to younger students about fairness.",
+      "characters": [
+        "students"
+      ],
+      "dialogue": "Dad (narrating): 'The students learned something important: when you speak peacefully about what's right, people listen. Change takes time, but it begins with courage.'",
+      "caption": "A lesson in speaking up: Students discover the power of peaceful voices.",
+      "art_prompt": "Students looking hopeful and proud, some studying with renewed focus, some mentoring younger ones, warm satisfied expressions.",
+      "emotion": "hopeful, proud, peaceful",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_11.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_11.png"
+    },
+    {
+      "index": 12,
+      "scene_description": "Dad and Daughter are back in the cozy bedroom. Dad closes the storybook gently while Daughter snuggles deeper into blankets, eyes growing sleepy and content. Stars twinkle outside the window.",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "dialogue": "Dad: 'And so, beta, remember: fairness matters. When you see something unfair, you can speak up kindly and bravely. The world listens to gentle, strong voices.'\n\nDaughter: 'I will, Papa. Thank you for the story.' (yawns softly)\n\nDad: 'Sleep well, my dear. Dream of a fair and kind India.'",
+      "caption": "Sweet dreams: A father and daughter rest, knowing that fairness begins with courage.",
+      "art_prompt": "Cozy bedroom at night, Dad closing storybook gently, Daughter tucked in blankets looking sleepy and peaceful, stars and moonlight through window, bedtime warmth.",
+      "emotion": "peaceful, loving, hopeful",
+      "image_path": "outputs/phase5/episode_cjp_origin/panel_12.png",
+      "image_method": "gemini_ref",
+      "image_qa": "pass",
+      "composed_image_path": "outputs/phase6/episode_cjp_origin/panel_12.png"
+    }
+  ],
+  "webtoon_path": "outputs/phase7/episode_cjp_origin/webtoon.png",
+  "pdf_path": "outputs/phase7/episode_cjp_origin/episode.pdf",
+  "webtoon_image_only_path": "outputs/phase7.5/episode_cjp_origin/webtoon_image_only.png",
+  "pdf_image_only_path": "outputs/phase7.5/episode_cjp_origin/episode_image_only.pdf"
+}

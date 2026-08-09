@@ -1,0 +1,14 @@
+.venv
+.git
+.gitignore
+**/__pycache__
+**/*.pyc
+.pytest_cache
+hf_cache
+models
+feedback-beta/node_modules
+feedback-beta/.vercel
+feedback-beta/public/comics
+*.egg-info
+.mypy_cache
+agent-transcripts

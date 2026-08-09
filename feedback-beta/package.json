@@ -1,0 +1,13 @@
+{
+  "name": "comicengine-reader",
+  "private": true,
+  "version": "0.2.0",
+  "description": "ComicEngine reader — register/login, comics, panel/story feedback (Vercel + Upstash)",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.34.3"
+  }
+}

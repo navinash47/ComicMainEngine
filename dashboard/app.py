@@ -1,20 +1,40 @@
-"""Live usage analytics + TaskObserver + Stories. Polls SQLite every few seconds."""
+"""Live usage analytics + TaskObserver + Stories + Phase 8.6 auth/feedback."""
 
 from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
+from starlette.middleware.sessions import SessionMiddleware
 
 from comicengine.analytics import analytics
-from comicengine.config import OUTPUTS
-from comicengine.images_gallery import gallery
+from comicengine.auth_oauth import (
+    clear_session,
+    finish_google_login,
+    login_redirect,
+    oauth_configured,
+    admin_user,
+    require_admin,
+    require_user,
+    session_user,
+    exchange_code,
+    dev_login_user,
+)
+from comicengine.config import (
+    AUTH_DEV_BYPASS,
+    BETA_REQUIRE_LOGIN,
+    OUTPUTS,
+    SESSION_SECRET,
+)
 from comicengine.curation import curation, panel_editor_payload, regenerate_panel
+from comicengine.feedback import feedback
+from comicengine.images_gallery import gallery
 from comicengine.library import load_catalog, rebuild_catalog
+from comicengine.reviewers import reviewers
 from comicengine.roi import roi_dashboard
 from comicengine.stories import list_stories, load_story
 from comicengine.tasks import observer
@@ -30,6 +50,52 @@ OUTPUTS.mkdir(parents=True, exist_ok=True)
 app.mount("/media", StaticFiles(directory=OUTPUTS), name="media")
 
 
+ADMIN_PREFIXES = (
+    "/api/curation",
+    "/api/library/refresh",
+    "/api/analytics/rescan-images",
+    "/api/feedback/export",
+)
+
+
+@app.middleware("http")
+async def beta_auth_gate(request: Request, call_next):
+    """Optional login wall. Default OFF so dashboard stats keep polling.
+
+    Destructive curation APIs still use Depends(admin_user) when a session exists;
+    set BETA_REQUIRE_LOGIN=1 only for a locked public beta host.
+    """
+    if not BETA_REQUIRE_LOGIN:
+        return await call_next(request)
+
+    path = request.url.path
+    if (
+        path.startswith("/static")
+        or path.startswith("/auth")
+        or path.startswith("/api/public")
+        or path in {"/login", "/api/me", "/api/auth/status", "/favicon.ico"}
+    ):
+        return await call_next(request)
+
+    user = session_user(request)
+    if user:
+        return await call_next(request)
+
+    if path.startswith("/api/"):
+        return JSONResponse({"detail": "login required"}, status_code=401)
+    return RedirectResponse(url=f"/login?next={path}", status_code=302)
+
+
+# Must be added AFTER @app.middleware("http") so SessionMiddleware is outermost
+# (Starlette runs last-added middleware first).
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SESSION_SECRET,
+    same_site="lax",
+    https_only=False,
+)
+
+
 class TaskPatch(BaseModel):
     status: str | None = None
     progress: float | None = Field(default=None, ge=0, le=1)
@@ -38,8 +104,104 @@ class TaskPatch(BaseModel):
     description: str | None = None
 
 
+class FeedbackSubmit(BaseModel):
+    answers: dict[str, Any]
+    story_id: str = ""
+
+
+@app.get("/login")
+def login_page() -> FileResponse:
+    return FileResponse(STATIC / "login.html")
+
+
+@app.get("/auth/login")
+def auth_login(request: Request, next: str = "/") -> RedirectResponse:
+    return login_redirect(request, next_path=next or "/")
+
+
+@app.get("/auth/callback")
+def auth_callback(
+    request: Request,
+    code: str | None = None,
+    state: str | None = None,
+    error: str | None = None,
+) -> RedirectResponse:
+    if error:
+        return RedirectResponse(url=f"/login?error={error}", status_code=302)
+    if not code:
+        raise HTTPException(status_code=400, detail="missing code")
+    expected = request.session.get("oauth_state")
+    if not expected or state != expected:
+        raise HTTPException(status_code=400, detail="invalid oauth state")
+    profile = exchange_code(code)
+    finish_google_login(request, profile)
+    nxt = request.session.pop("oauth_next", "/") or "/"
+    request.session.pop("oauth_state", None)
+    return RedirectResponse(url=nxt, status_code=302)
+
+
+@app.get("/auth/dev-login")
+def auth_dev_login(
+    request: Request,
+    next: str = "/library",
+    email: str = "dev@local.test",
+    name: str = "Dev Reviewer",
+) -> RedirectResponse:
+    if not AUTH_DEV_BYPASS:
+        raise HTTPException(status_code=403, detail="enable AUTH_DEV_BYPASS=1 in .env")
+    from comicengine.config import ADMIN_EMAILS
+
+    admin = (not ADMIN_EMAILS) or email.lower() in ADMIN_EMAILS or email.endswith("@local.test")
+    # Always admin for default local email so owner tools work offline
+    if email == "dev@local.test":
+        admin = True
+    dev_login_user(request, email=email, name=name, admin=admin)
+    return RedirectResponse(url=next or "/library", status_code=302)
+
+
+@app.get("/auth/logout")
+def auth_logout(request: Request) -> RedirectResponse:
+    clear_session(request)
+    return RedirectResponse(url="/login", status_code=302)
+
+
+@app.get("/api/me")
+def api_me(request: Request) -> dict[str, Any]:
+    user = session_user(request)
+    return {
+        "authenticated": bool(user),
+        "user": user,
+        "oauth_configured": oauth_configured(),
+        "auth_dev_bypass": AUTH_DEV_BYPASS,
+        "beta_require_login": BETA_REQUIRE_LOGIN,
+    }
+
+
+@app.get("/api/auth/status")
+def api_auth_status() -> dict[str, Any]:
+    return {
+        "oauth_configured": oauth_configured(),
+        "auth_dev_bypass": AUTH_DEV_BYPASS,
+        "beta_require_login": BETA_REQUIRE_LOGIN,
+        "reviewers": reviewers.summary(),
+        "feedback": feedback.summary(),
+    }
+
+
 @app.get("/")
 def index() -> FileResponse:
+    """Owner admin home — live usage / costs / recent calls (no auth)."""
+    return FileResponse(STATIC / "index.html")
+
+
+@app.get("/admin")
+def admin_stats_page() -> FileResponse:
+    """Alias for owner stats console (host privately; no login gate)."""
+    return FileResponse(STATIC / "index.html")
+
+
+@app.get("/stats")
+def stats_page() -> FileResponse:
     return FileResponse(STATIC / "index.html")
 
 
@@ -58,6 +220,16 @@ def library_page() -> FileResponse:
     return FileResponse(STATIC / "library.html")
 
 
+@app.get("/feedback")
+def feedback_page() -> FileResponse:
+    return FileResponse(STATIC / "feedback.html")
+
+
+@app.get("/reviewers")
+def reviewers_page() -> FileResponse:
+    return FileResponse(STATIC / "reviewers.html")
+
+
 @app.get("/roi")
 def roi_page() -> FileResponse:
     return FileResponse(STATIC / "roi.html")
@@ -74,13 +246,12 @@ def api_library(refresh: bool = Query(default=False)) -> dict[str, Any]:
 
 
 @app.post("/api/library/refresh")
-def api_library_refresh() -> dict[str, Any]:
+def api_library_refresh(_admin: dict = Depends(admin_user)) -> dict[str, Any]:
     return {"ok": True, "catalog": rebuild_catalog()}
 
 
 @app.get("/report")
 def report_pdf() -> FileResponse:
-    """Two-column LaTeX technical report (rebuild: python scripts/build_report.py)."""
     pdf = OUTPUTS / "reports" / "comicengine_report.pdf"
     if not pdf.exists():
         raise HTTPException(
@@ -112,6 +283,8 @@ def summary() -> dict[str, Any]:
             "by_category": dash["stats"]["by_category"],
             "recommendations": dash["recommendations"][:5],
         },
+        "reviewers": reviewers.summary(),
+        "feedback": feedback.summary(),
     }
 
 
@@ -124,7 +297,7 @@ def api_analytics(
 
 
 @app.post("/api/analytics/rescan-images")
-def api_rescan_images() -> dict[str, Any]:
+def api_rescan_images(_admin: dict = Depends(admin_user)) -> dict[str, Any]:
     result = analytics.rescan_image_quality()
     return {"ok": True, **result, "dashboard": analytics.dashboard(limit=100)}
 
@@ -140,7 +313,9 @@ def refresh_tasks() -> dict[str, Any]:
 
 
 @app.post("/api/tasks/{task_id}")
-def patch_task(task_id: str, body: TaskPatch) -> dict[str, Any]:
+def patch_task(
+    task_id: str, body: TaskPatch, _admin: dict = Depends(admin_user)
+) -> dict[str, Any]:
     kwargs: dict[str, Any] = {}
     if body.title is not None:
         kwargs["title"] = body.title
@@ -175,6 +350,7 @@ class CurationRegenBody(BaseModel):
 
 @app.get("/api/curation")
 def api_curation(
+    _admin: dict = Depends(admin_user),
     story_id: str | None = Query(default=None),
     status: str | None = Query(default=None),
 ) -> dict[str, Any]:
@@ -185,13 +361,15 @@ def api_curation(
 
 
 @app.post("/api/curation/seed")
-def api_curation_seed() -> dict[str, Any]:
+def api_curation_seed(_admin: dict = Depends(admin_user)) -> dict[str, Any]:
     out = curation.seed_from_stories()
     return {"ok": True, **out, "catalog": rebuild_catalog()}
 
 
 @app.get("/api/curation/{story_id}/panel/{panel}")
-def api_curation_panel_editor(story_id: str, panel: int) -> dict[str, Any]:
+def api_curation_panel_editor(
+    story_id: str, panel: int, _admin: dict = Depends(admin_user)
+) -> dict[str, Any]:
     try:
         return panel_editor_payload(story_id, panel)
     except FileNotFoundError as e:
@@ -201,7 +379,9 @@ def api_curation_panel_editor(story_id: str, panel: int) -> dict[str, Any]:
 
 
 @app.post("/api/curation/{story_id}")
-def api_curation_upsert(story_id: str, body: CurationPatch) -> dict[str, Any]:
+def api_curation_upsert(
+    story_id: str, body: CurationPatch, _admin: dict = Depends(admin_user)
+) -> dict[str, Any]:
     if body.status is not None and body.status not in {
         "pending",
         "approved",
@@ -224,7 +404,9 @@ def api_curation_upsert(story_id: str, body: CurationPatch) -> dict[str, Any]:
 
 
 @app.post("/api/curation/{story_id}/regenerate")
-def api_curation_regen(story_id: str, body: CurationRegenBody) -> dict[str, Any]:
+def api_curation_regen(
+    story_id: str, body: CurationRegenBody, _admin: dict = Depends(admin_user)
+) -> dict[str, Any]:
     try:
         result = regenerate_panel(
             story_id,
@@ -247,6 +429,120 @@ def api_curation_regen(story_id: str, body: CurationRegenBody) -> dict[str, Any]
     }
 
 
+@app.get("/api/feedback/questions")
+def api_feedback_questions() -> dict[str, Any]:
+    return feedback.questionnaire_meta()
+
+
+class PublicStoryFeedback(BaseModel):
+    name: str = Field(min_length=1, max_length=80)
+    story_id: str
+    overall_rating: int = Field(ge=1, le=5)
+    overall_feedback: str = ""
+    panels: list[dict[str, Any]] = Field(default_factory=list)
+
+
+@app.post("/api/public/register")
+def api_public_register(body: dict[str, Any]) -> dict[str, Any]:
+    name = str(body.get("name") or "").strip()
+    if not name or len(name) > 80:
+        raise HTTPException(status_code=400, detail="name required (1–80 chars)")
+    # Name-only reviewer (no Google). Stable id from lowercase name.
+    import hashlib
+
+    rid = "name:" + hashlib.sha256(name.lower().encode()).hexdigest()[:16]
+    user = reviewers.upsert_from_google(
+        {"sub": rid, "email": f"{rid}@name.local", "name": name, "picture": "", "locale": ""}
+    )
+    return {"ok": True, "reviewer": {"id": user["id"], "name": user["name"]}}
+
+
+@app.post("/api/public/story-feedback")
+def api_public_story_feedback(body: PublicStoryFeedback, request: Request) -> dict[str, Any]:
+    from comicengine.story_feedback import story_feedback
+
+    try:
+        row = story_feedback.submit(
+            name=body.name.strip(),
+            story_id=body.story_id,
+            overall_rating=body.overall_rating,
+            overall_feedback=body.overall_feedback,
+            panels=body.panels,
+            user_agent=request.headers.get("user-agent", ""),
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    return {"ok": True, "response": row}
+
+
+@app.get("/api/story-feedback")
+def api_story_feedback_list(
+    story_id: str | None = Query(default=None),
+    limit: int = Query(default=200, ge=1, le=2000),
+) -> dict[str, Any]:
+    """Owner-only listing (open when BETA_REQUIRE_LOGIN=0). Reviewers cannot see others."""
+    from comicengine.story_feedback import story_feedback
+
+    return {
+        "summary": story_feedback.summary(),
+        "items": story_feedback.list(story_id=story_id, limit=limit),
+    }
+
+
+@app.get("/api/public/stories")
+def api_public_stories() -> dict[str, Any]:
+    from comicengine.public_catalog import public_stories
+
+    return public_stories()
+
+
+@app.post("/api/feedback")
+def api_feedback_submit(
+    body: FeedbackSubmit, request: Request
+) -> dict[str, Any]:
+    # Prefer session user; else accept display name on body.answers meta
+    user = session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="login required for Mom Test form")
+    try:
+        row = feedback.submit(
+            reviewer=user,
+            answers=body.answers,
+            story_id=body.story_id,
+            user_agent=request.headers.get("user-agent", ""),
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    return {"ok": True, "response": row, "summary": feedback.summary()}
+
+
+@app.get("/api/feedback/list")
+def api_feedback_list(
+    reviewer_id: str | None = Query(default=None),
+    story_id: str | None = Query(default=None),
+    limit: int = Query(default=200, ge=1, le=2000),
+) -> dict[str, Any]:
+    return {
+        "summary": feedback.summary(),
+        "items": feedback.list(reviewer_id=reviewer_id, story_id=story_id, limit=limit),
+    }
+
+
+@app.get("/api/feedback/summary")
+def api_feedback_summary() -> dict[str, Any]:
+    return feedback.summary()
+
+
+@app.get("/api/feedback/export")
+def api_feedback_export(_admin: dict = Depends(admin_user)) -> dict[str, Any]:
+    return feedback.export_for_future()
+
+
+@app.get("/api/reviewers")
+def api_reviewers() -> dict[str, Any]:
+    return {"summary": reviewers.summary(), "items": reviewers.list()}
+
+
 @app.get("/api/stories")
 def api_stories() -> dict[str, Any]:
     return {"stories": list_stories()}
@@ -258,6 +554,16 @@ def api_story(story_id: str) -> dict[str, Any]:
     if not story:
         raise HTTPException(status_code=404, detail="story not found")
     return story
+
+
+@app.get("/review", response_class=HTMLResponse)
+def public_review_home() -> FileResponse:
+    return FileResponse(STATIC / "review" / "index.html")
+
+
+@app.get("/review/{story_id}", response_class=HTMLResponse)
+def public_review_story(story_id: str) -> FileResponse:
+    return FileResponse(STATIC / "review" / "story.html")
 
 
 @app.get("/stories/{story_id}", response_class=HTMLResponse)

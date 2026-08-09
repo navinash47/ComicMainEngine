@@ -102,6 +102,29 @@ class UsageDB:
             )
             return int(cur.lastrowid)
 
+    def log_local(
+        self,
+        *,
+        phase: str,
+        purpose: str,
+        note: str = "",
+        latency_ms: int = 0,
+        meta: dict[str, Any] | None = None,
+    ) -> int:
+        """Record $0 local work so admin stats show activity after image/LLM phases."""
+        return self.log(
+            ApiCall(
+                provider="local",
+                model="cpu",
+                purpose=purpose,
+                phase=phase,
+                cost_usd=0.0,
+                latency_ms=latency_ms,
+                ok=True,
+                meta={"note": note, **(meta or {})},
+            )
+        )
+
     def summary(self) -> dict[str, Any]:
         with self.connect() as conn:
             totals = conn.execute(

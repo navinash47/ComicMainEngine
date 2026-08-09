@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: comicengine-admin
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/summary
+    envVars:
+      - key: DASHBOARD_HOST
+        value: 0.0.0.0
+      - key: DASHBOARD_PORT
+        value: 8765
+      - key: BETA_REQUIRE_LOGIN
+        value: "0"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: PUBLIC_BASE_URL
+        sync: false
+      # Add provider keys in Render dashboard if you need regen from admin:
+      # GOOGLE_API_KEY, FAL_API_KEY, etc.

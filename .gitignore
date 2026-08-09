@@ -14,6 +14,11 @@ data/*.db-*
 outputs/**/*.png
 outputs/**/*.jpg
 outputs/**/*.webp
+feedback-beta/public/comics/**
+feedback-beta/node_modules/
+feedback-beta/.vercel/
+admin-site/node_modules/
+admin-site/.vercel/
 outputs/**/*.json
 !outputs/**/refs/
 !outputs/**/refs/**
@@ -36,6 +41,12 @@ outputs/**/*.json
 !outputs/phase7.5/**/*.json
 !outputs/phase9/
 !outputs/phase9/**/*.json
+!outputs/phase10/
+!outputs/phase10/**/*.json
+!outputs/phase11/
+!outputs/phase11/**/*.json
+!outputs/phase8.6/
+!outputs/phase8.6/**/*.json
 !outputs/library/
 !outputs/library/**/*.json
 !outputs/reports/
@@ -62,3 +73,4 @@ outputs/reports/*.aux
 outputs/reports/*.log
 outputs/reports/*.out
 outputs/reports/missfont.log
+.vercel-deploy-secrets.txt

@@ -1,6 +1,40 @@
 {
-  "updated_at": "2026-08-09T09:24:36.529205+00:00",
+  "updated_at": "2026-08-09T10:27:09.690524+00:00",
   "recommendations": [
+    {
+      "category": "image",
+      "purpose": "assemble_image_only",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
     {
       "category": "image",
       "purpose": "char_consistency",
@@ -297,6 +331,40 @@
     },
     {
       "category": "text",
+      "purpose": "assemble_composed",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
       "purpose": "char_consistency_judge",
       "optimal": {
         "model_key": "omniroute:anthropic::auto/cheap",
@@ -323,6 +391,142 @@
         "samples": 1,
         "avg_cost_usd": 0.031191,
         "avg_latency_ms": 10920,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "compose_episode",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "cost_guardrails",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "curation_seed",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "export_beta_site",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
         "avg_quality": null
       },
       "best_quality": null,
@@ -388,6 +592,108 @@
         "model_key": "demo::smoke",
         "provider": "demo",
         "model": "smoke",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "panel_editor",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "public_review",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "roi_snapshot",
+      "optimal": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
+        "samples": 1,
+        "avg_cost_usd": 0.0,
+        "avg_latency_ms": 0,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "local::cpu",
+        "provider": "local",
+        "model": "cpu",
         "samples": 1,
         "avg_cost_usd": 0.0,
         "avg_latency_ms": 0,

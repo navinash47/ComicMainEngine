@@ -1,0 +1,27 @@
+{
+  "phase": "phase11",
+  "captured_at": "2026-08-09T09:39:29.939052+00:00",
+  "guardrails": [
+    "Beta review traffic: no automatic panel regen for reviewers (admin-only).",
+    "Keep image gen on direct provider keys (never OmniRoute).",
+    "Prefer gemini_ref; Kontext only for hard identity retries.",
+    "Freeze StyleLock korean_manhwa until human taste gate closes.",
+    "Version 2 (Phase 12+) may add features only after Mom Test export review."
+  ],
+  "roi": {
+    "cost_per_story_usd": 0.9866,
+    "cost_per_panel_all_in_usd": 0.0673,
+    "projected_100_episodes_usd": 98.66,
+    "insights": [
+      "Total R&D spend $2.960 across 129 API calls.",
+      "Image share \u2248 74% of spend; text \u2248 26%.",
+      "Blended all-in \u2248 $0.987/story and $0.0673/panel.",
+      "Phase 5 panel batch alone \u2248 $0.0403/panel.",
+      "Projected 100 episodes at current blend \u2248 $98.66 (scripts+images+retries).",
+      "Highest-spend provider: google.",
+      "Curation: 12 panels approved so far."
+    ]
+  },
+  "version2_starts_at": "phase12",
+  "notes": "Full blind cheaper-backend bake-off deferred until Mom Test feedback from beta reviewers prioritizes cost vs quality \u2014 do not burn spend early."
+}

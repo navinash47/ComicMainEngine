@@ -11,11 +11,11 @@ sys.path[:0] = [str(ROOT / "src"), str(ROOT / "dashboard")]
 
 import uvicorn
 
-from comicengine.config import DASHBOARD_PORT
+from comicengine.config import DASHBOARD_HOST, DASHBOARD_PORT
 
 
 def main() -> None:
-    uvicorn.run("app:app", host="127.0.0.1", port=DASHBOARD_PORT, reload=False)
+    uvicorn.run("app:app", host=DASHBOARD_HOST, port=DASHBOARD_PORT, reload=False)
 
 
 if __name__ == "__main__":

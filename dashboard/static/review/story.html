@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Story feedback</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="public-review">
+  <header>
+    <div>
+      <p class="brand">ComicEngine</p>
+      <h1 id="storyTitle">Story</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/review">All stories</a>
+      <span class="muted small" id="whoHint"></span>
+    </div>
+  </header>
+
+  <section class="story-meta">
+    <p class="muted" id="storyTopic"></p>
+    <div class="link-row" id="editionLinks"></div>
+  </section>
+
+  <section class="story-panels" id="panels"></section>
+
+  <section class="feedback-form" id="overallBox">
+    <h2 class="fb-section">Overall for this story</h2>
+    <label class="pe-label" for="overallRating">Overall rating (1–5) *</label>
+    <select id="overallRating" required>
+      <option value="">Select…</option>
+      <option value="1">1 · poor</option>
+      <option value="2">2</option>
+      <option value="3">3 · ok</option>
+      <option value="4">4</option>
+      <option value="5">5 · excellent</option>
+    </select>
+    <label class="pe-label" for="overallFeedback">Overall feedback / suggestions</label>
+    <textarea id="overallFeedback" rows="4" placeholder="What worked or didn’t for the whole episode?"></textarea>
+    <div class="pe-foot" style="border:0;padding:0;margin-top:1rem">
+      <button type="button" class="btn pe-primary" id="submitAll">Submit story + panel feedback</button>
+    </div>
+    <p class="muted small" id="submitStatus"></p>
+  </section>
+
+  <script src="/static/review/review.js"></script>
+  <script>ReviewStory.init();</script>
+</body>
+</html>

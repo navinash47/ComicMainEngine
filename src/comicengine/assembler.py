@@ -237,4 +237,15 @@ def assemble_episode(
     else:
         episode.webtoon_image_only_path = rel_w
         episode.pdf_image_only_path = rel_p
+    try:
+        from comicengine.usage import UsageDB
+
+        UsageDB().log_local(
+            phase="phase7.5" if edition == "image_only" else "phase7",
+            purpose=f"assemble_{edition}",
+            note=f"assembled {story_id} ({edition})",
+            meta={"story_id": story_id, "edition": edition, "panels": len(used)},
+        )
+    except Exception:  # noqa: BLE001
+        pass
     return manifest

@@ -1,0 +1,38 @@
+{
+  "summary": {
+    "responses": 1,
+    "reviewers": 1,
+    "by_story": [
+      {
+        "story_id": "episode_cjp_origin",
+        "n": 1,
+        "avg_rating": 4.0
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "ec5f2447-6543-4e07-a101-83e9e86c5a62",
+      "reviewer_key": "name:9712c7c85d7c7bf9",
+      "reviewer_name": "TestFriend",
+      "story_id": "episode_cjp_origin",
+      "overall_rating": 4,
+      "overall_feedback": "Clear for bedtime",
+      "created_at": "2026-08-09T09:54:51.548719+00:00",
+      "user_agent": "curl/8.7.1",
+      "panels": [
+        {
+          "index": 1,
+          "rating": 5,
+          "feedback": "cozy"
+        },
+        {
+          "index": 2,
+          "rating": 3,
+          "feedback": "bit long"
+        }
+      ],
+      "meta": {}
+    }
+  ]
+}

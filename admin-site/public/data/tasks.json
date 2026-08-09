@@ -1,0 +1,349 @@
+{
+  "tasks": [
+    {
+      "id": "phase0",
+      "title": "Phase 0 \u2014 Environments & accounts",
+      "description": "venv, .env keys, API hello pings",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 0,
+      "phase": "phase0",
+      "updated_at": "2026-08-09T10:14:55.794256+00:00",
+      "meta": {
+        "last_note": "anthropic/openai/google ok"
+      }
+    },
+    {
+      "id": "dashboard",
+      "title": "Live usage + TaskObserver",
+      "description": "Local webpage tracking tokens/cost/tasks",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 5,
+      "phase": "dashboard",
+      "updated_at": "2026-08-09T07:17:07.800762+00:00",
+      "meta": {
+        "last_note": "usage.db + TaskObserver active"
+      }
+    },
+    {
+      "id": "phase0.5",
+      "title": "Phase 0.5 \u2014 AI script engine (CJP test)",
+      "description": "Bedtime episode JSON with CJP cast",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 7,
+      "phase": "phase0.5",
+      "updated_at": "2026-08-09T07:27:32.596172+00:00",
+      "meta": {
+        "error": "Expecting ',' delimiter: line 241 column 6 (char 16745)",
+        "last_note": "wrote episode_cjp_origin.json (12 panels)"
+      }
+    },
+    {
+      "id": "phase1",
+      "title": "Phase 1 \u2014 Single-image generation",
+      "description": "Nano Banana hello image (+ local FLUX later on PC)",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 10,
+      "phase": "phase1",
+      "updated_at": "2026-08-09T10:14:55.795133+00:00",
+      "meta": {
+        "last_note": "api ok"
+      }
+    },
+    {
+      "id": "phase2",
+      "title": "Phase 2 \u2014 Style lock",
+      "description": "Style suffix + small grid + style_anchor.png",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 20,
+      "phase": "phase2",
+      "updated_at": "2026-08-09T10:14:55.795894+00:00",
+      "meta": {
+        "last_note": "5 style images"
+      }
+    },
+    {
+      "id": "phase3",
+      "title": "Phase 3 \u2014 Character consistency bake-off",
+      "description": "Dad / Daughter / figure rubric",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 30,
+      "phase": "phase3",
+      "updated_at": "2026-08-09T08:18:38.964940+00:00",
+      "meta": {
+        "last_note": "winner=gemini_ref"
+      }
+    },
+    {
+      "id": "phase4",
+      "title": "Phase 4 \u2014 Multi-topic LLM scripts",
+      "description": "Et tu Brutus + Hitler warning (teen didactic) beside CJP",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 40,
+      "phase": "phase4",
+      "updated_at": "2026-08-09T08:40:45.113702+00:00",
+      "meta": {
+        "stories": [
+          "hitler_warning"
+        ],
+        "last_note": "wrote ['episode_hitler_warning.json']; dashboard stories=['episode_cjp_origin', 'episode_et_tu_brutus', 'episode_hitler_warning']",
+        "error": "35 validation errors for Episode\nfact_checks.0.verdict\n  Input should be 'supported', 'disputed', 'simplified' or 'dramatized' [type=literal_error, input_value='Misleading', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error\nfact_checks.1.verdict\n  Input should be 'supported', 'disputed', 'simplified' or 'dramatized' [type=literal_error, input_value='True', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error\nfact_checks.2.verdict\n  Input should be 'supported', 'disputed', 'simplified' or 'dramatized' [type=literal_error, input_value='Partly false', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error\npanels.0.scene_description\n  Field required [type=missing, input_value={'index': 1, 'characters'...od, no heroic framing.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.0.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line...d how to refuse that.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.1.scene_description\n  Field required [type=missing, input_value={'index': 2, 'characters'...ained historical tone.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.1.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'weimar_citi...s sell fake medicine.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.2.scene_description\n  Field required [type=missing, input_value={'index': 3, 'characters'...cumentary composition.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.2.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'adolf_hitle...ission slip for hate.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.3.scene_description\n  Field required [type=missing, input_value={'index': 4, 'characters'...roic documentary mood.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.3.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line...ripping their rights.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.4.scene_description\n  Field required [type=missing, input_value={'index': 5, 'characters'..., uneasy manhwa faces.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.4.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'weimar_citi...an murder a republic.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.5.scene_description\n  Field required [type=missing, input_value={'index': 6, 'characters'...ting, never glamorous.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.5.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'joseph_goeb...eracy is civic armor.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.6.scene_description\n  Field required [type=missing, input_value={'index': 7, 'characters'...o epic Nazi spectacle.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.6.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'joseph_goeb...they\u2019re defenses.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.7.scene_description\n  Field required [type=missing, input_value={'index': 8, 'characters'...spectful, non-graphic.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.7.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'anne_frank_...aking costs too much.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.8.scene_description\n  Field required [type=missing, input_value={'index': 9, 'characters'...hter\u2019s worried eyes.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.8.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line...olving real problems.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.9.scene_description\n  Field required [type=missing, input_value={'index': 10, 'characters...umentary manhwa style.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.9.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'heinrich_hi...s a machine of crime.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.10.scene_description\n  Field required [type=missing, input_value={'index': 11, 'characters...te at window, no gore.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.10.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'adolf_eichm... blood from a choice.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.11.scene_description\n  Field required [type=missing, input_value={'index': 12, 'characters...ce, no violence shown.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.11.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line...hes forget our names.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.12.scene_description\n  Field required [type=missing, input_value={'index': 13, 'characters...ainy documentary mood.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.12.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'resistance_...away fed the machine.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.13.scene_description\n  Field required [type=missing, input_value={'index': 14, 'characters...s; calm serious light.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.13.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line...ur laws, our courage.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.14.scene_description\n  Field required [type=missing, input_value={'index': 15, 'characters...ubdued memorial light.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.14.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'daughter', ... small truthful acts.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type\npanels.15.scene_description\n  Field required [type=missing, input_value={'index': 16, 'characters...ful without cute tone.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\npanels.15.dialogue\n  Input should be a valid string [type=string_type, input_value=[{'speaker': 'dad', 'line... I won\u2019t look away.'}], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type"
+      }
+    },
+    {
+      "id": "phase5",
+      "title": "Phase 5 \u2014 Panel batch generator",
+      "description": "Episode JSON \u2192 panels (gemini_ref + retries)",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 50,
+      "phase": "phase5",
+      "updated_at": "2026-08-09T08:53:59.434361+00:00",
+      "meta": {
+        "stories": [
+          "episode_cjp_origin.json",
+          "episode_et_tu_brutus.json",
+          "episode_hitler_warning.json"
+        ],
+        "last_note": "panels ok=44/44 errors=0 \u2192 /Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase5/batch_summary.json"
+      }
+    },
+    {
+      "id": "phase6",
+      "title": "Phase 6 \u2014 Speech bubble compositor",
+      "description": "Pillow captions/bubbles + story reader narration",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 60,
+      "phase": "phase6",
+      "updated_at": "2026-08-09T08:58:20.915925+00:00",
+      "meta": {
+        "last_note": "composed [{'story_id': 'episode_cjp_origin', 'ok': 12, 'errors': 0}, {'story_id': 'episode_et_tu_brutus', 'ok': 16, 'errors': 0}, {'story_id': 'episode_hitler_warning', 'ok': 16, 'errors': 0}]"
+      }
+    },
+    {
+      "id": "phase7",
+      "title": "Phase 7 \u2014 Episode assembler",
+      "description": "Vertical webtoon PNG + multi-page PDF per story",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 70,
+      "phase": "phase7",
+      "updated_at": "2026-08-09T09:05:06.890707+00:00",
+      "meta": {
+        "last_note": "assembled 3 stories \u2192 /Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase7/assemble_summary.json"
+      }
+    },
+    {
+      "id": "phase7.5",
+      "title": "Phase 7.5 \u2014 Only Image assembler",
+      "description": "Bubble-free webtoon/PDF from Phase 5 panels + Story Library",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 75,
+      "phase": "phase7.5",
+      "updated_at": "2026-08-09T09:08:53.922824+00:00",
+      "meta": {
+        "last_note": "image_only 3 stories; library=9"
+      }
+    },
+    {
+      "id": "phase8",
+      "title": "Phase 8 \u2014 Curation CLI + SQLite",
+      "description": "Approve / reject / regenerate panels & episodes",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 80,
+      "phase": "phase8",
+      "updated_at": "2026-08-09T09:11:30.945310+00:00",
+      "meta": {
+        "last_note": "seeded 47 rows"
+      }
+    },
+    {
+      "id": "phase8.5",
+      "title": "Phase 8.5 \u2014 Panel rating + prompt editor",
+      "description": "Rate/suggest panels; edit prompts on reject/regen; live site refresh",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 85,
+      "phase": "phase8.5",
+      "updated_at": "2026-08-09T09:22:16.710984+00:00",
+      "meta": {
+        "last_note": "rating + suggestions + editable regen prompt on Library/Story"
+      }
+    },
+    {
+      "id": "phase8.6",
+      "title": "Phase 8.6 \u2014 Google auth + Mom Test feedback",
+      "description": "Google login, reviewer ledger, Mom Test questionnaire, admin feedback log",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 86,
+      "phase": "phase8.6",
+      "updated_at": "2026-08-09T09:39:29.737167+00:00",
+      "meta": {
+        "last_note": "auth + Mom Test questionnaire + reviewer/feedback SQLite logs"
+      }
+    },
+    {
+      "id": "phase9",
+      "title": "Phase 9 \u2014 ROI dashboard",
+      "description": "/roi cost unit-economics + charts",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 90,
+      "phase": "phase9",
+      "updated_at": "2026-08-09T09:14:13.015254+00:00",
+      "meta": {
+        "last_note": "ROI ready \u2192 /roi \u00b7 snapshot /Users/avinashnandyala/Desktop/ComicMainEngine/outputs/phase9/roi_snapshot.json"
+      }
+    },
+    {
+      "id": "phase10",
+      "title": "Phase 10 \u2014 Publishing pipeline",
+      "description": "Cloudflare Pages + R2 export of Library editions",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 100,
+      "phase": "phase10",
+      "updated_at": "2026-08-09T09:39:29.852424+00:00",
+      "meta": {
+        "last_note": "exported 1 stories \u2192 outputs/phase10/site"
+      }
+    },
+    {
+      "id": "phase11",
+      "title": "Phase 11 \u2014 Cost optimization",
+      "description": "Beta cost guardrails + ROI baseline (full bake-off deferred to V2)",
+      "status": "completed",
+      "progress": 1.0,
+      "sort_order": 110,
+      "phase": "phase11",
+      "updated_at": "2026-08-09T09:39:29.940271+00:00",
+      "meta": {
+        "last_note": "guardrails snapshot written; Version 2 begins at phase12"
+      }
+    }
+  ],
+  "counts": {
+    "pending": 0,
+    "in_progress": 0,
+    "completed": 17,
+    "failed": 0,
+    "blocked": 0
+  },
+  "completion_ratio": 1.0,
+  "refresh": {
+    "changes": [
+      "phase0->completed",
+      "phase1->completed",
+      "phase2->completed"
+    ],
+    "phase_stats": {
+      "phase0": {
+        "phase": "phase0",
+        "calls": 12,
+        "ok_calls": 11,
+        "cost_usd": 0.0031688
+      },
+      "phase0.5": {
+        "phase": "phase0.5",
+        "calls": 2,
+        "ok_calls": 2,
+        "cost_usd": 0.045819
+      },
+      "phase1": {
+        "phase": "phase1",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.003
+      },
+      "phase10": {
+        "phase": "phase10",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase11": {
+        "phase": "phase11",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase2": {
+        "phase": "phase2",
+        "calls": 13,
+        "ok_calls": 13,
+        "cost_usd": 0.093276
+      },
+      "phase3": {
+        "phase": "phase3",
+        "calls": 23,
+        "ok_calls": 23,
+        "cost_usd": 0.387191
+      },
+      "phase4": {
+        "phase": "phase4",
+        "calls": 11,
+        "ok_calls": 10,
+        "cost_usd": 0.655416
+      },
+      "phase5": {
+        "phase": "phase5",
+        "calls": 66,
+        "ok_calls": 61,
+        "cost_usd": 1.772
+      },
+      "phase6": {
+        "phase": "phase6",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase7": {
+        "phase": "phase7",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase7.5": {
+        "phase": "phase7.5",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase8": {
+        "phase": "phase8",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase8.5": {
+        "phase": "phase8.5",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase8.6": {
+        "phase": "phase8.6",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      },
+      "phase9": {
+        "phase": "phase9",
+        "calls": 1,
+        "ok_calls": 1,
+        "cost_usd": 0.0
+      }
+    }
+  },
+  "updated_at": "2026-08-09T10:14:55.797862+00:00"
+}

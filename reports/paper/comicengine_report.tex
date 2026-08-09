@@ -340,6 +340,18 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
   \item CLI \texttt{scripts/phase8\_5\_panel\_editor.py}; APIs for panel editor GET and JSON regenerate body
 \end{itemize}
 
+\subsection{Phase 8.6 --- Reader auth + dual Vercel hosting (complete)}
+\textbf{Goal.} Separable reader vs admin surfaces; reviewers rate panels/stories without seeing engine stats.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Local FastAPI: open admin console (\texttt{/admin}); public review at \texttt{/review} (name + panel/story ratings)
+  \item Vercel \textbf{comicengine-reader}: username/password (HttpOnly session cookie + Upstash Redis)
+  \item Vercel \textbf{comicengine-admin}: shareable read-only engine snapshot + optional live Upstash feedback
+  \item Shared Upstash Redis; prepare scripts for comics (\texttt{prepare\_feedback\_beta.py}) and admin JSON (\texttt{prepare\_admin\_site.py})
+  \item Hosting runbook \texttt{docs/HOSTING.md}
+\end{itemize}
+
 \subsection{Phase 9 --- ROI dashboard (complete)}
 \textbf{Goal.} Make spend actionable: unit economics + charts from the SQLite ledger.
 
@@ -350,8 +362,27 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
   \item Snapshot JSON \texttt{outputs/phase9/roi\_snapshot.json} via \texttt{scripts/phase9\_roi.py}
 \end{itemize}
 
+\subsection{Phase 10 --- Publishing pipeline (complete)}
+\textbf{Goal.} Export approved Library editions for Cloudflare Pages + R2; keep live auth/feedback on FastAPI.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item \texttt{comicengine.publish.export\_beta\_site()} $\rightarrow$ \texttt{outputs/phase10/site}
+  \item CLI \texttt{scripts/phase10\_publish.py} (\texttt{export|upload-r2|deploy-pages|gate})
+  \item Live Google login remains on the FastAPI host (Tunnel / public HTTPS); Pages is the static mirror
+\end{itemize}
+
+\subsection{Phase 11 --- Cost guardrails (complete)}
+\textbf{Goal.} Freeze beta spend rules before Version~2; defer expensive cheaper-backend bake-offs until Mom Test priorities are clear.
+
+\paragraph{What worked.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+  \item Snapshot \texttt{outputs/phase11/cost\_guardrails.json} with ROI baseline + reviewer/admin regen policy
+  \item Explicit roadmap: \textbf{Version~2 begins at Phase~12}, feature work driven by exported Mom Test feedback
+\end{itemize}
+
 \section{Dashboard Surfaces}
-Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Story Library, \textbf{ROI}, Analytics, Images gallery, Report PDF (\texttt{/report}).
+Live at \texttt{http://127.0.0.1:8765}: usage KPIs, TaskObserver, Stories reader, Story Library, Feedback (Mom Test), Reviewers, \textbf{ROI}, Analytics, Images gallery, Report PDF (\texttt{/report}).
 
 \section{What We Explicitly Learned}
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
@@ -371,12 +402,13 @@ Style and consistency locks must not be decided solely by LLM judges or blank-fr
 \section{Next Gates}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
-  \item Phase~10 Cloudflare Pages + R2 publish of approved Library editions.
+  \item Complete Google OAuth + Cloudflare Tunnel/Pages credentials for public beta URL.
+  \item Version~2 / Phase~12+: prioritize features from Mom Test exports.
 \end{itemize}
 
 \section{Conclusion}
-ComicEngine now covers script$\rightarrow$render$\rightarrow$compose$\rightarrow$assemble$\rightarrow$curate$\rightarrow$ROI visibility.
-Remaining work is publish packaging and continued human taste gates on hard-history frames.
+ComicEngine now covers script$\rightarrow$render$\rightarrow$compose$\rightarrow$assemble$\rightarrow$curate$\rightarrow$ROI$\rightarrow$reader feedback hosting$\rightarrow$publish packaging.
+Version~2 starts at Phase~12 using logged panel/story feedback from beta readers.
 \appendix
 \section{Reproduce}
 \begin{verbatim}
