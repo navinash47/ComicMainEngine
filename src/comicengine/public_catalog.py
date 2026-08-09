@@ -13,6 +13,12 @@ from comicengine.stories import load_story
 
 def public_stories() -> dict[str, Any]:
     catalog = load_catalog(refresh=False)
+    # Prefer the same library heroes as Vercel thumbnails
+    hero_panel = {
+        "episode_cjp_origin": 5,
+        "episode_et_tu_brutus": 11,
+        "episode_hitler_warning": 1,
+    }
     stories_out: list[dict[str, Any]] = []
     for s in catalog.get("stories") or []:
         sid = s["id"]
@@ -34,6 +40,16 @@ def public_stories() -> dict[str, Any]:
             )
         eds = s.get("editions") or {}
         reader = eds.get("reader") or {}
+        thumb = ""
+        want = hero_panel.get(sid)
+        if want:
+            hit = next((p for p in panels if int(p.get("index") or 0) == want), None)
+            if hit and hit.get("image_href"):
+                thumb = hit["image_href"]
+        if not thumb and panels:
+            thumb = panels[0].get("image_href") or ""
+        if not thumb:
+            thumb = reader.get("webtoon_href") or ""
         stories_out.append(
             {
                 "id": sid,
@@ -42,6 +58,8 @@ def public_stories() -> dict[str, Any]:
                 "panel_count": len(panels) or s.get("panel_count") or 0,
                 "webtoon_href": reader.get("webtoon_href"),
                 "pdf_href": reader.get("pdf_href"),
+                "thumbnail_href": thumb,
+                "thumbnail_panel": want,
                 "reader_href": f"/review/{sid}",
                 "panels": panels,
             }

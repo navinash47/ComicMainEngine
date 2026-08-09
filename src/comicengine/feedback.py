@@ -221,6 +221,24 @@ FEEDBACK_QUESTIONS: list[dict[str, Any]] = [
     },
 ]
 
+# Slim Mom Test used after /review story ratings (and Vercel reader).
+PUBLIC_QUESTION_IDS: list[str] = [
+    "q01_role_context",
+    "q02_last_time",
+    "q03_what_broke",
+    "q04_current_tools",
+    "q05_sought_before",
+    "q06_when_need",
+    "q08_how_far",
+    "q09_minutes",
+    "q10_first_stop",
+    "q12_visual_break",
+    "q13_flinch",
+    "q15_showed_anyone",
+    "q17_compared_to",
+    "q18_still_missing",
+]
+
 FEEDBACK_SCHEMA = """
 CREATE TABLE IF NOT EXISTS feedback_response (
   id TEXT PRIMARY KEY,
@@ -277,6 +295,43 @@ class FeedbackDB:
             "questions": self.questions(),
         }
 
+    def public_questions(self) -> list[dict[str, Any]]:
+        by_id = {q["id"]: q for q in FEEDBACK_QUESTIONS}
+        return [by_id[i] for i in PUBLIC_QUESTION_IDS if i in by_id]
+
+    def public_questionnaire_meta(self) -> dict[str, Any]:
+        qs = self.public_questions()
+        return {
+            "method": "mom_test",
+            "intro": FEEDBACK_INTRO,
+            "question_count": len(qs),
+            "questions": qs,
+        }
+
+    def validate_public_answers(self, answers: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
+        """Validate only the public Mom Test subset."""
+        out: dict[str, Any] = {}
+        errors: list[str] = []
+        by_id = {q["id"]: q for q in self.public_questions()}
+        for q in self.public_questions():
+            qid = q["id"]
+            raw = answers.get(qid)
+            if raw is None or (isinstance(raw, str) and not str(raw).strip()):
+                if q.get("required"):
+                    errors.append(f"{qid} is required")
+                continue
+            kind = q["kind"]
+            if kind == "choice":
+                val = str(raw).strip()
+                choices = q.get("choices") or []
+                if choices and val not in choices:
+                    errors.append(f"{qid} invalid choice")
+                    continue
+                out[qid] = val
+            else:
+                out[qid] = str(raw).strip()
+        return out, errors
+
     def submit(
         self,
         *,
@@ -285,8 +340,12 @@ class FeedbackDB:
         story_id: str = "",
         user_agent: str = "",
         meta: dict[str, Any] | None = None,
+        public_subset: bool = False,
     ) -> dict[str, Any]:
-        cleaned, errors = self.validate_answers(answers)
+        if public_subset:
+            cleaned, errors = self.validate_public_answers(answers)
+        else:
+            cleaned, errors = self.validate_answers(answers)
         if errors:
             raise ValueError("; ".join(errors))
 
@@ -338,6 +397,7 @@ class FeedbackDB:
                         {
                             **(meta or {}),
                             "method": "mom_test",
+                            "public_subset": public_subset,
                             "intro": FEEDBACK_INTRO,
                         },
                         ensure_ascii=False,

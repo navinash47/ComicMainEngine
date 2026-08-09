@@ -496,6 +496,40 @@ def api_public_stories() -> dict[str, Any]:
     return public_stories()
 
 
+@app.get("/api/public/questionnaire")
+def api_public_questionnaire_meta() -> dict[str, Any]:
+    return feedback.public_questionnaire_meta()
+
+
+class PublicQuestionnaire(BaseModel):
+    name: str = Field(min_length=1, max_length=80)
+    story_id: str = ""
+    answers: dict[str, Any] = Field(default_factory=dict)
+
+
+@app.post("/api/public/questionnaire")
+def api_public_questionnaire_submit(body: PublicQuestionnaire, request: Request) -> dict[str, Any]:
+    import hashlib
+
+    name = body.name.strip()
+    rid = "name:" + hashlib.sha256(name.lower().encode()).hexdigest()[:16]
+    user = reviewers.upsert_from_google(
+        {"sub": rid, "email": f"{rid}@name.local", "name": name, "picture": "", "locale": ""}
+    )
+    try:
+        row = feedback.submit(
+            reviewer=user,
+            answers=body.answers,
+            story_id=body.story_id,
+            user_agent=request.headers.get("user-agent", ""),
+            public_subset=True,
+            meta={"source": "local-review"},
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
+    return {"ok": True, "response": row, "summary": feedback.summary()}
+
+
 @app.post("/api/feedback")
 def api_feedback_submit(
     body: FeedbackSubmit, request: Request
@@ -543,6 +577,96 @@ def api_reviewers() -> dict[str, Any]:
     return {"summary": reviewers.summary(), "items": reviewers.list()}
 
 
+@app.get("/api/admin/crm")
+def api_admin_crm(
+    limit: int = Query(default=200, ge=1, le=2000),
+) -> dict[str, Any]:
+    """Local admin CRM: reviewers + story ratings + Mom Test forms + chart data."""
+    from comicengine.story_feedback import story_feedback
+
+    sf = story_feedback.list(limit=limit)
+    mq = feedback.list(limit=limit)
+    rev = reviewers.list(limit=500)
+    by: dict[str, Any] = {}
+    for r in rev:
+        by[r["id"]] = {**r, "story_responses": [], "questionnaires": []}
+    for item in sf:
+        key = item.get("reviewer_key") or "unknown"
+        name = item.get("reviewer_name") or "unknown"
+        if key not in by:
+            by[key] = {
+                "id": key,
+                "name": name,
+                "email": "",
+                "story_responses": [],
+                "questionnaires": [],
+            }
+        by[key]["story_responses"].append(item)
+        if not by[key].get("name"):
+            by[key]["name"] = name
+    for item in mq:
+        rid = item.get("reviewer_id") or "unknown"
+        if rid not in by:
+            by[rid] = {
+                "id": rid,
+                "name": item.get("reviewer_name") or "unknown",
+                "email": item.get("reviewer_email") or "",
+                "story_responses": [],
+                "questionnaires": [],
+            }
+        by[rid]["questionnaires"].append(item)
+
+    people = []
+    for p in by.values():
+        overalls = [
+            float(x.get("overall_rating"))
+            for x in p["story_responses"]
+            if x.get("overall_rating") is not None
+        ]
+        people.append(
+            {
+                **p,
+                "stories_rated": len(p["story_responses"]),
+                "questionnaire_count": len(p["questionnaires"]),
+                "avg_overall": round(sum(overalls) / len(overalls), 2) if overalls else None,
+            }
+        )
+    people.sort(key=lambda x: (x.get("name") or "").lower())
+
+    ratings_hist = [0, 0, 0, 0, 0]
+    by_story: dict[str, Any] = {}
+    for item in sf:
+        o = int(item.get("overall_rating") or 0)
+        if 1 <= o <= 5:
+            ratings_hist[o - 1] += 1
+        sid = item.get("story_id") or "unknown"
+        by_story.setdefault(sid, {"story_id": sid, "responses": 0, "sum": 0})
+        by_story[sid]["responses"] += 1
+        by_story[sid]["sum"] += o
+    story_rows = [
+        {
+            "story_id": s["story_id"],
+            "responses": s["responses"],
+            "avg_overall": round(s["sum"] / s["responses"], 2) if s["responses"] else 0,
+        }
+        for s in by_story.values()
+    ]
+
+    return {
+        "summary": {
+            "reviewers": len(rev),
+            "story_feedback": len(sf),
+            "questionnaires": len(mq),
+            "people": len(people),
+        },
+        "people": people,
+        "story_feedback": sf,
+        "questionnaires": mq,
+        "charts": {"ratings_hist": ratings_hist, "by_story": story_rows},
+        "usage": (db.summary() or {}).get("totals"),
+    }
+
+
 @app.get("/api/stories")
 def api_stories() -> dict[str, Any]:
     return {"stories": list_stories()}
@@ -559,6 +683,11 @@ def api_story(story_id: str) -> dict[str, Any]:
 @app.get("/review", response_class=HTMLResponse)
 def public_review_home() -> FileResponse:
     return FileResponse(STATIC / "review" / "index.html")
+
+
+@app.get("/review/questionnaire", response_class=HTMLResponse)
+def public_review_questionnaire() -> FileResponse:
+    return FileResponse(STATIC / "review" / "questionnaire.html")
 
 
 @app.get("/review/{story_id}", response_class=HTMLResponse)

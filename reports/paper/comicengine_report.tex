@@ -345,7 +345,7 @@ episode\_hitler\_warning & 16 & webtoon + PDF \\
 
 \paragraph{What shipped.}
 \begin{itemize}[leftmargin=*,itemsep=1pt]
-  \item Local FastAPI: open owner console (\texttt{/admin}, \texttt{/stats}); public comics review at \texttt{/review} (panel + overall story ratings)
+  \item Local FastAPI: open owner console (\texttt{/admin}, \texttt{/stats}); public comics review at \texttt{/review} with thumbnail cards, Read\&rate / PDF / Just~read, and Mom Test after ratings; Reader CRM at \texttt{/reviewers}
   \item Vercel \textbf{comicengine-reader} (\texttt{https://comicengine-reader.vercel.app}): username/password (scrypt + HttpOnly \texttt{ce\_session} cookie + Upstash Redis)
   \item Library cards: evaluated 3{:}2 thumbnails, title, three actions --- \textbf{Read \& rate} / \textbf{PDF} / \textbf{Just read}
   \item Thumbnail picks (\texttt{scripts/select\_thumbnails.py}): CJP panel~5, Et~tu panel~11, Hitler-warning panel~1 (visual override away from spectacle beats)

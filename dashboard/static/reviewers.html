@@ -3,43 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ComicEngine · Reviewers & feedback</title>
+  <title>ComicEngine · Reviewer CRM</title>
   <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
   <header>
     <div>
       <p class="brand"><span class="brand-name">ComicEngine</span> <span class="beta-pill">Beta</span></p>
-      <h1>Reviewer feedback log</h1>
+      <h1>Admin · Reader CRM</h1>
     </div>
     <div class="status nav-links">
-      <a class="btn" href="/admin">Admin stats</a>
-      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/admin">Stats</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <a class="btn" href="/roi">ROI</a>
       <a class="btn" href="/review">Public review</a>
+      <button type="button" class="btn pe-primary" id="refreshBtn">Refresh</button>
       <button type="button" class="btn" id="exportBtn">Export JSON</button>
     </div>
   </header>
 
   <section class="story-meta">
-    <p class="lede">Name-based panel + story ratings from `/review` (and Vercel). No login on this admin page.</p>
+    <p class="lede">Who reviewed locally: story ratings + Mom Test answers. Same warm console look as the hosted admin.</p>
     <p class="muted small" id="rvMeta">loading…</p>
   </section>
 
-  <section class="grid">
-    <article class="wide">
-      <h2>Reviewers</h2>
-      <div id="reviewerList"></div>
+  <section class="kpis" id="crmKpis"></section>
+
+  <section class="grid" style="padding:0 2rem 1rem">
+    <article>
+      <h2>Ratings histogram</h2>
+      <canvas id="ratingChart" class="crm-canvas" height="160"></canvas>
     </article>
-    <article class="wide">
-      <h2>Feedback responses</h2>
-      <div id="feedbackList"></div>
+    <article>
+      <h2>Avg by story</h2>
+      <canvas id="storyChart" class="crm-canvas" height="160"></canvas>
     </article>
   </section>
 
+  <section class="story-meta">
+    <h2>People</h2>
+    <div class="people-layout">
+      <div id="peopleList" class="people-list"></div>
+      <div id="personDetail" class="person-detail">
+        <p class="muted">Select a person to see ratings and questionnaire answers.</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/charts.js"></script>
   <script src="/static/reviewers.js"></script>
-<footer class="site-footer">
-  <p>© 2026 Avinash Nandyala · ComicEngine</p>
-  <p class="muted small">AI comic pipeline — beta preview. Built by Avinash (<a href="https://github.com/navinash47" target="_blank" rel="noopener">@navinash47</a>).</p>
-</footer>
+  <footer class="site-footer">
+    <p>© 2026 Avinash Nandyala · ComicEngine</p>
+    <p class="muted small">AI comic pipeline — beta preview. Built by Avinash (<a href="https://github.com/navinash47" target="_blank" rel="noopener">@navinash47</a>).</p>
+  </footer>
 </body>
 </html>
