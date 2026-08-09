@@ -11,9 +11,12 @@ NEGATIVE_PROMPT = (
 )
 
 
-def build_prompt(scene: str, *, characters: str | None = None) -> str:
+def build_prompt(scene: str, *, characters: str | None = None, negative: bool = False) -> str:
     parts = [scene.strip()]
     if characters:
         parts.append(f"Characters: {characters.strip()}")
     parts.append(STYLE_SUFFIX)
-    return ". ".join(parts)
+    text = ". ".join(parts)
+    if negative:
+        text = f"{text}. Avoid: {NEGATIVE_PROMPT}"
+    return text
