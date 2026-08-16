@@ -30,6 +30,7 @@ from comicengine.config import (
     OUTPUTS,
     SESSION_SECRET,
 )
+from comicengine.v2a_program import ARCHITECTURE_PATH, load_program as load_v2a_program
 from comicengine.curation import curation, panel_editor_payload, regenerate_panel
 from comicengine.feedback import feedback
 from comicengine.images_gallery import gallery
@@ -228,6 +229,23 @@ def feedback_page() -> FileResponse:
 @app.get("/reviewers")
 def reviewers_page() -> FileResponse:
     return FileResponse(STATIC / "reviewers.html")
+
+
+@app.get("/v2a")
+def v2a_page() -> FileResponse:
+    return FileResponse(STATIC / "v2a.html")
+
+
+@app.get("/api/v2a/program")
+def api_v2a_program() -> dict[str, Any]:
+    return load_v2a_program()
+
+
+@app.get("/v2a/architecture")
+def v2a_architecture() -> FileResponse:
+    if not ARCHITECTURE_PATH.is_file():
+        raise HTTPException(status_code=404, detail="V2A architecture doc missing")
+    return FileResponse(ARCHITECTURE_PATH, media_type="text/markdown; charset=utf-8")
 
 
 @app.get("/roi")

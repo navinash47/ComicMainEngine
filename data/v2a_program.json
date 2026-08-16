@@ -8,7 +8,8 @@
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20). Do not edit v2_program.json from this track.",
       "Genre-agnostic framework. First fixture is Aranya — The Capture, not 'product is only Ramayana'.",
-      "Image APIs stay direct (GOOGLE_API_KEY, fal). OmniRoute is text only."
+      "Image APIs stay direct (GOOGLE_API_KEY, fal). OmniRoute is text only.",
+      "Dashboard: /v2a reads this file. Architecture: /v2a/architecture."
     ]
   },
   "phase_ids": [
