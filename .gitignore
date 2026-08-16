@@ -55,6 +55,7 @@ data/*
 !data/.gitkeep
 !data/style_lock.json
 !data/model_recommendations.json
+!data/v2a_program.json
 *.egg-info/
 dist/
 build/

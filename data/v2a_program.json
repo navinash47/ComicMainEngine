@@ -1,0 +1,335 @@
+{
+  "program": {
+    "version": "2A",
+    "title": "Version 2A — storyboard-first (parallel to Version 2)",
+    "active_phase_id": "a1",
+    "updated_at": "2026-08-16T22:36:00+00:00",
+    "updated_by": "a0-freeze",
+    "notes": [
+      "Parallel track beside Version 2 (data/v2_program.json phases 12–20). Do not edit v2_program.json from this track.",
+      "Genre-agnostic framework. First fixture is Aranya — The Capture, not 'product is only Ramayana'.",
+      "Image APIs stay direct (GOOGLE_API_KEY, fal). OmniRoute is text only."
+    ]
+  },
+  "phase_ids": [
+    "a0",
+    "a1",
+    "a2",
+    "a3",
+    "a4",
+    "a5"
+  ],
+  "phases": {
+    "a0": {
+      "id": "a0",
+      "title": "Architecture freeze",
+      "track": "process",
+      "status": "complete",
+      "sort_order": 0,
+      "exit_gate": "2A is readable without running code: docs/V2A_ARCHITECTURE.md + this JSON; live episode_schema.py unchanged; Version 2 frozen",
+      "checklist": [
+        "Write docs/V2A_ARCHITECTURE.md (layers, not-AI rules, Capture fixture, A0–A5 gates)",
+        "Write data/v2a_program.json with exit gates and test_series metadata",
+        "Un-ignore data/v2a_program.json in .gitignore",
+        "Do not edit data/v2_program.json or src/comicengine/episode_schema.py"
+      ],
+      "checklist_done": [
+        "Write docs/V2A_ARCHITECTURE.md (layers, not-AI rules, Capture fixture, A0–A5 gates)",
+        "Write data/v2a_program.json with exit gates and test_series metadata",
+        "Un-ignore data/v2a_program.json in .gitignore",
+        "Do not edit data/v2_program.json or src/comicengine/episode_schema.py"
+      ],
+      "blockers": [],
+      "notes": [
+        "Commit: phase-v2a-a0: freeze storyboard-first architecture beside Version 2"
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:30:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "in_progress"
+        },
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "gate_passed",
+          "by": "a0-freeze",
+          "status": "complete"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    },
+    "a1": {
+      "id": "a1",
+      "title": "Story Architect",
+      "track": "story",
+      "status": "locked",
+      "sort_order": 1,
+      "exit_gate": "Signed adult-stark Capture series: epic map; bibles for all leads (Surpanakha whole+wounded; Ravana king+ascetic); fact verdicts; 10 episode packets; human signed",
+      "checklist": [
+        "Epic map: Ramayana → Aranya Kanda → The Capture (10 episodes)",
+        "Enhanced bibles for Rama, Sita, Lakshmana, Surpanakha, Ravana, Maricha, Jatayu",
+        "Surpanakha whole + wounded sheets specified; Ravana king + ascetic",
+        "Fact / tradition sheet with supported/disputed/simplified/dramatized verdicts",
+        "10 episode packets (story goal + framework goal + gate); no images yet",
+        "Human sign-off on adult-stark tone (no exploitation, no gore-porn, no kitsch gods)"
+      ],
+      "checklist_done": [],
+      "blockers": [],
+      "notes": [
+        "Commit when done: phase-v2a-a1: architect the 10-episode Aranya capture test series",
+        "Reuse StorySpec; do not default voice to dad_to_daughter_bedtime"
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "locked"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    },
+    "a2": {
+      "id": "a2",
+      "title": "Scene cards + storyboard ingest",
+      "track": "product/infra",
+      "status": "locked",
+      "sort_order": 2,
+      "exit_gate": "A real sketch stores against a panel id: shot cards per scene; ingest photo/PNG → storyboard_path; one real sketch end-to-end",
+      "checklist": [
+        "Shot cards (camera, lighting, blocking, continuity) per scene for the prove episode",
+        "Ingest deskew/extract lines from paper photo or tablet PNG",
+        "Tag sketch to episode_id + panel_index",
+        "One real sketch stored end-to-end against a panel id"
+      ],
+      "checklist_done": [],
+      "blockers": [],
+      "notes": [
+        "Commit when done: phase-v2a-a2: shot cards plus storyboard ingest for tagged panels",
+        "Schema notes in the architecture doc are contracts only until an implementation phase edits episode_schema.py"
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "locked"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    },
+    "a3": {
+      "id": "a3",
+      "title": "Sketch-conditioned enhance",
+      "track": "product",
+      "status": "locked",
+      "sort_order": 3,
+      "exit_gate": "≥2 methods × ≥3 panels from ONE Capture scene (not all 10 episodes); ink/print style lock signed; no restage; ledger + report",
+      "checklist": [
+        "Pick one prove scene (ep 1 approach, ep 8 capture, or ep 10 Jatayu)",
+        "Bake-off ≥2 methods on ≥3 panels from that single scene",
+        "Style lock is ink/print — not korean_manhwa",
+        "High sketch control; restaging is a fail",
+        "Default method: line-art two-stage; human ink on hero pages",
+        "Ledger + living-report numbers if images/evals ran"
+      ],
+      "checklist_done": [],
+      "blockers": [],
+      "notes": [
+        "Commit when done: phase-v2a-a3: lock sketch-conditioned enhance and ink style",
+        "A3 is NOT a 10-episode render. Three panels from one scene.",
+        "Image APIs: GOOGLE_API_KEY and fal direct. No OmniRoute images."
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "locked"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    },
+    "a4": {
+      "id": "a4",
+      "title": "Panel memory + human gate",
+      "track": "learning",
+      "status": "locked",
+      "sort_order": 4,
+      "exit_gate": "Panel N+1 uses approved N: approve/ink/reject + Version 2 taxonomy; last-N refs passed in; 3-panel face/light hold",
+      "checklist": [
+        "Human gate: approve, light ink, or reject with a Version 2 taxonomy code",
+        "Pass last-N approved frames into the next enhance",
+        "3-panel sequence holds face and lighting",
+        "Knowledge is bible + last-N frames, not live weight updates"
+      ],
+      "checklist_done": [],
+      "blockers": [],
+      "notes": [
+        "Commit when done: phase-v2a-a4: panel memory constrains the next enhance",
+        "Reuse Version 2 taxonomy codes (identity_drift, continuity, prompt_art_miss, …) — do not fork v2_program.json"
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "locked"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    },
+    "a5": {
+      "id": "a5",
+      "title": "Distill loop",
+      "track": "learning",
+      "status": "locked",
+      "sort_order": 5,
+      "exit_gate": "≥30 approved pairs; style/lead LoRA or critic beats baseline; no live PPO; no per-panel fine-tune",
+      "checklist": [
+        "Accumulate ≥30 approved (sketch, refs, shot card) → panel pairs",
+        "Train style LoRA and/or one LoRA per lead — or a critic that beats baseline",
+        "Weights update on a schedule (end of episode / end of arc), not live",
+        "No live PPO on pixels; no per-panel foundation-model fine-tune"
+      ],
+      "checklist_done": [],
+      "blockers": [],
+      "notes": [
+        "Commit when done: phase-v2a-a5: distill from approved storyboard pairs",
+        "Visual twin of Version 2 phases 18–19, which stay text/feedback-only"
+      ],
+      "history": [
+        {
+          "at": "2026-08-16T22:36:00+00:00",
+          "action": "seeded",
+          "by": "system",
+          "status": "locked"
+        }
+      ],
+      "updated_at": "2026-08-16T22:36:00+00:00"
+    }
+  },
+  "test_series": {
+    "id": "aranya_the_capture",
+    "title": "Aranya — The Capture",
+    "role": "framework_test",
+    "product_claim": "FRAMEWORK TEST — not 'the product is only Ramayana'. Same slots must later fit Mahabharata, history, romance, original.",
+    "tone": "adult_stark",
+    "tone_rules": [
+      "Desire and violence are explicit and readable",
+      "No exploitation",
+      "No gore-porn",
+      "No kitsch gods",
+      "Not bedtime",
+      "Not all-ages ACK softening"
+    ],
+    "epic": "Ramayana",
+    "book": "Aranya Kanda",
+    "arc": "The Capture",
+    "pages_per_episode": "8-14",
+    "leads": [
+      "rama",
+      "sita",
+      "lakshmana",
+      "surpanakha",
+      "ravana",
+      "maricha",
+      "jatayu"
+    ],
+    "supporting": [
+      "khara",
+      "dushana"
+    ],
+    "locations": [
+      "panchavati_ashram",
+      "dandaka_forest",
+      "khara_field",
+      "lanka_court",
+      "sky_pushpaka_path",
+      "jatayu_fall_site"
+    ],
+    "episode_count": 10,
+    "episodes": [
+      {
+        "n": 1,
+        "title": "Surpanakha sees Rama",
+        "story_goal": "Panchavati; she is struck by Rama; proposes; he refuses and points her to Lakshmana.",
+        "framework_goal": "Desire + two-person blocking + forest light lock. Cast: Rama, Surpanakha, Sita glimpsed.",
+        "gate": "Bible looks hold; shot cards make her approach readable without restaging."
+      },
+      {
+        "n": 2,
+        "title": "The insult",
+        "story_goal": "Lakshmana rejects her; the mutilation (nose/ears) is consequence, not spectacle; she flees cursing.",
+        "framework_goal": "Adult violence without gore-porn; her face before vs after.",
+        "gate": "Two Surpanakha sheets (whole / wounded); you signed the violence line."
+      },
+      {
+        "n": 3,
+        "title": "Khara's war",
+        "story_goal": "She brings Khara–Dushana; Rama fights; the rakshasa force falls.",
+        "framework_goal": "Crowd/war (3D blockout is a later backup); Rama identity in action.",
+        "gate": "Battlefield location lock + crowd rule; Rama still matches ep 1."
+      },
+      {
+        "n": 4,
+        "title": "Report to Lanka",
+        "story_goal": "Surpanakha before Ravana; she describes Sita; his pride turns to wanting her.",
+        "framework_goal": "New location (Lanka court) + new lead (Ravana) + wounded-Surpanakha continuity.",
+        "gate": "Ravana bible + Lanka lock signed; her wound still present."
+      },
+      {
+        "n": 5,
+        "title": "Maricha's counsel",
+        "story_goal": "Ravana recruits Maricha; golden-deer plan; Maricha's fear.",
+        "framework_goal": "Two-hander intrigue; Ravana consistency from ep 4.",
+        "gate": "Maricha bible; plan fact-checked as dramatized Valmiki beat."
+      },
+      {
+        "n": 6,
+        "title": "Golden deer",
+        "story_goal": "Sita wants the deer; Rama hunts; Maricha's dying cry in Rama's voice.",
+        "framework_goal": "Magic/creature + off-screen voice; Sita + ashram lock from ep 1.",
+        "gate": "Deer design locked; ashram matches ep 1; cry labeled dramatized."
+      },
+      {
+        "n": 7,
+        "title": "Empty hut / rekha dramatized",
+        "story_goal": "Sita sends Lakshmana; threshold / rekha (mark dramatized vs tradition); Ravana as ascetic.",
+        "framework_goal": "Three-person exit + disguise (Ravana readable to us, not to Sita).",
+        "gate": "Disguise sheet + never lose Ravana identity to the reader."
+      },
+      {
+        "n": 8,
+        "title": "The capture",
+        "story_goal": "Ravana seizes Sita; Pushpaka; she resists.",
+        "framework_goal": "Abduction staging (adult, not exploitation); sky/chariot; Sita continuity.",
+        "gate": "You signed the capture boards; Sita face matches ep 1/6."
+      },
+      {
+        "n": 9,
+        "title": "Jatayu's stand",
+        "story_goal": "Jatayu fights Ravana; wings cut; Sita drops jewels.",
+        "framework_goal": "Aerial fight + new lead + jewel prop trail.",
+        "gate": "Jatayu bible; jewels are a continuity prop, not a one-off."
+      },
+      {
+        "n": 10,
+        "title": "Jatayu tells Rama",
+        "story_goal": "Empty ashram; dying Jatayu; Rama learns who took Sita; vow.",
+        "framework_goal": "Grief + testimony + callback to ep 1 location and ep 9 wounds.",
+        "gate": "Ashram + Jatayu wounded sheet match; series recap one-pager exists."
+      }
+    ],
+    "a3_bakeoff": {
+      "scope": "3 panels from ONE scene, not all 10 episodes",
+      "recommended_prove_scenes": [
+        "ep 1 approach",
+        "ep 8 capture",
+        "ep 10 Jatayu"
+      ]
+    }
+  },
+  "source": "local"
+}
