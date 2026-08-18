@@ -23,3 +23,4 @@ Do not batch two phases. One episode per A1 commit.
 - phase-v2a-a1-ep06: Golden deer
 - phase-v2a-a1-ep07: Empty hut / rekha dramatized
 - phase-v2a-a1-ep08: The capture
+- phase-v2a-a1-ep09: Jatayu's stand

@@ -1,0 +1,156 @@
+{
+  "id": "ep09",
+  "n": 9,
+  "title": "Jatayu's stand",
+  "topic": "Aranya Kanda — Jatayu fights Ravana",
+  "season": 1,
+  "episode_no": 9,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Aerial fight. Jatayu is kingly, not a mascot. Jewels are a continuity prop. Wing wound locks ep10.",
+  "story_goal": "Jatayu fights Ravana; wings cut; Sita drops jewels.",
+  "framework_goal": "Aerial fight + new lead (Jatayu) + prop trail (jewels).",
+  "gate": "Jatayu bible; jewel-drop is a continuity prop, not a one-off.",
+  "narrative_summary": "The old raptor hits the chariot. He loses a wing. She seeds the ground with metal.",
+  "location_ids": ["sky_pushpaka_path", "jatayu_fall_site"],
+  "lighting_recipe": {
+    "time_of_day": "dusk going night",
+    "key_direction": "last west on feathers, then ground dark",
+    "shadow": "huge wing",
+    "palette": ["feather brown", "blood", "gold specks falling"]
+  },
+  "characters": ["jatayu", "ravana", "sita"],
+  "fact_checks": [
+    {
+      "claim": "Jatayu fights Ravana and is mortally wounded.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda."
+    },
+    {
+      "claim": "Sita's jewelry as a path marker.",
+      "verdict": "simplified",
+      "source_note": "We lock the set from ep08-p06."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["jatayu"],
+      "scene_description": "Jatayu whole: enormous, scarred, kingly. Scale gag: he is bigger than the chariot's pride.",
+      "dialogue": "",
+      "caption": "He is not comic relief. He is a king who still flies.",
+      "emotion": "intercept",
+      "shot_card": {
+        "camera": "wide sky, bird vs vehicle",
+        "lighting": "dusk on feathers",
+        "blocking": "collision course",
+        "continuity_from": "jatayu whole",
+        "dramatic_purpose": "Lock Jatayu scale."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["jatayu", "ravana"],
+      "scene_description": "Impact. Talons, inlay, Ravana king face readable.",
+      "dialogue": "JATAYU: Put her down.",
+      "caption": "",
+      "emotion": "clash",
+      "shot_card": {
+        "camera": "medium melee in air",
+        "lighting": "gold vs brown",
+        "blocking": "two kings",
+        "continuity_from": "ep08 ravana king",
+        "dramatic_purpose": "Fight readable."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["sita", "jatayu"],
+      "scene_description": "Sita sees a chance. She does not freeze into a poster.",
+      "dialogue": "SITA: Grandfather—",
+      "caption": "",
+      "emotion": "hope",
+      "shot_card": {
+        "camera": "her in chariot, him filling the sky",
+        "lighting": "wind",
+        "blocking": "she toward the edge",
+        "continuity_from": "sita seized",
+        "dramatic_purpose": "She is in the fight."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["ravana", "jatayu"],
+      "scene_description": "The wing is cut. Consequence, not a gore atlas. Feathers.",
+      "dialogue": "",
+      "caption": "Kings end each other without speeches.",
+      "emotion": "wound",
+      "shot_card": {
+        "camera": "the ruined wing as landscape",
+        "lighting": "blood dark, not neon",
+        "blocking": "Jatayu falling start",
+        "continuity_from": "jatayu wounded variant",
+        "dramatic_purpose": "Wing lock for ep10."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["sita"],
+      "scene_description": "She drops the locked jewelry. Gold specks on dusk.",
+      "dialogue": "",
+      "caption": "The same metal from the hut. A trail, not a flourish.",
+      "emotion": "will",
+      "shot_card": {
+        "camera": "falling jewelry, chariot small above",
+        "lighting": "specks catching last light",
+        "blocking": "vertical rain of one set",
+        "continuity_from": "ep08-p06 prop",
+        "dramatic_purpose": "Continuity prop, not one-off."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["jatayu"],
+      "scene_description": "He hits canopy. Fall site: broken trees, huge wing on the ground.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "fall",
+      "shot_card": {
+        "camera": "wide ground, wing as ruin",
+        "lighting": "almost night",
+        "blocking": "body vs landscape",
+        "continuity_from": "jatayu_fall_site",
+        "dramatic_purpose": "Location lock."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["ravana", "sita"],
+      "scene_description": "Pushpaka recedes. She looking down at the bird. He looking forward.",
+      "dialogue": "RAVANA: Age is not an army.",
+      "caption": "",
+      "emotion": "leave",
+      "shot_card": {
+        "camera": "chariot pulling away, fall site tiny",
+        "lighting": "night coming",
+        "blocking": "distance increasing",
+        "continuity_from": "sky_pushpaka_path",
+        "dramatic_purpose": "They are gone."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["jatayu"],
+      "scene_description": "Wounded Jatayu still breathing. Eye open. Testimony later.",
+      "dialogue": "",
+      "caption": "He keeps one job: the name.",
+      "emotion": "hold",
+      "shot_card": {
+        "camera": "close eye and ruined wing",
+        "lighting": "ground dark, one gleam",
+        "blocking": "still",
+        "continuity_from": "ep09-p04 wound",
+        "dramatic_purpose": "Do not heal before ep10."
+      }
+    }
+  ]
+}
