@@ -1,0 +1,52 @@
+{
+  "locks": [
+    {
+      "id": "panchavati_ashram",
+      "display_name": "Panchavati ashram",
+      "look": "Leaf-thatched hut, packed earth, Godavari suggestion in the background, two-three trees that repeat. Warm late-day forest light as default.",
+      "materials": ["thatch", "packed earth", "living wood"],
+      "recurring_props": ["threshold / door-line (rekha is dramatized here in ep 7)", "Rama's weapons rack", "cooking fire"],
+      "episodes": [1, 6, 7, 10]
+    },
+    {
+      "id": "dandaka_forest",
+      "display_name": "Dandaka forest",
+      "look": "Dense, dry-green and shadow. Paths that feel watched. Not a park.",
+      "materials": ["teak-dark trunks", "leaf litter"],
+      "recurring_props": [],
+      "episodes": [1, 2, 6]
+    },
+    {
+      "id": "khara_field",
+      "display_name": "Khara's field",
+      "look": "Opened forest edge / waste ground, dust, rakshasa banners, space for a crowd without turning into a video-game arena.",
+      "materials": ["dust", "trampled brush"],
+      "recurring_props": ["fallen banners after the fight"],
+      "episodes": [3]
+    },
+    {
+      "id": "lanka_court",
+      "display_name": "Lanka court",
+      "look": "Stone, gold, night lamps, sea air implied. Vertical composition. Cold compared to Panchavati warmth.",
+      "materials": ["polished stone", "metal", "oil lamps"],
+      "recurring_props": ["Ravana's seat", "map or window toward the north"],
+      "episodes": [4, 5]
+    },
+    {
+      "id": "sky_pushpaka_path",
+      "display_name": "Pushpaka path",
+      "look": "Chariot-palace in air, cloud and dusk, Sita's hair in wind. Aerial, not cockpit sci-fi.",
+      "materials": ["inlaid wood/gold", "open sides"],
+      "recurring_props": ["Pushpaka as location-object", "jewels as falling trail"],
+      "episodes": [8, 9]
+    },
+    {
+      "id": "jatayu_fall_site",
+      "display_name": "Jatayu's fall site",
+      "look": "Broken canopy, huge wing on the ground, ashram still recognizable in the distance for ep 10 callback.",
+      "materials": ["feather", "blood on leaf litter"],
+      "recurring_props": ["ruined wing"],
+      "episodes": [9, 10]
+    }
+  ]
+}

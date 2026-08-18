@@ -1,0 +1,50 @@
+{
+  "source_note": "Dramatized from the public Valmiki Ramayana Aranya Kanda tradition. Verdicts label what we invent or compress. Do not invent theology as fact.",
+  "items": [
+    {
+      "claim": "Surpanakha desires Rama in the Dandaka forest and is refused; she is then mutilated (nose/ears) by Lakshmana.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda; widely attested. Staging of the wound is ours (consequence, not spectacle)."
+    },
+    {
+      "claim": "Khara and Dushana attack Rama after Surpanakha's report and are killed.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda war episode; crowd scale is simplified."
+    },
+    {
+      "claim": "Surpanakha's speech in Lanka causes Ravana to desire Sita and plan the abduction.",
+      "verdict": "supported",
+      "source_note": "Her report is traditional; the exact dialogue is dramatized."
+    },
+    {
+      "claim": "Maricha becomes the golden deer and, dying, cries out in Rama's voice.",
+      "verdict": "supported",
+      "source_note": "Deer-Maya and the false cry are traditional."
+    },
+    {
+      "claim": "Lakshmana rekha — a magical line Lakshmana draws that Ravana cannot cross.",
+      "verdict": "dramatized",
+      "source_note": "Popular later tradition / performance, not a secure Valmiki beat. We mark the threshold as a line Sita chooses to cross; do not present it as Valmiki fact."
+    },
+    {
+      "claim": "Ravana approaches as a mendicant/ascetic and seizes Sita.",
+      "verdict": "supported",
+      "source_note": "Disguise as a holy beggar is traditional. Our rule: reader still sees Ravana."
+    },
+    {
+      "claim": "Jatayu fights Ravana in the sky, is mortally wounded, and later tells Rama who took Sita.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda. Jewel-drop as a trail is traditional-adjacent; we use it as a continuity prop (simplified)."
+    },
+    {
+      "claim": "Sita's jewelry falling from Pushpaka to mark the path.",
+      "verdict": "simplified",
+      "source_note": "Present in the tradition in various forms; we lock one necklace/earring set from the Sita bible."
+    },
+    {
+      "claim": "Any private sexual violence on-panel.",
+      "verdict": "disputed",
+      "source_note": "We do not stage it. Capture is seizure and resistance, adult, not exploitation."
+    }
+  ]
+}

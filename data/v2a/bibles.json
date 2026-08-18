@@ -1,0 +1,152 @@
+{
+  "tone": "adult_stark",
+  "never_global": [
+    "korean_manhwa default look",
+    "kitsch halo gods",
+    "exploitation of Sita's body",
+    "gore-porn of Surpanakha's wound",
+    "dad_to_daughter_bedtime voice"
+  ],
+  "leads": [
+    {
+      "id": "rama",
+      "display_name": "Rama",
+      "role": "exile prince / archer",
+      "look": "Young adult Kosalan man in forest exile: matted dark hair bound, uncut beard stubble optional, taut lean body, bark-cloth and simple kshatriya string, bow always near. Face is calm, not cute. Ink-print graphic novel, not cel-shaded manhwa.",
+      "voice": "Few words. Measured. Refuses without cruelty. Does not sermonize mid-fight.",
+      "relationships": [
+        {"other_id": "sita", "relation": "wife", "note": "Protective; listens when she asks."},
+        {"other_id": "lakshmana", "relation": "brother", "note": "Trusts him to hold the line; does not mock his temper."},
+        {"other_id": "surpanakha", "relation": "would-be suitor / enemy", "note": "Names the refusal clearly; does not toy with her desire."}
+      ],
+      "costume_variants": [
+        {"id": "exile", "when": "Panchavati / forest (ep 1–3, 6–10)", "look": "bark-cloth, bow, no crown"},
+        {"id": "action", "when": "Khara war (ep 3)", "look": "same cloth, string drawn, dust and sweat"}
+      ],
+      "iconography": ["bow as identity, not jewelry", "tilak modest if present — not glow"],
+      "never_do": ["blue plastic skin", "smiling billboard god", "invented extra weapons"]
+    },
+    {
+      "id": "sita",
+      "display_name": "Sita",
+      "role": "exile princess / will, not ornament",
+      "look": "Young adult woman, dark hair in a practical forest knot, sun-worn, simple sari or bark-cloth, no palace jewelry in Panchavati except a few pieces she later drops. Face reads intelligence and want, not doll-cuteness.",
+      "voice": "Direct. She asks. She insists on the deer. She refuses Ravana in full sentences.",
+      "relationships": [
+        {"other_id": "rama", "relation": "husband", "note": "Desire and trust; she is not a silent prize."},
+        {"other_id": "lakshmana", "relation": "brother-in-law", "note": "Sharp when she sends him after Rama; not a shrew caricature."}
+      ],
+      "costume_variants": [
+        {"id": "ashram", "when": "ep 1, 6, 7", "look": "forest cloth, earth palette"},
+        {"id": "seized", "when": "ep 8–9", "look": "same cloth disordered; jewels used as trail not decoration"}
+      ],
+      "iconography": ["earth tones", "one recognizable necklace/earring set for the jewel drop"],
+      "never_do": ["sexualized capture staging", "helpless-only posing", "whitewashed skin"]
+    },
+    {
+      "id": "lakshmana",
+      "display_name": "Lakshmana",
+      "role": "younger brother / guard / temper",
+      "look": "Slightly younger than Rama, similar exile kit, shorter fuse in the eyes, bow or blade at hand. Same graphic-novel ink language as Rama so they read as kin, not clones — sharper jaw, less stillness.",
+      "voice": "Faster than Rama. Insults land. He can be ugly in the mutilation beat without becoming a cartoon sadist.",
+      "relationships": [
+        {"other_id": "rama", "relation": "brother", "note": "Obeys; resents being left as doorman."},
+        {"other_id": "surpanakha", "relation": "rejected suitor", "note": "The insult is his; own it."}
+      ],
+      "costume_variants": [
+        {"id": "exile", "when": "all forest eps", "look": "matching exile cloth, distinct scarf or arm-wrap so he is not Rama"}
+      ],
+      "iconography": ["arm-wrap or scarf as distinguisher"],
+      "never_do": ["identical face to Rama", "laughing during the wound"]
+    },
+    {
+      "id": "surpanakha",
+      "display_name": "Surpanakha",
+      "role": "rakshasi / desire / messenger of the war",
+      "look_whole": "Adult rakshasi who can wear a beautiful human-seeming form: dark hair, hungry mouth, forest jewelry, body that is sexual without pin-up posing. Not a monster-of-the-week. Desire is the point.",
+      "look_wounded": "Same person after the insult: nose and ears cut — blood, shock, ruined face held as consequence, not a money shot. Keep her eyes. Keep her hair. The wound is a continuity lock for ep 2–4.",
+      "look": "See costume_variants whole vs wounded. Default sheet is whole.",
+      "voice": "Frank desire, then rage. In Lanka she performs the wound and the wanting of Sita for Ravana's ear.",
+      "relationships": [
+        {"other_id": "rama", "relation": "unwanted desire", "note": "She proposes; he refuses."},
+        {"other_id": "lakshmana", "relation": "second refusal / mutilator", "note": ""},
+        {"other_id": "ravana", "relation": "brother", "note": "She uses humiliation to move him."},
+        {"other_id": "khara", "relation": "kin / commander", "note": "She brings him to die in ep 3."}
+      ],
+      "costume_variants": [
+        {"id": "whole", "when": "ep 1 and start of ep 2", "look": "beautiful-form forest rakshasi"},
+        {"id": "wounded", "when": "ep 2 after the cut, ep 3–4", "look": "same clothes, ruined midface, blood dried then fresh as needed"}
+      ],
+      "iconography": ["midface wound after ep 2 is mandatory", "no disappearing injury"],
+      "never_do": ["gore close-up as titillation", "reset to uninjured in Lanka", "reduce her to comic hag only"]
+    },
+    {
+      "id": "ravana",
+      "display_name": "Ravana",
+      "role": "king of Lanka / abductor",
+      "look_king": "Mature rakshasa king: ten heads are a design problem — prefer one primary head plus implied others (crown of faces, or nine in shadow/relief) so the reader can lock ONE face. Broad, jeweled, court-red and gold, not a Halloween mask. Pride in the shoulders.",
+      "look_ascetic": "Same primary face, stripped: ochre or bark robe, matted hair, water-pot, smaller body language. The reader must still see Ravana. Sita must not.",
+      "look": "King form unless episode says ascetic.",
+      "voice": "Court: measured appetite and insult-to-honor. Ascetic: borrowed humility that slips.",
+      "relationships": [
+        {"other_id": "surpanakha", "relation": "sister", "note": "Her wound is his pretext and his hunger's door."},
+        {"other_id": "sita", "relation": "desired captive", "note": "Want is political and sexual; staging stays adult, not porn."},
+        {"other_id": "maricha", "relation": "ally / tool", "note": "He overrides Maricha's fear."}
+      ],
+      "costume_variants": [
+        {"id": "king", "when": "ep 4, 5, 8, 9", "look": "Lanka court; one lockable face"},
+        {"id": "ascetic", "when": "ep 7–8 threshold", "look": "mendicant kit; same face"}
+      ],
+      "iconography": ["one readable primary face always", "Pushpaka as object later"],
+      "never_do": ["lose identity in disguise", "ten fully separate random faces", "rape staging"]
+    },
+    {
+      "id": "maricha",
+      "display_name": "Maricha",
+      "role": "rakshasa / golden deer / unwilling tool",
+      "look": "Older, thinner rakshasa than Ravana; fear in the posture. Deer form: luminous gold, too perfect, wrong for a forest — magic that looks like a trap.",
+      "voice": "Counsel first: do not do this. Then obedience. Dying cry copies Rama's timbre (dramatized).",
+      "relationships": [
+        {"other_id": "ravana", "relation": "lord / coerced ally", "note": "He has seen Rama's arrow before."}
+      ],
+      "costume_variants": [
+        {"id": "counsel", "when": "ep 5", "look": "lean rakshasa, Lanka or forest edge"},
+        {"id": "deer", "when": "ep 6", "look": "golden deer, slightly wrong anatomy"}
+      ],
+      "iconography": ["gold that does not belong in Dandaka"],
+      "never_do": ["cute Disney deer", "heroic last stand that steals Jatayu's beat"]
+    },
+    {
+      "id": "jatayu",
+      "display_name": "Jatayu",
+      "role": "vulture king / witness / dying testimony",
+      "look": "Enormous aged raptor, scarred, kingly not mascot. Wings as landscape. Wounded: one wing ruined, blood in feathers, still speaking.",
+      "voice": "Old. Costly. Names Ravana. No cute animal comic relief.",
+      "relationships": [
+        {"other_id": "rama", "relation": "ally of the father's generation", "note": "Ep 10 is testimony, not a fight he can win twice."},
+        {"other_id": "sita", "relation": "protector in the sky", "note": "He fails; that is the point."}
+      ],
+      "costume_variants": [
+        {"id": "whole", "when": "ep 9 start", "look": "full wings, intercepting Pushpaka"},
+        {"id": "wounded", "when": "ep 9 end, ep 10", "look": "wing cut, grounded, dying"}
+      ],
+      "iconography": ["scale: he is bigger than the chariot's pride", "jewels falling past him"],
+      "never_do": ["chibi bird", "heal between ep 9 and 10"]
+    }
+  ],
+  "supporting": [
+    {
+      "id": "khara",
+      "display_name": "Khara",
+      "role": "rakshasa commander",
+      "look": "War-form rakshasa, armor and mace, not a copy of Ravana's face.",
+      "never_do": ["steal the episode from Rama's identity test"]
+    },
+    {
+      "id": "dushana",
+      "display_name": "Dushana",
+      "role": "Khara's second",
+      "look": "Paired with Khara; distinct helmet or mark so crowd shots can pick two."
+    }
+  ]
+}

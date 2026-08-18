@@ -1,0 +1,24 @@
+{
+  "id": "aranya_the_capture",
+  "epic": "Ramayana",
+  "book": "Aranya Kanda",
+  "arc": "The Capture",
+  "tone": "adult_stark",
+  "voice": "adult_stark_epic",
+  "role": "framework_test",
+  "product_claim": "FRAMEWORK TEST — not the product is only Ramayana. Same slots must later fit Mahabharata, history, romance, original.",
+  "pages_per_episode": "8-14",
+  "panels_per_episode": "8-12",
+  "episodes": [
+    {"n": 1, "id": "ep01", "title": "Surpanakha sees Rama", "file": "data/v2a/episodes/ep01.json"},
+    {"n": 2, "id": "ep02", "title": "The insult", "file": "data/v2a/episodes/ep02.json"},
+    {"n": 3, "id": "ep03", "title": "Khara's war", "file": "data/v2a/episodes/ep03.json"},
+    {"n": 4, "id": "ep04", "title": "Report to Lanka", "file": "data/v2a/episodes/ep04.json"},
+    {"n": 5, "id": "ep05", "title": "Maricha's counsel", "file": "data/v2a/episodes/ep05.json"},
+    {"n": 6, "id": "ep06", "title": "Golden deer", "file": "data/v2a/episodes/ep06.json"},
+    {"n": 7, "id": "ep07", "title": "Empty hut / rekha dramatized", "file": "data/v2a/episodes/ep07.json"},
+    {"n": 8, "id": "ep08", "title": "The capture", "file": "data/v2a/episodes/ep08.json"},
+    {"n": 9, "id": "ep09", "title": "Jatayu's stand", "file": "data/v2a/episodes/ep09.json"},
+    {"n": 10, "id": "ep10", "title": "Jatayu tells Rama", "file": "data/v2a/episodes/ep10.json"}
+  ]
+}

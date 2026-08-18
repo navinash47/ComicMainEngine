@@ -13,3 +13,4 @@ Do not batch two phases. One episode per A1 commit.
 ## A1 — Story Architect
 
 - phase-v2a-a1: start Story Architect and seed v2a logs
+- phase-v2a-a1: lock Capture bibles, locations, and fact sheet
