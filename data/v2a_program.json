@@ -2,9 +2,9 @@
   "program": {
     "version": "2A",
     "title": "Version 2A — storyboard-first (parallel to Version 2)",
-    "active_phase_id": "a1",
-    "updated_at": "2026-08-18T21:28:00+00:00",
-    "updated_by": "a1-start",
+    "active_phase_id": "a2",
+    "updated_at": "2026-08-18T21:50:00+00:00",
+    "updated_by": "a1-sign",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20). Do not edit v2_program.json from this track.",
       "Genre-agnostic framework. First fixture is Aranya — The Capture, not 'product is only Ramayana'.",
@@ -64,7 +64,7 @@
       "id": "a1",
       "title": "Story Architect",
       "track": "story",
-      "status": "in_progress",
+      "status": "complete",
       "sort_order": 1,
       "exit_gate": "Signed adult-stark Capture series: epic map; bibles for all leads (Surpanakha whole+wounded; Ravana king+ascetic); fact verdicts; 10 episode packets; human signed",
       "checklist": [
@@ -80,12 +80,14 @@
         "Enhanced bibles for Rama, Sita, Lakshmana, Surpanakha, Ravana, Maricha, Jatayu",
         "Surpanakha whole + wounded sheets specified; Ravana king + ascetic",
         "Fact / tradition sheet with supported/disputed/simplified/dramatized verdicts",
-        "10 episode packets (story goal + framework goal + gate); no images yet"
+        "10 episode packets (story goal + framework goal + gate); no images yet",
+        "Human sign-off on adult-stark tone (no exploitation, no gore-porn, no kitsch gods)"
       ],
       "blockers": [],
       "notes": [
         "Git log is the store: one commit per episode. Mirror in logs/v2a.md.",
-        "Do not default voice to dad_to_daughter_bedtime"
+        "Do not default voice to dad_to_daughter_bedtime",
+        "Signed adult-stark 2026-08-18 (user continue after packets)."
       ],
       "history": [
         {
@@ -106,9 +108,15 @@
           "by": "a1-scripts",
           "status": "in_progress",
           "note": "ep01–ep10 committed; awaiting human sign-off on adult-stark"
+        },
+        {
+          "at": "2026-08-18T21:50:00+00:00",
+          "action": "gate_passed",
+          "by": "a1-sign",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-18T21:28:00+00:00"
+      "updated_at": "2026-08-18T21:50:00+00:00"
     },
     "a2": {
       "id": "a2",
