@@ -25,3 +25,4 @@ Do not batch two phases. One episode per A1 commit.
 - phase-v2a-a1-ep08: The capture
 - phase-v2a-a1-ep09: Jatayu's stand
 - phase-v2a-a1-ep10: Jatayu tells Rama
+- phase-v2a-a1: Capture packets written, awaiting sign-off

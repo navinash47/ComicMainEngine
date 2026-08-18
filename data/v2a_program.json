@@ -79,7 +79,8 @@
         "Epic map: Ramayana → Aranya Kanda → The Capture (10 episodes)",
         "Enhanced bibles for Rama, Sita, Lakshmana, Surpanakha, Ravana, Maricha, Jatayu",
         "Surpanakha whole + wounded sheets specified; Ravana king + ascetic",
-        "Fact / tradition sheet with supported/disputed/simplified/dramatized verdicts"
+        "Fact / tradition sheet with supported/disputed/simplified/dramatized verdicts",
+        "10 episode packets (story goal + framework goal + gate); no images yet"
       ],
       "blockers": [],
       "notes": [
@@ -98,6 +99,13 @@
           "action": "started",
           "by": "a1-start",
           "status": "in_progress"
+        },
+        {
+          "at": "2026-08-18T21:45:00+00:00",
+          "action": "packets_written",
+          "by": "a1-scripts",
+          "status": "in_progress",
+          "note": "ep01–ep10 committed; awaiting human sign-off on adult-stark"
         }
       ],
       "updated_at": "2026-08-18T21:28:00+00:00"
