@@ -1,0 +1,151 @@
+{
+  "id": "ep02",
+  "n": 2,
+  "title": "The insult",
+  "topic": "Aranya Kanda — Lakshmana mutilates Surpanakha",
+  "season": 1,
+  "episode_no": 2,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Adult-stark. The wound is consequence, not spectacle. No gore close-up as titillation.",
+  "story_goal": "Lakshmana rejects her; the mutilation (nose/ears) is consequence, not spectacle; she flees cursing.",
+  "framework_goal": "Adult violence without gore-porn; continuity of her face before vs after.",
+  "gate": "Two Surpanakha sheets (whole / wounded); you signed the violence line.",
+  "narrative_summary": "The second refusal turns to a blade. She leaves wounded. The ashram light does not change.",
+  "location_ids": ["panchavati_ashram", "dandaka_forest"],
+  "lighting_recipe": {
+    "time_of_day": "same late afternoon, minutes later",
+    "key_direction": "west, through trees",
+    "shadow": "long",
+    "palette": ["dry green", "earth", "blood as a small fact not a flood"]
+  },
+  "characters": ["surpanakha", "lakshmana", "rama", "sita"],
+  "fact_checks": [
+    {
+      "claim": "Lakshmana cuts Surpanakha's nose and ears after the refusal.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda. We do not linger on tissue."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["surpanakha", "lakshmana"],
+      "scene_description": "Whole Surpanakha still. She reaches for Lakshmana as if the redirect were consent.",
+      "dialogue": "SURPANAKHA: If he is closed, you are not.\nLAKSHMANA: I did not offer.",
+      "caption": "",
+      "emotion": "wrong",
+      "shot_card": {
+        "camera": "medium two-shot, her hand on his wrap",
+        "lighting": "same west key as ep01",
+        "blocking": "she closes; he turns his shoulder",
+        "continuity_from": "ep01-p07",
+        "dramatic_purpose": "Last whole-face sheet."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["lakshmana", "surpanakha"],
+      "scene_description": "His blade is out. Not a flourish. A decision already made.",
+      "dialogue": "LAKSHMANA: Do not put your mouth on this house.",
+      "caption": "",
+      "emotion": "cold",
+      "shot_card": {
+        "camera": "close on blade and his eyes; her face still whole at edge of frame",
+        "lighting": "hard edge light on metal",
+        "blocking": "he is the agent",
+        "continuity_from": "ep02-p01",
+        "dramatic_purpose": "Violence has a person attached."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["surpanakha"],
+      "scene_description": "The cut has happened. We see her after: blood, shock, ruined midface. Eyes still hers. No anatomy lesson.",
+      "dialogue": "",
+      "caption": "It is done. That is the whole of the spectacle.",
+      "emotion": "shock",
+      "shot_card": {
+        "camera": "medium, three-quarter, not a medical insert",
+        "lighting": "same forest gold, now cruel",
+        "blocking": "she staggers; hands at the wound, not posed",
+        "continuity_from": "wounded sheet lock",
+        "dramatic_purpose": "Lock wounded Surpanakha for ep 3–4."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["rama", "sita"],
+      "scene_description": "Ashram: Rama has stood. Sita's hand on the doorpost. They are not cheering.",
+      "dialogue": "SITA: That will travel.\nRAMA: It already has.",
+      "caption": "",
+      "emotion": "grim",
+      "shot_card": {
+        "camera": "medium ashram, same architecture as ep01-p01",
+        "lighting": "unchanged west key — place lock",
+        "blocking": "two in doorway; fight off-frame",
+        "continuity_from": "ep01-p01",
+        "dramatic_purpose": "House does not get a pass."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["surpanakha", "lakshmana"],
+      "scene_description": "She screams at him. Words of kin and Lanka, not a cartoon hex.",
+      "dialogue": "SURPANAKHA: My brothers will unmake your names.\nLAKSHMANA: Then send them.",
+      "caption": "",
+      "emotion": "rage",
+      "shot_card": {
+        "camera": "low on her, him standing",
+        "lighting": "her blood catches the key; do not glorify it",
+        "blocking": "distance opening",
+        "continuity_from": "ep02-p03 wound",
+        "dramatic_purpose": "Plot turn to Khara."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["surpanakha"],
+      "scene_description": "She runs into Dandaka. Wounded face in profile. Trees like bars.",
+      "dialogue": "",
+      "caption": "She does not go to die. She goes to tell.",
+      "emotion": "flight",
+      "shot_card": {
+        "camera": "tracking three-quarter from behind/side",
+        "lighting": "cooler understory",
+        "blocking": "exit into forest, same path language as ep01-p08",
+        "continuity_from": "ep01-p08",
+        "dramatic_purpose": "Before/after of the same exit."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["lakshmana"],
+      "scene_description": "Lakshmana wipes the blade. His wrap is the identity lock. He does not smile.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "empty",
+      "shot_card": {
+        "camera": "close, hands and wrap",
+        "lighting": "flat, unheroic",
+        "blocking": "alone",
+        "continuity_from": "ep01 lakshmana distinguisher",
+        "dramatic_purpose": "No victory pose."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["rama", "sita", "lakshmana"],
+      "scene_description": "Three at the ashram as light dies one notch. The hut is the same. The story is not.",
+      "dialogue": "RAMA: Watch the trees tonight.",
+      "caption": "",
+      "emotion": "omen",
+      "shot_card": {
+        "camera": "wide, ashram lock",
+        "lighting": "west key almost gone",
+        "blocking": "triangle of the household",
+        "continuity_from": "ep01-p01",
+        "dramatic_purpose": "Hold location for ep 6–7 and 10."
+      }
+    }
+  ]
+}
