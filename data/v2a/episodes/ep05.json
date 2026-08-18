@@ -1,0 +1,151 @@
+{
+  "id": "ep05",
+  "n": 5,
+  "title": "Maricha's counsel",
+  "topic": "Aranya Kanda — Ravana recruits Maricha",
+  "season": 1,
+  "episode_no": 5,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Two-hander. Ravana face matches ep04. Golden-deer plan labeled dramatized-as-traditional where needed; the plan itself is supported.",
+  "story_goal": "Ravana recruits Maricha; golden-deer plan; Maricha's fear.",
+  "framework_goal": "Two-hander intrigue; Ravana consistency from ep 4.",
+  "gate": "Maricha bible; plan fact-checked as dramatized Valmiki beat.",
+  "narrative_summary": "Maricha says do not. Ravana says you will. The deer is named.",
+  "location_ids": ["lanka_court"],
+  "lighting_recipe": {
+    "time_of_day": "same night / inner chamber",
+    "key_direction": "fewer lamps, tighter",
+    "shadow": "close",
+    "palette": ["stone", "low gold", "fear-green in Maricha"]
+  },
+  "characters": ["ravana", "maricha"],
+  "fact_checks": [
+    {
+      "claim": "Maricha is coerced into becoming the golden deer.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda counsel scene; dialogue dramatized."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["maricha"],
+      "scene_description": "Maricha thinner, older, already afraid before the order.",
+      "dialogue": "",
+      "caption": "He has seen that bow.",
+      "emotion": "fear",
+      "shot_card": {
+        "camera": "medium, hunched",
+        "lighting": "one lamp",
+        "blocking": "small in a large room",
+        "continuity_from": "maricha counsel variant",
+        "dramatic_purpose": "Lock Maricha."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["ravana", "maricha"],
+      "scene_description": "Ravana king form from ep04. Same primary face.",
+      "dialogue": "RAVANA: You will be a deer. Gold. Too beautiful for a forest.",
+      "caption": "",
+      "emotion": "order",
+      "shot_card": {
+        "camera": "two-shot, Ravana standing, Maricha seated or kneeling",
+        "lighting": "Ravana in more gold",
+        "blocking": "power diagonal",
+        "continuity_from": "ep04 ravana",
+        "dramatic_purpose": "Face lock."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["maricha"],
+      "scene_description": "Counsel: do not do this.",
+      "dialogue": "MARICHA: I have died at his hand in other shapes. Do not send me to die as a toy.",
+      "caption": "",
+      "emotion": "plead",
+      "shot_card": {
+        "camera": "close",
+        "lighting": "under-lamp on sweat",
+        "blocking": "hands open",
+        "continuity_from": "ep05-p01",
+        "dramatic_purpose": "Fear is information."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["ravana"],
+      "scene_description": "Ravana does not bargain.",
+      "dialogue": "RAVANA: Then die usefully.",
+      "caption": "",
+      "emotion": "cold",
+      "shot_card": {
+        "camera": "close, one face",
+        "lighting": "jewelry catch",
+        "blocking": "still",
+        "continuity_from": "ep04-p04",
+        "dramatic_purpose": "Same man."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["ravana", "maricha"],
+      "scene_description": "The plan in two sentences: deer, cry, empty hut.",
+      "dialogue": "RAVANA: She will send the husband. Then the brother. Then I walk in.",
+      "caption": "",
+      "emotion": "plot",
+      "shot_card": {
+        "camera": "overhead or wide of the two, like a map",
+        "lighting": "flat-ish, diagram feel without breaking style",
+        "blocking": "heads together despite hate",
+        "continuity_from": "ep05-p02",
+        "dramatic_purpose": "Reader knows the trap."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["maricha"],
+      "scene_description": "He agrees with his whole body against it.",
+      "dialogue": "MARICHA: When I cry, it will be his voice. Remember I warned you.",
+      "caption": "",
+      "emotion": "doom",
+      "shot_card": {
+        "camera": "medium, turning away",
+        "lighting": "lamp behind, face in dark",
+        "blocking": "exit start",
+        "continuity_from": "ep05-p03",
+        "dramatic_purpose": "Set the cry for ep06."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["ravana"],
+      "scene_description": "Alone again. Ascetic kit not yet on — king still.",
+      "dialogue": "",
+      "caption": "He will change clothes. Not the face.",
+      "emotion": "set",
+      "shot_card": {
+        "camera": "wide chamber",
+        "lighting": "lamps",
+        "blocking": "king alone",
+        "continuity_from": "never lose identity rule",
+        "dramatic_purpose": "Foreshadow disguise without showing it."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["maricha"],
+      "scene_description": "Hint of gold at the edge of the frame — not full deer yet.",
+      "dialogue": "",
+      "caption": "Tomorrow the forest will want something that does not belong there.",
+      "emotion": "omen",
+      "shot_card": {
+        "camera": "detail, gold light on a hand or eye",
+        "lighting": "unnatural gold",
+        "blocking": "transformation implied, not CGI morph porn",
+        "continuity_from": "maricha deer variant",
+        "dramatic_purpose": "Bridge to ep06."
+      }
+    }
+  ]
+}
