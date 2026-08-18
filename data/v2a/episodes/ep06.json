@@ -1,0 +1,151 @@
+{
+  "id": "ep06",
+  "n": 6,
+  "title": "Golden deer",
+  "topic": "Aranya Kanda — Maricha as the deer; the false cry",
+  "season": 1,
+  "episode_no": 6,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Ashram must match ep01. Cry in Rama's voice is supported tradition, labeled in caption if needed. Deer: slightly wrong gold.",
+  "story_goal": "Sita wants the deer; Rama hunts; Maricha's dying cry in Rama's voice.",
+  "framework_goal": "Magic/creature + off-screen voice; Sita + ashram lock from ep 1.",
+  "gate": "Deer design locked; ashram matches ep 1; cry is labeled dramatized as performance of a supported beat.",
+  "narrative_summary": "The forest offers a gold that does not belong. Rama leaves. A voice that is his, and is not, calls them apart.",
+  "location_ids": ["panchavati_ashram", "dandaka_forest"],
+  "lighting_recipe": {
+    "time_of_day": "late day, matching ep01",
+    "key_direction": "west through trees",
+    "shadow": "long, plus unnatural gold bounce off the deer",
+    "palette": ["dry green", "earth", "wrong gold"]
+  },
+  "characters": ["sita", "rama", "lakshmana", "maricha"],
+  "fact_checks": [
+    {
+      "claim": "Maricha as golden deer; dying cry in Rama's voice.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["rama", "sita", "lakshmana"],
+      "scene_description": "Ashram as ep01-p01: hut left, same trees. Household at rest.",
+      "dialogue": "",
+      "caption": "The house has not moved. The war has.",
+      "emotion": "still",
+      "shot_card": {
+        "camera": "wide, match ep01-p01 as closely as boards will allow",
+        "lighting": "west key",
+        "blocking": "three at home",
+        "continuity_from": "ep01-p01",
+        "dramatic_purpose": "Place lock."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["maricha"],
+      "scene_description": "Golden deer at the clearing edge. Too perfect. Joints slightly wrong.",
+      "dialogue": "",
+      "caption": "Gold that does not belong in Dandaka.",
+      "emotion": "uncanny",
+      "shot_card": {
+        "camera": "medium creature, forest behind",
+        "lighting": "self-luminous gold vs natural west key",
+        "blocking": "deer in the open, ashram tiny",
+        "continuity_from": "maricha deer variant",
+        "dramatic_purpose": "Lock deer design."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["sita", "rama"],
+      "scene_description": "Sita sees it. Want is real, not stupid-girl. Rama already does not like the gold.",
+      "dialogue": "SITA: I want that living thing.\nRAMA: Living things that shine like metal are not gifts.",
+      "caption": "",
+      "emotion": "pull",
+      "shot_card": {
+        "camera": "two-shot, her pointing, him still",
+        "lighting": "gold bounce on her face",
+        "blocking": "she forward, he planted",
+        "continuity_from": "sita ashram costume",
+        "dramatic_purpose": "Her will starts the trap."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["rama", "lakshmana"],
+      "scene_description": "Rama takes the bow. Lakshmana is told to stay.",
+      "dialogue": "RAMA: Hold the door.\nLAKSHMANA: I am not a door.",
+      "caption": "",
+      "emotion": "split",
+      "shot_card": {
+        "camera": "medium, wrap visible on Lakshmana",
+        "lighting": "west key",
+        "blocking": "Rama leaving frame toward forest",
+        "continuity_from": "ep01 wrap",
+        "dramatic_purpose": "Empty the hut setup."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["rama", "maricha"],
+      "scene_description": "Hunt among trees. Arrow. The gold breaks.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "kill",
+      "shot_card": {
+        "camera": "wide forest, readable shot",
+        "lighting": "gold dying",
+        "blocking": "Rama far; deer collapsing",
+        "continuity_from": "ep03 rama identity",
+        "dramatic_purpose": "Hunt is short."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["maricha"],
+      "scene_description": "Maricha dying, half deer half man if needed, or deer with a man's fear in the eye. Mouth open.",
+      "dialogue": "MARICHA (as Rama): Lakshmana—",
+      "caption": "The cry is his work. The voice is stolen.",
+      "emotion": "false",
+      "shot_card": {
+        "camera": "close mouth/eye",
+        "lighting": "gold going out",
+        "blocking": "dying",
+        "continuity_from": "ep05 warning",
+        "dramatic_purpose": "Off-screen voice source."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["sita", "lakshmana"],
+      "scene_description": "Ashram: the stolen voice hits them. Sita is already moving.",
+      "dialogue": "SITA: That is him. Go.",
+      "caption": "",
+      "emotion": "alarm",
+      "shot_card": {
+        "camera": "two-shot doorway, match ep01 doorway language",
+        "lighting": "west key, sudden",
+        "blocking": "she toward him, he rooted",
+        "continuity_from": "ep01-p05 doorway",
+        "dramatic_purpose": "Set ep07."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["rama"],
+      "scene_description": "Rama in the forest, hearing his own voice that he did not speak. Too late.",
+      "dialogue": "",
+      "caption": "He understands the trick while the house is already emptying.",
+      "emotion": "dread",
+      "shot_card": {
+        "camera": "medium, looking back toward ashram (unseen)",
+        "lighting": "forest cooler",
+        "blocking": "turn",
+        "continuity_from": "ep06-p05",
+        "dramatic_purpose": "Split complete."
+      }
+    }
+  ]
+}
