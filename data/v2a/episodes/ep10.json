@@ -1,0 +1,151 @@
+{
+  "id": "ep10",
+  "n": 10,
+  "title": "Jatayu tells Rama",
+  "topic": "Aranya Kanda — dying Jatayu names Ravana",
+  "season": 1,
+  "episode_no": 10,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Ashram and wounded Jatayu must match. Grief + testimony. Series recap is this packet's last panels.",
+  "story_goal": "Empty ashram; dying Jatayu; Rama learns who took Sita; vow.",
+  "framework_goal": "Grief + testimony + callback to ep 1 location and ep 9 wounds.",
+  "gate": "Ashram + Jatayu wounded sheet match; series recap one-pager exists (this episode close).",
+  "narrative_summary": "The hut is empty. The bird still knows the name. Rama vows. The Capture ends; the search is not this series.",
+  "location_ids": ["panchavati_ashram", "jatayu_fall_site"],
+  "lighting_recipe": {
+    "time_of_day": "night, then grey pre-dawn",
+    "key_direction": "moon then cold east",
+    "shadow": "hut black mouth",
+    "palette": ["ashram earth gone cold", "feather blood", "grey"]
+  },
+  "characters": ["rama", "lakshmana", "jatayu"],
+  "fact_checks": [
+    {
+      "claim": "Jatayu tells Rama that Ravana took Sita, then dies.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["rama", "lakshmana"],
+      "scene_description": "Ashram empty. Same layout as ep01-p01. Door black. No Sita.",
+      "dialogue": "",
+      "caption": "The kitchen is still there. That is the obscenity, again.",
+      "emotion": "empty",
+      "shot_card": {
+        "camera": "wide match ep01-p01 as tightly as boards allow",
+        "lighting": "night, cold",
+        "blocking": "two brothers small",
+        "continuity_from": "ep01-p01",
+        "dramatic_purpose": "Place callback."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["rama"],
+      "scene_description": "Threshold. The dirt line from ep07, scuffed.",
+      "dialogue": "RAMA: She stepped.",
+      "caption": "",
+      "emotion": "read",
+      "shot_card": {
+        "camera": "close dirt line, his bow in frame",
+        "lighting": "moon",
+        "blocking": "crouch",
+        "continuity_from": "ep07-p02",
+        "dramatic_purpose": "Rekha remains a choice in the dirt."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["rama", "lakshmana", "jatayu"],
+      "scene_description": "They find the fall site. Huge wounded wing. Jatayu still alive. Wound matches ep09.",
+      "dialogue": "LAKSHMANA: That is not a bird. That is a country falling.",
+      "caption": "",
+      "emotion": "find",
+      "shot_card": {
+        "camera": "wide wing landscape, two men arriving",
+        "lighting": "pre-dawn grey",
+        "blocking": "scale: they are small",
+        "continuity_from": "ep09-p06 / wounded jatayu",
+        "dramatic_purpose": "Wound lock."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["jatayu", "rama"],
+      "scene_description": "Testimony. Old voice. Costly.",
+      "dialogue": "JATAYU: Ravana. Lanka. The sky. I failed the woman.\nRAMA: You did not fail the name.",
+      "caption": "",
+      "emotion": "witness",
+      "shot_card": {
+        "camera": "close two: eye and Rama's face from ep01",
+        "lighting": "grey, honest",
+        "blocking": "Rama kneeling",
+        "continuity_from": "rama identity + jatayu wounded",
+        "dramatic_purpose": "Who took her."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["jatayu"],
+      "scene_description": "He dies. No cute animal afterlife. Wing still ruined.",
+      "dialogue": "",
+      "caption": "The job was the name. The job is done.",
+      "emotion": "end",
+      "shot_card": {
+        "camera": "the eye closing, wing still in frame",
+        "lighting": "flat dawn",
+        "blocking": "stillness",
+        "continuity_from": "ep09-p08",
+        "dramatic_purpose": "No heal."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["rama", "lakshmana"],
+      "scene_description": "Vow. Few words. Not a trailer speech.",
+      "dialogue": "RAMA: Then we walk until the name has a door.\nLAKSHMANA: I left her. I know.",
+      "caption": "",
+      "emotion": "vow",
+      "shot_card": {
+        "camera": "two-shot, wrap visible",
+        "lighting": "dawn",
+        "blocking": "standing",
+        "continuity_from": "lakshmana wrap",
+        "dramatic_purpose": "Search begins off-series."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["rama"],
+      "scene_description": "Recap image: ashram tiny in one direction, sky path implied in the other. No Sita on panel.",
+      "dialogue": "",
+      "caption": "Capture series complete. Same slots will take other genres. This was the test.",
+      "emotion": "open",
+      "shot_card": {
+        "camera": "very wide, Rama as a mark between hut and sky",
+        "lighting": "split earth/sky",
+        "blocking": "one figure",
+        "continuity_from": "series map",
+        "dramatic_purpose": "Series recap one-pager."
+      }
+    },
+    {
+      "index": 8,
+      "characters": [],
+      "scene_description": "Prop: one jewel from the locked set in leaf litter near the fall site — or a blank panel with the metal only.",
+      "dialogue": "",
+      "caption": "The trail exists. A2 will ask you to draw it.",
+      "emotion": "seed",
+      "shot_card": {
+        "camera": "macro jewel in leaves",
+        "lighting": "dawn glint",
+        "blocking": "no people",
+        "continuity_from": "ep08-p06 / ep09-p05",
+        "dramatic_purpose": "Handoff to storyboard."
+      }
+    }
+  ]
+}
