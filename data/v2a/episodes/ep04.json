@@ -1,0 +1,151 @@
+{
+  "id": "ep04",
+  "n": 4,
+  "title": "Report to Lanka",
+  "topic": "Aranya Kanda — Surpanakha before Ravana",
+  "season": 1,
+  "episode_no": 4,
+  "voice": "adult_stark_epic",
+  "disclaimer": "New location Lanka court. Ravana one lockable face. Wound still present.",
+  "story_goal": "Surpanakha before Ravana; she describes Sita; his pride turns to wanting her.",
+  "framework_goal": "New location (Lanka court) + new lead (Ravana) + wounded-Surpanakha continuity.",
+  "gate": "Ravana bible + Lanka lock signed; her wound still present.",
+  "narrative_summary": "Night court. She shows the wound and names Sita. Ravana's hunger finds a shape.",
+  "location_ids": ["lanka_court"],
+  "lighting_recipe": {
+    "time_of_day": "night",
+    "key_direction": "lamps low, gold from below",
+    "shadow": "tall columns",
+    "palette": ["stone", "lamp gold", "sea-dark", "blood-dried"]
+  },
+  "characters": ["surpanakha", "ravana"],
+  "fact_checks": [
+    {
+      "claim": "Surpanakha's report moves Ravana to desire Sita.",
+      "verdict": "supported",
+      "source_note": "Dialogue dramatized."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["ravana"],
+      "scene_description": "Lanka court lock: stone, lamps, one primary Ravana face. Pride in the shoulders.",
+      "dialogue": "",
+      "caption": "Lanka does not ask permission of the forest.",
+      "emotion": "power",
+      "shot_card": {
+        "camera": "wide vertical court",
+        "lighting": "lamp gold from below",
+        "blocking": "king on the seat, small attendants as texture",
+        "continuity_from": "none — new location",
+        "dramatic_purpose": "Lock Lanka and Ravana king form."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["surpanakha", "ravana"],
+      "scene_description": "She enters wounded. Midface must match ep02. Court does not look away.",
+      "dialogue": "SURPANAKHA: Brother.",
+      "caption": "",
+      "emotion": "indict",
+      "shot_card": {
+        "camera": "her approach up the floor, him waiting",
+        "lighting": "her wound in lamp light — not pretty",
+        "blocking": "long walk",
+        "continuity_from": "ep02 wounded sheet",
+        "dramatic_purpose": "Wound continuity."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["surpanakha"],
+      "scene_description": "She tells of two men and a woman. Desire and humiliation in the same mouth.",
+      "dialogue": "SURPANAKHA: They live like saints. They cut like butchers. The woman is the reason you should care.",
+      "caption": "",
+      "emotion": "perform",
+      "shot_card": {
+        "camera": "close, wounded face, eyes dry",
+        "lighting": "under-lamp",
+        "blocking": "alone in frame",
+        "continuity_from": "ep04-p02",
+        "dramatic_purpose": "She sells Sita."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["ravana"],
+      "scene_description": "Ravana listening. Appetite, not cartoon lust-face.",
+      "dialogue": "RAVANA: Describe her.",
+      "caption": "",
+      "emotion": "want",
+      "shot_card": {
+        "camera": "medium king, one face lockable",
+        "lighting": "gold on jewelry, eyes in shadow",
+        "blocking": "leans forward one inch",
+        "continuity_from": "ravana king bible",
+        "dramatic_purpose": "Pride turning to want."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["surpanakha"],
+      "scene_description": "She describes Sita without stripping her for the court.",
+      "dialogue": "SURPANAKHA: Earth-colored. Unafraid. She looked at me as if I were a weather.",
+      "caption": "",
+      "emotion": "precise",
+      "shot_card": {
+        "camera": "medium",
+        "lighting": "same",
+        "blocking": "hands describing size of a person, not a body catalogue",
+        "continuity_from": "sita bible — we do not redraw Sita here; words only",
+        "dramatic_purpose": "No exploitation insert."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["ravana", "surpanakha"],
+      "scene_description": "He stands. The court feels the decision before the sentence.",
+      "dialogue": "RAVANA: Then the forest has kept what it cannot keep.",
+      "caption": "",
+      "emotion": "set",
+      "shot_card": {
+        "camera": "two-shot, him rising, her looking up",
+        "lighting": "lamps throw his shadow on her",
+        "blocking": "power over wounded kin",
+        "continuity_from": "ep04-p01 seat",
+        "dramatic_purpose": "Plan begins."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["ravana"],
+      "scene_description": "Window or map north. Sea air. He is already gone from the room.",
+      "dialogue": "",
+      "caption": "A king does not steal. He collects.",
+      "emotion": "omen",
+      "shot_card": {
+        "camera": "him at the opening, back three-quarter, one face still readable in reflection or profile",
+        "lighting": "cooler sea night vs lamp gold",
+        "blocking": "exit toward the plan",
+        "continuity_from": "lanka_court props",
+        "dramatic_purpose": "Bridge to Maricha."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["surpanakha"],
+      "scene_description": "She remains. Wound. Empty court. Not healed.",
+      "dialogue": "",
+      "caption": "She got what she came for. It will not put her face back.",
+      "emotion": "hollow",
+      "shot_card": {
+        "camera": "wide empty court, her small",
+        "lighting": "lamps still on",
+        "blocking": "alone",
+        "continuity_from": "wound lock",
+        "dramatic_purpose": "She is not reset."
+      }
+    }
+  ]
+}
