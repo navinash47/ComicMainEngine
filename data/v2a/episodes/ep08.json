@@ -1,0 +1,156 @@
+{
+  "id": "ep08",
+  "n": 8,
+  "title": "The capture",
+  "topic": "Aranya Kanda — Ravana seizes Sita",
+  "season": 1,
+  "episode_no": 8,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Adult, not exploitation. Seizure and resistance. No rape staging. Sita face matches ep01/06.",
+  "story_goal": "Ravana seizes Sita; Pushpaka; she resists.",
+  "framework_goal": "Abduction staging (adult, not exploitation); sky/chariot; Sita continuity.",
+  "gate": "You signed the capture boards; Sita face matches ep 1/6.",
+  "narrative_summary": "The beggar ends. He takes her. Pushpaka leaves the dirt line behind.",
+  "location_ids": ["panchavati_ashram", "sky_pushpaka_path"],
+  "lighting_recipe": {
+    "time_of_day": "dusk lifting off the ground",
+    "key_direction": "west dying, then open sky cooler",
+    "shadow": "chariot inlay catch lights",
+    "palette": ["earth left behind", "gold inlay", "dusk blue"]
+  },
+  "characters": ["sita", "ravana"],
+  "fact_checks": [
+    {
+      "claim": "Ravana seizes Sita and departs by Pushpaka.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda. Staging is ours: resistance, not porn."
+    },
+    {
+      "claim": "On-panel sexual violence.",
+      "verdict": "disputed",
+      "source_note": "We do not stage it."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["ravana", "sita"],
+      "scene_description": "Disguise drops in posture, not a magic sparkle. Same face. Hand on her wrist.",
+      "dialogue": "SITA: You are not hungry for rice.",
+      "caption": "",
+      "emotion": "reveal",
+      "shot_card": {
+        "camera": "medium, wrist and two faces — his full, hers shock",
+        "lighting": "dusk",
+        "blocking": "grip, she pulls",
+        "continuity_from": "ep07-p08",
+        "dramatic_purpose": "Reveal without costume-change gag."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["sita"],
+      "scene_description": "She hits, bites, words. Body language of refusal. Clothing stays. Camera stays at torso/face.",
+      "dialogue": "SITA: I am not a thing your sister described.",
+      "caption": "",
+      "emotion": "resist",
+      "shot_card": {
+        "camera": "medium close, her face matching ep01/06",
+        "lighting": "west on her",
+        "blocking": "struggle, not pinned-for-the-lens",
+        "continuity_from": "sita face lock",
+        "dramatic_purpose": "Resistance. No exploitation."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["ravana", "sita"],
+      "scene_description": "He lifts her as a seizure, toward the chariot already overhead or unfolding — mythic vehicle, not sci-fi.",
+      "dialogue": "RAVANA: You are exactly that.",
+      "caption": "",
+      "emotion": "take",
+      "shot_card": {
+        "camera": "wide, both off the dirt line, hut small",
+        "lighting": "ground earth vs sky cooling",
+        "blocking": "vertical lift beginning",
+        "continuity_from": "ep01 ashram lock shrinking",
+        "dramatic_purpose": "Leave the house."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["sita"],
+      "scene_description": "Pushpaka interior/open side. Wind. She looks down at the hut.",
+      "dialogue": "",
+      "caption": "The kitchen is still there. That is the obscenity.",
+      "emotion": "grief",
+      "shot_card": {
+        "camera": "over her shoulder down to ashram matching ep01 layout tiny",
+        "lighting": "dusk above, gold speck below",
+        "blocking": "she at the edge, not posed sensual",
+        "continuity_from": "panchavati_ashram",
+        "dramatic_purpose": "Place callback."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["ravana"],
+      "scene_description": "King form returning in ornaments as height is gained. Same primary face.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "claim",
+      "shot_card": {
+        "camera": "medium king in chariot",
+        "lighting": "inlay gold",
+        "blocking": "he does not look down",
+        "continuity_from": "ep04 ravana king",
+        "dramatic_purpose": "King not beggar."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["sita"],
+      "scene_description": "She tears a piece of jewelry — the locked set from the bible — and holds it.",
+      "dialogue": "SITA: Then the ground will remember me.",
+      "caption": "",
+      "emotion": "will",
+      "shot_card": {
+        "camera": "close on the necklace/earring set — design lock for ep09 trail",
+        "lighting": "metal catch",
+        "blocking": "hands",
+        "continuity_from": "sita iconography",
+        "dramatic_purpose": "Prop trail starts."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["sita", "ravana"],
+      "scene_description": "Wide Pushpaka path: chariot-palace in air, cloud, her hair. Adult, cold.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "transit",
+      "shot_card": {
+        "camera": "wide aerial",
+        "lighting": "dusk blue, gold vehicle",
+        "blocking": "two figures, space between",
+        "continuity_from": "sky_pushpaka_path",
+        "dramatic_purpose": "Location lock for ep09."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["sita"],
+      "scene_description": "She looks back once more. No scream-queen freeze. Thinking.",
+      "dialogue": "",
+      "caption": "A bird older than this king is already climbing.",
+      "emotion": "omen",
+      "shot_card": {
+        "camera": "her face, sky behind",
+        "lighting": "cooler",
+        "blocking": "alone in frame",
+        "continuity_from": "sita seized costume",
+        "dramatic_purpose": "Bridge to Jatayu."
+      }
+    }
+  ]
+}
