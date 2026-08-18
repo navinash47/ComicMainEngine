@@ -909,3 +909,107 @@ canvas { width: 100%; background: rgba(0,0,0,0.15); border-radius: 4px; }
   letter-spacing: 0;
 }
 .v2a-ep p { margin: 0.2rem 0; font-size: 0.85rem; }
+
+.v2a-arch {
+  margin: 0 2rem 1.4rem;
+  padding: 1rem 0 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.v2a-arch-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.85rem;
+}
+.v2a-arch-pane { display: none; }
+.v2a-arch-pane.on { display: block; }
+.v2a-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.45rem;
+}
+.v2a-flow-col {
+  flex-direction: column;
+  align-items: stretch;
+}
+.v2a-node {
+  flex: 1 1 9rem;
+  min-width: 8.5rem;
+  padding: 0.7rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+}
+.v2a-node.dim { opacity: 0.72; }
+.v2a-node.on {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(217, 119, 58, 0.35);
+}
+.v2a-node.done { border-color: rgba(111, 191, 115, 0.4); }
+.v2a-node strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+.v2a-node em {
+  display: block;
+  margin-top: 0.25rem;
+  font-style: normal;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+.v2a-node-k {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+.v2a-node-wide { flex: 1 1 100%; max-width: 36rem; margin-inline: auto; text-align: center; }
+.v2a-chev {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-size: 1.1rem;
+  min-width: 1.1rem;
+}
+.v2a-chev-down { width: 100%; margin: 0.2rem 0; }
+.v2a-vs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.1rem;
+}
+@media (min-width: 860px) {
+  .v2a-vs { grid-template-columns: 1fr 1fr; }
+}
+.v2a-vs h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.v2a-locks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.5rem;
+}
+.v2a-panel-diag { display: flex; flex-direction: column; align-items: stretch; }
+.v2a-epic { max-width: 40rem; }
+.v2a-epic-box {
+  margin-top: 0.45rem;
+  padding: 0.65rem 0.75rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  font-family: var(--font-display);
+}
+.v2a-epic-box.sm { margin-top: 0; flex: 1; }
+.v2a-epic-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.45rem;
+}

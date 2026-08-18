@@ -80,7 +80,39 @@ function render(data) {
   $("updated").textContent = program.updated_at
     ? `updated ${program.updated_at}`
     : "loaded";
+
+  highlightPipeline(active, data.phases || {});
 }
+
+function highlightPipeline(activeId, phases) {
+  const order = ["a1", "a2", "a3", "a4", "a5"];
+  const activeIdx = order.indexOf(activeId);
+  document.querySelectorAll("#pipelineFlow .v2a-node").forEach((el) => {
+    const id = el.getAttribute("data-phase");
+    el.classList.remove("on", "done");
+    const st = phases[id]?.status;
+    if (st === "complete") el.classList.add("done");
+    if (id === activeId || (st !== "complete" && order.indexOf(id) === activeIdx)) {
+      el.classList.add("on");
+    }
+  });
+  const hint = $("archHint");
+  if (hint) hint.textContent = `active ${String(activeId || "—").toUpperCase()}`;
+}
+
+function wireArchTabs() {
+  const tabs = document.querySelectorAll("[data-arch]");
+  const panes = document.querySelectorAll("[data-pane]");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const id = tab.getAttribute("data-arch");
+      tabs.forEach((t) => t.classList.toggle("on", t === tab));
+      panes.forEach((p) => p.classList.toggle("on", p.getAttribute("data-pane") === id));
+    });
+  });
+}
+
+wireArchTabs();
 
 async function load() {
   $("updated").textContent = "loading…";

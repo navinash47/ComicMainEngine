@@ -2,7 +2,7 @@
 
 Readable without running code. Program state lives in [`data/v2a_program.json`](../data/v2a_program.json). One commit per phase gate. Branches: `phase-v2a-a0` … `phase-v2a-a5`.
 
-**Dashboard:** local admin → **Version 2A** → [`/v2a`](http://127.0.0.1:8770/v2a) (ComicEngine is on **8770**; 8765 is Procedural City). Architecture markdown: [`/v2a/architecture`](http://127.0.0.1:8770/v2a/architecture). API: `/api/v2a/program`. This is a live view of the JSON — it does not replace Version 2 (phases 12–20).
+**Dashboard:** local admin → **Version 2A** → [`/v2a`](http://127.0.0.1:8770/v2a) (ComicEngine is on **8770**; 8765 is Procedural City). Architecture diagrams are on that page (`#architecture`). Raw markdown: [`/v2a/architecture`](http://127.0.0.1:8770/v2a/architecture). API: `/api/v2a/program`. This is a live view of the JSON — it does not replace Version 2 (phases 12–20).
 
 ## Version 2 stays frozen
 

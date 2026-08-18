@@ -18,7 +18,8 @@
       <a class="btn" href="/library">Library</a>
       <a class="btn" href="/roi">ROI</a>
       <a class="btn tab on" href="/v2a">Version 2A</a>
-      <a class="btn" href="/v2a/architecture" target="_blank" rel="noopener">Architecture</a>
+      <a class="btn" href="#architecture">Diagrams</a>
+      <a class="btn" href="/v2a/architecture" target="_blank" rel="noopener">Raw doc</a>
       <button type="button" class="btn" id="refreshBtn">Refresh</button>
       <span id="updated">loading…</span>
     </div>
@@ -26,6 +27,116 @@
 
   <p class="lede v2a-lede" id="lede">Parallel to Version 2 (phases 12–20). You draw the shot; AI fills under locks.</p>
   <section class="kpis" id="kpis"></section>
+
+  <section class="v2a-arch" id="architecture">
+    <div class="tasks-head">
+      <h2>Architecture</h2>
+      <div class="tasks-meta"><span class="muted small" id="archHint">you own composition</span></div>
+    </div>
+    <div class="v2a-arch-tabs" role="tablist">
+      <button type="button" class="btn tab on" data-arch="pipeline">2A pipeline</button>
+      <button type="button" class="btn tab" data-arch="vs">vs text→image</button>
+      <button type="button" class="btn tab" data-arch="panel">one panel</button>
+      <button type="button" class="btn tab" data-arch="epic">epic graph</button>
+      <button type="button" class="btn tab" data-arch="route">routing</button>
+    </div>
+
+    <div class="v2a-arch-pane on" data-pane="pipeline">
+      <p class="muted small">Storyboard-first. Human gate at every box. Highlight follows the active phase.</p>
+      <div class="v2a-flow" id="pipelineFlow">
+        <div class="v2a-node" data-phase="a1"><span class="v2a-node-k">A1</span><strong>Story Architect</strong><em>epic map · bibles · script</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="a2"><span class="v2a-node-k">A2</span><strong>Shot cards + you draw</strong><em>camera · light · stick figures</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="a3"><span class="v2a-node-k">A3</span><strong>Enhance</strong><em>sketch stays · ink/print</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="a4"><span class="v2a-node-k">A4</span><strong>Gate + memory</strong><em>approve · last-N frames</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="a5"><span class="v2a-node-k">A5</span><strong>Distill</strong><em>LoRA / critic on a schedule</em></div>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="vs">
+      <p class="muted small">Today invents camera from words. 2A keeps your lines as the composition contract.</p>
+      <div class="v2a-vs">
+        <article>
+          <h3>Version 1 — text → image</h3>
+          <div class="v2a-flow v2a-flow-col">
+            <div class="v2a-node dim"><strong>StorySpec</strong><em>OmniRoute script</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>Episode JSON</strong><em>art_prompt guesses pose</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>char refs</strong><em>gemini_ref / Kontext</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>panel PNG</strong><em>manhwa look · camera drifts</em></div>
+          </div>
+        </article>
+        <article>
+          <h3>Version 2A — you draw → enhance</h3>
+          <div class="v2a-flow v2a-flow-col">
+            <div class="v2a-node"><strong>vague story + bibles</strong><em>architect, then dialogue</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>your sketch</strong><em>stick figure = camera</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>four locks</strong><em>sketch · face · place · light</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>panel PNG</strong><em>ink/print · no restage</em></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="panel">
+      <p class="muted small">Every enhance call is conditioned on four inputs. Restaging the sketch is a fail.</p>
+      <div class="v2a-panel-diag">
+        <div class="v2a-locks">
+          <div class="v2a-node"><strong>your sketch</strong><em>pose · crop · camera</em></div>
+          <div class="v2a-node"><strong>character lock</strong><em>face · costume · turnaround</em></div>
+          <div class="v2a-node"><strong>location lock</strong><em>ashram · court · sky</em></div>
+          <div class="v2a-node"><strong>lighting recipe</strong><em>key · time · palette</em></div>
+        </div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>enhance</strong><em>line-art two-stage · not korean_manhwa</em></div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>human gate</strong><em>approve · light ink · reject (identity_drift / continuity)</em></div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>panel memory</strong><em>bible + last-N approved frames — not live weight updates</em></div>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="epic">
+      <p class="muted small">Do not generate an epic as one episode. Same slots for Ramayana, Mahabharata, or any later genre.</p>
+      <div class="v2a-epic">
+        <div class="v2a-epic-box">Epic
+          <div class="v2a-epic-box">Book / Kanda / Parva
+            <div class="v2a-epic-box">Arc — The Capture
+              <div class="v2a-epic-box">Episode 1–10 <span class="muted">(8–14 pages)</span>
+                <div class="v2a-epic-row">
+                  <div class="v2a-epic-box sm">Scene</div>
+                  <span class="v2a-chev">→</span>
+                  <div class="v2a-epic-box sm">Panel + sketch</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="route">
+      <p class="muted small">Do not invert this. Images never go through OmniRoute.</p>
+      <div class="v2a-vs">
+        <article>
+          <h3>Text — OmniRoute</h3>
+          <div class="v2a-node v2a-node-wide"><strong>localhost:20128</strong><em>Story Architect · scripts · dialogue · OmniRoute API key</em></div>
+        </article>
+        <article>
+          <h3>Images — direct APIs</h3>
+          <div class="v2a-node v2a-node-wide"><strong>Google + fal from .env</strong><em>Gemini / Kontext / LoRA later · never OmniRoute</em></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <section class="tasks-wrap">
     <div class="tasks-head">
