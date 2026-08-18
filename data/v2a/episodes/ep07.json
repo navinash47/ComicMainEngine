@@ -1,0 +1,156 @@
+{
+  "id": "ep07",
+  "n": 7,
+  "title": "Empty hut / rekha dramatized",
+  "topic": "Aranya Kanda — Sita sends Lakshmana; Ravana as ascetic",
+  "season": 1,
+  "episode_no": 7,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Lakshmana rekha is DRAMATIZED (later tradition). We stage a threshold Sita chooses to cross. Ravana disguise: reader still sees Ravana.",
+  "story_goal": "Sita sends Lakshmana; threshold / rekha marked dramatized vs tradition; Ravana as ascetic.",
+  "framework_goal": "Three-person exit + disguise (Ravana readable to us, not to Sita).",
+  "gate": "Disguise sheet + never lose Ravana identity to the reader.",
+  "narrative_summary": "She sends him. The line is a choice, not Valmiki fact. A holy beggar arrives whose face we already know.",
+  "location_ids": ["panchavati_ashram"],
+  "lighting_recipe": {
+    "time_of_day": "late day, minutes after ep06",
+    "key_direction": "west, thinning",
+    "shadow": "long doorway",
+    "palette": ["earth", "ochre of the robe", "gold dying"]
+  },
+  "characters": ["sita", "lakshmana", "ravana"],
+  "fact_checks": [
+    {
+      "claim": "Lakshmana rekha as a magic uncrossable line.",
+      "verdict": "dramatized",
+      "source_note": "Later popular tradition. We show a threshold she steps over."
+    },
+    {
+      "claim": "Ravana as mendicant.",
+      "verdict": "supported",
+      "source_note": "Traditional disguise."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["sita", "lakshmana"],
+      "scene_description": "Doorway fight in words. She is not a shrew; he is not a child.",
+      "dialogue": "SITA: If you love him, go.\nLAKSHMANA: If I go, you are the door.",
+      "caption": "",
+      "emotion": "fracture",
+      "shot_card": {
+        "camera": "two-shot, threshold",
+        "lighting": "west key, hut dark",
+        "blocking": "she inside/on line, he outside",
+        "continuity_from": "ep06-p07",
+        "dramatic_purpose": "Three will become one."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["lakshmana"],
+      "scene_description": "He marks the ground — a line in dust, not a glowing CGI wall. Caption must say dramatized.",
+      "dialogue": "",
+      "caption": "A line in the dirt. Later tellings will make it magic. Here it is a brother's fear.",
+      "emotion": "dread",
+      "shot_card": {
+        "camera": "high on the dirt line, his wrap in frame",
+        "lighting": "late gold",
+        "blocking": "crouched, then gone",
+        "continuity_from": "facts.json rekha dramatized",
+        "dramatic_purpose": "Do not present rekha as Valmiki fact."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["lakshmana"],
+      "scene_description": "He leaves into the trees. Ashram shrinks.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "empty",
+      "shot_card": {
+        "camera": "wide, his back, hut left as ep01",
+        "lighting": "west",
+        "blocking": "exit",
+        "continuity_from": "ep01-p08 composition family",
+        "dramatic_purpose": "House emptied."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["sita"],
+      "scene_description": "Sita alone. The line at her feet.",
+      "dialogue": "",
+      "caption": "She can hear the forest pretending to be a husband.",
+      "emotion": "alone",
+      "shot_card": {
+        "camera": "medium, her and the dirt line",
+        "lighting": "doorway rim",
+        "blocking": "still",
+        "continuity_from": "sita ashram look",
+        "dramatic_purpose": "One person left."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["ravana"],
+      "scene_description": "Ascetic form at the trees: ochre, pot, matted hair. PRIMARY FACE is Ravana's from ep04. We know. She will not.",
+      "dialogue": "",
+      "caption": "A holy man. The reader is not fooled.",
+      "emotion": "false",
+      "shot_card": {
+        "camera": "full figure, face readable, no ten-head gag",
+        "lighting": "softer, borrowed humility",
+        "blocking": "at the line, not yet over",
+        "continuity_from": "ravana ascetic variant",
+        "dramatic_purpose": "Never lose identity to the reader."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["ravana", "sita"],
+      "scene_description": "He asks for alms from the far side of the dirt.",
+      "dialogue": "RAVANA (as beggar): Daughter, a handful of food. I will not cross what I should not.",
+      "caption": "",
+      "emotion": "lure",
+      "shot_card": {
+        "camera": "two-shot across the line",
+        "lighting": "his ochre vs her earth cloth",
+        "blocking": "line between them",
+        "continuity_from": "ep07-p02 line",
+        "dramatic_purpose": "The trap is courtesy."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["sita"],
+      "scene_description": "She decides. Foot over the line. Her choice, not a magic fail.",
+      "dialogue": "",
+      "caption": "She steps. That is the dramatized miracle: a person, not a spell, breaks.",
+      "emotion": "cross",
+      "shot_card": {
+        "camera": "close on foot and dirt line",
+        "lighting": "late gold on dust",
+        "blocking": "one step",
+        "continuity_from": "ep07-p02",
+        "dramatic_purpose": "Rekha as choice."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["sita", "ravana"],
+      "scene_description": "She is over. He is close. His face in her blind spot; full to us.",
+      "dialogue": "SITA: Eat, then go.\nRAVANA: I did not come to eat.",
+      "caption": "",
+      "emotion": "drop",
+      "shot_card": {
+        "camera": "over her shoulder, his true face to camera",
+        "lighting": "shadow on her, light on him for us",
+        "blocking": "too close",
+        "continuity_from": "ep07-p05 face",
+        "dramatic_purpose": "Bridge to capture."
+      }
+    }
+  ]
+}

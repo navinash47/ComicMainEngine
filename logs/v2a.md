@@ -21,3 +21,4 @@ Do not batch two phases. One episode per A1 commit.
 - phase-v2a-a1-ep04: Report to Lanka
 - phase-v2a-a1-ep05: Maricha's counsel
 - phase-v2a-a1-ep06: Golden deer
+- phase-v2a-a1-ep07: Empty hut / rekha dramatized
