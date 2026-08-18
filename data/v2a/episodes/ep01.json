@@ -1,0 +1,151 @@
+{
+  "id": "ep01",
+  "n": 1,
+  "title": "Surpanakha sees Rama",
+  "topic": "Aranya Kanda — Surpanakha desires Rama at Panchavati",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Dramatized from the public Ramayana Aranya Kanda tradition. Adult-stark test episode for ComicEngine 2A. Desire is explicit; not exploitation. Not bedtime.",
+  "story_goal": "Panchavati; she is struck by Rama; proposes; he refuses and points her to Lakshmana.",
+  "framework_goal": "Desire + two-person blocking + forest light lock. Cast: Rama, Surpanakha, Sita glimpsed.",
+  "gate": "Bible looks hold; shot cards make her approach readable without restaging.",
+  "narrative_summary": "Surpanakha finds the ashram. She wants Rama. He refuses without cruelty and names Lakshmana. She turns.",
+  "location_ids": ["panchavati_ashram", "dandaka_forest"],
+  "lighting_recipe": {
+    "time_of_day": "late afternoon",
+    "key_direction": "west, through trees, warm",
+    "shadow": "long, leaf-broken",
+    "palette": ["dry green", "earth", "warm gold", "dark bark"]
+  },
+  "characters": ["rama", "sita", "lakshmana", "surpanakha"],
+  "fact_checks": [
+    {
+      "claim": "Surpanakha desires Rama in exile and is refused.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda. Dialogue dramatized."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["rama", "sita"],
+      "scene_description": "Wide: Panchavati ashram in late light. Rama strings nothing; he sits with the bow across his knees. Sita at the hut mouth, water pot.",
+      "dialogue": "",
+      "caption": "Panchavati. Exile has a kitchen and a weapon.",
+      "emotion": "still",
+      "shot_card": {
+        "camera": "wide, slightly high, hut left, river suggestion right",
+        "lighting": "warm west key, long tree shadows",
+        "blocking": "Rama downstage center; Sita in doorway; Lakshmana off",
+        "continuity_from": "none — series open",
+        "dramatic_purpose": "Lock ashram and forest light for later callbacks."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["surpanakha"],
+      "scene_description": "Surpanakha in the trees, whole-form, watching. Desire on her face before she steps into the clearing.",
+      "dialogue": "",
+      "caption": "She has hunted worse than princes.",
+      "emotion": "hunger",
+      "shot_card": {
+        "camera": "medium, foliage frame, her eyes sharp",
+        "lighting": "same west key, cooler in the understory",
+        "blocking": "she occupies the right third, ashram tiny behind leaves",
+        "continuity_from": "ep01-p01 location",
+        "dramatic_purpose": "Introduce whole Surpanakha before speech."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["surpanakha", "rama"],
+      "scene_description": "She walks into the clearing. Rama does not stand yet. Two-person blocking: she closes distance; he holds the bow like a boundary.",
+      "dialogue": "SURPANAKHA: I have looked at many men. You are not many men.",
+      "caption": "",
+      "emotion": "forward",
+      "shot_card": {
+        "camera": "over Rama's shoulder, her full approach",
+        "lighting": "her face in warm light; his back half-shadow",
+        "blocking": "she center walking; he seated, bow horizontal",
+        "continuity_from": "ep01-p02",
+        "dramatic_purpose": "Desire as blocking, not as a joke."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["rama", "surpanakha"],
+      "scene_description": "Closer. She is beautiful-form and frank. Rama's face is calm, not disgusted, not flattered.",
+      "dialogue": "RAMA: I am married. That is the whole of it.\nSURPANAKHA: Wives are a custom. I am not.",
+      "caption": "",
+      "emotion": "tension",
+      "shot_card": {
+        "camera": "two-shot, eye level, no dutch-angle drama",
+        "lighting": "split: gold on her mouth, cooler on his",
+        "blocking": "equal height if she leans in; he does not retreat",
+        "continuity_from": "ep01-p03",
+        "dramatic_purpose": "Refusal without cruelty."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["sita"],
+      "scene_description": "Sita in the doorway, watching. Not a decorative insert — she hears this.",
+      "dialogue": "",
+      "caption": "Sita does not pretend not to hear.",
+      "emotion": "alert",
+      "shot_card": {
+        "camera": "medium doorway, hut interior dark behind",
+        "lighting": "rim from the west; her face readable",
+        "blocking": "one figure, threshold",
+        "continuity_from": "ep01-p01 hut",
+        "dramatic_purpose": "Sita is present. Glimpsed, not erased."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["rama", "surpanakha", "lakshmana"],
+      "scene_description": "Rama turns his head toward the trees where Lakshmana appears with firewood. He names the brother.",
+      "dialogue": "RAMA: My brother is there. He is not bound as I am.\nLAKSHMANA: I heard my name used as a gift.",
+      "caption": "",
+      "emotion": "turn",
+      "shot_card": {
+        "camera": "three-point: Rama seated, Surpanakha standing, Lakshmana entering left",
+        "lighting": "same key; Lakshmana steps into light",
+        "blocking": "triangle; she will pivot",
+        "continuity_from": "ep01-p04",
+        "dramatic_purpose": "Redirect is plot, not a sitcom beat."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["surpanakha", "lakshmana"],
+      "scene_description": "She looks Lakshmana over. Appetite does not vanish; it recalculates. His face is already less kind than Rama's.",
+      "dialogue": "SURPANAKHA: Then I will not waste a married mouth.\nLAKSHMANA: You will not use me as a spare.",
+      "caption": "",
+      "emotion": "cold",
+      "shot_card": {
+        "camera": "medium two-shot, slightly low on him",
+        "lighting": "harder shadow on his scarf/arm-wrap (identity lock)",
+        "blocking": "she turns fully away from Rama",
+        "continuity_from": "ep01-p06",
+        "dramatic_purpose": "Set ep 2. Distinguish Lakshmana by wrap, not by a different art style."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["surpanakha"],
+      "scene_description": "She leaves the clearing, not yet wounded, already insulted by the math. Forest swallows her. Ashram stays warm in the background — the light lock must match panel 1.",
+      "dialogue": "",
+      "caption": "She will not ask a third time.",
+      "emotion": "omen",
+      "shot_card": {
+        "camera": "wide, her back, ashram small and still golden",
+        "lighting": "west key dying; her silhouette cooler",
+        "blocking": "exit right; hut left as in p01",
+        "continuity_from": "ep01-p01 light and architecture",
+        "dramatic_purpose": "Close on continuity: same place, storm coming."
+      }
+    }
+  ]
+}

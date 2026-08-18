@@ -14,3 +14,4 @@ Do not batch two phases. One episode per A1 commit.
 
 - phase-v2a-a1: start Story Architect and seed v2a logs
 - phase-v2a-a1: lock Capture bibles, locations, and fact sheet
+- phase-v2a-a1-ep01: Surpanakha sees Rama

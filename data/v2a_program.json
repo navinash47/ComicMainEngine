@@ -75,7 +75,12 @@
         "10 episode packets (story goal + framework goal + gate); no images yet",
         "Human sign-off on adult-stark tone (no exploitation, no gore-porn, no kitsch gods)"
       ],
-      "checklist_done": [],
+      "checklist_done": [
+        "Epic map: Ramayana → Aranya Kanda → The Capture (10 episodes)",
+        "Enhanced bibles for Rama, Sita, Lakshmana, Surpanakha, Ravana, Maricha, Jatayu",
+        "Surpanakha whole + wounded sheets specified; Ravana king + ascetic",
+        "Fact / tradition sheet with supported/disputed/simplified/dramatized verdicts"
+      ],
       "blockers": [],
       "notes": [
         "Git log is the store: one commit per episode. Mirror in logs/v2a.md.",
