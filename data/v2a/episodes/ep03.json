@@ -1,0 +1,151 @@
+{
+  "id": "ep03",
+  "n": 3,
+  "title": "Khara's war",
+  "topic": "Aranya Kanda — Khara and Dushana fall",
+  "season": 1,
+  "episode_no": 3,
+  "voice": "adult_stark_epic",
+  "disclaimer": "Crowd/war simplified. Rama identity must match ep 1. Not a video-game arena.",
+  "story_goal": "She brings Khara–Dushana; Rama fights; the rakshasa force falls.",
+  "framework_goal": "Crowd/war; Rama identity in action.",
+  "gate": "Battlefield location lock + crowd rule; Rama still matches ep 1.",
+  "narrative_summary": "Wounded Surpanakha brings Khara. Rama kills the host. Dust, not glory.",
+  "location_ids": ["khara_field", "dandaka_forest"],
+  "lighting_recipe": {
+    "time_of_day": "harsh morning",
+    "key_direction": "high, bleaching",
+    "shadow": "short, hard",
+    "palette": ["dust", "iron", "dry green", "blood sparse"]
+  },
+  "characters": ["surpanakha", "khara", "dushana", "rama", "lakshmana"],
+  "fact_checks": [
+    {
+      "claim": "Khara and Dushana attack Rama and die.",
+      "verdict": "supported",
+      "source_note": "Aranya Kanda. Numbers simplified."
+    }
+  ],
+  "panels": [
+    {
+      "index": 1,
+      "characters": ["surpanakha", "khara"],
+      "scene_description": "Wounded Surpanakha before Khara. Midface wound mandatory. She points north toward the ashram.",
+      "dialogue": "SURPANAKHA: Two men. A woman. They cut me like a joke.",
+      "caption": "",
+      "emotion": "indict",
+      "shot_card": {
+        "camera": "medium, her ruined face toward us, Khara mass behind",
+        "lighting": "camp fire leftover, then cut to morning",
+        "blocking": "she is small against his armor",
+        "continuity_from": "ep02 wounded sheet",
+        "dramatic_purpose": "Wound still present."
+      }
+    },
+    {
+      "index": 2,
+      "characters": ["khara", "dushana"],
+      "scene_description": "Khara and Dushana distinct helmets. Host assembling on the field.",
+      "dialogue": "KHARA: Then we unmake the joke.",
+      "caption": "",
+      "emotion": "war",
+      "shot_card": {
+        "camera": "wide field lock — dust ground, banners",
+        "lighting": "harsh morning",
+        "blocking": "two commanders, crowd as texture not portraits",
+        "continuity_from": "location khara_field",
+        "dramatic_purpose": "Crowd rule: no individual extras as leads."
+      }
+    },
+    {
+      "index": 3,
+      "characters": ["rama"],
+      "scene_description": "Rama on the field. Exile cloth, bow, same face as ep01. Dust on him already.",
+      "dialogue": "",
+      "caption": "He did not come as a god. He came as the man who lives there.",
+      "emotion": "set",
+      "shot_card": {
+        "camera": "full figure, no heroic low-angle chrome",
+        "lighting": "bleaching sun",
+        "blocking": "alone against banners",
+        "continuity_from": "ep01 rama bible",
+        "dramatic_purpose": "Identity in action."
+      }
+    },
+    {
+      "index": 4,
+      "characters": ["rama", "khara"],
+      "scene_description": "First exchange: arrow vs mace space. Not a blur of extra arms.",
+      "dialogue": "KHARA: Hide behind dharma if it helps you die.",
+      "caption": "",
+      "emotion": "impact",
+      "shot_card": {
+        "camera": "wide action, readable silhouettes",
+        "lighting": "high sun, short shadows",
+        "blocking": "Khara advancing; Rama planted",
+        "continuity_from": "ep03-p02 field",
+        "dramatic_purpose": "War without losing faces."
+      }
+    },
+    {
+      "index": 5,
+      "characters": ["dushana", "lakshmana"],
+      "scene_description": "Lakshmana takes Dushana's side of the field. Wrap visible.",
+      "dialogue": "",
+      "caption": "",
+      "emotion": "fierce",
+      "shot_card": {
+        "camera": "medium action",
+        "lighting": "same",
+        "blocking": "pair fight, not a clone of Rama's pose",
+        "continuity_from": "lakshmana wrap",
+        "dramatic_purpose": "Brother is not a second Rama sprite."
+      }
+    },
+    {
+      "index": 6,
+      "characters": ["rama", "khara"],
+      "scene_description": "Khara falls. Keep it short. Dust, not fountain.",
+      "dialogue": "",
+      "caption": "The commander learns the arrow's name too late.",
+      "emotion": "end",
+      "shot_card": {
+        "camera": "medium, Khara down, Rama still standing in exile cloth",
+        "lighting": "sun still stupidly bright",
+        "blocking": "end of the duel",
+        "continuity_from": "ep03-p03 rama",
+        "dramatic_purpose": "Rama face still ep01."
+      }
+    },
+    {
+      "index": 7,
+      "characters": ["surpanakha"],
+      "scene_description": "She watches the field die. Wound, dust, no tears-for-beauty.",
+      "dialogue": "",
+      "caption": "She has one brother left who can make a country move.",
+      "emotion": "turn",
+      "shot_card": {
+        "camera": "close three-quarter wounded face, field bokeh",
+        "lighting": "harsh; wound not prettied",
+        "blocking": "alone at the edge",
+        "continuity_from": "ep02-p03",
+        "dramatic_purpose": "Bridge to Lanka."
+      }
+    },
+    {
+      "index": 8,
+      "characters": ["rama", "lakshmana"],
+      "scene_description": "Aftermath: banners down. Two brothers. No victory speech.",
+      "dialogue": "RAMA: She will not stop at this dust.",
+      "caption": "",
+      "emotion": "grim",
+      "shot_card": {
+        "camera": "wide field lock empty-ish",
+        "lighting": "morning still high",
+        "blocking": "two small figures",
+        "continuity_from": "khara_field",
+        "dramatic_purpose": "Close war episode."
+      }
+    }
+  ]
+}

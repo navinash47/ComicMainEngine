@@ -16,3 +16,5 @@ Do not batch two phases. One episode per A1 commit.
 - phase-v2a-a1: lock Capture bibles, locations, and fact sheet
 - phase-v2a-a1-ep01: Surpanakha sees Rama
 - phase-v2a-a1-ep02: The insult
+
+- phase-v2a-a1-ep03: Khara's war
