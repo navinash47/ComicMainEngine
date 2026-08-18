@@ -3,8 +3,8 @@
     "version": "2A",
     "title": "Version 2A — storyboard-first (parallel to Version 2)",
     "active_phase_id": "a1",
-    "updated_at": "2026-08-16T22:36:00+00:00",
-    "updated_by": "a0-freeze",
+    "updated_at": "2026-08-18T21:28:00+00:00",
+    "updated_by": "a1-start",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20). Do not edit v2_program.json from this track.",
       "Genre-agnostic framework. First fixture is Aranya — The Capture, not 'product is only Ramayana'.",
@@ -64,7 +64,7 @@
       "id": "a1",
       "title": "Story Architect",
       "track": "story",
-      "status": "locked",
+      "status": "in_progress",
       "sort_order": 1,
       "exit_gate": "Signed adult-stark Capture series: epic map; bibles for all leads (Surpanakha whole+wounded; Ravana king+ascetic); fact verdicts; 10 episode packets; human signed",
       "checklist": [
@@ -78,8 +78,8 @@
       "checklist_done": [],
       "blockers": [],
       "notes": [
-        "Commit when done: phase-v2a-a1: architect the 10-episode Aranya capture test series",
-        "Reuse StorySpec; do not default voice to dad_to_daughter_bedtime"
+        "Git log is the store: one commit per episode. Mirror in logs/v2a.md.",
+        "Do not default voice to dad_to_daughter_bedtime"
       ],
       "history": [
         {
@@ -87,9 +87,15 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-18T21:28:00+00:00",
+          "action": "started",
+          "by": "a1-start",
+          "status": "in_progress"
         }
       ],
-      "updated_at": "2026-08-16T22:36:00+00:00"
+      "updated_at": "2026-08-18T21:28:00+00:00"
     },
     "a2": {
       "id": "a2",
