@@ -19,6 +19,7 @@
       <a class="btn" href="/roi">ROI</a>
       <a class="btn" href="/v2a">Version 2A</a>
       <a class="btn tab on" href="/v2b">Version 2B</a>
+      <a class="btn" href="/v2b/gate1">Gate 1</a>
       <a class="btn" href="#architecture">Diagrams</a>
       <a class="btn" href="/v2b/architecture">Arch md</a>
       <a class="btn" href="/v2b/source-plan">Source plan</a>
@@ -50,6 +51,8 @@
         <div class="v2a-node" data-phase="b2"><span class="v2a-node-k">B2</span><strong>AOVs + ControlNet</strong><em>depth · Freestyle</em></div>
         <span class="v2a-chev" aria-hidden="true">→</span>
         <div class="v2a-node" data-phase="b3"><span class="v2a-node-k">B3</span><strong>Style LoRA</strong><em>fixed weight</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="g1"><span class="v2a-node-k">G1</span><strong>Eval harness</strong><em>pairwise VLM</em></div>
         <span class="v2a-chev" aria-hidden="true">→</span>
         <div class="v2a-node" data-phase="b4"><span class="v2a-node-k">B4</span><strong>Character LoRA</strong><em>3D turntable bootstrap</em></div>
         <span class="v2a-chev" aria-hidden="true">→</span>
@@ -161,7 +164,7 @@
 
   <section class="tasks-wrap">
     <div class="tasks-head">
-      <h2>Phases B0–B9</h2>
+      <h2>Phases B0–B9 + G1</h2>
       <div class="tasks-meta"><span id="phasePct">0%</span></div>
     </div>
     <div class="task-progress"><span id="phaseBar"></span></div>

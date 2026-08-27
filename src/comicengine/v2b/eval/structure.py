@@ -17,6 +17,7 @@ from skimage.metrics import structural_similarity as ssim
 from skimage.transform import resize
 
 SSIM_HYPOTHESIS = 0.7
+STRUCTURE_FLOOR = 0.53  # B2 calibrated cheap-skimage floor on this Mac
 EVAL_SIZE = (384, 576)  # W, H — matches 2:3 panel
 
 
@@ -59,20 +60,24 @@ def _iou(a: np.ndarray, b: np.ndarray) -> float:
     return float(inter / union)
 
 
-def score_camera(cam_dir: Path) -> dict[str, Any]:
+def score_camera(cam_dir: Path, panel: Path | None = None) -> dict[str, Any]:
     cam_dir = Path(cam_dir)
+    panel_path = Path(panel) if panel else cam_dir / "panel_01.png"
     depth_gt = _load_gray(cam_dir / "depth_01.png")
     lineart_gt = _load_gray(cam_dir / "lineart_01.png")
-    stylized = _load_gray(cam_dir / "panel_01.png")
+    stylized = _load_gray(panel_path)
     cheap = _match_polarity(depth_gt, _cheap_depth(stylized))
     ssim_depth = float(ssim(depth_gt, cheap, data_range=1.0))
     edge_iou = _iou(_edges(lineart_gt, lineart=True), _edges(stylized, lineart=False))
     return {
         "camera": cam_dir.name,
+        "panel": str(panel_path),
         "ssim_depth": round(ssim_depth, 4),
         "edge_iou": round(edge_iou, 4),
         "ssim_hypothesis": SSIM_HYPOTHESIS,
+        "structure_floor": STRUCTURE_FLOOR,
         "pass_ssim_hypothesis": ssim_depth >= SSIM_HYPOTHESIS,
+        "pass_structure_floor": ssim_depth >= STRUCTURE_FLOOR,
     }
 
 

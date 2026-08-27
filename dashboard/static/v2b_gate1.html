@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · 2B Gate 1</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <style>
+    .g1-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .g1-pair figure { margin: 0; background: var(--bg1); border: 1px solid var(--line); padding: 0.5rem; }
+    .g1-pair img { width: 100%; height: auto; display: block; background: #111; }
+    .g1-pair figcaption { margin-top: 0.4rem; font-size: 0.85rem; color: var(--muted); }
+    .g1-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
+    .g1-skip { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand"><span class="brand-name">ComicEngine</span> <span class="beta-pill">Beta</span></p>
+      <h1>Version 2B · Gate 1 pairwise</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/v2b">Version 2B</a>
+      <a class="btn tab on" href="/v2b/gate1">Gate 1</a>
+      <span id="progress">0/12</span>
+    </div>
+  </header>
+  <p class="lede">Twelve A/B clicks. A is left, B is right. Use tie if they are a toss-up. Do not invent a favorite — pick what you actually prefer for a bedtime dad-to-daughter comic.</p>
+  <p class="muted small" id="status">Loading pairs…</p>
+  <div id="pairs"></div>
+  <script src="/static/v2b_gate1.js"></script>
+  <footer class="site-footer">
+    <p>© 2026 Avinash Nandyala · ComicEngine</p>
+  </footer>
+</body>
+</html>

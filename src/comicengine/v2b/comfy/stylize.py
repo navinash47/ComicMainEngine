@@ -66,7 +66,7 @@ def _controlnet_workflow(
         data["3"]["inputs"]["scheduler"] = style["scheduler"]
         data["3"]["inputs"]["steps"] = int(style["steps"])
         data["4"]["inputs"]["ckpt_name"] = style.get("checkpoint") or ckpt
-        data["3"]["inputs"]["seed"] = int(style.get("seed") or seed)
+        data["3"]["inputs"]["seed"] = seed
     return data
 
 

@@ -14,8 +14,8 @@
 
 ## Version 2B (parallel — do not merge into 2A)
 
-- **Version:** 2B · B3 complete · next B4 character LoRA · fixture HIMYM ep1 panel 1 (3 cameras)
-- **Progress:** 4/10 phases complete (B0 architecture, B1 slice, B2 ControlNet, B3 style LoRA)
+- **Version:** 2B · G1 complete · next B4 character LoRA · fixture HIMYM ep1 panel 1 (3 cameras)
+- **Progress:** 5/11 phases complete (B0–B3 + G1 eval harness)
 - **Priority:** P2 (does not outrank City P1 or 2A A2)
 
 ### Next 3 tasks

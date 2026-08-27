@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B3
+\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B3 + G1
 \vspace{-0.6em}}
 
 \author{
@@ -462,6 +462,37 @@ cam\_c & 0.669 & 0.314 & 0.048 \\
 \end{tabular}
 \end{center}
 
+\paragraph{G1 eval harness (2026-08-27).}
+Prove-shot eval on the same three cameras. No PPO/GRPO/DPO.
+Structure hard gate is \textbf{mean} SSIM(depth) $\ge 0.53$ (not per-camera; cam\_b is often $0.51$--$0.52$). Locked B3 mean SSIM $0.584$ --- pass.
+Identity vs beauty is cheap \texttt{grid\_hist\_8x8} (log-only; capsule meshes, not faces).
+Pairwise judge: \texttt{gemini-3.6-flash} direct \texttt{GOOGLE\_API\_KEY} (retired \texttt{gemini-2.5-flash} returned 404). A/B swap; never OmniRoute images.
+12/12 human labels on \texttt{/v2b/gate1}. Exact LLM--human $4/12$; tie-lenient $10/12$. Two hard disagreements: \texttt{b\_b2\_beauty} and \texttt{c\_b2\_beauty} (human prefers beauty, Gemini prefers B2). Exact $8/12$ is calibration debt, not a train signal. Harness still passes.
+Best-of-N seeds $\{42,43,44,45\}$ on existing AOVs. Winners: cam\_a seed~44, cam\_b seed~44, cam\_c seed~42 (copy of locked B3). Human and Gemini both pick locked B3 over the cam\_b BoN winner.
+46 successful Gemini pairwise calls, \$0.043. Preferences: \texttt{data/v2b/eval/preferences.jsonl}. Scorecard: \texttt{data/v2b/eval/himym\_ep01\_g1\_scorecard.json}. B8 stays locked.
+
+\begin{center}
+\small
+\begin{tabular}{lcc}
+\toprule
+Pair & Gemini & Human \\
+\midrule
+a\_b1\_b2 & B & B \\
+a\_b2\_b3 & B & tie \\
+a\_b1\_b3 & B & B \\
+a\_b3\_beauty & A & tie \\
+b\_b2\_b3 & B & tie \\
+b\_b2\_beauty & A & B \\
+b\_b3\_beauty & A & tie \\
+b\_bon\_b3 & B & B \\
+c\_b2\_b3 & B & tie \\
+c\_b2\_beauty & A & B \\
+c\_b3\_beauty & A & tie \\
+c\_bon\_b3 & tie & tie \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
 
@@ -471,7 +502,7 @@ cam\_c & 0.669 & 0.314 & 0.048 \\
 \begin{enumerate}[leftmargin=*,itemsep=2pt]
   \item OmniRoute is excellent for LLM scripting/judging; keeping images off OmniRoute avoided opaque image billing and matched commercial-key policy.
   \item fal~\texttt{schnell} makes wide style exploration financially trivial (\textasciitilde\$0.024 for 8 bake-off frames).
-  \item Auto style judges trade off immersion vs.\ bedtime safety; human adjudication remains mandatory for product voice.
+  \item Auto style judges trade off immersion vs.\ bedtime safety; human adjudication remains mandatory for product voice. G1 exact Gemini--human agreement was $4/12$ (tie-lenient $10/12$) --- humans tied often; Gemini preferred stylized B3 over beauty and over B2.
   \item Pillow ``pass'' is necessary but not sufficient for character consistency; the Phase~3 LLM judge correctly ranked \texttt{gemini\_ref} over cheaper text-only despite identical QA scores.
   \item OmniRoute model routing matters: prefer \texttt{auto} (or provider-prefixed Claude) when \texttt{auto/cheap} returns thinking text without \texttt{tool\_use}.
   \item Vercel serverless session UX needs HttpOnly cookies (Bearer-only + aggressive \texttt{/me} clears caused login loops); CSS \texttt{display} on \texttt{.btn} overrides HTML \texttt{[hidden]}.
@@ -524,6 +555,7 @@ python scripts/build_report.py
 \item[2026-08-27 a] Version~2B B0/B1: 3D-previs architecture freeze; HIMYM ep1 panel~1 Cycles$\rightarrow$ComfyUI SD~1.5; beauty seed MAE $0.0$.
 \item[2026-08-27 b] Version~2B B2: three-camera AOVs + SD~1.5 ControlNet; mean SSIM(depth) $0.575$ (calibrated floor $0.53$); visual geometry lock.
 \item[2026-08-27 c] Version~2B B3: locked SD~1.5 storybook style LoRA (strength $1.0$, denoise $0.65$); mean SSIM(depth) $0.584$; mean MAE vs B2 $0.047$.
+\item[2026-08-27 d] Version~2B G1: 12/12 human pairs; Gemini exact $4/12$ (tie-lenient $10/12$); BoN seeds 42--45; \$0.043 \texttt{gemini-3.6-flash}; no DPO.
 \end{description}
 
 \end{document}

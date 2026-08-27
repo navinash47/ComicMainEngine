@@ -103,7 +103,7 @@ function render(data) {
 }
 
 function highlightPipeline(activeId, phases) {
-  const order = ["b1", "b2", "b3", "b4", "b8"];
+  const order = ["b1", "b2", "b3", "g1", "b4", "b8"];
   const activeIdx = order.indexOf(activeId);
   document.querySelectorAll("#pipelineFlow .v2a-node").forEach((el) => {
     const id = el.getAttribute("data-phase");

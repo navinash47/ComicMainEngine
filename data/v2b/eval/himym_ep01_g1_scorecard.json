@@ -1,0 +1,1033 @@
+{
+  "locked": {
+    "cameras": {
+      "cam_a": {
+        "b3": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01.png",
+            "ssim_depth": 0.5588,
+            "edge_iou": 0.2755,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0471,
+            "luma_corr_vs_beauty": 0.9157,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9518,
+            "clip_cosine": 0.9518,
+            "dino_cosine": 0.9518,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3286,
+            "panel_left_minus_right": 0.0883,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        },
+        "b2": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01_b2.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01_b2.png",
+            "ssim_depth": 0.5408,
+            "edge_iou": 0.4157,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0195,
+            "luma_corr_vs_beauty": 0.9882,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9927,
+            "clip_cosine": 0.9927,
+            "dino_cosine": 0.9927,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.1376,
+            "panel_left_minus_right": 0.105,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        },
+        "b1": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01_b1.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/panel_01_b1.png",
+            "ssim_depth": 0.5425,
+            "edge_iou": 0.3368,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0211,
+            "luma_corr_vs_beauty": 0.9836,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9894,
+            "clip_cosine": 0.9894,
+            "dino_cosine": 0.9894,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.1748,
+            "panel_left_minus_right": 0.1044,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        }
+      },
+      "cam_b": {
+        "b3": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/panel_01.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/panel_01.png",
+            "ssim_depth": 0.5249,
+            "edge_iou": 0.2862,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0618,
+            "luma_corr_vs_beauty": 0.9088,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9453,
+            "clip_cosine": 0.9453,
+            "dino_cosine": 0.9453,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.4251,
+            "panel_left_minus_right": 0.0822,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        },
+        "b2": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/panel_01_b2.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/panel_01_b2.png",
+            "ssim_depth": 0.5134,
+            "edge_iou": 0.2928,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0223,
+            "luma_corr_vs_beauty": 0.9889,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9885,
+            "clip_cosine": 0.9885,
+            "dino_cosine": 0.9885,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.1715,
+            "panel_left_minus_right": 0.0933,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        }
+      },
+      "cam_c": {
+        "b3": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/panel_01.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/panel_01.png",
+            "ssim_depth": 0.6688,
+            "edge_iou": 0.3141,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0542,
+            "luma_corr_vs_beauty": 0.8973,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9533,
+            "clip_cosine": 0.9533,
+            "dino_cosine": 0.9533,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3579,
+            "panel_left_minus_right": 0.0265,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        },
+        "b2": {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/panel_01_b2.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/panel_01_b2.png",
+            "ssim_depth": 0.6711,
+            "edge_iou": 0.3965,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0213,
+            "luma_corr_vs_beauty": 0.9853,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9835,
+            "clip_cosine": 0.9835,
+            "dino_cosine": 0.9835,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.2092,
+            "panel_left_minus_right": 0.0344,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        }
+      }
+    },
+    "mean_ssim_b3": 0.5842,
+    "b3_pass_structure_floor": true,
+    "note": "Hard gate is mean SSIM(depth) >= 0.53 (B2 calibrated). cam_b is often just under per-camera."
+  },
+  "bon": {
+    "cam_a": {
+      "camera": "cam_a",
+      "scored": [
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_42.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_42.png",
+            "ssim_depth": 0.5588,
+            "edge_iou": 0.2755,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0471,
+            "luma_corr_vs_beauty": 0.9157,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9518,
+            "clip_cosine": 0.9518,
+            "dino_cosine": 0.9518,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3286,
+            "panel_left_minus_right": 0.0883,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_43.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_43.png",
+            "ssim_depth": 0.5342,
+            "edge_iou": 0.2521,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0534,
+            "luma_corr_vs_beauty": 0.9121,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9155,
+            "clip_cosine": 0.9155,
+            "dino_cosine": 0.9155,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.4178,
+            "panel_left_minus_right": 0.09,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+            "ssim_depth": 0.5418,
+            "edge_iou": 0.3336,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0457,
+            "luma_corr_vs_beauty": 0.9208,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9368,
+            "clip_cosine": 0.9368,
+            "dino_cosine": 0.9368,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3234,
+            "panel_left_minus_right": 0.1066,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_45.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_a",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_45.png",
+            "ssim_depth": 0.5564,
+            "edge_iou": 0.3001,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0415,
+            "luma_corr_vs_beauty": 0.9232,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9566,
+            "clip_cosine": 0.9566,
+            "dino_cosine": 0.9566,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.2818,
+            "panel_left_minus_right": 0.0793,
+            "beauty_left_minus_right": 0.107,
+            "key_light_side_match": true
+          }
+        }
+      ],
+      "winner": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+      "tournament": [
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_42.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_45.png",
+          "winner": "B",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_45.png",
+          "axes": {
+            "structure": "B",
+            "style": "B",
+            "lighting": "B",
+            "bedtime": "B"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_43.png",
+          "winner": "A",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+          "axes": {
+            "structure": "A",
+            "style": "A",
+            "lighting": "A",
+            "bedtime": "A"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_45.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+          "winner": "B",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/seed_44.png",
+          "axes": {
+            "structure": "tie",
+            "style": "B",
+            "lighting": "B",
+            "bedtime": "tie"
+          }
+        }
+      ],
+      "structure_floor": 0.53,
+      "winner_alias": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_a/bon/winner.png"
+    },
+    "cam_b": {
+      "camera": "cam_b",
+      "scored": [
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_42.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_42.png",
+            "ssim_depth": 0.5249,
+            "edge_iou": 0.2862,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0618,
+            "luma_corr_vs_beauty": 0.9088,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9453,
+            "clip_cosine": 0.9453,
+            "dino_cosine": 0.9453,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.4251,
+            "panel_left_minus_right": 0.0822,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_43.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_43.png",
+            "ssim_depth": 0.5176,
+            "edge_iou": 0.2537,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.061,
+            "luma_corr_vs_beauty": 0.9291,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9538,
+            "clip_cosine": 0.9538,
+            "dino_cosine": 0.9538,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3457,
+            "panel_left_minus_right": 0.085,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+            "ssim_depth": 0.5158,
+            "edge_iou": 0.286,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0598,
+            "luma_corr_vs_beauty": 0.9107,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9562,
+            "clip_cosine": 0.9562,
+            "dino_cosine": 0.9562,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3515,
+            "panel_left_minus_right": 0.1052,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_45.png",
+          "hard_ok": false,
+          "structure": {
+            "camera": "cam_b",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_45.png",
+            "ssim_depth": 0.5149,
+            "edge_iou": 0.3128,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": false
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0569,
+            "luma_corr_vs_beauty": 0.916,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9526,
+            "clip_cosine": 0.9526,
+            "dino_cosine": 0.9526,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.4242,
+            "panel_left_minus_right": 0.0715,
+            "beauty_left_minus_right": 0.0936,
+            "key_light_side_match": true
+          }
+        }
+      ],
+      "winner": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+      "tournament": [
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_42.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_43.png",
+          "winner": "A",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_42.png",
+          "axes": {
+            "structure": "tie",
+            "style": "A",
+            "lighting": "B",
+            "bedtime": "A"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_45.png",
+          "winner": "A",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+          "axes": {
+            "structure": "A",
+            "style": "A",
+            "lighting": "A",
+            "bedtime": "A"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_42.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+          "winner": "B",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/seed_44.png",
+          "axes": {
+            "structure": "B",
+            "style": "B",
+            "lighting": "B",
+            "bedtime": "B"
+          }
+        }
+      ],
+      "structure_floor": 0.53,
+      "winner_alias": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_b/bon/winner.png"
+    },
+    "cam_c": {
+      "camera": "cam_c",
+      "scored": [
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+            "ssim_depth": 0.6688,
+            "edge_iou": 0.3141,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0542,
+            "luma_corr_vs_beauty": 0.8973,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9533,
+            "clip_cosine": 0.9533,
+            "dino_cosine": 0.9533,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3579,
+            "panel_left_minus_right": 0.0265,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_43.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_43.png",
+            "ssim_depth": 0.6723,
+            "edge_iou": 0.2774,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0586,
+            "luma_corr_vs_beauty": 0.9004,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9176,
+            "clip_cosine": 0.9176,
+            "dino_cosine": 0.9176,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.4502,
+            "panel_left_minus_right": 0.0437,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_44.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_44.png",
+            "ssim_depth": 0.6524,
+            "edge_iou": 0.2679,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0599,
+            "luma_corr_vs_beauty": 0.8708,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9554,
+            "clip_cosine": 0.9554,
+            "dino_cosine": 0.9554,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3448,
+            "panel_left_minus_right": 0.041,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        },
+        {
+          "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_45.png",
+          "hard_ok": true,
+          "structure": {
+            "camera": "cam_c",
+            "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_45.png",
+            "ssim_depth": 0.6837,
+            "edge_iou": 0.2696,
+            "ssim_hypothesis": 0.7,
+            "structure_floor": 0.53,
+            "pass_ssim_hypothesis": false,
+            "pass_structure_floor": true
+          },
+          "restage": {
+            "ok": true,
+            "mae_vs_beauty": 0.0529,
+            "luma_corr_vs_beauty": 0.8697,
+            "mae_max": 0.12
+          },
+          "identity": {
+            "identity_cosine": 0.9509,
+            "clip_cosine": 0.9509,
+            "dino_cosine": 0.9509,
+            "method": "grid_hist_8x8",
+            "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4."
+          },
+          "lighting": {
+            "hist_l1": 0.3499,
+            "panel_left_minus_right": 0.0179,
+            "beauty_left_minus_right": 0.0381,
+            "key_light_side_match": true
+          }
+        }
+      ],
+      "winner": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+      "tournament": [
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_45.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_43.png",
+          "winner": "A",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_45.png",
+          "axes": {
+            "structure": "A",
+            "style": "A",
+            "lighting": "A",
+            "bedtime": "A"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_44.png",
+          "winner": "A",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+          "axes": {
+            "structure": "A",
+            "style": "tie",
+            "lighting": "A",
+            "bedtime": "A"
+          }
+        },
+        {
+          "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_45.png",
+          "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+          "winner": "B",
+          "picked": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/seed_42.png",
+          "axes": {
+            "structure": "B",
+            "style": "B",
+            "lighting": "B",
+            "bedtime": "B"
+          }
+        }
+      ],
+      "structure_floor": 0.53,
+      "winner_alias": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/cam_c/bon/winner.png"
+    }
+  },
+  "gemini_pairs": [
+    {
+      "id": "a_b1_b2",
+      "camera": "a",
+      "left": "b1",
+      "right": "b2",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "B"
+    },
+    {
+      "id": "a_b2_b3",
+      "camera": "a",
+      "left": "b2",
+      "right": "b3",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "B"
+    },
+    {
+      "id": "a_b1_b3",
+      "camera": "a",
+      "left": "b1",
+      "right": "b3",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "B"
+    },
+    {
+      "id": "a_b3_beauty",
+      "camera": "a",
+      "left": "b3",
+      "right": "beauty",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "A"
+    },
+    {
+      "id": "b_b2_b3",
+      "camera": "b",
+      "left": "b2",
+      "right": "b3",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "B"
+    },
+    {
+      "id": "b_b2_beauty",
+      "camera": "b",
+      "left": "b2",
+      "right": "beauty",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "A"
+    },
+    {
+      "id": "b_b3_beauty",
+      "camera": "b",
+      "left": "b3",
+      "right": "beauty",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "A"
+    },
+    {
+      "id": "b_bon_b3",
+      "camera": "b",
+      "left": "bon_winner",
+      "right": "b3",
+      "skipped": false,
+      "winner": "B",
+      "axes": {
+        "structure": "tie",
+        "style": "B",
+        "lighting": "B",
+        "bedtime": "B"
+      },
+      "reason": "Image B accurately depicts the warm key light originating from the upper-left while maintaining identical scene structure.",
+      "forward": {
+        "winner": "B",
+        "structure": "tie",
+        "style": "tie",
+        "lighting": "B",
+        "bedtime": "B",
+        "reason": "Image B accurately depicts the warm key light originating from the upper-left while maintaining identical scene structure."
+      },
+      "backward_flipped": {
+        "winner": "B",
+        "structure": "tie",
+        "style": "B",
+        "lighting": "B",
+        "bedtime": "B"
+      }
+    },
+    {
+      "id": "c_b2_b3",
+      "camera": "c",
+      "left": "b2",
+      "right": "b3",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "B"
+    },
+    {
+      "id": "c_b2_beauty",
+      "camera": "c",
+      "left": "b2",
+      "right": "beauty",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "A"
+    },
+    {
+      "id": "c_b3_beauty",
+      "camera": "c",
+      "left": "b3",
+      "right": "beauty",
+      "skipped": true,
+      "reason": "gemini row exists",
+      "winner": "A"
+    },
+    {
+      "id": "c_bon_b3",
+      "camera": "c",
+      "left": "bon_winner",
+      "right": "b3",
+      "skipped": false,
+      "winner": "tie",
+      "axes": {
+        "structure": "tie",
+        "style": "tie",
+        "lighting": "tie",
+        "bedtime": "tie"
+      },
+      "reason": "Both images are identical 3D geometric blockout renders.",
+      "forward": {
+        "winner": "tie",
+        "structure": "tie",
+        "style": "tie",
+        "lighting": "tie",
+        "bedtime": "tie",
+        "reason": "Both images are identical 3D geometric blockout renders."
+      },
+      "backward_flipped": {
+        "winner": "tie",
+        "structure": "tie",
+        "style": "tie",
+        "lighting": "tie",
+        "bedtime": "tie"
+      }
+    }
+  ],
+  "agreement": {
+    "n_shared": 12,
+    "n_human": 12,
+    "n_gemini": 12,
+    "exact_matches": 4,
+    "exact_rate": 0.333,
+    "tie_lenient_matches": 10,
+    "tie_lenient_rate": 0.833,
+    "target": "8/12",
+    "pass_target": false,
+    "details": [
+      {
+        "pair_id": "a_b1_b2",
+        "gemini": "B",
+        "human": "B",
+        "match": true,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "a_b1_b3",
+        "gemini": "B",
+        "human": "B",
+        "match": true,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "a_b2_b3",
+        "gemini": "B",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "a_b3_beauty",
+        "gemini": "A",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "b_b2_b3",
+        "gemini": "B",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "b_b2_beauty",
+        "gemini": "A",
+        "human": "B",
+        "match": false,
+        "tie_lenient": false
+      },
+      {
+        "pair_id": "b_b3_beauty",
+        "gemini": "A",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "b_bon_b3",
+        "gemini": "B",
+        "human": "B",
+        "match": true,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "c_b2_b3",
+        "gemini": "B",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "c_b2_beauty",
+        "gemini": "A",
+        "human": "B",
+        "match": false,
+        "tie_lenient": false
+      },
+      {
+        "pair_id": "c_b3_beauty",
+        "gemini": "A",
+        "human": "tie",
+        "match": false,
+        "tie_lenient": true
+      },
+      {
+        "pair_id": "c_bon_b3",
+        "gemini": "tie",
+        "human": "tie",
+        "match": true,
+        "tie_lenient": true
+      }
+    ],
+    "note": "G1 still passes the harness if exact rate is below 8/12; that is calibration debt, not an RL train signal. Ties count as lenient agreement."
+  },
+  "b1": null
+}

@@ -277,6 +277,43 @@ def v2b_source_plan() -> FileResponse:
     return FileResponse(V2B_SOURCE_PLAN_PATH, media_type="text/markdown; charset=utf-8")
 
 
+@app.get("/v2b/gate1")
+def v2b_gate1_page() -> FileResponse:
+    return FileResponse(STATIC / "v2b_gate1.html")
+
+
+class V2bPrefIn(BaseModel):
+    pair_id: str
+    winner: str
+
+
+@app.get("/api/v2b/gate1/pairs")
+def api_v2b_gate1_pairs() -> list[dict[str, Any]]:
+    from comicengine.v2b.eval.preferences import pair_catalog
+
+    return pair_catalog()
+
+
+@app.post("/api/v2b/preferences")
+def api_v2b_preferences(body: V2bPrefIn) -> dict[str, Any]:
+    from comicengine.v2b.eval.preferences import PAIRS, append_pref, agreement
+
+    spec = next((p for p in PAIRS if p["id"] == body.pair_id), None)
+    if spec is None:
+        raise HTTPException(status_code=404, detail="unknown pair_id")
+    if body.winner not in {"A", "B", "tie"}:
+        raise HTTPException(status_code=400, detail="winner must be A, B, or tie")
+    row = append_pref(
+        pair_id=spec["id"],
+        camera=spec["camera"],
+        left=spec["left"],
+        right=spec["right"],
+        winner=body.winner,
+        source="human",
+    )
+    return {"ok": True, "row": row, "agreement": agreement()}
+
+
 @app.get("/roi")
 def roi_page() -> FileResponse:
     return FileResponse(STATIC / "roi.html")

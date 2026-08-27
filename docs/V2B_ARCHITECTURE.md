@@ -1,8 +1,8 @@
 # Version 2B — 3D-previs comic pipeline
 
-Readable without running Blender or ComfyUI. Program state lives in [`data/v2b_program.json`](../data/v2b_program.json). One commit per phase gate. Branches: `phase-v2b-b0` … `phase-v2b-b9`.
+Readable without running Blender or ComfyUI. Program state lives in [`data/v2b_program.json`](../data/v2b_program.json). One commit per phase gate. Branches: `phase-v2b-b0` … `phase-v2b-g1` … `phase-v2b-b9`.
 
-**Dashboard:** local admin → **Version 2B** → [`/v2b`](http://127.0.0.1:8770/v2b) (ComicEngine is on **8770**; 8765 is Procedural City). Architecture diagrams are on that page (`#architecture`). Raw markdown: [`/v2b/architecture`](http://127.0.0.1:8770/v2b/architecture). Source research plan: [`/v2b/source-plan`](http://127.0.0.1:8770/v2b/source-plan). API: `/api/v2b/program`. This is a live view of the JSON — it does not replace Version 2 or Version 2A.
+**Dashboard:** local admin → **Version 2B** → [`/v2b`](http://127.0.0.1:8770/v2b) (ComicEngine is on **8770**; 8765 is Procedural City). Gate 1 pairwise: [`/v2b/gate1`](http://127.0.0.1:8770/v2b/gate1). Architecture diagrams are on that page (`#architecture`). Raw markdown: [`/v2b/architecture`](http://127.0.0.1:8770/v2b/architecture). Source research plan: [`/v2b/source-plan`](http://127.0.0.1:8770/v2b/source-plan). API: `/api/v2b/program`. This is a live view of the JSON — it does not replace Version 2 or Version 2A.
 
 External research (citation, not code): [`docs/V2B_SOURCE_PLAN.md`](V2B_SOURCE_PLAN.md) (Compass artifact). This file is the living contract for ComicMainEngine.
 
@@ -74,7 +74,7 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 - **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2–B3 use SD 1.5 ControlNet + style LoRA on MPS**; SDXL is the later ship stack (B4+), not this machine. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
 - **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB — ship target when ControlNet fits. This Mac locks SD 1.5. FLUX.1-dev is non-commercial — do not ship on it.
 - **kohya_ss / sd-scripts** for character LoRAs (B4). Style LoRA for B3 was acquired, not trained.
-- **Eval:** DINOv2/CLIP identity; SSIM/LPIPS + depth/edge re-extract for structure; Qwen3-VL **pairwise** (not 1–10 scores) for lighting/aesthetic.
+- **Eval:** cheap `grid_hist_8x8` identity until B4 (not DINOv2/CLIP weights in the project venv); SSIM(depth) structure floor 0.53; luminance hist + key-light side; Gemini Flash **pairwise** (not 1–10 scores). Compass named Qwen3-VL; G1 used `gemini-3.6-flash` direct `GOOGLE_API_KEY`. Never OmniRoute images.
 - **Determinism:** pin seeds, sampler, steps, CFG, model/LoRA hashes. Content-hash cache skips unchanged specs.
 
 ### Intended package (B1+, not this freeze)
@@ -111,9 +111,9 @@ A panel spec names location, character(s), camera, lights, seed. Headless `himym
 
 IP-Adapter / InstantID / PuLID are fallbacks only (InsightFace terms + photoreal bias).
 
-### Layer 4 — Eval + best-of-N (B8)
+### Layer 4 — Eval + best-of-N (G1 prove-shot; B8 later)
 
-N candidates per panel. Hard gates on structure and identity, then weighted rank + pairwise VLM. Scorecards are the preference dataset. Diffusion-DPO (B9) is optional and cloud-only.
+G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3 cameras). Hard gate is **mean** SSIM(depth) ≥ 0.53 (cam_b is often just under per-camera). Identity is log-only until B4. Preferences land in `data/v2b/eval/preferences.jsonl` for later B9. B8 is the same harness on more locations — do not mark B8 complete from G1. Diffusion-DPO (B9) is optional and cloud-only.
 
 ---
 
@@ -128,6 +128,7 @@ N candidates per panel. Hard gates on structure and identity, then weighted rank
 - **B1 prove shot — panel 1 only:** living-room sofa at night, soft lamp. Dad sits beside Maya — no book — knees almost touching. Low-detail room + two seated primitives. Camera and key light locked in the spec. Output: `outputs/v2b/himym_ep01/panel_01.png`.
 - **B2 cameras:** `outputs/v2b/himym_ep01/cam_{a,b,c}/` (hero two-shot, closer, slight profile). Depth + GP lineart drive SD 1.5 ControlNet.
 - **B3 style:** same three cameras, locked `storybook_anime_lora` at strength 1.0. Gut-check is these framings, not 10 scenes (B8).
+- **G1 eval:** 12 human A/B labels on `/v2b/gate1`; Gemini pairwise with A/B swap; BoN seeds 42–45. Scorecard `data/v2b/eval/himym_ep01_g1_scorecard.json`.
 - **Later:** B5 reuses Grand Oriole / lobby / tram locations from the same packet. B7 may sequence more of the 76. Do not render all 76 in B1.
 
 ---
@@ -152,6 +153,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B1** | Phase 0 vertical slice | Prove the chain | HIMYM ep1 **panel 1** living-room two-shot → Cycles → one ComfyUI PNG; same seed near-identical. Not all 76 panels. | `phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI` |
 | **B2** | Phase 1 AOVs + ControlNet | Geometry by construction | Depth + Freestyle consumed; `eval/structure` SSIM(depth) floor vs conditioning; 3 test cameras | `phase-v2b-b2: Blender AOVs drive multi-ControlNet structure` |
 | **B3** | Phase 2 style LoRA | One comic style | Fixed style LoRA + locked checkpoint/sampler; style reads intentional across panels | `phase-v2b-b3: lock style LoRA on every 2B panel` |
+| **G1** | Phase 7 eval (prove-shot) | Pairwise harness | Four-axis scorecard + 12 human A/B + Gemini pairwise + BoN N=4; no DPO | `phase-v2b-g1: pairwise eval harness and preference log on HIMYM p1` |
 | **B4** | Phase 3 character LoRA | Identity from 3D | Turntable → stylize → train; held-out DINOv2 identity; no baked-CG look | `phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable` |
 | **B5** | Phase 4 location reuse | Spec-driven panels | Versioned 3D locations; four-axis scorecard per panel | `phase-v2b-b5: spec-driven locations with four-axis scorecards` |
 | **B6** | Phase 5 multi-character | No identity bleed | Two+ LoRAs gated by object-index masks | `phase-v2b-b6: mask-driven multi-character LoRAs without bleed` |
@@ -159,7 +161,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0–B3 are complete. B4–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0–B3 and G1 are complete. B4–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 
