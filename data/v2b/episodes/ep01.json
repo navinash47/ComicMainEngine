@@ -1,0 +1,1056 @@
+{
+  "id": "himym_ep01",
+  "title": "How I Met Your Mother — Episode 1: Infatuation",
+  "track": "2B",
+  "source_v1": "outputs/phase4/episode_how_i_met_your_mother_ep1.json",
+  "source_note": "Read-only V1 script. Do not edit that file from 2B work. This packet is the 2B-owned fixture.",
+  "not_from": "data/v2a/",
+  "season": 1,
+  "episode_no": 1,
+  "voice": "dad_to_daughter_love_story",
+  "disclaimer": "A dad-to-daughter love story comic. Soft romance, non-explicit.",
+  "topic": "Dad tells Maya how he met Mom — Rohan and Elena, a Meridian Soft trip to the Bay Area, nights around the Grand Oriole Hotel.",
+  "narrative_summary": "Dad tells Maya how he met Mom: shy IT guy Rohan keeps crossing paths with Elena on a Bay Area work trip. Silence becomes cafeteria talk, long walks, a cancelled club night, and a nervously tender hotel-room movie. A Sunday movie day peaks the crush; he asks for honesty with a Limbo Date. Feelings are known by the end. To Be Continued.",
+  "panel_count": 76,
+  "why_this_fixture": "Longest existing ComicEngine episode (76 panels). Gives 2B camera, location reuse, two-shot identity, and later sequencing on one story.",
+  "b1_prove": {
+    "panel_index": 1,
+    "location_id": "living_room",
+    "characters": [
+      "dad",
+      "daughter"
+    ],
+    "camera": "Medium two-shot on the sofa, 3/4 toward Maya, knees almost touching, no book",
+    "lighting": "Night interior, single soft lamp, warm key from camera-left",
+    "blocking": "Dad stage-right of Maya on the sofa; Maya grins sideways; Dad already looks doomed",
+    "scene": "Living-room sofa at night, soft lamp. Dad sits beside Maya — no book — knees almost touching. Maya grins sideways; Dad already looks doomed.",
+    "caption": "PRESENT · Living room · after dinner",
+    "dialogue": "Maya: Okay. Spill. How did you actually meet Mom?\nDad: ...You sure you want the full version? It's embarrassing.\nMaya: Perfect. I live for your embarrassment.",
+    "blender_intent": "Low-detail living room + two seated primitives. Camera and lamp locked in the spec. Not Aranya. Not a generic empty cube.",
+    "output": "outputs/v2b/himym_ep01/panel_01.png"
+  },
+  "story_goal": "Dad tells Maya how he met Mom: shy Rohan keeps crossing Elena on a Bay Area work trip until feelings are known.",
+  "framework_goal": "Long-form consistency: living-room frame, hotel/lobby/tram locations, Rohan+Elena identity across 76 panels.",
+  "gate": "B1 proves panel 1 living-room two-shot through Blender→ComfyUI. Do not render all 76 in B1.",
+  "leads": [
+    "dad",
+    "daughter",
+    "rohan",
+    "elena"
+  ],
+  "supporting": [
+    "kabir",
+    "arjun",
+    "wei",
+    "marcus"
+  ],
+  "characters": [
+    {
+      "id": "dad",
+      "display_name": "Dad (Rohan)",
+      "role": "narrator father, present day",
+      "look": "Indian dad late 30s, soft sweater, curly hair greying at temples, warm flustered smile, Korean manhwa",
+      "notes": "Sits beside Maya and tells her how he met Mom."
+    },
+    {
+      "id": "daughter",
+      "display_name": "Maya",
+      "role": "teen daughter who teases then softens",
+      "look": "Indian teen girl ~14, oversized hoodie, pajama pants, sharp curious manhwa eyes, mischievous grin",
+      "notes": "Roasts Dad hard, then leans in when story gets tender."
+    },
+    {
+      "id": "rohan",
+      "display_name": "Young Rohan",
+      "role": "Dad in the past — shy IT employee on an HQ trip",
+      "look": "27yo Indian man, curly black hair, company badge hoodie, introvert posture, manhwa face that shows every feeling",
+      "notes": "Straight-forward; cannot read flirting; brave with honesty; butterflies literal."
+    },
+    {
+      "id": "elena",
+      "display_name": "Elena Brooks",
+      "role": "Mom in the past — tall brunette colleague",
+      "look": "tall Caucasian woman mid-20s, soft brunette baby-cut bob, pretty kind eyes, sometimes Meridian Soft tee, manhwa soft glow",
+      "notes": "Quiet then warm; scared of heartbreak; more interested than she admits early."
+    },
+    {
+      "id": "kabir",
+      "display_name": "Kabir Desai",
+      "role": "F1 Indian friend — flat-hunt panic",
+      "look": "Indian guy mid-20s, neat hair, glasses, joking smile, manhwa",
+      "notes": "Rent math comic relief."
+    },
+    {
+      "id": "arjun",
+      "display_name": "Arjun Nair",
+      "role": "F2 Indian friend — reads the room",
+      "look": "Indian guy mid-20s, casual tee, easygoing manhwa smile",
+      "notes": "Anti-third-wheel wingman."
+    },
+    {
+      "id": "wei",
+      "display_name": "Wei Zhang",
+      "role": "F3 Chinese friend with the car",
+      "look": "Chinese guy mid-20s, sensible jacket, car keys energy, manhwa",
+      "notes": "Drives early week; absence triggers tram meet-cute."
+    },
+    {
+      "id": "marcus",
+      "display_name": "Marcus Hale",
+      "role": "kind team manager late 30s",
+      "look": "white man late 30s, office polo, friendly calm manhwa face",
+      "notes": "Invites Rohan to lunch."
+    }
+  ],
+  "locations": [
+    {
+      "id": "living_room",
+      "display_name": "Dad's living room",
+      "look": "Night interior, sofa, soft lamp, no book on laps",
+      "recurring": true
+    },
+    {
+      "id": "sjc_arrivals",
+      "display_name": "San Jose Airport arrivals",
+      "look": "California morning light, suitcase, arrivals hall"
+    },
+    {
+      "id": "grand_oriole_corridor",
+      "display_name": "Grand Oriole Hotel corridor",
+      "look": "Hotel hallway, phones with apartment listings"
+    },
+    {
+      "id": "hotel_room_rohan",
+      "display_name": "Rohan's hotel room",
+      "look": "Bed, ceiling stare, small room"
+    },
+    {
+      "id": "grand_oriole_lobby",
+      "display_name": "Grand Oriole Lobby",
+      "look": "Wide lobby, time-slow first look at Elena"
+    },
+    {
+      "id": "light_rail",
+      "display_name": "Bay Area light rail / tram",
+      "look": "Platform and car, silence, meet-cute"
+    },
+    {
+      "id": "meridian_campus",
+      "display_name": "Meridian Soft Bay Campus",
+      "look": "Office campus, cafeteria, lunch tables"
+    },
+    {
+      "id": "hotel_dining",
+      "display_name": "Hotel dining / lobby late",
+      "look": "Warm hotel public space, walks, cancelled club night"
+    },
+    {
+      "id": "elena_room",
+      "display_name": "Elena's hotel room",
+      "look": "Movie night, tender, closed door privacy"
+    }
+  ],
+  "panels": [
+    {
+      "n": 1,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT · Living room · after dinner",
+      "scene": "Living-room sofa at night, soft lamp. Dad sits beside Maya — no book — knees almost touching. Maya grins sideways; Dad already looks doomed.",
+      "emotion": "playful, warm",
+      "dialogue": "Maya: Okay. Spill. How did you actually meet Mom?\nDad: ...You sure you want the full version? It's embarrassing.\nMaya: Perfect. I live for your embarrassment."
+    },
+    {
+      "n": 2,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT · Living room",
+      "scene": "Close two-shot: Dad rubs the back of his neck; Maya leans in sparkling.",
+      "emotion": "teasing",
+      "dialogue": "Dad: Fine. Spring, years ago. Company sent me to the Bay Area office for two weeks.\nMaya: 'Two weeks' is always how these movies start. Continue, tragic hero."
+    },
+    {
+      "n": 3,
+      "location_id": "light_rail",
+      "characters": [],
+      "caption": "HOW I MET YOUR MOTHER · Episode 1 — Infatuation",
+      "scene": "Elegant title card: bay dusk skyline, tiny tram lights, soft feather motif.",
+      "emotion": "cinematic",
+      "dialogue": ""
+    },
+    {
+      "n": 4,
+      "location_id": "sjc_arrivals",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SATURDAY · March 8 · San Jose Airport · ~9:00 AM",
+      "scene": "Young Rohan exits arrivals with suitcase; California light hits curly hair. Tiny nervous sparkles around his eyes — excited and out of place.",
+      "emotion": "hopeful, overstimulated",
+      "dialogue": "Dad (V.O.): First Saturday I landed — jetlagged, pretending I knew what I was doing."
+    },
+    {
+      "n": 5,
+      "location_id": "grand_oriole_corridor",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "caption": "SATURDAY · March 8 · Grand Oriole Hotel corridor · afternoon",
+      "scene": "Hotel corridor: Rohan, Kabir, Arjun compare apartment listing screens; comic shock at rents.",
+      "emotion": "comic overload",
+      "dialogue": "Kabir: Bro, this rent can't be real.\nArjun: It is. Welcome to California math.\nRohan: We need a flat. And also... sleep."
+    },
+    {
+      "n": 6,
+      "location_id": "hotel_room_rohan",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SUNDAY · March 9 · Hotel room · late morning",
+      "scene": "Sunday: Rohan alone on hotel bed staring at ceiling; boredom lines; phone idle.",
+      "emotion": "restless loneliness",
+      "dialogue": "Dad (V.O.): Sunday I was so bored I went downstairs just to walk in circles like a professional circle-walker."
+    },
+    {
+      "n": 7,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 9 · Grand Oriole Lobby · ~11:20 AM",
+      "scene": "Lobby panorama — time slows. Across the space: Elena in Meridian Soft tee, tall, baby-cut brunette, pretty — looking at her phone. Rohan freezes mid-step.",
+      "emotion": "love-at-first-sight jolt",
+      "dialogue": "Dad (V.O.): That was the first time I saw her face.\nMaya (inset): Mom in a company tee? Immediate legend status."
+    },
+    {
+      "n": 8,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SUNDAY · March 9 · Lobby · internal beat",
+      "scene": "Extreme close-up of Rohan's eyes reflecting Elena; tiny butterflies hatch around his temples.",
+      "emotion": "infatuation ignition",
+      "dialogue": "Dad (V.O.): Curly-hair IT guy brain: short-circuit. Pretty. Tall. Same company shirt. Dangerous combination."
+    },
+    {
+      "n": 9,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 9 · Lobby",
+      "scene": "Rohan introduces himself awkwardly; Elena gives a cool reserved glance — could be shy or cold.",
+      "emotion": "awkward crush",
+      "dialogue": "Rohan: Hi— uh— same company? I'm Rohan. Meridian Soft...\nElena: Elena.\nDad (V.O.): That look. Condescending? Or did I invent it because pretty girls scramble me?"
+    },
+    {
+      "n": 10,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT · Living room",
+      "scene": "Present: Maya covers mouth laughing; Dad covers face with both hands.",
+      "emotion": "daughter roast",
+      "dialogue": "Maya: You disliked her AND liked her? Multitasking!\nDad: Don't put that on a poster.\nMaya: Mental billboard. High resolution."
+    },
+    {
+      "n": 11,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "wei",
+        "rohan",
+        "kabir",
+        "arjun"
+      ],
+      "caption": "MONDAY · March 10 · Hotel curb · ~8:15 AM",
+      "scene": "Monday curb: Wei's car; Rohan Kabir Arjun pile in; Wei confident at wheel.",
+      "emotion": "grateful energy",
+      "dialogue": "Wei: Hop in. Office express.\nRohan: Wei, you are the hero of mornings."
+    },
+    {
+      "n": 12,
+      "location_id": "light_rail",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "TUESDAY · March 11 · City light-rail stop · ~8:05 AM",
+      "scene": "Tuesday transit stop alone: no Wei. Soft wind. Destiny ripple lines around Rohan's shoes.",
+      "emotion": "fateful quiet",
+      "dialogue": "Dad (V.O.): Tuesday — Wei couldn't drive us. A tiny change. Destiny wears casual clothes."
+    },
+    {
+      "n": 13,
+      "location_id": "light_rail",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 11 · Light-rail platform",
+      "scene": "Platform: Elena in white-and-blue with a pretty hat — morning light turns cinematic. Rohan's pupils widen; sparkles.",
+      "emotion": "infatuation spike",
+      "dialogue": "Dad (V.O.): And there she was again. White and blue. That hat. I forgot how to be a person."
+    },
+    {
+      "n": 14,
+      "location_id": "light_rail",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 11 · Light rail · morning commute",
+      "scene": "Tram interior: Rohan manages a tiny intro then becomes a statue; silence drawn as comic panels between them.",
+      "emotion": "nervous comedy",
+      "dialogue": "Rohan: Hi... again. Rohan.\nElena: Morning.\nDad (V.O.): Then — silence. Olympic silence. My mouth filed a resignation letter."
+    },
+    {
+      "n": 15,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya freezes face like statue Rohan; Dad groans.",
+      "emotion": "playful roast",
+      "dialogue": "Maya: Strategy: exist silently near crush.\nDad: It was... presence.\nMaya: It was cowardice with good hair."
+    },
+    {
+      "n": 16,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "caption": "TUESDAY · March 11 · Meridian Soft Bay Campus · daytime",
+      "scene": "Office day-one montage: Marcus handshake, badge scan, laptop — Rohan sweaty but trying.",
+      "emotion": "first-day nerves",
+      "dialogue": "Marcus: Welcome aboard, Rohan. Lunch later?\nRohan: Thank you, sir— I mean Marcus— I mean— okay."
+    },
+    {
+      "n": 17,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 12 · Hotel lobby · morning",
+      "scene": "Wednesday lobby: both wait for rideshare; quiet stretches like elastic; Rohan's hands fidget.",
+      "emotion": "tense quiet",
+      "dialogue": "Dad (V.O.): Wednesday. Lobby again. Same quiet. Saying 'hi' felt like climbing a mountain in flip-flops."
+    },
+    {
+      "n": 18,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "marcus"
+      ],
+      "caption": "WEDNESDAY · March 12 · Office cafeteria · lunch",
+      "scene": "Cafeteria: Marcus waves; Rohan arrives late with tray; table full — soft panic.",
+      "emotion": "mild panic",
+      "dialogue": "Marcus: Rohan! We saved— wait, we filled up.\nDad (V.O.): Late again. Destiny... or bad cafeteria timing. Same thing that week."
+    },
+    {
+      "n": 19,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 12 · Cafeteria · lunch",
+      "scene": "Rohan sits across Elena alone at small table — soft spotlight between trays.",
+      "emotion": "first real talk",
+      "dialogue": "Rohan: Mind if I sit? We keep... existing near each other in lobbies.\nElena: Sure."
+    },
+    {
+      "n": 20,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 12 · Cafeteria",
+      "scene": "Talk beat: Rohan animated with hands about California smiling culture; Elena listening, faint smile blooming.",
+      "emotion": "warming",
+      "dialogue": "Rohan: People here smile at strangers like it's a sport.\nElena: You're new. Give it a week.\nRohan: A week of smiling — or panicking?"
+    },
+    {
+      "n": 21,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 12 · Cafeteria · mid-lunch",
+      "scene": "Feeling close-up: Rohan watching her listen more than talk — manhwa soft focus on her lashes.",
+      "emotion": "tender observation",
+      "dialogue": "Dad (V.O.): She listened more than she spoke. I liked that. Quiet isn't empty — sometimes it's careful."
+    },
+    {
+      "n": 22,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "elena",
+        "rohan"
+      ],
+      "caption": "WEDNESDAY · March 12 · Office curb · evening",
+      "scene": "Evening curb: Elena enters cab alone; Wei's text about flat hunt. Rohan torn silhouette.",
+      "emotion": "soft regret",
+      "dialogue": "Dad (V.O.): Wei left early for apartments. She rode alone. I told myself it was fine.\nMaya (inset): Your face is lying to Future You."
+    },
+    {
+      "n": 23,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "THURSDAY · March 13 · Hotel dining lobby · ~7:10 PM",
+      "scene": "Thursday dinner: Rohan alone at hotel restaurant — introvert fortress with phone.",
+      "emotion": "lonely introvert",
+      "dialogue": "Dad (V.O.): Thursday I sat alone. Not because I disliked people — because girls, even platonically, scrambled my confidence."
+    },
+    {
+      "n": 24,
+      "location_id": "hotel_dining",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "THURSDAY · March 13 · Hotel dining · evening",
+      "scene": "Elena sits opposite unexpectedly — electric crackle doodles; Rohan jolts; butterflies explode.",
+      "emotion": "electric crush",
+      "dialogue": "Elena: Hi.\nRohan: —!\nDad (V.O.): She sat across from me. My heart rebooted incorrectly."
+    },
+    {
+      "n": 25,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya making zap sound effects with fingers; Dad smiling helplessly.",
+      "emotion": "tease + soft pride",
+      "dialogue": "Maya: BZZT. Crush.exe has crashed.\nDad: It crashed into a better version of me."
+    },
+    {
+      "n": 26,
+      "location_id": "hotel_dining",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "THURSDAY · March 13 · Hotel dining · ~7:10–9:10 PM",
+      "scene": "Long dinner montage feeling: plates emptier, clocks melt ~2 hours, laughter lines, eyes soft.",
+      "emotion": "sparkling connection",
+      "dialogue": "Dad (V.O.): Two hours. Work. Random things. Easy and terrifying — like learning to swim mid-ocean."
+    },
+    {
+      "n": 27,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "THURSDAY · March 13 · Downtown streets · night",
+      "scene": "Night street walk under lamps; Elena gestures keep walking; Rohan would walk forever.",
+      "emotion": "romantic stroll",
+      "dialogue": "Elena: One more block?\nRohan: Okay.\nElena: ...Okay one more?\nDad (V.O.): She kept insisting we walk. I would've walked to Oregon."
+    },
+    {
+      "n": 28,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "THURSDAY · March 13 · Night walk",
+      "scene": "Walk feeling panel: sideways glance — is this friendship? His fingers twitch near hers and retreat.",
+      "emotion": "confused longing",
+      "dialogue": "Rohan (thought): Don't read too much. Don't read too little. Why is there no manual?\nDad (V.O.): I wanted to know how girls think — and somehow the answer was walking beside one."
+    },
+    {
+      "n": 29,
+      "location_id": "hotel_room_rohan",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "caption": "THURSDAY · March 13 · Friends' hotel room · ~11:20 PM",
+      "scene": "Hotel hallway: Rohan bursts into friends' room gushing; Kabir Arjun Wei roast him.",
+      "emotion": "comic excitement",
+      "dialogue": "Rohan: Guys. There's a girl.\nKabir: There are many girls.\nRohan: No — a girl girl.\nArjun: Oh no. He's gone.\nWei: Destiny hours."
+    },
+    {
+      "n": 30,
+      "location_id": "hotel_room_rohan",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "THURSDAY night → FRIDAY · 12:00 AM · Hotel room",
+      "scene": "Rohan asleep peaceful; phone lights with Elena's follow request — unseen. Dramatic irony sparkles.",
+      "emotion": "dramatic irony",
+      "dialogue": "Dad (V.O.): Slept like a baby at midnight. Phone got a follow request... and I — genius — had deleted the app a year ago."
+    },
+    {
+      "n": 31,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya facepalms so hard the couch shakes.",
+      "emotion": "max roast",
+      "dialogue": "Maya: You DELETED the app?\nDad: I was living pure. Offline. Philosophical.\nMaya: You were living romantic stupid. Cute stupid, but stupid."
+    },
+    {
+      "n": 32,
+      "location_id": "hotel_room_rohan",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "FRIDAY · March 14 · Afternoon → evening · Hotel room",
+      "scene": "Friday afternoon: Rohan glowing while getting ready; phone shows Elena invite to club Friday eve.",
+      "emotion": "excited peak",
+      "dialogue": "Elena (text): Club tonight? Friends going — come!\nRohan (text): Yes!! Excited to meet everyone!\nDad (V.O.): I got ready like it was a wedding. Heart doing cartwheels."
+    },
+    {
+      "n": 33,
+      "location_id": "hotel_room_rohan",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "FRIDAY · March 14 · Evening · Hotel room",
+      "scene": "Phone close-up: later text — too many people, maybe skip. Rohan's face cracks; little dark rain.",
+      "emotion": "hurt",
+      "dialogue": "Elena (text): Actually... lots of people. Maybe skip tonight?\nDad (V.O.): Cancelled. Upset. Almost angry. Thumb hovered over delete contact."
+    },
+    {
+      "n": 34,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present careful: Dad softer; Maya quieter but still herself.",
+      "emotion": "sincere",
+      "dialogue": "Dad: Then I criticized myself. Acquaintance — not entitled to her Friday.\nMaya: Grown-up Dad speaking. Rare form.\nDad: I performed grown-up by lying I was 'busy' the next day."
+    },
+    {
+      "n": 35,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "arjun"
+      ],
+      "caption": "SATURDAY · March 15 · Day · city sidewalk",
+      "scene": "Saturday day: Rohan with Arjun walking 'fine'; thought bubbles of Elena cancelled club.",
+      "emotion": "pretend-okay comedy",
+      "dialogue": "Arjun: You okay?\nRohan: Busy. Very busy. Busy with busy-ness.\nArjun: ...You're upset."
+    },
+    {
+      "n": 36,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "caption": "SATURDAY · March 15 · Hotel dining lobby · evening",
+      "scene": "Saturday hotel dining lobby: Elena approaches Rohan + Arjun; apologetic soft eyes.",
+      "emotion": "apology warmth",
+      "dialogue": "Elena: Rohan — I'm sorry about last night. Can I make it up?\nRohan: Uh— this is Arjun.\nArjun: Hi. Friendly obstacle. Nice to meet you."
+    },
+    {
+      "n": 37,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "elena",
+        "rohan",
+        "arjun"
+      ],
+      "caption": "SATURDAY · March 15 · Lobby",
+      "scene": "Movie invite; Rohan asks Arjun; Arjun declines with subtle wink away from Elena.",
+      "emotion": "wingman comedy",
+      "dialogue": "Elena: Theater nearby — want to watch something?\nRohan: Arjun, you in?\nArjun: Busy. Deeply busy. Ancient busy. You two go... as friends."
+    },
+    {
+      "n": 38,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SATURDAY · March 15 · Lobby",
+      "scene": "Rohan scrolling to invite Kabir/Wei; Elena gently places hand on his phone — softness zoom.",
+      "emotion": "hint blindness",
+      "dialogue": "Rohan: Wait I can ping Kabir—\nElena: No need.\nDad (V.O.): Hand on my phone. Brain typed FRIENDS. Destiny typed DATE??"
+    },
+    {
+      "n": 39,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present roast panel — Maya pointing at imaginary whiteboard labeled 'HINTS YOU MISSED'.",
+      "emotion": "tease",
+      "dialogue": "Maya: Mom said 'no need' and you still held a friendship press conference?\nDad: Allergic to implications.\nMaya: Get an epipen for romance."
+    },
+    {
+      "n": 40,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SATURDAY · March 15 · Hotel hallway · ~9:40 PM",
+      "scene": "Hallway: Rohan invents tiredness; Elena reads him; invites movie in her room — just us.",
+      "emotion": "shocked yes",
+      "dialogue": "Rohan: I'm tired. Sleep. Definitely sleep.\nElena: What are you actually going to do?\nRohan: ...Watch a movie.\nElena: Then watch in my room. Just us."
+    },
+    {
+      "n": 41,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SATURDAY · March 15 · Rohan's room",
+      "scene": "Rohan in his room grabbing iPad Pro — freeze-frame terror, sweat drops, butterfly storm.",
+      "emotion": "scared butterflies",
+      "dialogue": "Dad (V.O.): Best part — I was terrified.\nMaya (present): Of Mom?\nDad: Of accidentally becoming a person who sits on a bed near a crush."
+    },
+    {
+      "n": 42,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SATURDAY · March 15 · Elena's hotel room · night",
+      "scene": "Elena's room: Rohan plants iPad on desk far away like a professional; Elena points to bed.",
+      "emotion": "awkward comedy",
+      "dialogue": "Rohan: Desk is good. Cinema of professionalism.\nElena: Bed's better. Come on."
+    },
+    {
+      "n": 43,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SATURDAY night · Elena's room",
+      "scene": "On bed edge plugging charger; Elena scoots closer for the screen — distance collapses; butterflies fill room air.",
+      "emotion": "intense crush",
+      "dialogue": "Dad (V.O.): She came closer so she could see. I froze. Every butterfly in California moved into my stomach."
+    },
+    {
+      "n": 44,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SATURDAY night · ~10:30 PM–1:00 AM · Elena's room · movie: Night Watchman",
+      "scene": "Watching soft-horror Night Watchman: jump scare; Elena jolts closer, almost head on shoulder; water bottle; comic stomach growl bubbles.",
+      "emotion": "cozy scare romance",
+      "dialogue": "SFX: JUMP!\nElena: —!\nDad (V.O.): Every scare: closer. Almost her head on my shoulder. She drank water like dinner forgot her. Her stomach growled. Weirdly adorable."
+    },
+    {
+      "n": 45,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SATURDAY night · Elena's room · internal",
+      "scene": "Rohan thought storm overlay: hints? friendship? romance? manhwa question-mark rain.",
+      "emotion": "internal chaos",
+      "dialogue": "Rohan (thought): Is she giving hints?\nAm I failing Hint Class?\nIs this friendship with jump scares?\nDad (V.O.): Confused. Crushed. Still sitting like a gentleman statue."
+    },
+    {
+      "n": 46,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya whispering like gossip show host.",
+      "emotion": "tease",
+      "dialogue": "Maya: Head. Nearly. On. Shoulder.\nDad: I know.\nMaya: And you did... statues?\nDad: Elite statues."
+    },
+    {
+      "n": 47,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "SUNDAY · March 16 · 2:00 AM → 4:01 AM → 7:00 AM",
+      "scene": "2AM Rohan returns; can't sleep; 4AM text from Elena can't sleep either — soft phone glow.",
+      "emotion": "hope blooming",
+      "dialogue": "Elena (text, 4:01 AM): Still awake. That movie ruined me.\nDad (V.O.): Woke at seven, saw it, and thought — wait. Maybe...?"
+    },
+    {
+      "n": 48,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "caption": "SUNDAY · March 16 · Morning–1:00 PM · apartment search",
+      "scene": "Flat hunting till 1PM with friends; Elena excited movie texts overlay between rental disasters.",
+      "emotion": "busy joy",
+      "dialogue": "Kabir: This closet is pretending to be a bedroom.\nElena (text): Still on for movie later??\nRohan (text): YES."
+    },
+    {
+      "n": 49,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 16 · ~3:00 PM · Silverleaf Mall approach",
+      "scene": "Walking to Silverleaf Mall theater in sun — side by side; soft cinematic widen.",
+      "emotion": "movie-date glow",
+      "dialogue": "Dad (V.O.): Walked to the theater. The whole afternoon felt like a scene someone wrote for me."
+    },
+    {
+      "n": 50,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 16 · Starbucks · pre-movie",
+      "scene": "Starbucks: tissue falls; both dive; forehead bump; shared smile — spark line through Rohan's stomach.",
+      "emotion": "sweet collide",
+      "dialogue": "SFX: bonk\nElena: Ow—\nRohan: Sorry—!\nBoth: ...\nDad (V.O.): That smile went straight through my stomach."
+    },
+    {
+      "n": 51,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya softens, hand over heart dramatically.",
+      "emotion": "warm",
+      "dialogue": "Maya: Okay that was illegally cute.\nDad: Right? I still replay the head-bonk in 4K."
+    },
+    {
+      "n": 52,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 16 · Cinema · afternoon showing",
+      "scene": "Dark theater: sitting close; Rohan's hand hovers near hers — almost — retreats.",
+      "emotion": "almost-touch tension",
+      "dialogue": "Dad (V.O.): In the dark: Do I put my hand on hers?\nMaya (present): Dad. The answer was yes.\nDad: I know that NOW."
+    },
+    {
+      "n": 53,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 16 · Theater plaza · late afternoon",
+      "scene": "Outside theater: Rohan asks for social; Elena already sent; gentle roast energy.",
+      "emotion": "cute comedy",
+      "dialogue": "Rohan: Can I get your... social?\nElena: I already sent it. Days ago.\nRohan: I deleted the app. Philosophically.\nElena: Reinstall philosophy, Rohan."
+    },
+    {
+      "n": 54,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "SUNDAY · March 16 · Evening → night",
+      "scene": "Evening montage: dinner, walk, second movie in her room — 'best day' stamp glowing.",
+      "emotion": "peak happiness",
+      "dialogue": "Dad (V.O.): Dinner. Walk. Another movie in her room. Best day of the trip. Felt like a date... even while I refused the word."
+    },
+    {
+      "n": 55,
+      "location_id": "meridian_campus",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "MONDAY · March 17 · Campus + hotel · day–evening",
+      "scene": "Monday campus: lunch together, hallway waves between breaks — unlabeled couple energy.",
+      "emotion": "comfortable closeness",
+      "dialogue": "Dad (V.O.): Monday — breaks, lunch, leave together, dinner, walk. A ritual was forming."
+    },
+    {
+      "n": 56,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "MONDAY · March 17 · Night · Elena's room",
+      "scene": "Hotel room: watching Rohan's pick — soft Indian romantic Roja vibes (tasteful); warm scenes → they glance at each other then look away.",
+      "emotion": "charged silence",
+      "dialogue": "Dad (V.O.): Alternate-day rule. My choice: Roja. When warm scenes came... we looked. Silently. Then pretended the wall was fascinating."
+    },
+    {
+      "n": 57,
+      "location_id": "grand_oriole_lobby",
+      "characters": [],
+      "caption": "COUNTDOWN · Rohan checks out Thu morning (Mar 20) · Elena Fri (Mar 21)",
+      "scene": "Graphic: hotel checkout countdown as a ticking heart calendar.",
+      "emotion": "ticking dread",
+      "dialogue": ""
+    },
+    {
+      "n": 58,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya counting on fingers.",
+      "emotion": "tease",
+      "dialogue": "Maya: So your brain: movies good / labeling feelings bad.\nDad: Accurate. Painfully accurate."
+    },
+    {
+      "n": 59,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "kabir",
+        "arjun",
+        "wei"
+      ],
+      "caption": "TUESDAY · March 18 · Office break area · daytime",
+      "scene": "Tuesday: Rohan can't work; friends huddle advice — ask her clear.",
+      "emotion": "anxious counsel",
+      "dialogue": "Kabir: Ask. Friend or more.\nWei: Clear is kind.\nArjun: Or die of confusion — also popular.\nRohan: If I ask, it might get awkward forever."
+    },
+    {
+      "n": 60,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "TUESDAY · March 18 · Desk · daytime",
+      "scene": "Rohan at desk staring at code he cannot see — Elena silhouette in thoughts.",
+      "emotion": "distracted longing",
+      "dialogue": "Dad (V.O.): Whole day unproductive. Heart louder than keyboard."
+    },
+    {
+      "n": 61,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · ~9:30 PM · Elena's room",
+      "scene": "Tuesday night Forrest Gump glow; comfortable until phone rings.",
+      "emotion": "calm before storm",
+      "dialogue": "Dad (V.O.): Night. Her movie — Forrest Gump. Beautiful. Then her brother called."
+    },
+    {
+      "n": 62,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · During call",
+      "scene": "Elena on phone lies 'lots of friends' while Rohan alone beside her — hurt then courage rising.",
+      "emotion": "soft sting → resolve",
+      "dialogue": "Elena (on phone): Yeah, just hanging out with a bunch of friends.\nDad (V.O.): I was the only bunch. That lie opened a door. Honesty walked through."
+    },
+    {
+      "n": 63,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · After call",
+      "scene": "After call: Rohan gentle confrontation — last movie as friends vs long future of movies.",
+      "emotion": "heart-on-sleeve",
+      "dialogue": "Rohan: Why did you lie?\nElena: ...\nRohan: Hey — this might be our last movie as friends... or the start of movies together for a long, long future."
+    },
+    {
+      "n": 64,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Elena's room",
+      "scene": "Elena shocked: wasn't interested at first; Rohan sad awkward; gut still whispers she cares.",
+      "emotion": "shock / hurt",
+      "dialogue": "Elena: I wasn't interested in you at first.\nRohan: ...Oh.\nDad (V.O.): Sad. Awkward. Gut still whispered she cared."
+    },
+    {
+      "n": 65,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Elena's room",
+      "scene": "She says get out; he stays, takes her hand, kneels sincerely — earnest not wedding parody.",
+      "emotion": "vulnerable courage",
+      "dialogue": "Elena: Get out first.\nRohan: I won't. Please hear me.\nDad (V.O.): I took her hand. Knelt — not for theater. For truth."
+    },
+    {
+      "n": 66,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Elena's room",
+      "scene": "Elena: scared of dating after friends' heartbreaks; Rohan: we pull each other up when we fight.",
+      "emotion": "sincere negotiation",
+      "dialogue": "Elena: I'm scared. I've watched friends shatter.\nRohan: Breakups happen when people stop pulling each other up. If we fight, we pull. We learn each other. Accept me — for dating."
+    },
+    {
+      "n": 67,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Elena's room",
+      "scene": "Close-up: Rohan names LIMBO DATE — manhwa title-card energy on the phrase.",
+      "emotion": "thesis moment",
+      "dialogue": "Rohan: Call it a Limbo Date. Not nothing. Not everything. The honest middle — tell me how you really feel.\nElena: ...Limbo Date?"
+    },
+    {
+      "n": 68,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Late",
+      "scene": "Elena admits little interest but too early; Rohan: better early than late; answer by tomorrow dinner.",
+      "emotion": "hopeful honesty",
+      "dialogue": "Elena: I had a little interest... but it felt too early.\nRohan: Better early than late. Bad at flirting. Good at honesty. Think tonight. Tell me at tomorrow's dinner."
+    },
+    {
+      "n": 69,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "TUESDAY · March 18 · Hallway / her room · late",
+      "scene": "Awkward hallway exit; Elena alone conflicted on bed; Rohan's silhouette walking away small.",
+      "emotion": "aftermath hush",
+      "dialogue": "Dad (V.O.): Left awkwardly — like a man who put his heart on the carpet and hoped nobody stepped on it."
+    },
+    {
+      "n": 70,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT",
+      "scene": "Present: Maya wiped-eyed still roasting.",
+      "emotion": "soft tease",
+      "dialogue": "Maya: You KNEELED?\nDad: Respectfully!\nMaya: Mom must've thought you were proposing to the carpet.\nDad: ...Possibly."
+    },
+    {
+      "n": 71,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan"
+      ],
+      "caption": "WEDNESDAY · March 19 · Office daytime",
+      "scene": "Wednesday: Elena WFH; empty office chair; Rohan restless pacing thoughts.",
+      "emotion": "anxious waiting",
+      "dialogue": "Dad (V.O.): She didn't come to campus. Worked from hotel. I respected space. My stomach did not."
+    },
+    {
+      "n": 72,
+      "location_id": "hotel_dining",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 19 · Hotel dining · evening",
+      "scene": "Dinner: Elena careful — stay in contact, don't talk about yesterday; Rohan happy but senses uneven footing.",
+      "emotion": "bittersweet relief",
+      "dialogue": "Elena: Let's stay in contact. But please — not last night's talk. Not tonight.\nRohan: Okay. I can do that.\nDad (V.O.): Happy. She looked careful. Something unfinished."
+    },
+    {
+      "n": 73,
+      "location_id": "grand_oriole_lobby",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 19 · Night walk near hotel",
+      "scene": "Night walk: Forrest Gump feather / opportunity speech; Elena soft-shocked.",
+      "emotion": "tender breakthrough",
+      "dialogue": "Rohan: Forrest Gump — that feather. Great relationships are like opportunity. They float by. I didn't want to waste it. That's why I asked early.\nElena: ...You remembered that?\nDad (V.O.): Soft-shocked. The good kind."
+    },
+    {
+      "n": 74,
+      "location_id": "elena_room",
+      "characters": [
+        "rohan",
+        "elena"
+      ],
+      "caption": "WEDNESDAY · March 19 · Night · Elena's room",
+      "scene": "Movie night different energy — knowing glances; truth in the room; quiet victory smiles.",
+      "emotion": "quiet victory",
+      "dialogue": "Dad (V.O.): Movie as usual. Different. The truth sat between us. Phase one — honesty — somehow worked. I was solitary... but willing to understand."
+    },
+    {
+      "n": 75,
+      "location_id": "living_room",
+      "characters": [
+        "dad",
+        "daughter"
+      ],
+      "caption": "PRESENT · Living room · late",
+      "scene": "Present close: Maya leans head on Dad's shoulder; both soft lamp-lit.",
+      "emotion": "warm cliffhanger",
+      "dialogue": "Dad: Lots happened after that...\nMaya: Part Two. Tomorrow. Non-negotiable. Bring snacks for my emotional damage.\nDad: Deal."
+    },
+    {
+      "n": 76,
+      "location_id": "grand_oriole_lobby",
+      "characters": [],
+      "caption": "END OF EPISODE 1 — INFATUATION · TO BE CONTINUED IN PART 2",
+      "scene": "End card: white feather drifting through warm hotel hallway; To Be Continued.",
+      "emotion": "cinematic",
+      "dialogue": ""
+    }
+  ]
+}

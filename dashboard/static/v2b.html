@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ComicEngine · Version 2B</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <p class="brand"><span class="brand-name">ComicEngine</span> <span class="beta-pill">Beta</span></p>
+      <h1>Version 2B · 3D-previs track</h1>
+    </div>
+    <div class="status nav-links">
+      <a class="btn" href="/admin">Stats</a>
+      <a class="btn" href="/analytics">Analytics</a>
+      <a class="btn" href="/library">Library</a>
+      <a class="btn" href="/roi">ROI</a>
+      <a class="btn" href="/v2a">Version 2A</a>
+      <a class="btn tab on" href="/v2b">Version 2B</a>
+      <a class="btn" href="#architecture">Diagrams</a>
+      <a class="btn" href="/v2b/architecture">Arch md</a>
+      <a class="btn" href="/v2b/source-plan">Source plan</a>
+      <button type="button" class="btn" id="refreshBtn">Refresh</button>
+      <span id="updated">loading…</span>
+    </div>
+  </header>
+
+  <p class="lede v2a-lede" id="lede">Parallel to Version 2 and 2A. The 3D spec is the camera; ComfyUI stylizes under ControlNet.</p>
+  <section class="kpis" id="kpis"></section>
+
+  <section class="v2a-arch" id="architecture">
+    <div class="tasks-head">
+      <h2>Architecture</h2>
+      <div class="tasks-meta"><span class="muted small" id="archHint">3D spec owns composition</span></div>
+    </div>
+    <div class="v2a-arch-tabs" role="tablist">
+      <button type="button" class="btn tab on" data-arch="pipeline">2B pipeline</button>
+      <button type="button" class="btn tab" data-arch="vs">vs 2A / vs 2</button>
+      <button type="button" class="btn tab" data-arch="panel">one panel / AOVs</button>
+      <button type="button" class="btn tab" data-arch="route">routing</button>
+    </div>
+
+    <div class="v2a-arch-pane on" data-pane="pipeline">
+      <p class="muted small">Code-first. Headless bpy, not live MCP. Highlight follows the active phase.</p>
+      <div class="v2a-flow" id="pipelineFlow">
+        <div class="v2a-node" data-phase="b1"><span class="v2a-node-k">B1</span><strong>Vertical slice</strong><em>room + primitive → PNG</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="b2"><span class="v2a-node-k">B2</span><strong>AOVs + ControlNet</strong><em>depth · Freestyle</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="b3"><span class="v2a-node-k">B3</span><strong>Style LoRA</strong><em>fixed weight</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="b4"><span class="v2a-node-k">B4</span><strong>Character LoRA</strong><em>3D turntable bootstrap</em></div>
+        <span class="v2a-chev" aria-hidden="true">→</span>
+        <div class="v2a-node" data-phase="b8"><span class="v2a-node-k">B8</span><strong>Best-of-N</strong><em>pairwise VLM</em></div>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="vs">
+      <p class="muted small">Three tracks. Do not merge programs. Version 2 stays frozen text/feedback.</p>
+      <div class="v2a-vs">
+        <article>
+          <h3>Version 2A — you draw</h3>
+          <div class="v2a-flow v2a-flow-col">
+            <div class="v2a-node dim"><strong>shot card</strong><em>camera in words</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>your sketch</strong><em>stick figure = camera</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>Gemini / fal</strong><em>direct .env APIs</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node dim"><strong>panel PNG</strong><em>ink/print · no restage</em></div>
+          </div>
+        </article>
+        <article>
+          <h3>Version 2B — 3D spec</h3>
+          <div class="v2a-flow v2a-flow-col">
+            <div class="v2a-node"><strong>panel spec</strong><em>JSON/YAML scene graph</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>headless Blender</strong><em>Cycles AOVs</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>ComfyUI HTTP</strong><em>SDXL + ControlNet</em></div>
+            <span class="v2a-chev">↓</span>
+            <div class="v2a-node"><strong>panel PNG</strong><em>geometry by construction</em></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="panel">
+      <p class="muted small">Blender emits the conditioning. ControlNet must follow it. Restaging the 3D camera is a fail.</p>
+      <div class="v2a-panel-diag">
+        <div class="v2a-locks">
+          <div class="v2a-node"><strong>beauty</strong><em>img2img base</em></div>
+          <div class="v2a-node"><strong>depth</strong><em>ControlNet-depth</em></div>
+          <div class="v2a-node"><strong>Freestyle</strong><em>ControlNet-lineart</em></div>
+          <div class="v2a-node"><strong>object-index</strong><em>character masks</em></div>
+        </div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>ComfyUI stylize</strong><em>SDXL · style LoRA · character LoRA later</em></div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>eval scorecard</strong><em>structure · identity · location · lighting</em></div>
+        <span class="v2a-chev v2a-chev-down">↓</span>
+        <div class="v2a-node v2a-node-wide"><strong>best-of-N</strong><em>pairwise VLM · not 1–10 scores</em></div>
+      </div>
+    </div>
+
+    <div class="v2a-arch-pane" data-pane="route">
+      <p class="muted small">Do not invert this. Images never go through OmniRoute. MCP is discovery only.</p>
+      <div class="v2a-vs">
+        <article>
+          <h3>Text — OmniRoute</h3>
+          <div class="v2a-node v2a-node-wide"><strong>localhost:20128</strong><em>captions · scripts if any · OmniRoute API key</em></div>
+        </article>
+        <article>
+          <h3>3D — Blender subprocess</h3>
+          <div class="v2a-node v2a-node-wide"><strong>blender -b -P</strong><em>4.2 LTS · Cycles · no live MCP in production</em></div>
+        </article>
+      </div>
+      <div class="v2a-vs" style="margin-top: 1rem;">
+        <article>
+          <h3>Stylize — ComfyUI local</h3>
+          <div class="v2a-node v2a-node-wide"><strong>localhost:8188</strong><em>/prompt + /ws · SDXL · never OmniRoute</em></div>
+        </article>
+        <article>
+          <h3>Optional API stylize</h3>
+          <div class="v2a-node v2a-node-wide"><strong>Google + fal from .env</strong><em>B4 bootstrap only · never OmniRoute</em></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="v2a-stores" id="stores">
+    <div class="tasks-head">
+      <h2>Data stores</h2>
+      <div class="tasks-meta"><span class="muted small">do not write 2B state into 2A files</span></div>
+    </div>
+    <div class="v2a-store-grid">
+      <article class="v2a-store">
+        <strong>2B program</strong>
+        <span class="beta-pill">JSON</span>
+        <code>data/v2b_program.json</code>
+      </article>
+      <article class="v2a-store">
+        <strong>V2A (separate)</strong>
+        <span class="beta-pill">JSON</span>
+        <code>data/v2a_program.json</code>
+      </article>
+      <article class="v2a-store">
+        <strong>V2 (frozen)</strong>
+        <span class="beta-pill">JSON</span>
+        <code>data/v2_program.json</code>
+      </article>
+      <article class="v2a-store">
+        <strong>HIMYM ep1</strong>
+        <span class="beta-pill">JSON</span>
+        <code>data/v2b/episodes/ep01.json</code>
+      </article>
+    </div>
+  </section>
+
+  <section class="tasks-wrap">
+    <div class="tasks-head">
+      <h2>Phases B0–B9</h2>
+      <div class="tasks-meta"><span id="phasePct">0%</span></div>
+    </div>
+    <div class="task-progress"><span id="phaseBar"></span></div>
+    <div id="phaseList" class="v2a-phase-list"></div>
+  </section>
+
+  <section class="stories-wrap">
+    <div class="tasks-head">
+      <h2>Test series</h2>
+      <div class="tasks-meta"><span id="sceneMeta">—</span></div>
+    </div>
+    <p class="muted small" id="sceneNote"></p>
+    <div id="sceneDetail" class="v2a-episode-list"></div>
+  </section>
+
+  <script src="/static/v2b.js"></script>
+  <footer class="site-footer">
+    <p>© 2026 Avinash Nandyala · ComicEngine</p>
+    <p class="muted small">Version 2B is a parallel track. Version 2 (12–20) stays frozen. Version 2A stays storyboard-first.</p>
+  </footer>
+</body>
+</html>
