@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """HIMYM ep1 panel 1 through Blender → ComfyUI.
 
-B2 (ControlNet) is the default when depth+lineart weights exist.
-Pass --b1 for the img2img-only vertical slice.
+B3 (ControlNet + locked style LoRA) is the default.
+Pass --b2 for ControlNet without LoRA, --b1 for img2img-only.
 """
 
 from __future__ import annotations
@@ -26,12 +26,27 @@ def main() -> int:
         help="Render Cycles AOVs and skip ComfyUI",
     )
     parser.add_argument(
+        "--comfy-only",
+        action="store_true",
+        help="Reuse existing AOVs; skip Blender",
+    )
+    parser.add_argument(
         "--b1",
         action="store_true",
         help="B1 img2img only (no ControlNet, camera A beauty)",
     )
+    parser.add_argument(
+        "--b2",
+        action="store_true",
+        help="B2 ControlNet without style LoRA",
+    )
     args = parser.parse_args()
-    out = run_panel(skip_comfy=args.blender_only, b1=args.b1)
+    out = run_panel(
+        skip_comfy=args.blender_only,
+        skip_blender=args.comfy_only,
+        b1=args.b1,
+        b2=args.b2,
+    )
     print(json.dumps(out, indent=2))
     return 0
 

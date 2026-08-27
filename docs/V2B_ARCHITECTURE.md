@@ -39,7 +39,7 @@ External research (citation, not code): [`docs/V2B_SOURCE_PLAN.md`](V2B_SOURCE_P
 | Stylize / ControlNet / LoRA infer | **Local ComfyUI** HTTP `/prompt` + `/ws` | `localhost:8188` — never OmniRoute |
 | Optional bootstrap stylize (B4) | **Direct provider APIs** | `GOOGLE_API_KEY`, fal from project `.env` |
 
-Never route Nano Banana / Flux / GPT-Image / SDXL / ComfyUI traffic through OmniRoute. Gemini text hellos stay direct Google. Image generation in 2B is local ComfyUI (SDXL workhorse) unless a later phase explicitly uses a direct API for dataset stylize.
+Never route Nano Banana / Flux / GPT-Image / SDXL / ComfyUI traffic through OmniRoute. Gemini text hellos stay direct Google. Image generation in 2B is local ComfyUI (SD 1.5 + ControlNet + style LoRA on this Mac; SDXL is the later ship stack) unless a later phase explicitly uses a direct API for dataset stylize.
 
 ---
 
@@ -71,9 +71,9 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 
 - **Python 3.11**, package under `src/comicengine/v2b/` (create in B1, not B0).
 - **Blender** invoked headless. Homebrew currently installs **5.2.1 LTS** (`/opt/homebrew/bin/blender`). Compass suggested 4.2 for addons we are not using; do not install Blender MCP into the pipeline.
-- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2 uses SD 1.5 ControlNet on MPS**; SDXL is the later ship stack (B3+), not this gate. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
-- **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB. FLUX.1-dev is non-commercial — do not ship on it. Optional later: FLUX.1-schnell or Qwen-Image (Apache 2.0).
-- **kohya_ss / sd-scripts** for SDXL LoRAs (B3–B4).
+- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2–B3 use SD 1.5 ControlNet + style LoRA on MPS**; SDXL is the later ship stack (B4+), not this machine. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
+- **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB — ship target when ControlNet fits. This Mac locks SD 1.5. FLUX.1-dev is non-commercial — do not ship on it.
+- **kohya_ss / sd-scripts** for character LoRAs (B4). Style LoRA for B3 was acquired, not trained.
 - **Eval:** DINOv2/CLIP identity; SSIM/LPIPS + depth/edge re-extract for structure; Qwen3-VL **pairwise** (not 1–10 scores) for lighting/aesthetic.
 - **Determinism:** pin seeds, sampler, steps, CFG, model/LoRA hashes. Content-hash cache skips unchanged specs.
 
@@ -101,7 +101,7 @@ A panel spec names location, character(s), camera, lights, seed. Headless `himym
 
 ### Layer 2 — ComfyUI stylize
 
-**B2 uses SD 1.5 ControlNet on MPS; SDXL later.** POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths ~0.55–0.8). Fixed checkpoint `v1-5-pruned-emaonly` + euler / seed 42. Style LoRA at a locked weight is B3 (SDXL). Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`. Never OmniRoute.
+**B3 locks an SD 1.5 style LoRA on MPS; SDXL later.** POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths 0.75 / 0.65), then `LoraLoader` at a locked weight. Checkpoint `v1-5-pruned-emaonly`, euler 18, CFG 6.5, seed 42, denoise 0.65. Style registry: [`data/v2b/lora/registry.json`](../data/v2b/lora/registry.json) (hash only; weights gitignored). Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`. Never OmniRoute.
 
 ### Layer 3 — Identity from the 3D model (B4)
 
@@ -127,6 +127,7 @@ N candidates per panel. Hard gates on structure and identity, then weighted rank
 - **Packet:** `data/v2b/episodes/ep01.json` (2B-owned). V1 phase4 JSON is the read-only source.
 - **B1 prove shot — panel 1 only:** living-room sofa at night, soft lamp. Dad sits beside Maya — no book — knees almost touching. Low-detail room + two seated primitives. Camera and key light locked in the spec. Output: `outputs/v2b/himym_ep01/panel_01.png`.
 - **B2 cameras:** `outputs/v2b/himym_ep01/cam_{a,b,c}/` (hero two-shot, closer, slight profile). Depth + GP lineart drive SD 1.5 ControlNet.
+- **B3 style:** same three cameras, locked `storybook_anime_lora` at strength 1.0. Gut-check is these framings, not 10 scenes (B8).
 - **Later:** B5 reuses Grand Oriole / lobby / tram locations from the same packet. B7 may sequence more of the 76. Do not render all 76 in B1.
 
 ---
@@ -135,7 +136,7 @@ N candidates per panel. Hard gates on structure and identity, then weighted rank
 
 - SDXL: CreativeML OpenRAIL++-M — commercial OK. Primary ship base.
 - FLUX.1-dev: non-commercial — avoid for a sellable product.
-- Train style/character LoRAs on our own or licensed art.
+- Train style/character LoRAs on our own or licensed art. B3 acquired `neonforestmist/sd15-storybook-anime-lora` (CreativeML OpenRAIL-M); SHA256 in `data/v2b/lora/registry.json`. Do not commit the `.safetensors`.
 - Invoke Blender as an external subprocess; do not redistribute Blender or ship a GPL addon unless we accept GPL on that addon.
 - InsightFace weights used by FaceID/InstantID/PuLID: non-commercial research terms — another reason LoRA-first.
 
@@ -158,7 +159,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0, B1, and B2 are complete. B3–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0–B3 are complete. B4–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 

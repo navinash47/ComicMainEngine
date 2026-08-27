@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B2
+\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B3
 \vspace{-0.6em}}
 
 \author{
@@ -426,7 +426,8 @@ Stylizer still restages (speech-bubble/cloak drift) --- expected without Control
 \paragraph{B2 ControlNet lock (2026-08-27).}
 Same panel, three cameras (\texttt{cam\_a} hero two-shot, \texttt{cam\_b} closer, \texttt{cam\_c} slight profile).
 Blender 5.2.1 Freestyle-as-pass is empty; lineart is Grease Pencil Line Art on black. Depth is inverted normalized Z (near=white). Index RGB: dad=R, maya=G.
-ComfyUI SD~1.5 multi-ControlNet on MPS (depth strength 0.75, lineart 0.65, denoise 0.45, seed 42). Local API spend \$0. SDXL waits for B3+.
+ComfyUI SD~1.5 multi-ControlNet on MPS (depth strength 0.75, lineart 0.65, denoise 0.45, seed 42). Local API spend \$0. SDXL waits until ControlNet fits.
+
 Cheap skimage structure (no Depth-Anything): mean SSIM(depth) $0.575$ vs hypothesis $0.7$ --- calibrated floor $0.53$. Mean edge IoU $0.368$. Visual geometry lock holds (sofa + two figures, no B1 restage).
 
 \begin{center}
@@ -438,6 +439,25 @@ Camera & SSIM(depth) & edge IoU \\
 cam\_a & 0.541 & 0.416 \\
 cam\_b & 0.513 & 0.293 \\
 cam\_c & 0.671 & 0.397 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{B3 style LoRA lock (2026-08-27).}
+Same three cameras, no Blender rerender. Acquired \texttt{neonforestmist/sd15-storybook-anime-lora} (CreativeML OpenRAIL-M; SHA256 \texttt{0304bb42\ldots e9b0}) because SDXL+ControlNet does not fit 16GB MPS.
+Locked on every ControlNet stylize: LoRA strength $1.0$, checkpoint \texttt{v1-5-pruned-emaonly}, euler 18, CFG $6.5$, seed 42, denoise $0.65$ (raised from B2 $0.45$ so the adapter shows through). Registry: \texttt{data/v2b/lora/registry.json}. Weights gitignored.
+Structure holds: mean SSIM(depth) $0.584$ (calibrated floor $0.53$); mean edge IoU $0.292$; mean pixel MAE vs B2 $0.047$. Local API spend \$0.
+Gut-check is these three framings, not a 10-scene VLM (B8). Style reads as storybook illustration on capsule meshes (warmer lamp, white spherical heads); ink-line faces wait on B4.
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\toprule
+Camera & SSIM(depth) & edge IoU & MAE vs B2 \\
+\midrule
+cam\_a & 0.559 & 0.276 & 0.039 \\
+cam\_b & 0.525 & 0.286 & 0.054 \\
+cam\_c & 0.669 & 0.314 & 0.048 \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -470,7 +490,7 @@ Public beta URLs expose comics widely --- keep admin password private; Upstash h
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
   \item Collect panel/story ratings from beta readers; harvest admin live people analytics for Version~2 priorities.
   \item Re-run \texttt{prepare\_admin\_site.py} (+ redeploy) whenever ledger/ROI snapshot must refresh.
-  \item Version~2 / Phase~12+: feature work driven by real reader feedback (not vanity NPS).
+  \item Version~2B B4: character LoRA from stylized 3D turntable (SD~1.5 on this Mac; SDXL later).
 \end{itemize}
 
 \section{Conclusion}
@@ -503,6 +523,7 @@ python scripts/build_report.py
 \item[2026-08-09 l] Phase~8.6: dual Vercel reader/admin + Upstash auth; thumbnails; live people analytics; Beta branding; ledger snapshot still $\approx$\$2.96 / 138 calls.
 \item[2026-08-27 a] Version~2B B0/B1: 3D-previs architecture freeze; HIMYM ep1 panel~1 Cycles$\rightarrow$ComfyUI SD~1.5; beauty seed MAE $0.0$.
 \item[2026-08-27 b] Version~2B B2: three-camera AOVs + SD~1.5 ControlNet; mean SSIM(depth) $0.575$ (calibrated floor $0.53$); visual geometry lock.
+\item[2026-08-27 c] Version~2B B3: locked SD~1.5 storybook style LoRA (strength $1.0$, denoise $0.65$); mean SSIM(depth) $0.584$; mean MAE vs B2 $0.047$.
 \end{description}
 
 \end{document}

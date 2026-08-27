@@ -2,9 +2,9 @@
   "program": {
     "version": "2B",
     "title": "Version 2B — 3D-previs pipeline (parallel to Version 2 and 2A)",
-    "active_phase_id": "b2",
-    "updated_at": "2026-08-27T07:40:00+00:00",
-    "updated_by": "b2-controlnet",
+    "active_phase_id": "b3",
+    "updated_at": "2026-08-27T18:05:00+00:00",
+    "updated_by": "b3-style-lora",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20) and Version 2A (data/v2a_program.json A0–A5). Do not edit those files from this track.",
       "3D spec is the composition contract. Headless Blender AOVs → local ComfyUI ControlNet. Not sketch-first (that is 2A).",
@@ -147,7 +147,7 @@
       "notes": [
         "Commit: phase-v2b-b2: Blender AOVs drive multi-ControlNet structure",
         "Skip StableGen — custom ComfyUI graph only",
-        "B2 stays SD 1.5 ControlNet on Mac MPS. SDXL is B3+.",
+        "B2 stays SD 1.5 ControlNet on Mac MPS. SDXL waits for a machine that fits ControlNet+SDXL.",
         "Blender 5.2 Freestyle-as-pass is empty; lineart is Grease Pencil Line Art on black, not canny-from-beauty. index_01.png is dad=R, maya=G.",
         "Outputs: outputs/v2b/himym_ep01/cam_{a,b,c}/{beauty,depth,lineart,normal,index,panel}_01.png",
         "Structure scorecard data/v2b/eval/himym_ep01_b2_structure.json: mean SSIM(depth) 0.575 (cheap skimage, no Depth-Anything); hypothesis 0.7 calibrated to 0.53. mean edge IoU 0.368. Visual geometry lock holds on all 3 cameras."
@@ -172,20 +172,28 @@
       "id": "b3",
       "title": "Style LoRA (Compass Phase 2)",
       "track": "product",
-      "status": "locked",
+      "status": "complete",
       "sort_order": 3,
       "exit_gate": "One style LoRA at fixed weight on every panel; locked checkpoint/sampler; style reads as intentional comic art, not default slop",
       "checklist": [
-        "Train or acquire one SDXL style LoRA; record hash in registry",
+        "Train or acquire one SD 1.5 style LoRA (SDXL ControlNet does not fit this 16GB MPS machine); record hash in registry",
         "Apply at fixed weight on every stylize call",
-        "Lock checkpoint, sampler, steps, CFG",
-        "Human gut-check across different scenes"
+        "Lock checkpoint, sampler, steps, CFG, denoise, seed",
+        "Human gut-check across 3 cameras of panel 1"
       ],
-      "checklist_done": [],
+      "checklist_done": [
+        "Train or acquire one SD 1.5 style LoRA (SDXL ControlNet does not fit this 16GB MPS machine); record hash in registry",
+        "Apply at fixed weight on every stylize call",
+        "Lock checkpoint, sampler, steps, CFG, denoise, seed",
+        "Human gut-check across 3 cameras of panel 1"
+      ],
       "blockers": [],
       "notes": [
         "Commit when done: phase-v2b-b3: lock style LoRA on every 2B panel",
-        "SDXL OpenRAIL++-M is the ship base. Do not ship on FLUX.1-dev."
+        "Acquired neonforestmist/sd15-storybook-anime-lora (CreativeML OpenRAIL-M). SHA256 0304bb42819790cf63f4125ac70cee60fda682cc5aa4bfb512bb9e3b1746e9b0. Weights gitignored.",
+        "Locked: v1-5-pruned-emaonly, euler 18, CFG 6.5, seed 42, denoise 0.65, LoRA strength 1.0. Denoise raised from B2 0.45 so the LoRA can show through ControlNet.",
+        "SDXL style LoRA remains the later ship path. Do not ship on FLUX.1-dev.",
+        "Gut-check is 3 cameras of panel 1, not 10 scenes (that is B8). Capsule meshes still read as illustrated blockout; ink-line faces wait on B4."
       ],
       "history": [
         {
@@ -193,9 +201,15 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-27T18:05:00+00:00",
+          "action": "completed",
+          "by": "b3-style-lora",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-27T18:05:00+00:00"
     },
     "b4": {
       "id": "b4",
@@ -402,13 +416,13 @@
         "title": "Infatuation",
         "story_goal": "Dad tells Maya how he met Mom: shy Rohan keeps crossing Elena on a Bay Area work trip until feelings are known.",
         "framework_goal": "76-panel consistency: living-room frame, hotel/lobby/tram locations, Rohan+Elena identity.",
-        "gate": "B2 locks panel 1 living-room two-shot on 3 cameras via depth+lineart ControlNet. Do not render all 76."
+        "gate": "B3 locks one SD 1.5 style LoRA on panel 1 (3 cameras). Do not render all 76."
       }
     ]
   },
   "test_scene": {
     "title": "HIMYM ep1 · panel 1 — living-room sofa",
-    "product_claim": "B2 (Compass Phase 1) ControlNet lock on the longest-episode prove shot. Later panels stay locked until B5–B7.",
+    "product_claim": "B3 (Compass Phase 2) style LoRA lock on the longest-episode prove shot. Later panels stay locked until B5–B7.",
     "description": "Night living room, soft lamp. Dad sits beside Maya on the sofa — no book — knees almost touching. Two seated primitives, locked camera and key light.",
     "fixture": "himym_ep01_panel_01",
     "episode_id": "himym_ep01",
