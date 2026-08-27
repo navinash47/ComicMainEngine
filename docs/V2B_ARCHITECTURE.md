@@ -71,10 +71,10 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 
 - **Python 3.11**, package under `src/comicengine/v2b/` (create in B1, not B0).
 - **Blender** invoked headless. Homebrew currently installs **5.2.1 LTS** (`/opt/homebrew/bin/blender`). Compass suggested 4.2 for addons we are not using; do not install Blender MCP into the pipeline.
-- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2–B3 use SD 1.5 ControlNet + style LoRA on MPS**; SDXL is the later ship stack (B4+), not this machine. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
+- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2–B4 use SD 1.5 ControlNet + LoRA on MPS**; SDXL is the later ship stack, not this machine. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
 - **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB — ship target when ControlNet fits. This Mac locks SD 1.5. FLUX.1-dev is non-commercial — do not ship on it.
-- **kohya_ss / sd-scripts** for character LoRAs (B4). Style LoRA for B3 was acquired, not trained.
-- **Eval:** cheap `grid_hist_8x8` identity until B4 (not DINOv2/CLIP weights in the project venv); SSIM(depth) structure floor 0.53; luminance hist + key-light side; Gemini Flash **pairwise** (not 1–10 scores). Compass named Qwen3-VL; G1 used `gemini-3.6-flash` direct `GOOGLE_API_KEY`. Never OmniRoute images.
+- **Character LoRA (B4):** diffusers + PEFT in `ComfyUI/.venv` (torch/MPS). Compass named kohya/SDXL; kohya-on-MPS is a time sink and SDXL+ControlNet does not fit. Style LoRA for B3 was acquired, not trained. Do not add torch to ComicEngine `.venv`.
+- **Eval:** `grid_hist_8x8` is log-only. B4 identity is DINOv2-small in `ComfyUI/.venv` (Dad holdout vs Dad sheet vs Maya), Gemini `same_person` fallback. SSIM(depth) structure floor 0.53; luminance hist + key-light side; Gemini Flash **pairwise** (not 1–10 scores). Compass named Qwen3-VL; G1 used `gemini-3.6-flash` direct `GOOGLE_API_KEY`. Never OmniRoute images.
 - **Determinism:** pin seeds, sampler, steps, CFG, model/LoRA hashes. Content-hash cache skips unchanged specs.
 
 ### Intended package (B1+, not this freeze)
@@ -83,8 +83,8 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 src/comicengine/v2b/
   blender/   # spec → bpy, AOVs, headless wrapper
   comfy/     # HTTP client + workflow JSON
-  lora/      # bootstrap + kohya (later)
-  eval/      # DINOv2/CLIP, structure, VLM pairwise
+  lora/      # registry + turntable bootstrap (train script: scripts/v2b_b4_train.py)
+  eval/      # DINOv2 (ComfyUI venv), structure, VLM pairwise
   pipeline/  # panel + storyboard orchestration
 data/v2b/    # specs, later assets (git-lfs/DVC)
 ```
@@ -101,15 +101,19 @@ A panel spec names location, character(s), camera, lights, seed. Headless `himym
 
 ### Layer 2 — ComfyUI stylize
 
-**B3 locks an SD 1.5 style LoRA on MPS; SDXL later.** POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths 0.75 / 0.65), then `LoraLoader` at a locked weight. Checkpoint `v1-5-pruned-emaonly`, euler 18, CFG 6.5, seed 42, denoise 0.65. Style registry: [`data/v2b/lora/registry.json`](../data/v2b/lora/registry.json) (hash only; weights gitignored). Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`. Never OmniRoute.
+**B3 locks an SD 1.5 style LoRA on MPS; SDXL later.** POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths 0.75 / 0.65 on panels; B4 bootstrap uses 0.55 / 0.45), then `LoraLoader` at a locked weight. Checkpoint `v1-5-pruned-emaonly`, euler 18, CFG 6.5, seed 42, denoise 0.65 on panels (0.40 on the character bootstrap). Style registry: [`data/v2b/lora/registry.json`](../data/v2b/lora/registry.json) (hash only; weights gitignored). B4 stacks a second Dad `LoraLoader`. Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`. Never OmniRoute.
 
 ### Layer 3 — Identity from the 3D model (B4)
 
-1. Render the character turntable (many angles, poses, expressions, lights).
-2. Stylize each render (img2img denoise ~0.4, ≥2 variants) so the LoRA learns identity, not the CG look.
-3. Train SDXL LoRA (kohya). Held-out cameras for eval.
+Capsules cannot be the dataset (a LoRA of blobs stays blobs). B4 replaces them with **block humanoids** (Dad: sweater + curly hair spheres; Maya: hoodie + ponytail) and writes AOVs under `outputs/v2b/himym_ep01/b4/` so G1 `cam_{a,b,c}` stays frozen.
 
-IP-Adapter / InstantID / PuLID are fallbacks only (InsightFace terms + photoreal bias).
+1. Standing Dad turntable (no sofa): 12 azimuths × 2 elevations, or `--quick` 8 views. Optional 4 Maya standing views as a contrast set, not a Maya LoRA.
+2. Stylize with the locked B3 style LoRA but **weaker** ControlNet: denoise **0.40**, depth 0.55, lineart 0.45, seeds `{42,43}`, trigger `ce_dad_rohan`.
+3. Train **SD 1.5** rank-16 LoRA in `ComfyUI/.venv` (diffusers+PEFT). Weights gitignored; SHA256 in `data/v2b/lora/registry.json` `characters.dad`.
+4. Infer panel 1 with stacked `LoraLoader`s (style then Dad at ~0.8) on the **new** living-room AOVs.
+5. Eval: mean SSIM(depth) ≥ 0.53 vs **B4** depth; restage MAE vs beauty ≤ 0.12; identity Dad holdout closer to Dad sheet than Maya on ≥6/8 (DINOv2) or Gemini fallback. `grid_hist_8x8` stays log-only. Do not claim Compass 0.85.
+
+B6 is when two LoRAs get object-index masks. IP-Adapter / InstantID / PuLID stay fallbacks (InsightFace terms + photoreal bias).
 
 ### Layer 4 — Eval + best-of-N (G1 prove-shot; B8 later)
 
@@ -129,6 +133,7 @@ G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3
 - **B2 cameras:** `outputs/v2b/himym_ep01/cam_{a,b,c}/` (hero two-shot, closer, slight profile). Depth + GP lineart drive SD 1.5 ControlNet.
 - **B3 style:** same three cameras, locked `storybook_anime_lora` at strength 1.0. Gut-check is these framings, not 10 scenes (B8).
 - **G1 eval:** 12 human A/B labels on `/v2b/gate1`; Gemini pairwise with A/B swap; BoN seeds 42–45. Scorecard `data/v2b/eval/himym_ep01_g1_scorecard.json`.
+- **B4 character:** block meshes + Dad SD 1.5 LoRA. Scorecard `data/v2b/eval/himym_ep01_b4.json`. Maya LoRA waits for B6. Do not InstantID.
 - **Later:** B5 reuses Grand Oriole / lobby / tram locations from the same packet. B7 may sequence more of the 76. Do not render all 76 in B1.
 
 ---
@@ -154,7 +159,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B2** | Phase 1 AOVs + ControlNet | Geometry by construction | Depth + Freestyle consumed; `eval/structure` SSIM(depth) floor vs conditioning; 3 test cameras | `phase-v2b-b2: Blender AOVs drive multi-ControlNet structure` |
 | **B3** | Phase 2 style LoRA | One comic style | Fixed style LoRA + locked checkpoint/sampler; style reads intentional across panels | `phase-v2b-b3: lock style LoRA on every 2B panel` |
 | **G1** | Phase 7 eval (prove-shot) | Pairwise harness | Four-axis scorecard + 12 human A/B + Gemini pairwise + BoN N=4; no DPO | `phase-v2b-g1: pairwise eval harness and preference log on HIMYM p1` |
-| **B4** | Phase 3 character LoRA | Identity from 3D | Turntable → stylize → train; held-out DINOv2 identity; no baked-CG look | `phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable` |
+| **B4** | Phase 3 character LoRA | Identity from 3D | Block humanoids; SD 1.5 Dad LoRA from stylized turntable; held-out Dad>Maya; mean SSIM ≥ 0.53 | `phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable` |
 | **B5** | Phase 4 location reuse | Spec-driven panels | Versioned 3D locations; four-axis scorecard per panel | `phase-v2b-b5: spec-driven locations with four-axis scorecards` |
 | **B6** | Phase 5 multi-character | No identity bleed | Two+ LoRAs gated by object-index masks | `phase-v2b-b6: mask-driven multi-character LoRAs without bleed` |
 | **B7** | Phase 6 sequencing | Storyboard run | Ordered panels, cache hits skip unchanged renders | `phase-v2b-b7: multi-panel storyboard sequencing with cache` |

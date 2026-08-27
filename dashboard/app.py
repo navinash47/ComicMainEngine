@@ -314,6 +314,27 @@ def api_v2b_preferences(body: V2bPrefIn) -> dict[str, Any]:
     return {"ok": True, "row": row, "agreement": agreement()}
 
 
+@app.get("/api/v2b/b4/gallery")
+def api_v2b_b4_gallery() -> dict[str, Any]:
+    root = OUTPUTS / "v2b" / "himym_ep01"
+
+    def url(path: Path) -> str | None:
+        if not path.is_file():
+            return None
+        rel = path.resolve().relative_to(OUTPUTS.resolve())
+        return "/media/" + str(rel).replace("\\", "/")
+
+    dad_tt = sorted((root / "b4" / "turntable" / "dad").glob("*/beauty_01.png"))[:8]
+    dad_style = sorted((root / "b4" / "dataset" / "dad").glob("*.png"))[:8]
+    return {
+        "b3_cam_a": url(root / "cam_a" / "panel_01.png"),
+        "b4_cam_a": url(root / "b4" / "cam_a" / "panel_01.png"),
+        "b4_beauty_a": url(root / "b4" / "cam_a" / "beauty_01.png"),
+        "turntable": [url(p) for p in dad_tt if url(p)],
+        "stylized": [url(p) for p in dad_style if url(p)],
+    }
+
+
 @app.get("/roi")
 def roi_page() -> FileResponse:
     return FileResponse(STATIC / "roi.html")

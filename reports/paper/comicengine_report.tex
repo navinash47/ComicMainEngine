@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B3 + G1
+\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B4 + G1
 \vspace{-0.6em}}
 
 \author{
@@ -447,7 +447,7 @@ cam\_c & 0.671 & 0.397 \\
 Same three cameras, no Blender rerender. Acquired \texttt{neonforestmist/sd15-storybook-anime-lora} (CreativeML OpenRAIL-M; SHA256 \texttt{0304bb42\ldots e9b0}) because SDXL+ControlNet does not fit 16GB MPS.
 Locked on every ControlNet stylize: LoRA strength $1.0$, checkpoint \texttt{v1-5-pruned-emaonly}, euler 18, CFG $6.5$, seed 42, denoise $0.65$ (raised from B2 $0.45$ so the adapter shows through). Registry: \texttt{data/v2b/lora/registry.json}. Weights gitignored.
 Structure holds: mean SSIM(depth) $0.584$ (calibrated floor $0.53$); mean edge IoU $0.292$; mean pixel MAE vs B2 $0.047$. Local API spend \$0.
-Gut-check is these three framings, not a 10-scene VLM (B8). Style reads as storybook illustration on capsule meshes (warmer lamp, white spherical heads); ink-line faces wait on B4.
+Gut-check is these three framings, not a 10-scene VLM (B8). Style reads as storybook illustration on capsule meshes (warmer lamp, white spherical heads); B4 replaces capsules with block humanoids + Dad LoRA.
 
 \begin{center}
 \small
@@ -465,7 +465,7 @@ cam\_c & 0.669 & 0.314 & 0.048 \\
 \paragraph{G1 eval harness (2026-08-27).}
 Prove-shot eval on the same three cameras. No PPO/GRPO/DPO.
 Structure hard gate is \textbf{mean} SSIM(depth) $\ge 0.53$ (not per-camera; cam\_b is often $0.51$--$0.52$). Locked B3 mean SSIM $0.584$ --- pass.
-Identity vs beauty is cheap \texttt{grid\_hist\_8x8} (log-only; capsule meshes, not faces).
+Identity vs beauty is cheap \texttt{grid\_hist\_8x8} (log-only on G1 capsules; B4 uses DINOv2).
 Pairwise judge: \texttt{gemini-3.6-flash} direct \texttt{GOOGLE\_API\_KEY} (retired \texttt{gemini-2.5-flash} returned 404). A/B swap; never OmniRoute images.
 12/12 human labels on \texttt{/v2b/gate1}. Exact LLM--human $4/12$; tie-lenient $10/12$. Two hard disagreements: \texttt{b\_b2\_beauty} and \texttt{c\_b2\_beauty} (human prefers beauty, Gemini prefers B2). Exact $8/12$ is calibration debt, not a train signal. Harness still passes.
 Best-of-N seeds $\{42,43,44,45\}$ on existing AOVs. Winners: cam\_a seed~44, cam\_b seed~44, cam\_c seed~42 (copy of locked B3). Human and Gemini both pick locked B3 over the cam\_b BoN winner.
@@ -493,6 +493,27 @@ c\_bon\_b3 & tie & tie \\
 \end{tabular}
 \end{center}
 
+\paragraph{B4 character LoRA (2026-08-27).}
+Capsules cannot be a character dataset. B4 replaces them with block humanoids (Dad: navy sweater + curly hair spheres; Maya: hoodie + ponytail) and writes a sibling tree \texttt{outputs/v2b/himym\_ep01/b4/} so G1 \texttt{cam\_\{a,b,c\}} stays frozen.
+Standing Dad turntable (no sofa), \texttt{--quick} 8 views $\times$ 2 seeds. Bootstrap stylize: denoise $0.40$, ControlNet depth $0.55$ / lineart $0.45$, style LoRA on, trigger \texttt{ce\_dad\_rohan}. Four Maya standing views as contrast only --- no Maya LoRA (that is B6).
+Train: SD~1.5 rank-16 LoRA in \texttt{ComfyUI/.venv} (diffusers+PEFT, 250 steps on 12 cached latents). Compass named kohya/SDXL; this 16GB Mac cannot. Weights gitignored; SHA256 \texttt{bfd7f7d8\ldots 3bfaf} in \texttt{data/v2b/lora/registry.json}.
+Infer: stacked \texttt{LoraLoader} (style then Dad at $0.8$) on the new living-room AOVs. Local API spend \$0. Never OmniRoute.
+Scorecard \texttt{data/v2b/eval/himym\_ep01\_b4.json}: mean SSIM(depth) $0.5488$ (floor $0.53$) --- pass. Restage MAE vs beauty $0.061$--$0.082$ ($\le 0.12$). DINOv2-small on 4 holdout stylized views: $3/4$ closer to Dad sheet than Maya --- pass (\texttt{--quick} bar; full bar is $6/8$). \texttt{grid\_hist\_8x8} stays log-only; do not claim Compass $0.85$.
+cam\_b SSIM $0.469$ fails per-camera (same pattern as G1); the hard gate is the mean. Gut-check: hair mass readable on cam\_a; Maya is a smaller hoodie figure, not an orange capsule. B8 stays locked.
+
+\begin{center}
+\small
+\begin{tabular}{lccc}
+\toprule
+Camera & SSIM(depth) & edge IoU & MAE vs beauty \\
+\midrule
+cam\_a & 0.534 & 0.263 & 0.061 \\
+cam\_b & 0.469 & 0.244 & 0.082 \\
+cam\_c & 0.644 & 0.252 & 0.063 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
 
@@ -506,7 +527,7 @@ c\_bon\_b3 & tie & tie \\
   \item Pillow ``pass'' is necessary but not sufficient for character consistency; the Phase~3 LLM judge correctly ranked \texttt{gemini\_ref} over cheaper text-only despite identical QA scores.
   \item OmniRoute model routing matters: prefer \texttt{auto} (or provider-prefixed Claude) when \texttt{auto/cheap} returns thinking text without \texttt{tool\_use}.
   \item Vercel serverless session UX needs HttpOnly cookies (Bearer-only + aggressive \texttt{/me} clears caused login loops); CSS \texttt{display} on \texttt{.btn} overrides HTML \texttt{[hidden]}.
-  \item Admin canvas charts must lock CSS height --- reading \texttt{canvas.height} after DPR resize compounds every live poll.
+  \item Version~2B B4: DINOv2-small in \texttt{ComfyUI/.venv} separates stylized Dad holdouts from Maya $3/4$ after a 250-step SD~1.5 LoRA; kohya/SDXL still does not fit this Mac.
 \end{enumerate}
 
 \section{Risks and Ethics}
@@ -521,7 +542,7 @@ Public beta URLs expose comics widely --- keep admin password private; Upstash h
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
   \item Collect panel/story ratings from beta readers; harvest admin live people analytics for Version~2 priorities.
   \item Re-run \texttt{prepare\_admin\_site.py} (+ redeploy) whenever ledger/ROI snapshot must refresh.
-  \item Version~2B B4: character LoRA from stylized 3D turntable (SD~1.5 on this Mac; SDXL later).
+  \item Version~2B B5: spec-driven location reuse with four-axis scorecards. B6 is two LoRAs + object-index masks. B8 stays locked.
 \end{itemize}
 
 \section{Conclusion}
@@ -556,6 +577,7 @@ python scripts/build_report.py
 \item[2026-08-27 b] Version~2B B2: three-camera AOVs + SD~1.5 ControlNet; mean SSIM(depth) $0.575$ (calibrated floor $0.53$); visual geometry lock.
 \item[2026-08-27 c] Version~2B B3: locked SD~1.5 storybook style LoRA (strength $1.0$, denoise $0.65$); mean SSIM(depth) $0.584$; mean MAE vs B2 $0.047$.
 \item[2026-08-27 d] Version~2B G1: 12/12 human pairs; Gemini exact $4/12$ (tie-lenient $10/12$); BoN seeds 42--45; \$0.043 \texttt{gemini-3.6-flash}; no DPO.
+\item[2026-08-27 e] Version~2B B4: block humanoids; Dad SD~1.5 LoRA (250 steps, SHA256 \texttt{bfd7f7d8\ldots}); mean SSIM $0.549$; DINOv2 $3/4$ Dad$>$Maya; B8 still locked.
 \end{description}
 
 \end{document}
