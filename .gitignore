@@ -58,6 +58,9 @@ data/*
 !data/v2a_program.json
 !data/v2a/
 !data/v2a/**
+!data/v2b_program.json
+!data/v2b/
+!data/v2b/**
 *.egg-info/
 dist/
 build/

@@ -31,6 +31,11 @@ from comicengine.config import (
     SESSION_SECRET,
 )
 from comicengine.v2a_program import ARCHITECTURE_PATH, load_program as load_v2a_program
+from comicengine.v2b_program import (
+    ARCHITECTURE_PATH as V2B_ARCHITECTURE_PATH,
+    SOURCE_PLAN_PATH as V2B_SOURCE_PLAN_PATH,
+    load_program as load_v2b_program,
+)
 from comicengine.curation import curation, panel_editor_payload, regenerate_panel
 from comicengine.feedback import feedback
 from comicengine.images_gallery import gallery
@@ -246,6 +251,30 @@ def v2a_architecture() -> FileResponse:
     if not ARCHITECTURE_PATH.is_file():
         raise HTTPException(status_code=404, detail="V2A architecture doc missing")
     return FileResponse(ARCHITECTURE_PATH, media_type="text/markdown; charset=utf-8")
+
+
+@app.get("/v2b")
+def v2b_page() -> FileResponse:
+    return FileResponse(STATIC / "v2b.html")
+
+
+@app.get("/api/v2b/program")
+def api_v2b_program() -> dict[str, Any]:
+    return load_v2b_program()
+
+
+@app.get("/v2b/architecture")
+def v2b_architecture() -> FileResponse:
+    if not V2B_ARCHITECTURE_PATH.is_file():
+        raise HTTPException(status_code=404, detail="V2B architecture doc missing")
+    return FileResponse(V2B_ARCHITECTURE_PATH, media_type="text/markdown; charset=utf-8")
+
+
+@app.get("/v2b/source-plan")
+def v2b_source_plan() -> FileResponse:
+    if not V2B_SOURCE_PLAN_PATH.is_file():
+        raise HTTPException(status_code=404, detail="V2B source plan missing")
+    return FileResponse(V2B_SOURCE_PLAN_PATH, media_type="text/markdown; charset=utf-8")
 
 
 @app.get("/roi")
