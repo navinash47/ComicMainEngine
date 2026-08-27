@@ -45,7 +45,7 @@ Do not batch two phases. One gate per B-phase commit.
 
 ## B4 — Character LoRA (Dad)
 
-- `phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable`
+- `6472480` phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable
 - Block humanoids replace capsules. G1 `cam_{a,b,c}` frozen; B4 writes `outputs/v2b/himym_ep01/b4/`.
 - Dad standing turntable `--quick` 8 views × 2 seeds (denoise 0.40, depth CN 0.55, lineart 0.45). 4 Maya contrast views, no Maya LoRA.
 - SD 1.5 LoRA trained in `ComfyUI/.venv` (diffusers+PEFT, rank 16, 250 steps). SHA256 `bfd7f7d8023ba91bbf47b420a11a128465ac620865ea8a8ef6a1d973d153bfaf`. Weights gitignored. Trigger `ce_dad_rohan`.
