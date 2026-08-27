@@ -1,0 +1,26 @@
+{
+  "style": {
+    "id": "storybook_anime_sd15",
+    "filename": "storybook_anime_lora.safetensors",
+    "source_url": "https://huggingface.co/neonforestmist/sd15-storybook-anime-lora",
+    "download_url": "https://huggingface.co/neonforestmist/sd15-storybook-anime-lora/resolve/main/storybook_anime_lora.safetensors",
+    "license": "CreativeML OpenRAIL-M",
+    "base_model": "sd1.5",
+    "sha256": "0304bb42819790cf63f4125ac70cee60fda682cc5aa4bfb512bb9e3b1746e9b0",
+    "strength_model": 1.0,
+    "strength_clip": 1.0,
+    "trigger": "storybook anime illustration",
+    "positive_prompt": "storybook anime illustration, cel shaded comic panel, flat color, bold outlines, Indian father and teenage daughter sitting on a sofa in a night living room, warm lamp, medium two-shot, clear poses, warm hand-painted background, whimsical children's book anime style, no text",
+    "negative_prompt": "photoreal, 3d render, cgi, watermark, text, letters, extra limbs, blurry, deformed",
+    "checkpoint": "v1-5-pruned-emaonly.safetensors",
+    "sampler_name": "euler",
+    "scheduler": "normal",
+    "steps": 18,
+    "cfg": 6.5,
+    "denoise": 0.65,
+    "seed": 42,
+    "acquired": true,
+    "trained": false,
+    "notes": "Acquired SD 1.5 storybook-illustration LoRA for Mac MPS. SDXL ControlNet does not fit this 16GB machine; SDXL style LoRA is the later ship path."
+  }
+}

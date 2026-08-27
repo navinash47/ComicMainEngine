@@ -1,0 +1,49 @@
+{
+  "cameras": [
+    {
+      "camera": "cam_a",
+      "ssim_depth": 0.5588,
+      "edge_iou": 0.2755,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false,
+      "mae_vs_b2": 0.0393
+    },
+    {
+      "camera": "cam_b",
+      "ssim_depth": 0.5249,
+      "edge_iou": 0.2862,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false,
+      "mae_vs_b2": 0.0541
+    },
+    {
+      "camera": "cam_c",
+      "ssim_depth": 0.6688,
+      "edge_iou": 0.3141,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false,
+      "mae_vs_b2": 0.0476
+    }
+  ],
+  "mean_ssim_depth": 0.5842,
+  "mean_edge_iou": 0.2919,
+  "mean_mae_vs_b2": 0.047,
+  "hypothesis_ssim_depth": 0.7,
+  "calibrated_ssim_floor": 0.53,
+  "all_pass_hypothesis": false,
+  "visual_geometry_lock": true,
+  "style_lora": {
+    "id": "storybook_anime_sd15",
+    "filename": "storybook_anime_lora.safetensors",
+    "sha256": "0304bb42819790cf63f4125ac70cee60fda682cc5aa4bfb512bb9e3b1746e9b0",
+    "strength_model": 1.0,
+    "strength_clip": 1.0,
+    "denoise": 0.65,
+    "checkpoint": "v1-5-pruned-emaonly.safetensors",
+    "sampler": "euler",
+    "steps": 18,
+    "cfg": 6.5,
+    "seed": 42
+  },
+  "note": "cheap skimage depth (no Depth-Anything) mean SSIM 0.584 < 0.7; calibrated floor 0.53. Visual: sofa + two capsule figures still match the 3D cameras. Style shift vs B2 is storybook illustration (warmer lamp, white spherical heads, watercolor grain), not ink-line faces — those wait on B4 meshes/character LoRA."
+}
