@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""B1 alias. Prefer scripts/v2b_panel.py (B2 ControlNet by default)."""
+"""HIMYM ep1 panel 1 through Blender → ComfyUI.
+
+B2 (ControlNet) is the default when depth+lineart weights exist.
+Pass --b1 for the img2img-only vertical slice.
+"""
 
 from __future__ import annotations
 
@@ -11,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(ROOT / "src")]
 
-from comicengine.v2b.pipeline.panel import run_b1  # noqa: E402
+from comicengine.v2b.pipeline.panel import run_panel  # noqa: E402
 
 
 def main() -> int:
@@ -19,10 +23,15 @@ def main() -> int:
     parser.add_argument(
         "--blender-only",
         action="store_true",
-        help="Render the Cycles beauty pass and skip ComfyUI",
+        help="Render Cycles AOVs and skip ComfyUI",
+    )
+    parser.add_argument(
+        "--b1",
+        action="store_true",
+        help="B1 img2img only (no ControlNet, camera A beauty)",
     )
     args = parser.parse_args()
-    out = run_b1(skip_comfy=args.blender_only)
+    out = run_panel(skip_comfy=args.blender_only, b1=args.b1)
     print(json.dumps(out, indent=2))
     return 0
 

@@ -1,7 +1,13 @@
-"""Standalone bpy script: HIMYM ep1 panel 1 living-room two-shot.
+"""Standalone bpy script: HIMYM ep1 panel 1 living-room two-shot AOVs.
 
-Run via blender --background --python himym_p1.py -- --out PATH
+Run via blender --background --python himym_p1.py -- --out-dir PATH
 Does not import comicengine (Blender's Python is separate).
+
+Writes per camera under out-dir/cam_{a,b,c}/:
+  beauty_01.png, depth_01.png, lineart_01.png, normal_01.png, index_01.png
+
+Blender 5.2 Freestyle-as-pass is empty; lineart is Grease Pencil Line Art
+composited on black (not canny-from-beauty). index RGB is dad=R, maya=G.
 """
 
 from __future__ import annotations
@@ -18,6 +24,16 @@ SEED = 42
 SAMPLES = 32
 RES_X = 768
 RES_Y = 1152
+DAD_INDEX = 1
+MAYA_INDEX = 2
+LINE_RADIUS = 0.012
+
+# Hero two-shot, closer, slight profile — same sofa, walls in frame.
+CAMERAS = {
+    "a": {"location": (0.18, -3.55, 1.32), "lens": 38.0, "target": (0.05, 0.55, 0.72)},
+    "b": {"location": (0.10, -2.45, 1.12), "lens": 50.0, "target": (0.05, 0.52, 0.70)},
+    "c": {"location": (1.55, -3.00, 1.28), "lens": 42.0, "target": (0.08, 0.55, 0.72)},
+}
 
 
 def _argv_after_double_dash() -> list[str]:
@@ -34,7 +50,7 @@ def look_at(obj: bpy.types.Object, target: tuple[float, float, float]) -> None:
 def wipe_scene() -> None:
     bpy.ops.object.select_all(action="SELECT")
     bpy.ops.object.delete(use_global=False)
-    for block in (bpy.data.meshes, bpy.data.materials, bpy.data.lights, bpy.data.cameras):
+    for block in (bpy.data.meshes, bpy.data.materials, bpy.data.lights, bpy.data.cameras, bpy.data.grease_pencils):
         for item in list(block):
             block.remove(item)
 
@@ -50,19 +66,33 @@ def mat(name: str, color: tuple[float, float, float], roughness: float = 0.55) -
     return m
 
 
-def add_cube(name: str, scale: tuple[float, float, float], loc: tuple[float, float, float], material: bpy.types.Material) -> bpy.types.Object:
+def add_cube(
+    name: str,
+    scale: tuple[float, float, float],
+    loc: tuple[float, float, float],
+    material: bpy.types.Material,
+    pass_index: int = 0,
+) -> bpy.types.Object:
     bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
     obj = bpy.context.active_object
     obj.name = name
     obj.scale = scale
+    obj.pass_index = pass_index
     obj.data.materials.append(material)
     return obj
 
 
-def add_capsule(name: str, loc: tuple[float, float, float], scale: float, material: bpy.types.Material) -> bpy.types.Object:
+def add_capsule(
+    name: str,
+    loc: tuple[float, float, float],
+    scale: float,
+    material: bpy.types.Material,
+    pass_index: int,
+) -> None:
     bpy.ops.mesh.primitive_uv_sphere_add(radius=0.22 * scale, location=(loc[0], loc[1], loc[2] + 0.42 * scale))
     head = bpy.context.active_object
     head.name = f"{name}_head"
+    head.pass_index = pass_index
     head.data.materials.append(material)
     bpy.ops.mesh.primitive_cylinder_add(
         radius=0.18 * scale,
@@ -71,11 +101,11 @@ def add_capsule(name: str, loc: tuple[float, float, float], scale: float, materi
     )
     body = bpy.context.active_object
     body.name = f"{name}_body"
+    body.pass_index = pass_index
     body.data.materials.append(material)
-    return body
 
 
-def build_living_room() -> None:
+def build_living_room() -> dict[str, bpy.types.Object]:
     wall = mat("wall", (0.22, 0.20, 0.18))
     floor_m = mat("floor", (0.28, 0.22, 0.18), roughness=0.7)
     sofa_m = mat("sofa", (0.18, 0.22, 0.28))
@@ -91,9 +121,8 @@ def build_living_room() -> None:
     add_cube("sofa_back", (1.45, 0.16, 0.5), (0.05, 0.78, 0.58), sofa_m)
     add_cube("lamp_stand", (0.06, 0.06, 0.85), (-1.35, 0.1, 0.85), lamp_m)
 
-    # Sit on the sofa cushion (top ~0.33). Stage-right of Maya = camera-left.
-    add_capsule("dad", (-0.38, 0.50, 0.55), 1.05, dad_m)
-    add_capsule("maya", (0.42, 0.52, 0.50), 0.86, maya_m)
+    add_capsule("dad", (-0.38, 0.50, 0.55), 1.05, dad_m, DAD_INDEX)
+    add_capsule("maya", (0.42, 0.52, 0.50), 0.86, maya_m, MAYA_INDEX)
 
     bpy.ops.object.light_add(type="AREA", location=(-1.35, -0.2, 1.7))
     lamp = bpy.context.active_object
@@ -110,12 +139,15 @@ def build_living_room() -> None:
     fill.data.color = (0.55, 0.62, 0.85)
     fill.data.size = 1.4
 
-    bpy.ops.object.camera_add(location=(0.2, -4.15, 1.45))
-    cam = bpy.context.active_object
-    cam.name = "panel_cam"
-    cam.data.lens = 45
-    look_at(cam, (0.05, 0.55, 0.75))
-    bpy.context.scene.camera = cam
+    cameras: dict[str, bpy.types.Object] = {}
+    for cam_id, spec in CAMERAS.items():
+        bpy.ops.object.camera_add(location=spec["location"])
+        cam = bpy.context.active_object
+        cam.name = f"panel_cam_{cam_id}"
+        cam.data.lens = spec["lens"]
+        look_at(cam, spec["target"])
+        cameras[cam_id] = cam
+    bpy.context.scene.camera = cameras["a"]
 
     world = bpy.data.worlds.new("dim_world")
     bpy.context.scene.world = world
@@ -124,9 +156,74 @@ def build_living_room() -> None:
     if bg:
         bg.inputs[0].default_value = (0.10, 0.09, 0.08, 1.0)
         bg.inputs[1].default_value = 0.25
+    return cameras
 
 
-def configure_cycles() -> None:
+def add_lineart_object() -> bpy.types.Collection:
+    bpy.ops.object.grease_pencil_add(type="LINEART_SCENE", use_in_front=True)
+    gp = bpy.context.active_object
+    gp.name = "LineArt"
+    modifier = gp.modifiers[0]
+    modifier.radius = LINE_RADIUS
+    modifier.opacity = 1.0
+    modifier.use_contour = True
+    modifier.use_crease = True
+    modifier.use_intersection = True
+    style = gp.data.materials[0].grease_pencil
+    style.show_stroke = True
+    style.show_fill = False
+    style.color = (1.0, 1.0, 1.0, 1.0)
+
+    col = bpy.data.collections.new("lineart")
+    scene = bpy.context.scene
+    if col.name not in scene.collection.children:
+        scene.collection.children.link(col)
+    for existing in list(gp.users_collection):
+        existing.objects.unlink(gp)
+    col.objects.link(gp)
+    return col
+
+
+def _layer_collection(layer_coll: bpy.types.LayerCollection, name: str) -> bpy.types.LayerCollection | None:
+    if layer_coll.name == name:
+        return layer_coll
+    for child in layer_coll.children:
+        found = _layer_collection(child, name)
+        if found:
+            return found
+    return None
+
+
+def configure_view_layers() -> tuple[bpy.types.ViewLayer, bpy.types.ViewLayer]:
+    scene = bpy.context.scene
+    beauty = scene.view_layers[0]
+    beauty.name = "beauty"
+    beauty.use_pass_combined = True
+    beauty.use_pass_z = True
+    beauty.use_pass_normal = True
+    beauty.use_pass_object_index = True
+    beauty.use_pass_grease_pencil = False
+    beauty.use_freestyle = False
+    excluded = _layer_collection(beauty.layer_collection, "lineart")
+    if excluded:
+        excluded.exclude = True
+    beauty.update_render_passes()
+
+    if "lines" in scene.view_layers:
+        lines = scene.view_layers["lines"]
+    else:
+        lines = scene.view_layers.new("lines")
+    lines.use_pass_combined = True
+    lines.use_pass_grease_pencil = True
+    lines.use_pass_z = False
+    lines.use_pass_normal = False
+    lines.use_pass_object_index = False
+    lines.use_freestyle = False
+    lines.update_render_passes()
+    return beauty, lines
+
+
+def configure_cycles(samples: int) -> None:
     scene = bpy.context.scene
     scene.render.engine = "CYCLES"
     scene.render.resolution_x = RES_X
@@ -135,7 +232,10 @@ def configure_cycles() -> None:
     scene.render.image_settings.file_format = "PNG"
     scene.render.image_settings.color_mode = "RGB"
     scene.render.film_transparent = False
-    scene.cycles.samples = SAMPLES
+    scene.render.use_compositing = True
+    scene.render.use_sequencer = False
+    scene.render.use_freestyle = False
+    scene.cycles.samples = samples
     scene.cycles.seed = SEED
     scene.cycles.use_denoising = False
     scene.cycles.device = "CPU"
@@ -152,21 +252,111 @@ def configure_cycles() -> None:
         scene.cycles.device = "CPU"
 
 
-def render_to(path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    bpy.context.scene.render.filepath = str(path)
-    bpy.ops.render.render(write_still=True)
+def _file_item(fo: bpy.types.CompositorNodeOutputFile, name: str, socket: str, color_mode: str) -> None:
+    item = fo.file_output_items.new(socket, name)
+    item.override_node_format = True
+    item.format.file_format = "PNG"
+    item.format.color_mode = color_mode
+    item.save_as_render = False
+
+
+def build_compositor() -> bpy.types.CompositorNodeOutputFile:
+    scene = bpy.context.scene
+    ng = bpy.data.node_groups.new("V2BComp", "CompositorNodeTree")
+    ng.interface.new_socket(name="Image", in_out="OUTPUT", socket_type="NodeSocketColor")
+    rl_b = ng.nodes.new("CompositorNodeRLayers")
+    rl_b.layer = "beauty"
+    rl_l = ng.nodes.new("CompositorNodeRLayers")
+    rl_l.layer = "lines"
+    go = ng.nodes.new("NodeGroupOutput")
+    norm = ng.nodes.new("CompositorNodeNormalize")
+    inv = ng.nodes.new("CompositorNodeInvert")
+    id_dad = ng.nodes.new("CompositorNodeIDMask")
+    id_maya = ng.nodes.new("CompositorNodeIDMask")
+    comb = ng.nodes.new("CompositorNodeCombineColor")
+    black = ng.nodes.new("CompositorNodeRGB")
+    black.outputs[0].default_value = (0.0, 0.0, 0.0, 1.0)
+    over = ng.nodes.new("CompositorNodeAlphaOver")
+    fo = ng.nodes.new("CompositorNodeOutputFile")
+    fo.file_name = ""
+    fo.format.media_type = "IMAGE"
+    fo.format.file_format = "PNG"
+    _file_item(fo, "beauty_01", "RGBA", "RGB")
+    _file_item(fo, "depth_01", "FLOAT", "BW")
+    _file_item(fo, "lineart_01", "RGBA", "RGB")
+    _file_item(fo, "normal_01", "VECTOR", "RGB")
+    _file_item(fo, "index_01", "RGBA", "RGB")
+
+    id_dad.inputs["Index"].default_value = DAD_INDEX
+    id_maya.inputs["Index"].default_value = MAYA_INDEX
+    comb.inputs["Blue"].default_value = 0.0
+    comb.inputs["Alpha"].default_value = 1.0
+
+    links = ng.links
+    links.new(rl_b.outputs["Image"], go.inputs["Image"])
+    links.new(rl_b.outputs["Image"], fo.inputs["beauty_01"])
+    links.new(rl_b.outputs["Depth"], norm.inputs[0])
+    links.new(norm.outputs[0], inv.inputs["Color"])
+    links.new(inv.outputs[0], fo.inputs["depth_01"])
+    links.new(rl_b.outputs["Normal"], fo.inputs["normal_01"])
+    links.new(rl_b.outputs["Object Index"], id_dad.inputs["ID value"])
+    links.new(rl_b.outputs["Object Index"], id_maya.inputs["ID value"])
+    links.new(id_dad.outputs["Alpha"], comb.inputs["Red"])
+    links.new(id_maya.outputs["Alpha"], comb.inputs["Green"])
+    links.new(comb.outputs["Image"], fo.inputs["index_01"])
+    links.new(black.outputs[0], over.inputs["Background"])
+    links.new(rl_l.outputs["Grease Pencil"], over.inputs["Foreground"])
+    links.new(over.outputs[0], fo.inputs["lineart_01"])
+    scene.compositing_node_group = ng
+    return fo
+
+
+def render_cameras(out_dir: Path, cameras: dict[str, bpy.types.Object], cam_ids: list[str], file_out: bpy.types.CompositorNodeOutputFile) -> None:
+    scene = bpy.context.scene
+    for cam_id in cam_ids:
+        cam_dir = out_dir / f"cam_{cam_id}"
+        cam_dir.mkdir(parents=True, exist_ok=True)
+        scene.camera = cameras[cam_id]
+        file_out.directory = str(cam_dir)
+        scene.render.filepath = str(cam_dir / "_cycles")
+        bpy.ops.render.render(write_still=True)
+        leftover = cam_dir / "_cycles.png"
+        if leftover.is_file():
+            leftover.unlink()
+        print(f"wrote {cam_dir}")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", required=True)
+    parser.add_argument("--out-dir", dest="out_dir")
+    parser.add_argument("--out", help="B1 alias: write cam_a beauty to this PNG as well")
+    parser.add_argument("--cameras", default="a,b,c")
+    parser.add_argument("--samples", type=int, default=SAMPLES)
     args = parser.parse_args(_argv_after_double_dash())
+    if args.out_dir:
+        out_dir = Path(args.out_dir)
+    elif args.out:
+        out_dir = Path(args.out).resolve().parent
+    else:
+        raise SystemExit("need --out-dir or --out")
+    cam_ids = [c.strip() for c in args.cameras.split(",") if c.strip()]
+    for cam_id in cam_ids:
+        if cam_id not in CAMERAS:
+            raise SystemExit(f"unknown camera {cam_id}; expected a,b,c")
+    out_dir.mkdir(parents=True, exist_ok=True)
     wipe_scene()
-    build_living_room()
-    configure_cycles()
-    render_to(Path(args.out))
-    print(f"wrote {args.out}")
+    cameras = build_living_room()
+    add_lineart_object()
+    configure_view_layers()
+    configure_cycles(args.samples)
+    file_out = build_compositor()
+    render_cameras(out_dir, cameras, cam_ids, file_out)
+    if args.out:
+        src = out_dir / "cam_a" / "beauty_01.png"
+        dest = Path(args.out)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_bytes(src.read_bytes())
+        print(f"wrote {dest}")
 
 
 if __name__ == "__main__":
