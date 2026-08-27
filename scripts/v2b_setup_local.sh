@@ -20,6 +20,17 @@ fi
 "$ROOT/ComfyUI/.venv/bin/pip" install -U pip
 "$ROOT/ComfyUI/.venv/bin/pip" install -r "$ROOT/ComfyUI/requirements.txt"
 
+CN_DIR="$ROOT/ComfyUI/models/controlnet"
+mkdir -p "$CN_DIR"
+if [[ ! -s "$CN_DIR/control_v11f1p_sd15_depth.pth" ]]; then
+  curl -L --fail --retry 3 -o "$CN_DIR/control_v11f1p_sd15_depth.pth" \
+    https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth
+fi
+if [[ ! -s "$CN_DIR/control_v11p_sd15_lineart.pth" ]]; then
+  curl -L --fail --retry 3 -o "$CN_DIR/control_v11p_sd15_lineart.pth" \
+    https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth
+fi
+
 echo "Start ComfyUI with:"
 echo "  cd \"$ROOT/ComfyUI\" && .venv/bin/python main.py --port 8188 --listen 127.0.0.1"
-echo "Then: PYTHONPATH=src python scripts/v2b_b1_panel.py"
+echo "Then: PYTHONPATH=src python scripts/v2b_panel.py"

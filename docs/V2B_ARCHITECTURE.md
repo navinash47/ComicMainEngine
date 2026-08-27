@@ -71,8 +71,7 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 
 - **Python 3.11**, package under `src/comicengine/v2b/` (create in B1, not B0).
 - **Blender** invoked headless. Homebrew currently installs **5.2.1 LTS** (`/opt/homebrew/bin/blender`). Compass suggested 4.2 for addons we are not using; do not install Blender MCP into the pipeline.
-- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). B1 proves img2img with **SD 1.5** on Mac MPS; SDXL + ControlNet is B2+.
-- **ComfyUI** persistent local server. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
+- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2 uses SD 1.5 ControlNet on MPS**; SDXL is the later ship stack (B3+), not this gate. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
 - **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB. FLUX.1-dev is non-commercial — do not ship on it. Optional later: FLUX.1-schnell or Qwen-Image (Apache 2.0).
 - **kohya_ss / sd-scripts** for SDXL LoRAs (B3–B4).
 - **Eval:** DINOv2/CLIP identity; SSIM/LPIPS + depth/edge re-extract for structure; Qwen3-VL **pairwise** (not 1–10 scores) for lighting/aesthetic.
@@ -98,11 +97,11 @@ Do not put 2B pipeline code into `panel_batch.py`, `script_engine.py`, or 2A mod
 
 ### Layer 1 — Spec → headless Blender
 
-A panel spec names location, character(s), camera, lights, seed. `build_scene.py` constructs the graph in bpy. `render_passes.py` emits beauty, Z/depth, normal, Freestyle line-art (as render pass), and object-index / cryptomatte. Run via `blender -b scene.blend -P run_headless.py`. Fixed render settings. Re-run with the same spec+seed must be byte-identical or near-identical on the 3D render.
+A panel spec names location, character(s), camera, lights, seed. Headless `himym_p1.py` emits beauty, normalized Z depth (near=white), Grease Pencil Line Art (Blender 5.2 Freestyle-as-pass is empty), normal, and object-index (dad=R, maya=G). Run via `blender --background --factory-startup --python himym_p1.py`. Fixed render settings. Re-run with the same spec+seed must be byte-identical or near-identical on the 3D render.
 
 ### Layer 2 — ComfyUI stylize
 
-POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths ~0.5–0.8), optional normal. Fixed checkpoint + sampler. Style LoRA at a locked weight (B3). Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`.
+**B2 uses SD 1.5 ControlNet on MPS; SDXL later.** POST a parametrized API workflow: img2img from the beauty pass, ControlNet-depth + ControlNet-lineart (strengths ~0.55–0.8). Fixed checkpoint `v1-5-pruned-emaonly` + euler / seed 42. Style LoRA at a locked weight is B3 (SDXL). Character LoRAs gated by object-index masks (B6). Retrieve PNGs via `/history` + `/view`. Never OmniRoute.
 
 ### Layer 3 — Identity from the 3D model (B4)
 
@@ -127,6 +126,7 @@ N candidates per panel. Hard gates on structure and identity, then weighted rank
 - **Leads:** Dad (Rohan present), Maya, Young Rohan, Elena
 - **Packet:** `data/v2b/episodes/ep01.json` (2B-owned). V1 phase4 JSON is the read-only source.
 - **B1 prove shot — panel 1 only:** living-room sofa at night, soft lamp. Dad sits beside Maya — no book — knees almost touching. Low-detail room + two seated primitives. Camera and key light locked in the spec. Output: `outputs/v2b/himym_ep01/panel_01.png`.
+- **B2 cameras:** `outputs/v2b/himym_ep01/cam_{a,b,c}/` (hero two-shot, closer, slight profile). Depth + GP lineart drive SD 1.5 ControlNet.
 - **Later:** B5 reuses Grand Oriole / lobby / tram locations from the same packet. B7 may sequence more of the 76. Do not render all 76 in B1.
 
 ---
@@ -158,7 +158,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0 and B1 are complete. B2–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0, B1, and B2 are complete. B3–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 

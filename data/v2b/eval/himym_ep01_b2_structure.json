@@ -1,0 +1,32 @@
+{
+  "cameras": [
+    {
+      "camera": "cam_a",
+      "ssim_depth": 0.5408,
+      "edge_iou": 0.4157,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false
+    },
+    {
+      "camera": "cam_b",
+      "ssim_depth": 0.5134,
+      "edge_iou": 0.2928,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false
+    },
+    {
+      "camera": "cam_c",
+      "ssim_depth": 0.6711,
+      "edge_iou": 0.3965,
+      "ssim_hypothesis": 0.7,
+      "pass_ssim_hypothesis": false
+    }
+  ],
+  "mean_ssim_depth": 0.5751,
+  "mean_edge_iou": 0.3683,
+  "hypothesis_ssim_depth": 0.7,
+  "calibrated_ssim_floor": 0.53,
+  "all_pass_hypothesis": false,
+  "visual_geometry_lock": true,
+  "note": "cheap skimage depth (no Depth-Anything) mean SSIM 0.575 < 0.7; calibrated floor 0.53. Visual: sofa + two figures still match the 3D cameras (no B1 bubble/cloak restage)."
+}

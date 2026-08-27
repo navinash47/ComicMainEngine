@@ -1,0 +1,114 @@
+{
+  "3": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 6.5,
+      "denoise": 0.45,
+      "latent_image": ["11", 0],
+      "model": ["4", 0],
+      "negative": ["17", 1],
+      "positive": ["17", 0],
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "seed": 42,
+      "steps": 18
+    }
+  },
+  "4": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "v1-5-pruned-emaonly.safetensors"
+    }
+  },
+  "6": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["4", 1],
+      "text": "comic illustration, night living room, Indian father and teenage daughter sitting on a sofa, warm lamp, medium two-shot, clear poses, no text"
+    }
+  },
+  "7": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": ["4", 1],
+      "text": "photoreal, watermark, text, letters, extra limbs, blurry, deformed"
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["3", 0],
+      "vae": ["4", 2]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "v2b_himym_p1_cn",
+      "images": ["8", 0]
+    }
+  },
+  "10": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "beauty_01.png"
+    }
+  },
+  "11": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": ["10", 0],
+      "vae": ["4", 2]
+    }
+  },
+  "12": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "depth_01.png"
+    }
+  },
+  "13": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "lineart_01.png"
+    }
+  },
+  "14": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "control_v11f1p_sd15_depth.pth"
+    }
+  },
+  "15": {
+    "class_type": "ControlNetLoader",
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_lineart.pth"
+    }
+  },
+  "16": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": ["6", 0],
+      "negative": ["7", 0],
+      "control_net": ["14", 0],
+      "image": ["12", 0],
+      "strength": 0.75,
+      "start_percent": 0.0,
+      "end_percent": 1.0,
+      "vae": ["4", 2]
+    }
+  },
+  "17": {
+    "class_type": "ControlNetApplyAdvanced",
+    "inputs": {
+      "positive": ["16", 0],
+      "negative": ["16", 1],
+      "control_net": ["15", 0],
+      "image": ["13", 0],
+      "strength": 0.65,
+      "start_percent": 0.0,
+      "end_percent": 1.0,
+      "vae": ["4", 2]
+    }
+  }
+}
