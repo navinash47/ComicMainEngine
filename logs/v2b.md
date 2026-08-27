@@ -7,8 +7,16 @@ Do not batch two phases. One gate per B-phase commit.
 ## B0 — Architecture freeze
 
 - `c7e5c9f` phase-v2b-b0: freeze 3D-previs pipeline architecture beside Version 2 and 2A
+- `96d5e05` phase-v2b-b0: record B0 freeze hash in v2b logs
 - Fixture: HIMYM Episode 1 (76 panels). B1 prove is panel 1 living-room sofa (Dad + Maya).
 
-## B1–B9
+## B1 — Vertical slice
+
+- `phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI`
+- Cycles beauty seed 42, 32 samples, 768×1152. Two reruns: pixel MAE 0.0 (PNG hashes differ).
+- ComfyUI HTTP img2img SD 1.5 denoise 0.42. Stylizer still restages (no ControlNet) — B2.
+- Run: `PYTHONPATH=src python scripts/v2b_b1_panel.py`
+
+## B2–B9
 
 Locked until each phase starts.

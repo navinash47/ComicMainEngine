@@ -2,9 +2,9 @@
   "program": {
     "version": "2B",
     "title": "Version 2B — 3D-previs pipeline (parallel to Version 2 and 2A)",
-    "active_phase_id": "b0",
-    "updated_at": "2026-08-27T06:10:00+00:00",
-    "updated_by": "b0-himym",
+    "active_phase_id": "b1",
+    "updated_at": "2026-08-27T07:10:00+00:00",
+    "updated_by": "b1-slice",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20) and Version 2A (data/v2a_program.json A0–A5). Do not edit those files from this track.",
       "3D spec is the composition contract. Headless Blender AOVs → local ComfyUI ControlNet. Not sketch-first (that is 2A).",
@@ -31,7 +31,7 @@
       "id": "b0",
       "title": "Architecture freeze",
       "track": "process",
-      "status": "in_progress",
+      "status": "complete",
       "sort_order": 0,
       "exit_gate": "2B is readable without running Blender or ComfyUI: docs/V2B_ARCHITECTURE.md + this JSON + /v2b; Version 2 and 2A untouched",
       "checklist": [
@@ -51,7 +51,7 @@
       "blockers": [],
       "notes": [
         "Commit: phase-v2b-b0: freeze 3D-previs pipeline architecture beside Version 2 and 2A",
-        "B1–B9 stay locked. No src/comicengine/v2b/ package in this freeze."
+        "B0 freeze already landed; JSON status closed with the B1 gate (B1 owns src/comicengine/v2b/)."
       ],
       "history": [
         {
@@ -59,15 +59,21 @@
           "action": "started",
           "by": "b0-freeze",
           "status": "in_progress"
+        },
+        {
+          "at": "2026-08-27T07:10:00+00:00",
+          "action": "completed",
+          "by": "b1-slice",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-27T07:10:00+00:00"
     },
     "b1": {
       "id": "b1",
       "title": "Vertical slice (Compass Phase 0)",
       "track": "product/infra",
-      "status": "locked",
+      "status": "complete",
       "sort_order": 1,
       "exit_gate": "HIMYM ep1 panel 1 (living-room sofa, Dad + Maya) → Cycles blockout → one ComfyUI img2img PNG; same seed near-identical; ComfyUI over HTTP only. Do not render all 76 panels.",
       "checklist": [
@@ -79,14 +85,22 @@
         "Do not use Blender MCP as the production path",
         "Do not edit outputs/phase4/episode_how_i_met_your_mother_ep1.json from 2B work"
       ],
-      "checklist_done": [],
-      "blockers": [
-        "Blender 4.2 LTS on PATH",
-        "ComfyUI listening on localhost:8188"
+      "checklist_done": [
+        "Create src/comicengine/v2b/ blender headless wrapper for data/v2b/episodes/ep01.json panel 1",
+        "Low-detail living room + two seated primitives (Dad, Maya); camera and lamp from the panel-1 spec",
+        "ComfyUI HTTP client (POST /prompt, ws progress, /history + /view)",
+        "pipeline.panel produces outputs/v2b/himym_ep01/panel_01.png with zero manual steps",
+        "Re-run with the same seed is byte-identical or near-identical on the Blender render",
+        "Do not use Blender MCP as the production path",
+        "Do not edit outputs/phase4/episode_how_i_met_your_mother_ep1.json from 2B work"
       ],
+      "blockers": [],
       "notes": [
-        "Commit when done: phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI",
-        "Fixture is HIMYM ep1 (longest V1 episode, 76 panels). B1 is panel 1 only — not Aranya, not a nameless cube."
+        "Commit: phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI",
+        "Fixture is HIMYM ep1 (longest V1 episode, 76 panels). B1 is panel 1 only — not Aranya, not a nameless cube.",
+        "Blender 5.2.1 LTS via Homebrew; ComfyUI 0.34 on MPS; SD 1.5 img2img denoise 0.42. ControlNet is B2.",
+        "Outputs: outputs/v2b/himym_ep01/beauty_01.png and panel_01.png",
+        "Seed-rerun 2026-08-27: two Cycles beauty passes, seed 42. PNG hashes differ (encoder metadata); mean pixel MAE 0.0."
       ],
       "history": [
         {
@@ -94,9 +108,21 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-27T06:38:00+00:00",
+          "action": "started",
+          "by": "b1-slice",
+          "status": "in_progress"
+        },
+        {
+          "at": "2026-08-27T07:10:00+00:00",
+          "action": "completed",
+          "by": "b1-slice",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-27T07:10:00+00:00"
     },
     "b2": {
       "id": "b2",

@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 9~August~2026 · Phases~0--11 + Romance pipeline HIMYM Ep1 Steps~1--5 complete
+\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 Steps~1--5 + Version~2B B0/B1
 \vspace{-0.6em}}
 
 \author{
@@ -408,6 +408,21 @@ Engine usage snapshot still ~\$2.96 / 138 calls (dominant spend remains Phase~5 
 After Steps~1--5: romance pipeline spend $\approx$\$2.88 (refs \$0.018 + panels \$2.86; compose/assemble local \$0);
 full ledger $\approx$\$5.84 / 223 calls.
 
+\section{Version 2B (parallel 3D-previs track)}
+\label{sec:v2b}
+Version~2B is a \textbf{separate program} from Version~2 (phases 12--20) and Version~2A (sketch-first).
+Do not edit \texttt{data/v2\_program.json}, \texttt{data/v2a\_program.json}, \texttt{data/v2a/}, or \texttt{episode\_schema.py} from 2B work.
+Fixture is V1 HIMYM Episode~1 (76 panels); 2B owns \texttt{data/v2b/episodes/ep01.json}. Image traffic is local ComfyUI or direct \texttt{.env} APIs --- never OmniRoute.
+
+\paragraph{B0 architecture freeze.}
+Docs + \texttt{data/v2b\_program.json} + dashboard \texttt{/v2b}. No Blender/ComfyUI code in that freeze.
+
+\paragraph{B1 vertical slice (2026-08-27).}
+HIMYM ep1 panel~1 living-room two-shot: headless Blender 5.2.1 Cycles (seed 42, 32 samples, $768\times1152$) $\rightarrow$ ComfyUI HTTP img2img (SD~1.5 \texttt{v1-5-pruned-emaonly}, denoise 0.42, euler 18 steps, seed 42) on Mac MPS.
+Local API spend \$0 (no Gemini/fal).
+Two Cycles beauty reruns: pixel MAE $0.0$ (PNG byte hashes differ; encoder metadata).
+Stylizer still restages (speech-bubble/cloak drift) --- expected without ControlNet; B2 pins geometry.
+
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
 
@@ -467,6 +482,7 @@ python scripts/build_report.py
 \item[2026-08-09 j] Phase~9: ROI dashboard (\texttt{/roi}) unit economics + spend charts.
 \item[2026-08-09 k] Phase~8.5: panel rating + editable art prompt on reject/regen.
 \item[2026-08-09 l] Phase~8.6: dual Vercel reader/admin + Upstash auth; thumbnails; live people analytics; Beta branding; ledger snapshot still $\approx$\$2.96 / 138 calls.
+\item[2026-08-27 a] Version~2B B0/B1: 3D-previs architecture freeze; HIMYM ep1 panel~1 Cycles$\rightarrow$ComfyUI SD~1.5; beauty seed MAE $0.0$.
 \end{description}
 
 \end{document}

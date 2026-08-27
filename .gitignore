@@ -80,3 +80,5 @@ outputs/reports/*.log
 outputs/reports/*.out
 outputs/reports/missfont.log
 .vercel-deploy-secrets.txt
+ComfyUI/
+

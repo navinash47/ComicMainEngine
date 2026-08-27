@@ -35,7 +35,7 @@ External research (citation, not code): [`docs/V2B_SOURCE_PLAN.md`](V2B_SOURCE_P
 | Traffic | Where | Keys / process |
 |---|---|---|
 | Text / scripts / captions (if any) | **OmniRoute** `localhost:20128` (`USE_OMNIROUTE=1`) | `OMNIROUTE_API_KEY` |
-| Blender renders / AOVs | **Local subprocess** `blender --background --python` | Blender 4.2 LTS on PATH |
+| Blender renders / AOVs | **Local subprocess** `blender --background --python` | Blender 5.2.1 LTS (`/opt/homebrew/bin/blender`) |
 | Stylize / ControlNet / LoRA infer | **Local ComfyUI** HTTP `/prompt` + `/ws` | `localhost:8188` — never OmniRoute |
 | Optional bootstrap stylize (B4) | **Direct provider APIs** | `GOOGLE_API_KEY`, fal from project `.env` |
 
@@ -70,7 +70,8 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 ## Stack (locked for B1+)
 
 - **Python 3.11**, package under `src/comicengine/v2b/` (create in B1, not B0).
-- **Blender 4.2 LTS**, Cycles headless. MCP (`ahujasid/blender-mcp`) is discovery-only.
+- **Blender** invoked headless. Homebrew currently installs **5.2.1 LTS** (`/opt/homebrew/bin/blender`). Compass suggested 4.2 for addons we are not using; do not install Blender MCP into the pipeline.
+- **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). B1 proves img2img with **SD 1.5** on Mac MPS; SDXL + ControlNet is B2+.
 - **ComfyUI** persistent local server. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
 - **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB. FLUX.1-dev is non-commercial — do not ship on it. Optional later: FLUX.1-schnell or Qwen-Image (Apache 2.0).
 - **kohya_ss / sd-scripts** for SDXL LoRAs (B3–B4).
@@ -157,7 +158,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0 is this freeze. B1–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0 and B1 are complete. B2–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 
