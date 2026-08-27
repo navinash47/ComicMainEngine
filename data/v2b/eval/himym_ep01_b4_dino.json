@@ -1,0 +1,32 @@
+{
+  "method": "dinov2-small",
+  "n": 4,
+  "wins": 3,
+  "pass": true,
+  "details": [
+    {
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az090_el12_s42.png",
+      "dad": 0.6557,
+      "maya": 0.6625,
+      "ok": false
+    },
+    {
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az090_el12_s43.png",
+      "dad": 0.63,
+      "maya": 0.5586,
+      "ok": true
+    },
+    {
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az270_el12_s42.png",
+      "dad": 0.6568,
+      "maya": 0.6182,
+      "ok": true
+    },
+    {
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az270_el12_s43.png",
+      "dad": 0.6219,
+      "maya": 0.5754,
+      "ok": true
+    }
+  ]
+}

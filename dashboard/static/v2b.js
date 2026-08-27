@@ -138,6 +138,7 @@ async function load() {
     const res = await fetch("/api/v2b/program");
     if (!res.ok) throw new Error(`${res.status}`);
     render(await res.json());
+    await loadB4();
   } catch (err) {
     $("updated").textContent = `error ${err}`;
     $("lede").textContent = "Could not load data/v2b_program.json.";
@@ -146,3 +147,36 @@ async function load() {
 
 $("refreshBtn").addEventListener("click", load);
 load();
+
+async function loadB4() {
+  const compare = $("b4Compare");
+  const turn = $("b4Turntable");
+  if (!compare) return;
+  try {
+    const res = await fetch("/api/v2b/b4/gallery");
+    if (!res.ok) return;
+    const g = await res.json();
+    const fig = (src, cap) =>
+      src
+        ? `<figure style="margin:0;background:var(--bg1);border:1px solid var(--line);padding:0.4rem"><img src="${esc(src)}" alt="${esc(cap)}" style="width:100%;height:auto;display:block;background:#111"/><figcaption class="muted small">${esc(cap)}</figcaption></figure>`
+        : "";
+    compare.style.display = "grid";
+    compare.style.gridTemplateColumns = "1fr 1fr 1fr";
+    compare.style.gap = "0.75rem";
+    compare.innerHTML = [
+      fig(g.b3_cam_a, "B3 / G1 cam_a (frozen)"),
+      fig(g.b4_beauty_a, "B4 beauty cam_a"),
+      fig(g.b4_cam_a, "B4 panel cam_a (style+Dad LoRA)"),
+    ].join("");
+    if (turn) {
+      turn.style.display = "grid";
+      turn.style.gridTemplateColumns = "repeat(auto-fill, minmax(140px, 1fr))";
+      turn.style.gap = "0.5rem";
+      turn.style.marginTop = "0.75rem";
+      const shots = (g.stylized || []).length ? g.stylized : g.turntable || [];
+      turn.innerHTML = shots.map((u, i) => fig(u, `dad ${i + 1}`)).join("");
+    }
+  } catch {
+    /* gallery is optional until B4 PNGs exist */
+  }
+}

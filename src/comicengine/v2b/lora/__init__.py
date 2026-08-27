@@ -1,1 +1,1 @@
-"""Style LoRA registry (weights live in gitignored ComfyUI/models/loras/)."""
+"""Style + character LoRA registry (weights live in gitignored ComfyUI/models/loras/)."""

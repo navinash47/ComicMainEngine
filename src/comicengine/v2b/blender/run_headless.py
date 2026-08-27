@@ -10,6 +10,7 @@ from pathlib import Path
 from comicengine.config import ROOT
 
 SCRIPT = Path(__file__).resolve().parent / "himym_p1.py"
+TURNTABLE = Path(__file__).resolve().parent / "dad_turntable.py"
 
 CANDIDATES = (
     os.environ.get("BLENDER_BIN"),
@@ -95,3 +96,41 @@ def render_himym_p1_aovs(
     if missing:
         raise RuntimeError("Blender AOVs missing:\n" + "\n".join(missing) + f"\nstdout:\n{proc.stdout[-2000:]}")
     return paths
+
+
+def render_turntable(
+    out_dir: Path,
+    *,
+    character: str = "dad",
+    quick: bool = False,
+    samples: int | None = None,
+) -> Path:
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        str(blender_bin()),
+        "--background",
+        "--factory-startup",
+        "--python",
+        str(TURNTABLE),
+        "--",
+        "--out-dir",
+        str(out_dir),
+        "--character",
+        character,
+    ]
+    if quick:
+        cmd.append("--quick")
+    if samples is not None:
+        cmd.extend(["--samples", str(samples)])
+    proc = _run(cmd)
+    expected = None
+    for child in sorted(out_dir.iterdir()) if out_dir.is_dir() else []:
+        beauty = child / "beauty_01.png"
+        if beauty.is_file():
+            expected = beauty
+            break
+    if expected is None:
+        expected = out_dir / "missing.png"
+    _raise_if_failed(proc, cmd, expected)
+    return out_dir

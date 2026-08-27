@@ -19,6 +19,11 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
+_DIR = Path(__file__).resolve().parent
+if str(_DIR) not in sys.path:
+    sys.path.insert(0, str(_DIR))
+from humanoid import add_seated_dad, add_seated_maya  # noqa: E402
+
 
 SEED = 42
 SAMPLES = 32
@@ -82,29 +87,6 @@ def add_cube(
     return obj
 
 
-def add_capsule(
-    name: str,
-    loc: tuple[float, float, float],
-    scale: float,
-    material: bpy.types.Material,
-    pass_index: int,
-) -> None:
-    bpy.ops.mesh.primitive_uv_sphere_add(radius=0.22 * scale, location=(loc[0], loc[1], loc[2] + 0.42 * scale))
-    head = bpy.context.active_object
-    head.name = f"{name}_head"
-    head.pass_index = pass_index
-    head.data.materials.append(material)
-    bpy.ops.mesh.primitive_cylinder_add(
-        radius=0.18 * scale,
-        depth=0.55 * scale,
-        location=(loc[0], loc[1], loc[2] + 0.12 * scale),
-    )
-    body = bpy.context.active_object
-    body.name = f"{name}_body"
-    body.pass_index = pass_index
-    body.data.materials.append(material)
-
-
 def build_living_room() -> dict[str, bpy.types.Object]:
     wall = mat("wall", (0.22, 0.20, 0.18))
     floor_m = mat("floor", (0.28, 0.22, 0.18), roughness=0.7)
@@ -121,8 +103,10 @@ def build_living_room() -> dict[str, bpy.types.Object]:
     add_cube("sofa_back", (1.45, 0.16, 0.5), (0.05, 0.78, 0.58), sofa_m)
     add_cube("lamp_stand", (0.06, 0.06, 0.85), (-1.35, 0.1, 0.85), lamp_m)
 
-    add_capsule("dad", (-0.38, 0.50, 0.55), 1.05, dad_m, DAD_INDEX)
-    add_capsule("maya", (0.42, 0.52, 0.50), 0.86, maya_m, MAYA_INDEX)
+    dad_hair = mat("dad_hair", (0.12, 0.10, 0.09), roughness=0.75)
+    maya_hair = mat("maya_hair", (0.18, 0.10, 0.06), roughness=0.7)
+    add_seated_dad((-0.38, 0.50, 0.42), dad_m, dad_hair, DAD_INDEX, scale=1.05)
+    add_seated_maya((0.42, 0.52, 0.40), maya_m, maya_hair, MAYA_INDEX, scale=0.86)
 
     bpy.ops.object.light_add(type="AREA", location=(-1.35, -0.2, 1.7))
     lamp = bpy.context.active_object

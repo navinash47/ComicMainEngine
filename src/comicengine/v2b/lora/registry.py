@@ -17,12 +17,61 @@ class StyleLoraError(RuntimeError):
     pass
 
 
+def _load() -> dict[str, Any]:
+    return json.loads(REGISTRY_PATH.read_text())
+
+
+def sha256_file(path: Path) -> str:
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
 def load_style() -> dict[str, Any]:
-    data = json.loads(REGISTRY_PATH.read_text())
-    style = data.get("style")
+    style = _load().get("style")
     if not isinstance(style, dict) or not style.get("filename"):
         raise StyleLoraError(f"missing style entry in {REGISTRY_PATH}")
     return style
+
+
+def load_character(char_id: str = "dad") -> dict[str, Any]:
+    block = (_load().get("characters") or {}).get(char_id)
+    if not isinstance(block, dict) or not block.get("filename"):
+        raise StyleLoraError(f"missing characters.{char_id} in {REGISTRY_PATH}")
+    return block
+
+
+def character_lora_path(char_id: str = "dad") -> Path:
+    return LORA_DIR / str(load_character(char_id)["filename"])
+
+
+def character_lora_exists(char_id: str = "dad") -> bool:
+    try:
+        return character_lora_path(char_id).is_file()
+    except StyleLoraError:
+        return False
+
+
+def verify_character_lora(char_id: str = "dad") -> Path:
+    spec = load_character(char_id)
+    path = LORA_DIR / str(spec["filename"])
+    if not path.is_file():
+        raise StyleLoraError(f"Missing character LoRA at {path}")
+    digest = sha256_file(path)
+    expected = str(spec.get("sha256") or "").lower()
+    if expected and digest != expected:
+        raise StyleLoraError(f"Character LoRA hash mismatch for {path.name}: got {digest}, expected {expected}")
+    return path
+
+
+def upsert_character(char_id: str, **fields: Any) -> dict[str, Any]:
+    data = _load()
+    chars = dict(data.get("characters") or {})
+    row = dict(chars.get(char_id) or {})
+    row.update(fields)
+    row["id"] = char_id
+    chars[char_id] = row
+    data["characters"] = chars
+    REGISTRY_PATH.write_text(json.dumps(data, indent=2) + "\n")
+    return row
 
 
 def style_lora_path(style: dict[str, Any] | None = None) -> Path:

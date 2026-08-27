@@ -65,7 +65,7 @@ def _parse_json(text: str) -> dict[str, Any]:
     return data
 
 
-def _one_pass(path_a: Path, path_b: Path, db: UsageDB) -> dict[str, Any]:
+def _one_pass(path_a: Path, path_b: Path, db: UsageDB, prompt: str | None = None) -> dict[str, Any]:
     from google import genai
     from google.genai import types
 
@@ -86,7 +86,7 @@ def _one_pass(path_a: Path, path_b: Path, db: UsageDB) -> dict[str, Any]:
         resp = client.models.generate_content(
             model=JUDGE_MODEL,
             contents=[
-                PROMPT,
+                prompt or PROMPT,
                 types.Part.from_bytes(data=Path(path_a).read_bytes(), mime_type=mime_a),
                 types.Part.from_bytes(data=Path(path_b).read_bytes(), mime_type=mime_b),
             ],
@@ -143,4 +143,51 @@ def pairwise(path_a: Path, path_b: Path, *, db: UsageDB | None = None) -> dict[s
         "reason": forward.get("reason") or "",
         "forward": forward,
         "backward_flipped": flipped,
+    }
+
+
+IDENTITY_PROMPT = """Image A is a character reference. Image B is a candidate still.
+
+Question: is B the SAME PERSON as A (identity: hair, face mass, clothes type)? Ignore pose and camera.
+
+Return ONLY JSON:
+{
+  "winner": "B" | "A" | "tie",
+  "structure": "tie",
+  "style": "tie",
+  "lighting": "tie",
+  "bedtime": "tie",
+  "reason": "one short sentence"
+}
+
+Rules:
+- winner B means B is the same person as A.
+- winner A means B is a different person.
+- tie if unsure.
+- pairwise only. Do not output 1-10 scores.
+"""
+
+
+def same_person(reference: Path, candidate: Path, *, db: UsageDB | None = None) -> dict[str, Any]:
+    """True when Gemini says the candidate is the same person as the reference."""
+    db = db or UsageDB()
+    forward = _one_pass(reference, candidate, db, prompt=IDENTITY_PROMPT)
+    backward = _one_pass(candidate, reference, db, prompt=IDENTITY_PROMPT)
+    # forward winner B = same. backward (swapped) winner A = same in original terms.
+    fwd_same = forward.get("winner") == "B"
+    back_same = backward.get("winner") == "A"
+    if fwd_same and back_same:
+        same = True
+    elif (not fwd_same) and (not back_same) and forward.get("winner") != "tie" and backward.get("winner") != "tie":
+        same = False
+    elif forward.get("winner") == "tie" and backward.get("winner") == "tie":
+        same = False
+    else:
+        third = _one_pass(reference, candidate, db, prompt=IDENTITY_PROMPT)
+        same = third.get("winner") == "B"
+    return {
+        "same": same,
+        "reason": forward.get("reason") or "",
+        "forward": forward,
+        "backward": backward,
     }

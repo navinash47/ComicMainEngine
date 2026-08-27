@@ -1,8 +1,4 @@
-"""Identity vs beauty. Capsules are not faces — log only, never a G1 fail gate.
-
-Project venv has no torch. Use a spatial color grid (CLIP/DINOv2 stand-in).
-B4 should replace this with real DINOv2/CLIP once torch is in the ComicEngine env.
-"""
+"""Identity vs beauty. grid_hist is log-only. B4 uses DINOv2/Gemini for Dad."""
 
 from __future__ import annotations
 
@@ -14,6 +10,29 @@ from PIL import Image
 from skimage.transform import resize
 
 from comicengine.v2b.eval.structure import EVAL_SIZE
+
+CELLS = 8
+LUMA_BINS = 32
+
+
+def crop_index_channel(panel: Path, index_png: Path, *, channel: str = "R", pad: int = 8) -> Path:
+    """Crop the panel to the object-index mask. channel R=dad, G=maya."""
+    panel_im = Image.open(panel).convert("RGB")
+    idx = Image.open(index_png).convert("RGB")
+    if idx.size != panel_im.size:
+        idx = idx.resize(panel_im.size)
+    arr = np.asarray(idx)
+    ch = {"R": 0, "G": 1, "B": 2}[channel]
+    mask = arr[..., ch] > 40
+    if not mask.any():
+        raise RuntimeError(f"empty {channel} mask in {index_png}")
+    ys, xs = np.where(mask)
+    y0, y1 = max(0, int(ys.min()) - pad), min(arr.shape[0], int(ys.max()) + pad)
+    x0, x1 = max(0, int(xs.min()) - pad), min(arr.shape[1], int(xs.max()) + pad)
+    crop = panel_im.crop((x0, y0, x1, y1))
+    dest = Path(panel).with_name(Path(panel).stem + f"_{channel.lower()}crop.png")
+    crop.save(dest)
+    return dest
 
 CELLS = 8
 LUMA_BINS = 32
@@ -49,5 +68,5 @@ def score_vs_beauty(panel: Path, beauty: Path) -> dict[str, Any]:
         "clip_cosine": sim,
         "dino_cosine": sim,
         "method": "grid_hist_8x8",
-        "note": "Not DINOv2/CLIP weights. Capsule-vs-capsule baseline until B4.",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person.",
     }

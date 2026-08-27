@@ -3,8 +3,8 @@
     "version": "2B",
     "title": "Version 2B — 3D-previs pipeline (parallel to Version 2 and 2A)",
     "active_phase_id": "b4",
-    "updated_at": "2026-08-27T19:50:00+00:00",
-    "updated_by": "g1-eval",
+    "updated_at": "2026-08-27T21:20:00+00:00",
+    "updated_by": "b4-character-lora",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20) and Version 2A (data/v2a_program.json A0–A5). Do not edit those files from this track.",
       "3D spec is the composition contract. Headless Blender AOVs → local ComfyUI ControlNet. Not sketch-first (that is 2A).",
@@ -262,21 +262,32 @@
       "id": "b4",
       "title": "Character LoRA bootstrap (Compass Phase 3)",
       "track": "product",
-      "status": "locked",
+      "status": "complete",
       "sort_order": 4,
-      "exit_gate": "Turntable renders stylized (denoise ~0.4, ≥2 variants) then kohya SDXL LoRA; held-out cameras keep identity without baked-CG look",
+      "exit_gate": "Block humanoid Dad+Maya; Dad SD 1.5 LoRA from stylized turntable (denoise 0.4, 2 seeds) trained in ComfyUI/.venv; held-out identity Dad>Maya; living-room mean SSIM(depth) ≥ 0.53. Not SDXL. Not Maya LoRA.",
       "checklist": [
-        "Render character turntable: many angles, poses, expressions, lights",
-        "Stylize each (img2img denoise ~0.4, ≥2 variants) before training",
-        "Train SDXL character LoRA (kohya); unique trigger token",
-        "Held-out camera eval with DINOv2/CLIP — not ArcFace as primary",
-        "Optional Gemini/fal bootstrap stylize stays direct .env keys, never OmniRoute"
+        "Replace capsules with block humanoids (Dad sweater/hair, Maya hoodie/ponytail) without overwriting G1 AOVs",
+        "Dad standing turntable AOVs (no sofa); optional Maya contrast views",
+        "Stylize turntable at denoise 0.4 + weaker ControlNet, 2 seeds, trigger ce_dad_rohan",
+        "Train SD 1.5 LoRA in ComfyUI/.venv (rank 16); hash in registry; weights gitignored",
+        "Stack style+Dad LoRA on B4 living-room cameras; structure floor 0.53; identity Dad vs Maya",
+        "Do not mark B8 complete; do not train Maya LoRA; do not InstantID; do not render all 76"
       ],
-      "checklist_done": [],
+      "checklist_done": [
+        "Replace capsules with block humanoids (Dad sweater/hair, Maya hoodie/ponytail) without overwriting G1 AOVs",
+        "Dad standing turntable AOVs (no sofa); optional Maya contrast views",
+        "Stylize turntable at denoise 0.4 + weaker ControlNet, 2 seeds, trigger ce_dad_rohan",
+        "Train SD 1.5 LoRA in ComfyUI/.venv (rank 16); hash in registry; weights gitignored",
+        "Stack style+Dad LoRA on B4 living-room cameras; structure floor 0.53; identity Dad vs Maya",
+        "Do not mark B8 complete; do not train Maya LoRA; do not InstantID; do not render all 76"
+      ],
       "blockers": [],
       "notes": [
-        "Commit when done: phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable",
-        "IP-Adapter/InstantID/PuLID are fallbacks only"
+        "Scorecard data/v2b/eval/himym_ep01_b4.json. --quick 8-view set. Mean SSIM(depth) 0.5488 (floor 0.53). Restage MAE vs beauty ≤ 0.082. DINOv2-small identity 3/4 Dad>Maya. cam_b SSIM 0.469 fails per-camera (same pattern as G1); mean gate holds.",
+        "LoRA ce_dad_rohan.safetensors rank 16, 250 steps, SHA256 bfd7f7d8023ba91bbf47b420a11a128465ac620865ea8a8ef6a1d973d153bfaf. Weights gitignored. Trigger ce_dad_rohan. Not Maya LoRA; not SDXL; not InstantID.",
+        "G1 PNGs under outputs/v2b/himym_ep01/cam_{a,b,c}/ stay frozen. B4 writes himym_ep01/b4/.",
+        "B8 remains locked. B6 is two LoRAs + object-index masks.",
+        "Commit: phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable"
       ],
       "history": [
         {
@@ -284,9 +295,21 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-27T20:00:00+00:00",
+          "action": "started",
+          "by": "b4-character-lora",
+          "status": "in_progress"
+        },
+        {
+          "at": "2026-08-27T21:20:00+00:00",
+          "action": "completed",
+          "by": "b4-character-lora",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-27T21:20:00+00:00"
     },
     "b5": {
       "id": "b5",
@@ -463,13 +486,13 @@
         "title": "Infatuation",
         "story_goal": "Dad tells Maya how he met Mom: shy Rohan keeps crossing Elena on a Bay Area work trip until feelings are known.",
         "framework_goal": "76-panel consistency: living-room frame, hotel/lobby/tram locations, Rohan+Elena identity.",
-        "gate": "G1 logged 12 human pairs on panel 1 (3 cameras). Next is B4 character LoRA. Do not render all 76."
+        "gate": "B4 block meshes + Dad SD 1.5 LoRA on panel 1. Do not render all 76."
       }
     ]
   },
   "test_scene": {
     "title": "HIMYM ep1 · panel 1 — living-room sofa",
-    "product_claim": "G1 eval harness on the B0–B3 prove shot. Next is B4 character LoRA. Later panels stay locked until B5–B7.",
+    "product_claim": "B4 block humanoids + Dad SD 1.5 LoRA on the prove shot. Maya mesh only (no Maya LoRA until B6). Later panels stay locked until B5–B7.",
     "description": "Night living room, soft lamp. Dad sits beside Maya on the sofa — no book — knees almost touching. Two seated primitives, locked camera and key light.",
     "fixture": "himym_ep01_panel_01",
     "episode_id": "himym_ep01",

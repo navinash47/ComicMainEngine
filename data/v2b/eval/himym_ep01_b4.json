@@ -1,0 +1,170 @@
+{
+  "root": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4",
+  "quick": true,
+  "train_steps": 250,
+  "lora_sha256": "bfd7f7d8023ba91bbf47b420a11a128465ac620865ea8a8ef6a1d973d153bfaf",
+  "structure_floor": 0.53,
+  "mean_ssim_b4": 0.5488,
+  "pass_structure_floor": true,
+  "cameras": {
+    "cam_a": {
+      "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_a/panel_01.png",
+      "hard_ok": true,
+      "structure": {
+        "camera": "cam_a",
+        "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_a/panel_01.png",
+        "ssim_depth": 0.5337,
+        "edge_iou": 0.2626,
+        "ssim_hypothesis": 0.7,
+        "structure_floor": 0.53,
+        "pass_ssim_hypothesis": false,
+        "pass_structure_floor": true
+      },
+      "restage": {
+        "ok": true,
+        "mae_vs_beauty": 0.0611,
+        "luma_corr_vs_beauty": 0.8747,
+        "mae_max": 0.12
+      },
+      "identity": {
+        "identity_cosine": 0.9388,
+        "clip_cosine": 0.9388,
+        "dino_cosine": 0.9388,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      },
+      "lighting": {
+        "hist_l1": 0.3822,
+        "panel_left_minus_right": 0.092,
+        "beauty_left_minus_right": 0.108,
+        "key_light_side_match": true
+      },
+      "dad_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_a/panel_01_rcrop.png",
+      "dad_crop_vs_beauty": {
+        "identity_cosine": 0.8281,
+        "clip_cosine": 0.8281,
+        "dino_cosine": 0.8281,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      }
+    },
+    "cam_b": {
+      "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_b/panel_01.png",
+      "hard_ok": false,
+      "structure": {
+        "camera": "cam_b",
+        "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_b/panel_01.png",
+        "ssim_depth": 0.469,
+        "edge_iou": 0.2438,
+        "ssim_hypothesis": 0.7,
+        "structure_floor": 0.53,
+        "pass_ssim_hypothesis": false,
+        "pass_structure_floor": false
+      },
+      "restage": {
+        "ok": true,
+        "mae_vs_beauty": 0.0822,
+        "luma_corr_vs_beauty": 0.7865,
+        "mae_max": 0.12
+      },
+      "identity": {
+        "identity_cosine": 0.9214,
+        "clip_cosine": 0.9214,
+        "dino_cosine": 0.9214,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      },
+      "lighting": {
+        "hist_l1": 0.4973,
+        "panel_left_minus_right": 0.0686,
+        "beauty_left_minus_right": 0.0929,
+        "key_light_side_match": true
+      },
+      "dad_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_b/panel_01_rcrop.png",
+      "dad_crop_vs_beauty": {
+        "identity_cosine": 0.9265,
+        "clip_cosine": 0.9265,
+        "dino_cosine": 0.9265,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      }
+    },
+    "cam_c": {
+      "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_c/panel_01.png",
+      "hard_ok": true,
+      "structure": {
+        "camera": "cam_c",
+        "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_c/panel_01.png",
+        "ssim_depth": 0.6438,
+        "edge_iou": 0.2523,
+        "ssim_hypothesis": 0.7,
+        "structure_floor": 0.53,
+        "pass_ssim_hypothesis": false,
+        "pass_structure_floor": true
+      },
+      "restage": {
+        "ok": true,
+        "mae_vs_beauty": 0.0629,
+        "luma_corr_vs_beauty": 0.8616,
+        "mae_max": 0.12
+      },
+      "identity": {
+        "identity_cosine": 0.9597,
+        "clip_cosine": 0.9597,
+        "dino_cosine": 0.9597,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      },
+      "lighting": {
+        "hist_l1": 0.3367,
+        "panel_left_minus_right": 0.0303,
+        "beauty_left_minus_right": 0.0373,
+        "key_light_side_match": true
+      },
+      "dad_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/cam_c/panel_01_rcrop.png",
+      "dad_crop_vs_beauty": {
+        "identity_cosine": 0.9059,
+        "clip_cosine": 0.9059,
+        "dino_cosine": 0.9059,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      }
+    }
+  },
+  "identity": {
+    "method": "dinov2-small",
+    "n": 4,
+    "wins": 3,
+    "pass": true,
+    "details": [
+      {
+        "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az090_el12_s42.png",
+        "dad": 0.6557,
+        "maya": 0.6625,
+        "ok": false
+      },
+      {
+        "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az090_el12_s43.png",
+        "dad": 0.63,
+        "maya": 0.5586,
+        "ok": true
+      },
+      {
+        "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az270_el12_s42.png",
+        "dad": 0.6568,
+        "maya": 0.6182,
+        "ok": true
+      },
+      {
+        "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b4/dataset/dad/az270_el12_s43.png",
+        "dad": 0.6219,
+        "maya": 0.5754,
+        "ok": true
+      }
+    ],
+    "fallback": null
+  },
+  "character_lora": true,
+  "metadata": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/lora/dad/metadata.json",
+    "note": "Identity gate is Dad holdout closer to Dad sheet than Maya (DINOv2) or Gemini same-person. --quick holdout is 4 images (2 views × 2 seeds); bar 3/4. Full bar is 6/8. grid_hist is log-only."
+}

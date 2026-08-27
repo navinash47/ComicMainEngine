@@ -42,8 +42,16 @@ def _controlnet_workflow(
     seed: int,
     *,
     style_lora: bool = False,
+    denoise: float | None = None,
+    depth_strength: float | None = None,
+    lineart_strength: float | None = None,
+    positive: str | None = None,
+    negative: str | None = None,
+    character_lora: str | None = None,
+    character_strength: float = 0.8,
 ) -> dict[str, Any]:
-    path = CONTROLNET_LORA_WORKFLOW if style_lora else CONTROLNET_WORKFLOW
+    use_style = style_lora or bool(character_lora)
+    path = CONTROLNET_LORA_WORKFLOW if use_style else CONTROLNET_WORKFLOW
     data = json.loads(path.read_text())
     data["10"]["inputs"]["image"] = beauty_name
     data["12"]["inputs"]["image"] = depth_name
@@ -52,21 +60,43 @@ def _controlnet_workflow(
     data["3"]["inputs"]["seed"] = seed
     data["14"]["inputs"]["control_net_name"] = DEPTH_CN
     data["15"]["inputs"]["control_net_name"] = LINEART_CN
-    if style_lora:
+    if depth_strength is not None:
+        data["16"]["inputs"]["strength"] = float(depth_strength)
+    if lineart_strength is not None:
+        data["17"]["inputs"]["strength"] = float(lineart_strength)
+    if use_style:
         style = load_style()
         verify_style_lora(style)
         data["18"]["inputs"]["lora_name"] = style["filename"]
         data["18"]["inputs"]["strength_model"] = float(style["strength_model"])
         data["18"]["inputs"]["strength_clip"] = float(style["strength_clip"])
-        data["6"]["inputs"]["text"] = style["positive_prompt"]
-        data["7"]["inputs"]["text"] = style["negative_prompt"]
+        data["6"]["inputs"]["text"] = positive or style["positive_prompt"]
+        data["7"]["inputs"]["text"] = negative or style["negative_prompt"]
         data["3"]["inputs"]["cfg"] = float(style["cfg"])
-        data["3"]["inputs"]["denoise"] = float(style["denoise"])
+        data["3"]["inputs"]["denoise"] = float(style["denoise"] if denoise is None else denoise)
         data["3"]["inputs"]["sampler_name"] = style["sampler_name"]
         data["3"]["inputs"]["scheduler"] = style["scheduler"]
         data["3"]["inputs"]["steps"] = int(style["steps"])
         data["4"]["inputs"]["ckpt_name"] = style.get("checkpoint") or ckpt
         data["3"]["inputs"]["seed"] = seed
+    elif denoise is not None:
+        data["3"]["inputs"]["denoise"] = float(denoise)
+    if character_lora:
+        if "18" not in data:
+            raise RuntimeError("character LoRA requires the style-LoRA ControlNet graph")
+        data["19"] = {
+            "class_type": "LoraLoader",
+            "inputs": {
+                "lora_name": character_lora,
+                "strength_model": float(character_strength),
+                "strength_clip": float(character_strength),
+                "model": ["18", 0],
+                "clip": ["18", 1],
+            },
+        }
+        data["3"]["inputs"]["model"] = ["19", 0]
+        data["6"]["inputs"]["clip"] = ["19", 1]
+        data["7"]["inputs"]["clip"] = ["19", 1]
     return data
 
 
@@ -95,13 +125,20 @@ def stylize_controlnet(
     ckpt: str = DEFAULT_CKPT,
     seed: int = SEED,
     style_lora: bool = False,
+    denoise: float | None = None,
+    depth_strength: float | None = None,
+    lineart_strength: float | None = None,
+    positive: str | None = None,
+    negative: str | None = None,
+    character_lora: str | None = None,
+    character_strength: float = 0.8,
 ) -> Path:
     if not controlnet_weights_exist():
         raise FileNotFoundError(
             "Missing SD 1.5 ControlNet weights in ComfyUI/models/controlnet/: "
             f"{DEPTH_CN} and {LINEART_CN}"
         )
-    if style_lora and not style_lora_exists():
+    if (style_lora or character_lora) and not style_lora_exists():
         verify_style_lora()
     client.wait_until_up(base)
     beauty_name = client.upload_image(Path(beauty_png), base=base)
@@ -115,6 +152,13 @@ def stylize_controlnet(
             ckpt,
             seed,
             style_lora=style_lora,
+            denoise=denoise,
+            depth_strength=depth_strength,
+            lineart_strength=lineart_strength,
+            positive=positive,
+            negative=negative,
+            character_lora=character_lora,
+            character_strength=character_strength,
         ),
         base=base,
     )

@@ -22,5 +22,21 @@
     "acquired": true,
     "trained": false,
     "notes": "Acquired SD 1.5 storybook-illustration LoRA for Mac MPS. SDXL ControlNet does not fit this 16GB machine; SDXL style LoRA is the later ship path."
+  },
+  "characters": {
+    "dad": {
+      "id": "dad",
+      "filename": "ce_dad_rohan.safetensors",
+      "trigger": "ce_dad_rohan",
+      "base_model": "sd1.5",
+      "rank": 16,
+      "alpha": 16,
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "sha256": "bfd7f7d8023ba91bbf47b420a11a128465ac620865ea8a8ef6a1d973d153bfaf",
+      "trained": true,
+      "notes": "B4: SD 1.5 LoRA from stylized 3D turntable. Weights gitignored.",
+      "steps": 250
+    }
   }
 }
