@@ -35,7 +35,7 @@ Do not batch two phases. One gate per B-phase commit.
 
 ## G1 — Eval harness (prove-shot)
 
-- `phase-v2b-g1: pairwise eval harness and preference log on HIMYM p1`
+- `46eb043` phase-v2b-g1: pairwise eval harness and preference log on HIMYM p1
 - Four-axis scorecard on locked B3 (mean SSIM(depth) 0.584, floor 0.53). Identity is cheap `grid_hist_8x8` vs beauty, log-only until B4 faces exist.
 - Pairwise Gemini `gemini-3.6-flash` (direct `GOOGLE_API_KEY`; `gemini-2.5-flash` 404). 12 catalog pairs + BoN knockout, A/B swap. 46 ok calls, $0.043. Never OmniRoute images.
 - 12/12 human labels on `/v2b/gate1`. Exact LLM–human 4/12; tie-lenient 10/12. Two hard disagreements: `b_b2_beauty` and `c_b2_beauty` (human prefers beauty, Gemini prefers B2). Harness PASS; exact 8/12 is calibration debt, not an RL train signal.
