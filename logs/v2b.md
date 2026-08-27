@@ -27,7 +27,7 @@ Do not batch two phases. One gate per B-phase commit.
 
 ## B3 — Style LoRA
 
-- `phase-v2b-b3: lock style LoRA on every 2B panel`
+- `2eeb413` phase-v2b-b3: lock style LoRA on every 2B panel
 - Acquired `neonforestmist/sd15-storybook-anime-lora` (OpenRAIL-M). SHA256 `0304bb42819790cf63f4125ac70cee60fda682cc5aa4bfb512bb9e3b1746e9b0`. Weights in gitignored `ComfyUI/models/loras/`.
 - Locked on every ControlNet stylize: strength 1.0, `v1-5-pruned-emaonly`, euler 18, CFG 6.5, seed 42, denoise 0.65 (raised from B2 0.45 so the LoRA shows through).
 - Scorecard `data/v2b/eval/himym_ep01_b3_structure.json`: mean SSIM(depth) 0.584 (calibrated floor 0.53); mean edge IoU 0.292; mean pixel MAE vs B2 0.047. Visual geometry lock holds. Style is storybook illustration on capsule meshes, not ink-line faces (B4).
