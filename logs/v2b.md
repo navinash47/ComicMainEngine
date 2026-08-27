@@ -12,7 +12,7 @@ Do not batch two phases. One gate per B-phase commit.
 
 ## B1 — Vertical slice
 
-- `phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI`
+- `544c325` phase-v2b-b1: HIMYM ep1 panel 1 living-room two-shot through ComfyUI
 - Cycles beauty seed 42, 32 samples, 768×1152. Two reruns: pixel MAE 0.0 (PNG hashes differ).
 - ComfyUI HTTP img2img SD 1.5 denoise 0.42. Stylizer still restages (no ControlNet) — B2.
 - Run: `PYTHONPATH=src python scripts/v2b_b1_panel.py`
