@@ -1,0 +1,51 @@
+{
+  "id": "himym_ep01_b5",
+  "locations": ["living_room", "grand_oriole_lobby"],
+  "panels": [
+    {
+      "id": "living_a",
+      "location_id": "living_room",
+      "camera": "a",
+      "characters": ["dad", "daughter"],
+      "character_lora": "dad",
+      "seed": 42,
+      "positive": null
+    },
+    {
+      "id": "living_b",
+      "location_id": "living_room",
+      "camera": "b",
+      "characters": ["dad", "daughter"],
+      "character_lora": "dad",
+      "seed": 42,
+      "positive": null
+    },
+    {
+      "id": "living_c",
+      "location_id": "living_room",
+      "camera": "c",
+      "characters": ["dad", "daughter"],
+      "character_lora": "dad",
+      "seed": 42,
+      "positive": null
+    },
+    {
+      "id": "lobby_wide",
+      "location_id": "grand_oriole_lobby",
+      "camera": "wide",
+      "characters": [],
+      "character_lora": null,
+      "seed": 42,
+      "positive": "storybook anime illustration, grand hotel lobby, marble floor, wood reception desk, two columns, warm afternoon light, empty of people, cel shaded comic panel, no sofa, no living room, no text"
+    },
+    {
+      "id": "lobby_close",
+      "location_id": "grand_oriole_lobby",
+      "camera": "close",
+      "characters": [],
+      "character_lora": null,
+      "seed": 42,
+      "positive": "storybook anime illustration, grand hotel lobby close on reception desk, columns behind, warm stone, empty of people, cel shaded comic panel, no sofa, no living room, no text"
+    }
+  ]
+}

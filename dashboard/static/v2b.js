@@ -103,7 +103,7 @@ function render(data) {
 }
 
 function highlightPipeline(activeId, phases) {
-  const order = ["b1", "b2", "b3", "g1", "b4", "b8"];
+  const order = ["b1", "b2", "b3", "g1", "b4", "b5", "b8"];
   const activeIdx = order.indexOf(activeId);
   document.querySelectorAll("#pipelineFlow .v2a-node").forEach((el) => {
     const id = el.getAttribute("data-phase");
@@ -139,6 +139,7 @@ async function load() {
     if (!res.ok) throw new Error(`${res.status}`);
     render(await res.json());
     await loadB4();
+    await loadB5();
   } catch (err) {
     $("updated").textContent = `error ${err}`;
     $("lede").textContent = "Could not load data/v2b_program.json.";
@@ -178,5 +179,29 @@ async function loadB4() {
     }
   } catch {
     /* gallery is optional until B4 PNGs exist */
+  }
+}
+
+async function loadB5() {
+  const el = $("b5Compare");
+  if (!el) return;
+  try {
+    const res = await fetch("/api/v2b/b5/gallery");
+    if (!res.ok) return;
+    const g = await res.json();
+    const fig = (src, cap) =>
+      src
+        ? `<figure style="margin:0;background:var(--bg1);border:1px solid var(--line);padding:0.4rem"><img src="${esc(src)}" alt="${esc(cap)}" style="width:100%;height:auto;display:block;background:#111"/><figcaption class="muted small">${esc(cap)}</figcaption></figure>`
+        : "";
+    el.style.display = "grid";
+    el.style.gridTemplateColumns = "1fr 1fr 1fr";
+    el.style.gap = "0.75rem";
+    el.innerHTML = [
+      fig(g.living_a, "living_room cam_a (spec + Dad LoRA)"),
+      fig(g.lobby_wide, "Grand Oriole lobby wide"),
+      fig(g.lobby_close, "Grand Oriole lobby close"),
+    ].join("");
+  } catch {
+    /* optional until B5 PNGs exist */
   }
 }

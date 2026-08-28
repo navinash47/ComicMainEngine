@@ -74,7 +74,7 @@ Skip StableGen. It textures 3D meshes; 2B needs flat stylized 2D panels.
 - **ComfyUI** persistent local server at `localhost:8188` (repo-local `ComfyUI/`, gitignored). **B2–B4 use SD 1.5 ControlNet + LoRA on MPS**; SDXL is the later ship stack, not this machine. Workflows stored as API-format JSON. One instance per GPU; no concurrent `/prompt`s.
 - **SDXL** base (OpenRAIL++-M, commercial OK) + richest ControlNet/LoRA ecosystem on 16GB — ship target when ControlNet fits. This Mac locks SD 1.5. FLUX.1-dev is non-commercial — do not ship on it.
 - **Character LoRA (B4):** diffusers + PEFT in `ComfyUI/.venv` (torch/MPS). Compass named kohya/SDXL; kohya-on-MPS is a time sink and SDXL+ControlNet does not fit. Style LoRA for B3 was acquired, not trained. Do not add torch to ComicEngine `.venv`.
-- **Eval:** `grid_hist_8x8` is log-only. B4 identity is DINOv2-small in `ComfyUI/.venv` (Dad holdout vs Dad sheet vs Maya), Gemini `same_person` fallback. SSIM(depth) structure floor 0.53; luminance hist + key-light side; Gemini Flash **pairwise** (not 1–10 scores). Compass named Qwen3-VL; G1 used `gemini-3.6-flash` direct `GOOGLE_API_KEY`. Never OmniRoute images.
+- **Eval:** `grid_hist_8x8` is log-only. B4 identity is DINOv2-small in `ComfyUI/.venv` (Dad holdout vs Dad sheet vs Maya), Gemini `same_person` fallback. B5 location is DINOv2-small on character-painted backgrounds; gate is same-room mean > cross-room (Compass 0.9 is a hypothesis). SSIM(depth) structure floor 0.53 is the living-room calibration, not empty lobby. Luminance hist + key-light side; Gemini Flash **pairwise** (not 1–10 scores). Compass named Qwen3-VL; G1 used `gemini-3.6-flash` direct `GOOGLE_API_KEY`. Never OmniRoute images.
 - **Determinism:** pin seeds, sampler, steps, CFG, model/LoRA hashes. Content-hash cache skips unchanged specs.
 
 ### Intended package (B1+, not this freeze)
@@ -97,7 +97,7 @@ Do not put 2B pipeline code into `panel_batch.py`, `script_engine.py`, or 2A mod
 
 ### Layer 1 — Spec → headless Blender
 
-A panel spec names location, character(s), camera, lights, seed. Headless `himym_p1.py` emits beauty, normalized Z depth (near=white), Grease Pencil Line Art (Blender 5.2 Freestyle-as-pass is empty), normal, and object-index (dad=R, maya=G). Run via `blender --background --factory-startup --python himym_p1.py`. Fixed render settings. Re-run with the same spec+seed must be byte-identical or near-identical on the 3D render.
+A panel spec names location, character(s), camera, lights, seed. **B5** loads versioned JSON under `data/v2b/specs/` (Pydantic in `src/comicengine/v2b/spec.py`; not `episode_schema.py`). Headless `build_scene.py` places primitives from that JSON. `himym_p1.py` stays the frozen B1–B4 living-room path. AOVs: beauty, normalized Z depth (near=white), Grease Pencil Line Art, normal, object-index (dad=R, maya=G). Run via `blender --background --factory-startup --python build_scene.py`. Re-run with the same spec+seed must be byte-identical or near-identical on the 3D render.
 
 ### Layer 2 — ComfyUI stylize
 
@@ -114,6 +114,10 @@ Capsules cannot be the dataset (a LoRA of blobs stays blobs). B4 replaces them w
 5. Eval: mean SSIM(depth) ≥ 0.53 vs **B4** depth; restage MAE vs beauty ≤ 0.12; identity Dad holdout closer to Dad sheet than Maya on ≥6/8 (DINOv2) or Gemini fallback. `grid_hist_8x8` stays log-only. Do not claim Compass 0.85.
 
 B6 is when two LoRAs get object-index masks. IP-Adapter / InstantID / PuLID stay fallbacks (InsightFace terms + photoreal bias).
+
+### Layer 3.5 — Location reuse (B5)
+
+Versioned location JSON (`data/v2b/specs/locations/`) + panel runfile (`himym_ep01_b5.json`). Prove: living room ×3 (stacked style+Dad LoRA) and Grand Oriole lobby ×2 (style only, empty — no Rohan LoRA). Location eval: character-index painted out, DINOv2-small on backgrounds; gate is **same-room mean > cross-room**. Compass 0.9 is a hypothesis. Structure floor 0.53 is the living-room calibration, not empty lobby. Writes `outputs/v2b/himym_ep01/b5/`. G1/B4 trees stay frozen.
 
 ### Layer 4 — Eval + best-of-N (G1 prove-shot; B8 later)
 
@@ -134,7 +138,8 @@ G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3
 - **B3 style:** same three cameras, locked `storybook_anime_lora` at strength 1.0. Gut-check is these framings, not 10 scenes (B8).
 - **G1 eval:** 12 human A/B labels on `/v2b/gate1`; Gemini pairwise with A/B swap; BoN seeds 42–45. Scorecard `data/v2b/eval/himym_ep01_g1_scorecard.json`.
 - **B4 character:** block meshes + Dad SD 1.5 LoRA. Scorecard `data/v2b/eval/himym_ep01_b4.json`. Maya LoRA waits for B6. Do not InstantID.
-- **Later:** B5 reuses Grand Oriole / lobby / tram locations from the same packet. B7 may sequence more of the 76. Do not render all 76 in B1.
+- **B5 locations:** spec-driven `living_room` ×3 + `grand_oriole_lobby` ×2. Scorecard `data/v2b/eval/himym_ep01_b5.json`. No Rohan/Elena LoRA. Do not InstantID.
+- **Later:** B6 is two LoRAs + object-index masks. B7 may sequence more of the 76. Do not render all 76 in B1.
 
 ---
 
@@ -166,7 +171,7 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0–B3 and G1 are complete. B4–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0–B5 and G1 are complete. B6–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 

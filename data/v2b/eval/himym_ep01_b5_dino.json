@@ -1,0 +1,42 @@
+{
+  "method": "dinov2-small-background",
+  "intra": {
+    "living_room": [
+      {
+        "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_a/panel_01_bg.png",
+        "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_b/panel_01_bg.png",
+        "cosine": 0.7913
+      },
+      {
+        "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_a/panel_01_bg.png",
+        "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_c/panel_01_bg.png",
+        "cosine": 0.8843
+      },
+      {
+        "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_b/panel_01_bg.png",
+        "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/living_room/cam_c/panel_01_bg.png",
+        "cosine": 0.8
+      }
+    ],
+    "grand_oriole_lobby": [
+      {
+        "a": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/grand_oriole_lobby/cam_wide/panel_01_bg.png",
+        "b": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b5/grand_oriole_lobby/cam_close/panel_01_bg.png",
+        "cosine": 0.7366
+      }
+    ]
+  },
+  "intra_mean": {
+    "living_room": 0.8252,
+    "grand_oriole_lobby": 0.7366
+  },
+  "contrast": [
+    {
+      "a": "living_room",
+      "b": "grand_oriole_lobby",
+      "cosine": 0.4765
+    }
+  ],
+  "pass_same_beats_cross": true,
+  "note": "Compass named DINOv2(background) \u2265 0.9. B5 gate is same-location mean > cross-location. grid_hist is log-only."
+}
