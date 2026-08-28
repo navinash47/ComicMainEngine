@@ -15,6 +15,9 @@ CONTROLNET_WORKFLOW = Path(__file__).resolve().parent / "workflows" / "img2img_c
 CONTROLNET_LORA_WORKFLOW = (
     Path(__file__).resolve().parent / "workflows" / "img2img_controlnet_lora_sd15.json"
 )
+INPAINT_LORA_WORKFLOW = (
+    Path(__file__).resolve().parent / "workflows" / "img2img_controlnet_inpaint_lora_sd15.json"
+)
 DEFAULT_CKPT = "v1-5-pruned-emaonly.safetensors"
 SEED = 42
 DEPTH_CN = "control_v11f1p_sd15_depth.pth"
@@ -100,6 +103,55 @@ def _controlnet_workflow(
     return data
 
 
+def _inpaint_workflow(
+    panel_name: str,
+    depth_name: str,
+    lineart_name: str,
+    mask_name: str,
+    ckpt: str,
+    seed: int,
+    *,
+    character_lora: str,
+    character_strength: float = 0.8,
+    denoise: float | None = None,
+    depth_strength: float | None = None,
+    lineart_strength: float | None = None,
+    positive: str | None = None,
+    negative: str | None = None,
+    grow_mask_by: int = 8,
+) -> dict[str, Any]:
+    style = load_style()
+    verify_style_lora(style)
+    data = json.loads(INPAINT_LORA_WORKFLOW.read_text())
+    data["10"]["inputs"]["image"] = panel_name
+    data["12"]["inputs"]["image"] = depth_name
+    data["13"]["inputs"]["image"] = lineart_name
+    data["19"]["inputs"]["image"] = mask_name
+    data["4"]["inputs"]["ckpt_name"] = style.get("checkpoint") or ckpt
+    data["3"]["inputs"]["seed"] = seed
+    data["14"]["inputs"]["control_net_name"] = DEPTH_CN
+    data["15"]["inputs"]["control_net_name"] = LINEART_CN
+    data["18"]["inputs"]["lora_name"] = style["filename"]
+    data["18"]["inputs"]["strength_model"] = float(style["strength_model"])
+    data["18"]["inputs"]["strength_clip"] = float(style["strength_clip"])
+    data["22"]["inputs"]["lora_name"] = character_lora
+    data["22"]["inputs"]["strength_model"] = float(character_strength)
+    data["22"]["inputs"]["strength_clip"] = float(character_strength)
+    data["21"]["inputs"]["grow_mask_by"] = int(grow_mask_by)
+    data["6"]["inputs"]["text"] = positive or data["6"]["inputs"]["text"]
+    data["7"]["inputs"]["text"] = negative or style["negative_prompt"]
+    data["3"]["inputs"]["cfg"] = float(style["cfg"])
+    data["3"]["inputs"]["denoise"] = float(style["denoise"] if denoise is None else denoise)
+    data["3"]["inputs"]["sampler_name"] = style["sampler_name"]
+    data["3"]["inputs"]["scheduler"] = style["scheduler"]
+    data["3"]["inputs"]["steps"] = int(style["steps"])
+    if depth_strength is not None:
+        data["16"]["inputs"]["strength"] = float(depth_strength)
+    if lineart_strength is not None:
+        data["17"]["inputs"]["strength"] = float(lineart_strength)
+    return data
+
+
 def stylize_img2img(
     beauty_png: Path,
     dest_png: Path,
@@ -159,6 +211,60 @@ def stylize_controlnet(
             negative=negative,
             character_lora=character_lora,
             character_strength=character_strength,
+        ),
+        base=base,
+    )
+    history = client.wait_history(prompt_id, base=base)
+    return client.fetch_first_image(history, Path(dest_png), base=base)
+
+
+def stylize_inpaint_controlnet(
+    panel_png: Path,
+    depth_png: Path,
+    lineart_png: Path,
+    mask_png: Path,
+    dest_png: Path,
+    *,
+    character_lora: str,
+    character_strength: float = 0.8,
+    base: str = client.DEFAULT_BASE,
+    ckpt: str = DEFAULT_CKPT,
+    seed: int = SEED,
+    denoise: float | None = 0.55,
+    depth_strength: float | None = None,
+    lineart_strength: float | None = None,
+    positive: str | None = None,
+    negative: str | None = None,
+    grow_mask_by: int = 8,
+) -> Path:
+    """Pass-2: denoise only the object-index mask. Style LoRA + one character LoRA."""
+    if not controlnet_weights_exist():
+        raise FileNotFoundError(
+            "Missing SD 1.5 ControlNet weights in ComfyUI/models/controlnet/: "
+            f"{DEPTH_CN} and {LINEART_CN}"
+        )
+    verify_style_lora()
+    client.wait_until_up(base)
+    panel_name = client.upload_image(Path(panel_png), base=base)
+    depth_name = client.upload_image(Path(depth_png), base=base)
+    lineart_name = client.upload_image(Path(lineart_png), base=base)
+    mask_name = client.upload_image(Path(mask_png), base=base)
+    prompt_id = client.queue_prompt(
+        _inpaint_workflow(
+            panel_name,
+            depth_name,
+            lineart_name,
+            mask_name,
+            ckpt,
+            seed,
+            character_lora=character_lora,
+            character_strength=character_strength,
+            denoise=denoise,
+            depth_strength=depth_strength,
+            lineart_strength=lineart_strength,
+            positive=positive,
+            negative=negative,
+            grow_mask_by=grow_mask_by,
         ),
         base=base,
     )

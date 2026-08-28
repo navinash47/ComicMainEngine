@@ -1,0 +1,6 @@
+{
+  "id": "himym_ep01_b6",
+  "location_id": "living_room",
+  "cameras": ["a", "c"],
+  "characters": ["dad", "daughter"]
+}

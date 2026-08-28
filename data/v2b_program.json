@@ -2,9 +2,9 @@
   "program": {
     "version": "2B",
     "title": "Version 2B — 3D-previs pipeline (parallel to Version 2 and 2A)",
-    "active_phase_id": "b5",
-    "updated_at": "2026-08-28T00:50:00+00:00",
-    "updated_by": "b5-location-reuse",
+    "active_phase_id": "b6",
+    "updated_at": "2026-08-28T02:50:00+00:00",
+    "updated_by": "b6-multi-character-masks",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20) and Version 2A (data/v2a_program.json A0–A5). Do not edit those files from this track.",
       "3D spec is the composition contract. Headless Blender AOVs → local ComfyUI ControlNet. Not sketch-first (that is 2A).",
@@ -363,7 +363,7 @@
       "id": "b6",
       "title": "Multi-character masks (Compass Phase 5)",
       "track": "product",
-      "status": "locked",
+      "status": "complete",
       "sort_order": 6,
       "exit_gate": "Two+ character LoRAs in one panel gated by Blender object-index masks; own-identity holds, cross-identity below bleed threshold",
       "checklist": [
@@ -372,10 +372,17 @@
         "Two-pass masked inpaint fallback if single-pass bleeds",
         "Bleed metric: own-identity vs other-identity"
       ],
-      "checklist_done": [],
+      "checklist_done": [
+        "Object-index / cryptomatte masks from Blender",
+        "Regional prompting / LoRA gating in ComfyUI",
+        "Two-pass masked inpaint fallback if single-pass bleeds",
+        "Bleed metric: own-identity vs other-identity"
+      ],
       "blockers": [],
       "notes": [
-        "Commit when done: phase-v2b-b6: mask-driven multi-character LoRAs without bleed"
+        "Scorecard data/v2b/eval/himym_ep01_b6.json. Mean SSIM(depth) 0.5917 on cam_a/c (floor 0.53). Maya LoRA 4/4 holdout. Bleed: Dad vs pass1 0.966/0.984; Maya G-crop own>cross. Seated dad_own vs Maya sheet is log-only (block two-shot). SHA256 b767153fc38dbf7aad445165868036e14d9a8fee60fe5f0ed7ef722f9b168d86. Weights gitignored.",
+        "Two-pass: style+Dad, then VAEEncodeForInpaint on G-index with Maya LoRA. cam_b skipped. No Rohan/Elena. No InstantID. B8 stays locked.",
+        "Commit: phase-v2b-b6: mask-driven multi-character LoRAs without bleed"
       ],
       "history": [
         {
@@ -383,9 +390,21 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-28T01:45:00+00:00",
+          "action": "started",
+          "by": "b6-multi-character-masks",
+          "status": "in_progress"
+        },
+        {
+          "at": "2026-08-28T02:50:00+00:00",
+          "action": "completed",
+          "by": "b6-multi-character-masks",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-28T02:50:00+00:00"
     },
     "b7": {
       "id": "b7",
@@ -506,13 +525,13 @@
         "title": "Infatuation",
         "story_goal": "Dad tells Maya how he met Mom: shy Rohan keeps crossing Elena on a Bay Area work trip until feelings are known.",
         "framework_goal": "76-panel consistency: living-room frame, hotel/lobby/tram locations, Rohan+Elena identity.",
-        "gate": "B5 spec-driven living room ×3 + Grand Oriole lobby ×2. Do not render all 76."
+        "gate": "B6 two-pass Dad+Maya LoRAs on living-room cam_a/c. Do not render all 76."
       }
     ]
   },
   "test_scene": {
     "title": "HIMYM ep1 · panel 1 — living-room sofa",
-    "product_claim": "B5 reuses living_room from a versioned spec and adds Grand Oriole lobby. Dad LoRA on living cameras only. No Rohan LoRA. Maya LoRA waits for B6.",
+    "product_claim": "B6 two-pass: style+Dad globally, Maya LoRA inpainted on G-index. cam_a and cam_c. No Rohan LoRA. B7 sequences next.",
     "description": "Night living room, soft lamp. Dad sits beside Maya on the sofa — no book — knees almost touching. Two seated primitives, locked camera and key light.",
     "fixture": "himym_ep01_panel_01",
     "episode_id": "himym_ep01",

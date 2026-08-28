@@ -354,6 +354,25 @@ def api_v2b_b5_gallery() -> dict[str, Any]:
     }
 
 
+@app.get("/api/v2b/b6/gallery")
+def api_v2b_b6_gallery() -> dict[str, Any]:
+    root = OUTPUTS / "v2b" / "himym_ep01" / "b6" / "living_room"
+
+    def url(path: Path) -> str | None:
+        if not path.is_file():
+            return None
+        rel = path.resolve().relative_to(OUTPUTS.resolve())
+        return "/media/" + str(rel).replace("\\", "/")
+
+    return {
+        "cam_a": url(root / "cam_a" / "panel_01.png"),
+        "cam_a_pass1": url(root / "cam_a" / "panel_01_pass1.png"),
+        "cam_c": url(root / "cam_c" / "panel_01.png"),
+        "cam_c_pass1": url(root / "cam_c" / "panel_01_pass1.png"),
+        "mask_a": url(root / "cam_a" / "mask_g.png"),
+    }
+
+
 @app.get("/roi")
 def roi_page() -> FileResponse:
     return FileResponse(STATIC / "roi.html")

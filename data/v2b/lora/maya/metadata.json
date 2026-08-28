@@ -1,0 +1,369 @@
+{
+  "character": "maya",
+  "trigger": "ce_maya",
+  "denoise": 0.4,
+  "depth_strength": 0.55,
+  "lineart_strength": 0.45,
+  "seeds": [
+    42,
+    43
+  ],
+  "maya": [
+    {
+      "character": "maya",
+      "view_id": "az000_el12",
+      "azimuth": 0,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az000_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 0 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az000_el12",
+      "azimuth": 0,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az000_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 0 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az045_el12",
+      "azimuth": 45,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az045_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 45 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az045_el12",
+      "azimuth": 45,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az045_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 45 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az090_el12",
+      "azimuth": 90,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 90 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az090_el12",
+      "azimuth": 90,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 90 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az135_el12",
+      "azimuth": 135,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az135_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 135 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az135_el12",
+      "azimuth": 135,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az135_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 135 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az180_el12",
+      "azimuth": 180,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az180_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 180 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az180_el12",
+      "azimuth": 180,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az180_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 180 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az225_el12",
+      "azimuth": 225,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az225_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 225 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az225_el12",
+      "azimuth": 225,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az225_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 225 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az270_el12",
+      "azimuth": 270,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 270 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az270_el12",
+      "azimuth": 270,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 270 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az315_el12",
+      "azimuth": 315,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az315_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 315 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az315_el12",
+      "azimuth": 315,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az315_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 315 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    }
+  ],
+  "train": [
+    {
+      "character": "maya",
+      "view_id": "az000_el12",
+      "azimuth": 0,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az000_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 0 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az000_el12",
+      "azimuth": 0,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az000_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 0 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az045_el12",
+      "azimuth": 45,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az045_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 45 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az045_el12",
+      "azimuth": 45,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az045_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 45 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az135_el12",
+      "azimuth": 135,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az135_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 135 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az135_el12",
+      "azimuth": 135,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az135_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 135 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az180_el12",
+      "azimuth": 180,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az180_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 180 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az180_el12",
+      "azimuth": 180,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az180_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 180 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az225_el12",
+      "azimuth": 225,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az225_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 225 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az225_el12",
+      "azimuth": 225,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az225_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 225 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az315_el12",
+      "azimuth": 315,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az315_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 315 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az315_el12",
+      "azimuth": 315,
+      "elevation": 12,
+      "holdout": false,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az315_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 315 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    }
+  ],
+  "holdout": [
+    {
+      "character": "maya",
+      "view_id": "az090_el12",
+      "azimuth": 90,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 90 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az090_el12",
+      "azimuth": 90,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 90 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az270_el12",
+      "azimuth": 270,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 42,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s42.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 270 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    },
+    {
+      "character": "maya",
+      "view_id": "az270_el12",
+      "azimuth": 270,
+      "elevation": 12,
+      "holdout": true,
+      "seed": 43,
+      "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s43.png",
+      "caption": "ce_maya, indian teen girl, oversized hoodie, ponytail, pajama pants, storybook anime illustration, cel shaded comic character, standing turntable, plain grey floor, no sofa, no text, azimuth 270 degrees, elevation 12 degrees",
+      "style": "storybook_anime_lora.safetensors"
+    }
+  ]
+}

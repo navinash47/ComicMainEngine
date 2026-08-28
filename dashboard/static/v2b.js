@@ -103,7 +103,7 @@ function render(data) {
 }
 
 function highlightPipeline(activeId, phases) {
-  const order = ["b1", "b2", "b3", "g1", "b4", "b5", "b8"];
+  const order = ["b1", "b2", "b3", "g1", "b4", "b5", "b6", "b8"];
   const activeIdx = order.indexOf(activeId);
   document.querySelectorAll("#pipelineFlow .v2a-node").forEach((el) => {
     const id = el.getAttribute("data-phase");
@@ -140,6 +140,7 @@ async function load() {
     render(await res.json());
     await loadB4();
     await loadB5();
+    await loadB6();
   } catch (err) {
     $("updated").textContent = `error ${err}`;
     $("lede").textContent = "Could not load data/v2b_program.json.";
@@ -203,5 +204,30 @@ async function loadB5() {
     ].join("");
   } catch {
     /* optional until B5 PNGs exist */
+  }
+}
+
+async function loadB6() {
+  const el = $("b6Compare");
+  if (!el) return;
+  try {
+    const res = await fetch("/api/v2b/b6/gallery");
+    if (!res.ok) return;
+    const g = await res.json();
+    const fig = (src, cap) =>
+      src
+        ? `<figure style="margin:0;background:var(--bg1);border:1px solid var(--line);padding:0.4rem"><img src="${esc(src)}" alt="${esc(cap)}" style="width:100%;height:auto;display:block;background:#111"/><figcaption class="muted small">${esc(cap)}</figcaption></figure>`
+        : "";
+    el.style.display = "grid";
+    el.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+    el.style.gap = "0.75rem";
+    el.innerHTML = [
+      fig(g.cam_a_pass1, "cam_a pass1 (style+Dad)"),
+      fig(g.cam_a, "cam_a two-pass (Maya mask)"),
+      fig(g.cam_c_pass1, "cam_c pass1 (style+Dad)"),
+      fig(g.cam_c, "cam_c two-pass (Maya mask)"),
+    ].join("");
+  } catch {
+    /* optional until B6 PNGs exist */
   }
 }

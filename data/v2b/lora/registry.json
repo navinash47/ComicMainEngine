@@ -37,6 +37,20 @@
       "trained": true,
       "notes": "B4: SD 1.5 LoRA from stylized 3D turntable. Weights gitignored.",
       "steps": 250
+    },
+    "maya": {
+      "id": "maya",
+      "filename": "ce_maya.safetensors",
+      "trigger": "ce_maya",
+      "base_model": "sd1.5",
+      "rank": 16,
+      "alpha": 16,
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "sha256": "b767153fc38dbf7aad445165868036e14d9a8fee60fe5f0ed7ef722f9b168d86",
+      "trained": true,
+      "notes": "B6: SD 1.5 LoRA from stylized 3D turntable. Weights gitignored.",
+      "steps": 250
     }
   }
 }

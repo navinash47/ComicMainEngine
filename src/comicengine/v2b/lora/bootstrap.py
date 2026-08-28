@@ -28,8 +28,9 @@ MAYA_PROMPT = (
 NEG = "photoreal, 3d render, cgi, watermark, text, letters, extra limbs, blurry, deformed, sofa, living room"
 
 
-def _view_dir(character: str, view_id: str) -> Path:
-    return B4_ROOT / "turntable" / character / view_id
+def _view_dir(character: str, view_id: str, turntable_root: Path | None = None) -> Path:
+    root = Path(turntable_root) if turntable_root else B4_ROOT / "turntable" / character
+    return root / view_id
 
 
 def caption_for(character: str, view: dict[str, object]) -> str:
@@ -42,27 +43,35 @@ def stylize_character(
     *,
     quick: bool = False,
     seeds: tuple[int, ...] = BOOTSTRAP_SEEDS,
+    dest_root: Path | None = None,
+    turntable_root: Path | None = None,
+    full: bool = False,
 ) -> list[dict[str, Any]]:
     style = load_style()
-    trigger = load_character("dad")["trigger"] if character == "dad" else ""
+    trigger = ""
+    if character == "dad":
+        trigger = str(load_character("dad")["trigger"])
+    elif full:
+        trigger = str(load_character(character)["trigger"])
     rows: list[dict[str, Any]] = []
-    dest_root = B4_ROOT / "dataset" / character
+    dest_root = Path(dest_root) if dest_root else B4_ROOT / "dataset" / character
     dest_root.mkdir(parents=True, exist_ok=True)
     if character == "dad":
         CAPTION_ROOT.mkdir(parents=True, exist_ok=True)
     views = view_specs(quick=quick)
-    if character == "maya":
+    use_seeds = seeds
+    if character == "maya" and not full:
         views = [v for v in views if not v["holdout"]][:4]
-        seeds = (seeds[0],)
+        use_seeds = (seeds[0],)
     for view in views:
-        src = _view_dir(character, str(view["id"]))
+        src = _view_dir(character, str(view["id"]), turntable_root)
         beauty, depth, lineart = src / "beauty_01.png", src / "depth_01.png", src / "lineart_01.png"
         if not beauty.is_file():
             raise FileNotFoundError(f"missing turntable AOV {beauty}")
         prompt = caption_for(character, view)
         if trigger and trigger not in prompt:
             prompt = f"{trigger}, {prompt}"
-        for seed in seeds:
+        for seed in use_seeds:
             name = f"{view['id']}_s{seed}.png"
             dest = dest_root / name
             print(f"stylize {character} {name} exists={dest.is_file()}", flush=True)
@@ -114,6 +123,24 @@ def write_metadata(dad_rows: list[dict[str, Any]], maya_rows: list[dict[str, Any
     }
     META_PATH.write_text(json.dumps(payload, indent=2) + "\n")
     return META_PATH
+
+
+def write_character_metadata(character: str, rows: list[dict[str, Any]], dest: Path | None = None) -> Path:
+    path = Path(dest) if dest else ROOT / "data" / "v2b" / "lora" / character / "metadata.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "character": character,
+        "trigger": load_character(character)["trigger"],
+        "denoise": 0.40,
+        "depth_strength": 0.55,
+        "lineart_strength": 0.45,
+        "seeds": list(BOOTSTRAP_SEEDS),
+        character: rows,
+        "train": [r for r in rows if not r["holdout"]],
+        "holdout": [r for r in rows if r["holdout"]],
+    }
+    path.write_text(json.dumps(payload, indent=2) + "\n")
+    return path
 
 
 def load_metadata() -> dict[str, Any]:

@@ -34,6 +34,25 @@ def crop_index_channel(panel: Path, index_png: Path, *, channel: str = "R", pad:
     crop.save(dest)
     return dest
 
+
+def index_channel_mask(
+    index_png: Path,
+    *,
+    channel: str = "G",
+    dest: Path | None = None,
+    threshold: int = 40,
+) -> Path:
+    """White-on-black RGB mask from an object-index channel (R=dad, G=maya)."""
+    idx = Image.open(index_png).convert("RGB")
+    arr = np.asarray(idx)
+    ch = {"R": 0, "G": 1, "B": 2}[channel]
+    mask = (arr[..., ch] > threshold).astype(np.uint8) * 255
+    rgb = np.stack([mask, mask, mask], axis=-1)
+    dest = Path(dest) if dest else Path(index_png).with_name(f"mask_{channel.lower()}.png")
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    Image.fromarray(rgb).save(dest)
+    return dest
+
 CELLS = 8
 LUMA_BINS = 32
 
