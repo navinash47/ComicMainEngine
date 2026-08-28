@@ -53,6 +53,15 @@ Do not batch two phases. One gate per B-phase commit.
 - B8 stays locked. No InstantID/IP-Adapter. No DPO.
 - Run: `PYTHONPATH=src python scripts/v2b_b4.py --all --quick`
 
-## B5–B9
+## B5 — Location reuse
+
+- `phase-v2b-b5: spec-driven locations with four-axis scorecards`
+- Versioned JSON under `data/v2b/specs/` (Pydantic). `build_scene.py` is spec-driven. `himym_p1.py` stays the frozen B1–B4 path.
+- Prove: living room ×3 (style+Dad LoRA) + Grand Oriole lobby ×2 (style only, empty). No Rohan/Elena/Maya LoRA. Tram not in this gate.
+- Scorecard `data/v2b/eval/himym_ep01_b5.json`: living mean SSIM(depth) 0.5489 (floor 0.53). Lobby mean 0.478 (empty-room cheap-depth). DINOv2 background living 0.825 vs living–lobby 0.476 (same-room beats cross-room). Compass 0.9 not claimed.
+- Outputs `outputs/v2b/himym_ep01/b5/`. G1/B4 frozen. B8 stays locked.
+- Run: `PYTHONPATH=src python scripts/v2b_b5.py --all`
+
+## B6–B9
 
 Locked until each phase starts.

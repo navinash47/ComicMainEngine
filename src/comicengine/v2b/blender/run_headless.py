@@ -11,6 +11,7 @@ from comicengine.config import ROOT
 
 SCRIPT = Path(__file__).resolve().parent / "himym_p1.py"
 TURNTABLE = Path(__file__).resolve().parent / "dad_turntable.py"
+BUILD_SCENE = Path(__file__).resolve().parent / "build_scene.py"
 
 CANDIDATES = (
     os.environ.get("BLENDER_BIN"),
@@ -134,3 +135,46 @@ def render_turntable(
         expected = out_dir / "missing.png"
     _raise_if_failed(proc, cmd, expected)
     return out_dir
+
+
+def render_from_spec(
+    location_json: Path,
+    out_dir: Path,
+    *,
+    cameras: tuple[str, ...],
+    characters: tuple[str, ...] = (),
+    samples: int | None = None,
+) -> dict[str, Path]:
+    out_dir = Path(out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    cmd = [
+        str(blender_bin()),
+        "--background",
+        "--factory-startup",
+        "--python",
+        str(BUILD_SCENE),
+        "--",
+        "--location",
+        str(Path(location_json).resolve()),
+        "--out-dir",
+        str(out_dir),
+        "--cameras",
+        ",".join(cameras),
+        "--characters",
+        ",".join(characters),
+    ]
+    if samples is not None:
+        cmd.extend(["--samples", str(samples)])
+    proc = _run(cmd)
+    paths = {cam: out_dir / f"cam_{cam}" for cam in cameras}
+    expected = paths[cameras[0]] / "beauty_01.png"
+    _raise_if_failed(proc, cmd, expected)
+    missing = [
+        str(folder / name)
+        for folder in paths.values()
+        for name in ("beauty_01.png", "depth_01.png", "lineart_01.png", "index_01.png")
+        if not (folder / name).is_file()
+    ]
+    if missing:
+        raise RuntimeError("Blender AOVs missing:\n" + "\n".join(missing) + f"\nstdout:\n{proc.stdout[-2000:]}")
+    return paths

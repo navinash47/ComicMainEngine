@@ -1,0 +1,44 @@
+{
+  "id": "grand_oriole_lobby",
+  "version": 1,
+  "display_name": "Grand Oriole Lobby",
+  "look": "Wide hotel lobby, reception desk, columns, warm stone — no sofa, no living room",
+  "world_color": [0.42, 0.38, 0.32],
+  "world_strength": 0.55,
+  "primitives": [
+    {"name": "floor", "scale": [8.0, 8.0, 0.08], "loc": [0.0, 0.5, -0.04], "color": [0.42, 0.38, 0.32], "roughness": 0.65},
+    {"name": "wall_back", "scale": [8.0, 0.16, 4.2], "loc": [0.0, 4.6, 2.1], "color": [0.55, 0.50, 0.42], "roughness": 0.5},
+    {"name": "wall_left", "scale": [0.16, 8.0, 4.2], "loc": [-4.0, 0.5, 2.1], "color": [0.50, 0.46, 0.40], "roughness": 0.5},
+    {"name": "wall_right", "scale": [0.16, 8.0, 4.2], "loc": [4.0, 0.5, 2.1], "color": [0.50, 0.46, 0.40], "roughness": 0.5},
+    {"name": "col_l", "scale": [0.28, 0.28, 2.6], "loc": [-1.7, 2.4, 1.3], "color": [0.62, 0.56, 0.46], "roughness": 0.4},
+    {"name": "col_r", "scale": [0.28, 0.28, 2.6], "loc": [1.7, 2.4, 1.3], "color": [0.62, 0.56, 0.46], "roughness": 0.4},
+    {"name": "desk", "scale": [1.8, 0.55, 0.48], "loc": [0.0, 1.55, 0.28], "color": [0.22, 0.14, 0.10], "roughness": 0.45},
+    {"name": "desk_top", "scale": [1.95, 0.62, 0.06], "loc": [0.0, 1.55, 0.55], "color": [0.28, 0.18, 0.12], "roughness": 0.4},
+    {"name": "rug", "scale": [2.8, 1.8, 0.02], "loc": [0.0, -0.4, 0.02], "color": [0.35, 0.18, 0.14], "roughness": 0.85}
+  ],
+  "lights": [
+    {
+      "name": "lobby_key",
+      "kind": "AREA",
+      "location": [-1.6, -1.2, 3.4],
+      "energy": 160.0,
+      "color": [1.0, 0.88, 0.70],
+      "size": 1.2,
+      "target": [0.0, 1.4, 1.0]
+    },
+    {
+      "name": "lobby_fill",
+      "kind": "AREA",
+      "location": [2.2, -2.0, 2.6],
+      "energy": 40.0,
+      "color": [0.70, 0.75, 0.90],
+      "size": 2.0,
+      "target": null
+    }
+  ],
+  "cameras": {
+    "wide": {"location": [0.15, -5.4, 1.85], "lens": 32.0, "target": [0.0, 1.5, 1.05]},
+    "close": {"location": [0.55, -3.15, 1.35], "lens": 45.0, "target": [0.0, 1.45, 0.85]}
+  },
+  "characters": []
+}

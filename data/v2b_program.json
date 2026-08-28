@@ -2,9 +2,9 @@
   "program": {
     "version": "2B",
     "title": "Version 2B — 3D-previs pipeline (parallel to Version 2 and 2A)",
-    "active_phase_id": "b4",
-    "updated_at": "2026-08-27T21:20:00+00:00",
-    "updated_by": "b4-character-lora",
+    "active_phase_id": "b5",
+    "updated_at": "2026-08-28T00:50:00+00:00",
+    "updated_by": "b5-location-reuse",
     "notes": [
       "Parallel track beside Version 2 (data/v2_program.json phases 12–20) and Version 2A (data/v2a_program.json A0–A5). Do not edit those files from this track.",
       "3D spec is the composition contract. Headless Blender AOVs → local ComfyUI ControlNet. Not sketch-first (that is 2A).",
@@ -315,19 +315,27 @@
       "id": "b5",
       "title": "Location reuse (Compass Phase 4)",
       "track": "product",
-      "status": "locked",
+      "status": "complete",
       "sort_order": 5,
-      "exit_gate": "Reusable versioned 3D locations; panel spec references location + character(s) + camera; four-axis scorecard per panel",
+      "exit_gate": "Reusable versioned 3D locations; panel spec references location + character(s) + camera; four-axis scorecard per panel. Prove: living room ×3 + Grand Oriole lobby ×2. Not 76 panels. Not Rohan LoRA.",
       "checklist": [
         "Pydantic/YAML panel spec schema under data/v2b/",
         "build_scene.py becomes spec-driven (not hardcoded)",
         "Same location across multiple panels scored for background similarity",
         "Full eval scorecard emitted per panel"
       ],
-      "checklist_done": [],
+      "checklist_done": [
+        "Pydantic/YAML panel spec schema under data/v2b/",
+        "build_scene.py becomes spec-driven (not hardcoded)",
+        "Same location across multiple panels scored for background similarity",
+        "Full eval scorecard emitted per panel"
+      ],
       "blockers": [],
       "notes": [
-        "Commit when done: phase-v2b-b5: spec-driven locations with four-axis scorecards"
+        "Scorecard data/v2b/eval/himym_ep01_b5.json. Living mean SSIM(depth) 0.5489 (floor 0.53). Lobby mean 0.4785 (empty-room cheap-depth; not the B2 floor). DINOv2 background: living 0.825 vs lobby-living 0.476 — same-room beats cross-room. Compass 0.9 not claimed.",
+        "Specs: data/v2b/specs/locations/{living_room,grand_oriole_lobby}.json + himym_ep01_b5.json. build_scene.py. Outputs himym_ep01/b5/. G1/B4 frozen.",
+        "No Rohan/Elena/Maya LoRA. No InstantID. B8 stays locked.",
+        "Commit: phase-v2b-b5: spec-driven locations with four-axis scorecards"
       ],
       "history": [
         {
@@ -335,9 +343,21 @@
           "action": "seeded",
           "by": "system",
           "status": "locked"
+        },
+        {
+          "at": "2026-08-28T00:20:00+00:00",
+          "action": "started",
+          "by": "b5-location-reuse",
+          "status": "in_progress"
+        },
+        {
+          "at": "2026-08-28T00:50:00+00:00",
+          "action": "completed",
+          "by": "b5-location-reuse",
+          "status": "complete"
         }
       ],
-      "updated_at": "2026-08-27T06:00:00+00:00"
+      "updated_at": "2026-08-28T00:50:00+00:00"
     },
     "b6": {
       "id": "b6",
@@ -486,13 +506,13 @@
         "title": "Infatuation",
         "story_goal": "Dad tells Maya how he met Mom: shy Rohan keeps crossing Elena on a Bay Area work trip until feelings are known.",
         "framework_goal": "76-panel consistency: living-room frame, hotel/lobby/tram locations, Rohan+Elena identity.",
-        "gate": "B4 block meshes + Dad SD 1.5 LoRA on panel 1. Do not render all 76."
+        "gate": "B5 spec-driven living room ×3 + Grand Oriole lobby ×2. Do not render all 76."
       }
     ]
   },
   "test_scene": {
     "title": "HIMYM ep1 · panel 1 — living-room sofa",
-    "product_claim": "B4 block humanoids + Dad SD 1.5 LoRA on the prove shot. Maya mesh only (no Maya LoRA until B6). Later panels stay locked until B5–B7.",
+    "product_claim": "B5 reuses living_room from a versioned spec and adds Grand Oriole lobby. Dad LoRA on living cameras only. No Rohan LoRA. Maya LoRA waits for B6.",
     "description": "Night living room, soft lamp. Dad sits beside Maya on the sofa — no book — knees almost touching. Two seated primitives, locked camera and key light.",
     "fixture": "himym_ep01_panel_01",
     "episode_id": "himym_ep01",
