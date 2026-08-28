@@ -12,6 +12,7 @@ from comicengine.config import ROOT
 
 SPECS = ROOT / "data" / "v2b" / "specs"
 B5_RUN = SPECS / "himym_ep01_b5.json"
+B6_RUN = SPECS / "himym_ep01_b6.json"
 LOCATIONS = SPECS / "locations"
 
 
@@ -75,6 +76,13 @@ class B5Run(BaseModel):
     panels: list[PanelSpec]
 
 
+class B6Run(BaseModel):
+    id: str = "himym_ep01_b6"
+    location_id: str = "living_room"
+    cameras: list[str]
+    characters: list[str] = Field(default_factory=list)
+
+
 def load_location(location_id: str) -> LocationSpec:
     path = LOCATIONS / f"{location_id}.json"
     return LocationSpec.model_validate_json(path.read_text())
@@ -82,6 +90,10 @@ def load_location(location_id: str) -> LocationSpec:
 
 def load_b5_run(path: Path | None = None) -> B5Run:
     return B5Run.model_validate_json(Path(path or B5_RUN).read_text())
+
+
+def load_b6_run(path: Path | None = None) -> B6Run:
+    return B6Run.model_validate_json(Path(path or B6_RUN).read_text())
 
 
 def dump_location_json(spec: LocationSpec) -> dict[str, Any]:

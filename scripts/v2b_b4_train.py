@@ -19,6 +19,7 @@ def main() -> int:
     parser.add_argument("--steps", type=int, default=800)
     parser.add_argument("--rank", type=int, default=16)
     parser.add_argument("--lr", type=float, default=1e-4)
+    parser.add_argument("--meta", default=str(META))
     parser.add_argument("--out", default=str(OUT))
     args = parser.parse_args()
 
@@ -34,11 +35,12 @@ def main() -> int:
     from safetensors.torch import save_file
     from transformers import CLIPTextModel, CLIPTokenizer
 
-    if not META.is_file():
-        raise SystemExit(f"missing {META}; run bootstrap first")
+    meta_path = Path(args.meta)
+    if not meta_path.is_file():
+        raise SystemExit(f"missing {meta_path}; run bootstrap first")
     if not CKPT.is_file():
         raise SystemExit(f"missing checkpoint {CKPT}")
-    meta = json.loads(META.read_text())
+    meta = json.loads(meta_path.read_text())
     rows = list(meta.get("train") or [])
     if len(rows) < 4:
         raise SystemExit(f"need at least 4 train images, got {len(rows)}")

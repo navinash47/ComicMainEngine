@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B5 + G1
+\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B6 + G1
 \vspace{-0.6em}}
 
 \author{
@@ -534,6 +534,23 @@ lobby\_close & 0.569 & 0.038 & grand\_oriole\_lobby \\
 \end{tabular}
 \end{center}
 
+\paragraph{B6 multi-character masks (2026-08-27).}
+Maya gets the same SD~1.5 turntable LoRA recipe as Dad (\texttt{ce\_maya}, rank 16, 250 steps, SHA256 \texttt{b767153f\ldots 8d86}). Prove: living-room cam\_a and cam\_c only --- cam\_b is the hard crop. Two-pass: style+Dad on the full frame, then stock ComfyUI \texttt{VAEEncodeForInpaint} on the G object-index with Maya LoRA (no global Dad+Maya stack). Sibling tree \texttt{outputs/v2b/himym\_ep01/b6/}. G1/B4/B5 stay frozen. Local API spend \$0. Never OmniRoute. No InstantID.
+Maya holdout DINOv2-small $4/4$ closer to Maya sheet than Dad --- pass (\texttt{--quick} bar). Structure mean SSIM(depth) $0.5917$ (floor $0.53$) --- pass. Restage MAE vs beauty $0.065$--$0.067$.
+Bleed: Dad R-crop vs pass1 $0.966$ / $0.984$ (floor $0.90$) --- the mask held. Maya G-crop own $>$ other both cameras. Seated dad\_own vs Maya sheet is a coin-flip on block meshes in a tight two-shot --- log-only, same honesty as SSIM $0.53$ vs Compass $0.7$. Compass $0.85$ not claimed. B8 stays locked.
+
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Camera & SSIM(depth) & MAE vs beauty & Dad vs pass1 & Maya own$>$cross \\
+\midrule
+cam\_a & 0.537 & 0.065 & 0.966 & yes \\
+cam\_c & 0.647 & 0.067 & 0.984 & yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
 
@@ -548,6 +565,7 @@ lobby\_close & 0.569 & 0.038 & grand\_oriole\_lobby \\
   \item OmniRoute model routing matters: prefer \texttt{auto} (or provider-prefixed Claude) when \texttt{auto/cheap} returns thinking text without \texttt{tool\_use}.
   \item Vercel serverless session UX needs HttpOnly cookies (Bearer-only + aggressive \texttt{/me} clears caused login loops); CSS \texttt{display} on \texttt{.btn} overrides HTML \texttt{[hidden]}.
   \item Version~2B B5: DINOv2 background cosine separates living-room cameras ($0.825$) from Grand Oriole lobby ($0.476$ cross); Compass $0.9$ is still a hypothesis.
+  \item Version~2B B6: two-pass G-index inpaint keeps Dad vs pass1 at $0.966$+; Maya holdout $4/4$. Seated dad\_own vs Maya sheet on block two-shots is log-only.
 \end{enumerate}
 
 \section{Risks and Ethics}
@@ -562,7 +580,7 @@ Public beta URLs expose comics widely --- keep admin password private; Upstash h
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
   \item Collect panel/story ratings from beta readers; harvest admin live people analytics for Version~2 priorities.
   \item Re-run \texttt{prepare\_admin\_site.py} (+ redeploy) whenever ledger/ROI snapshot must refresh.
-  \item Version~2B B6: two LoRAs gated by object-index masks. B8 stays locked. Tram location still open.
+  \item Version~2B B7: storyboard sequencing with cache. B8 stays locked.
 \end{itemize}
 
 \section{Conclusion}
@@ -599,6 +617,7 @@ python scripts/build_report.py
 \item[2026-08-27 d] Version~2B G1: 12/12 human pairs; Gemini exact $4/12$ (tie-lenient $10/12$); BoN seeds 42--45; \$0.043 \texttt{gemini-3.6-flash}; no DPO.
 \item[2026-08-27 e] Version~2B B4: block humanoids; Dad SD~1.5 LoRA (250 steps, SHA256 \texttt{bfd7f7d8\ldots}); mean SSIM $0.549$; DINOv2 $3/4$ Dad$>$Maya; B8 still locked.
 \item[2026-08-27 f] Version~2B B5: spec-driven living room $\times 3$ + Grand Oriole lobby $\times 2$; living SSIM $0.549$; DINOv2 same-room $0.825$ $>$ cross $0.476$; no Rohan LoRA.
+\item[2026-08-27 g] Version~2B B6: Maya SD~1.5 LoRA (250 steps) + two-pass G-index inpaint on cam\_a/c; SSIM $0.592$; holdout $4/4$; Dad vs pass1 $0.966$+; B8 still locked.
 \end{description}
 
 \end{document}

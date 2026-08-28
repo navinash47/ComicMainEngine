@@ -62,6 +62,15 @@ Do not batch two phases. One gate per B-phase commit.
 - Outputs `outputs/v2b/himym_ep01/b5/`. G1/B4 frozen. B8 stays locked.
 - Run: `PYTHONPATH=src python scripts/v2b_b5.py --all`
 
-## B6–B9
+## B6 — Multi-character masks
+
+- `phase-v2b-b6: mask-driven multi-character LoRAs without bleed`
+- Maya SD 1.5 LoRA from B4 standing turntable AOVs (`--quick` 8 views × 2 seeds, 12 train / 4 holdout). Rank 16, 250 steps in `ComfyUI/.venv`. SHA256 `b767153fc38dbf7aad445165868036e14d9a8fee60fe5f0ed7ef722f9b168d86`. Weights gitignored. Trigger `ce_maya`.
+- Two-pass on living-room cam_a and cam_c: style+Dad globally, then `VAEEncodeForInpaint` on G-index with Maya LoRA. cam_b skipped. G1/B4/B5 frozen. Outputs `outputs/v2b/himym_ep01/b6/`.
+- Scorecard `data/v2b/eval/himym_ep01_b6.json`: mean SSIM(depth) 0.5917 (floor 0.53). Maya holdout DINOv2 4/4. Bleed: Dad vs pass1 0.966 / 0.984; Maya G-crop own>cross. Seated dad_own vs Maya sheet is log-only (block two-shot). Compass 0.85 not claimed.
+- No Rohan/Elena LoRA. No InstantID. B8 stays locked.
+- Run: `PYTHONPATH=src python scripts/v2b_b6.py --all --quick`
+
+## B7–B9
 
 Locked until each phase starts.

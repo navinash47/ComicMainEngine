@@ -1,0 +1,149 @@
+{
+  "root": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6",
+  "structure_floor": 0.53,
+  "mean_ssim": 0.5917,
+  "pass_structure_floor": true,
+  "cameras": {
+    "cam_a": {
+      "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_a/panel_01.png",
+      "hard_ok": true,
+      "structure": {
+        "camera": "cam_a",
+        "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_a/panel_01.png",
+        "ssim_depth": 0.5366,
+        "edge_iou": 0.2594,
+        "ssim_hypothesis": 0.7,
+        "structure_floor": 0.53,
+        "pass_ssim_hypothesis": false,
+        "pass_structure_floor": true
+      },
+      "restage": {
+        "ok": true,
+        "mae_vs_beauty": 0.0648,
+        "luma_corr_vs_beauty": 0.8745,
+        "mae_max": 0.12
+      },
+      "identity": {
+        "identity_cosine": 0.921,
+        "clip_cosine": 0.921,
+        "dino_cosine": 0.921,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      },
+      "lighting": {
+        "hist_l1": 0.4512,
+        "panel_left_minus_right": 0.0955,
+        "beauty_left_minus_right": 0.108,
+        "key_light_side_match": true
+      },
+      "dad_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_a/panel_01_rcrop.png",
+      "maya_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_a/panel_01_gcrop.png"
+    },
+    "cam_c": {
+      "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_c/panel_01.png",
+      "hard_ok": true,
+      "structure": {
+        "camera": "cam_c",
+        "panel": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_c/panel_01.png",
+        "ssim_depth": 0.6469,
+        "edge_iou": 0.2707,
+        "ssim_hypothesis": 0.7,
+        "structure_floor": 0.53,
+        "pass_ssim_hypothesis": false,
+        "pass_structure_floor": true
+      },
+      "restage": {
+        "ok": true,
+        "mae_vs_beauty": 0.0665,
+        "luma_corr_vs_beauty": 0.8569,
+        "mae_max": 0.12
+      },
+      "identity": {
+        "identity_cosine": 0.9526,
+        "clip_cosine": 0.9526,
+        "dino_cosine": 0.9526,
+        "method": "grid_hist_8x8",
+        "note": "Cheap grid histogram. B4 identity uses DINOv2 in ComfyUI/.venv or Gemini same-person."
+      },
+      "lighting": {
+        "hist_l1": 0.3807,
+        "panel_left_minus_right": 0.0337,
+        "beauty_left_minus_right": 0.0373,
+        "key_light_side_match": true
+      },
+      "dad_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_c/panel_01_rcrop.png",
+      "maya_crop": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/living_room/cam_c/panel_01_gcrop.png"
+    }
+  },
+  "identity_bleed": {
+    "method": "dinov2-small",
+    "identity": {
+      "n": 4,
+      "wins": 4,
+      "pass": true,
+      "details": [
+        {
+          "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s42.png",
+          "maya": 0.7066,
+          "dad": 0.652,
+          "ok": true
+        },
+        {
+          "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az090_el12_s43.png",
+          "maya": 0.6216,
+          "dad": 0.5583,
+          "ok": true
+        },
+        {
+          "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s42.png",
+          "maya": 0.5553,
+          "dad": 0.5033,
+          "ok": true
+        },
+        {
+          "png": "/Users/avinashnandyala/Desktop/ComicMainEngine/outputs/v2b/himym_ep01/b6/dataset/maya/az270_el12_s43.png",
+          "maya": 0.5321,
+          "dad": 0.4865,
+          "ok": true
+        }
+      ],
+      "note": "Maya holdout closer to Maya sheet than Dad. Compass 0.85 not claimed."
+    },
+    "bleed": {
+      "n": 2,
+      "wins": 2,
+      "pass": true,
+      "details": [
+        {
+          "camera": "a",
+          "dad_own": 0.4255,
+          "dad_cross": 0.4281,
+          "maya_own": 0.4823,
+          "maya_cross": 0.398,
+          "dad_stable_vs_pass1": 0.966,
+          "maya_vs_pass1": 0.8433,
+          "dad_stable_floor": 0.9,
+          "sheet_dad_own_beats_cross": false,
+          "ok": true
+        },
+        {
+          "camera": "c",
+          "dad_own": 0.4838,
+          "dad_cross": 0.4996,
+          "maya_own": 0.5268,
+          "maya_cross": 0.435,
+          "dad_stable_vs_pass1": 0.9843,
+          "maya_vs_pass1": 0.7397,
+          "dad_stable_floor": 0.9,
+          "sheet_dad_own_beats_cross": false,
+          "ok": true
+        }
+      ],
+      "note": "Maya G-crop closer to Maya sheet than Dad. Dad R-crop cosine vs pass1 >= 0.90 (mask held). Seated dad_own vs Maya sheet is log-only: block meshes in a tight two-shot."
+    },
+    "pass_identity": true,
+    "pass_bleed": true
+  },
+  "maya_lora": true,
+  "note": "Two-pass: style+Dad globally, then Maya LoRA inpainted on G-index. Maya holdout identity vs Dad sheet. Bleed: Dad R-crop stays close to pass1; Maya G-crop closer to Maya sheet than Dad. Seated dad_own vs Maya sheet is log-only (block meshes in a tight two-shot). Compass 0.85 not claimed. No InstantID. B8 stays locked."
+}
