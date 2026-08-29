@@ -29,6 +29,7 @@ from himym_p1 import (  # noqa: E402
     wipe_scene,
 )
 from humanoid import add_seated_dad, add_seated_maya  # noqa: E402
+from mesh_place import place_glb  # noqa: E402
 
 
 def _argv_after_double_dash() -> list[str]:
@@ -37,14 +38,7 @@ def _argv_after_double_dash() -> list[str]:
     return []
 
 
-def build_from_spec(loc: dict, character_ids: list[str]) -> dict[str, bpy.types.Object]:
-    mats: dict[str, bpy.types.Material] = {}
-    for prim in loc["primitives"]:
-        key = tuple(prim["color"]) + (float(prim.get("roughness") or 0.55),)
-        if key not in mats:
-            mats[key] = mat(prim["name"], tuple(prim["color"]), roughness=float(prim.get("roughness") or 0.55))
-        add_cube(prim["name"], tuple(prim["scale"]), tuple(prim["loc"]), mats[key])
-
+def _place_characters(loc: dict, character_ids: list[str], mesh_dir: Path | None) -> None:
     wanted = set(character_ids)
     dad_m = mat("dad", (0.20, 0.24, 0.32))
     maya_m = mat("maya", (0.55, 0.32, 0.16))
@@ -59,10 +53,29 @@ def build_from_spec(loc: dict, character_ids: list[str]) -> dict[str, bpy.types.
         pose = str(ch.get("pose") or "seated")
         loc3 = tuple(ch["loc"])
         scale = float(ch.get("scale") or 1.0)
+        if mesh_dir is not None:
+            key = "dad" if cid == "dad" else "maya"
+            glb = Path(mesh_dir) / f"{key}_{pose}.glb"
+            # Hips origin sits too deep in the sofa back; pull toward the camera.
+            if pose == "seated":
+                loc3 = (loc3[0], loc3[1] - 0.16, loc3[2] - 0.04)
+            place_glb(glb, name=f"{key}_mesh", loc=loc3, scale=scale, pass_index=DAD_INDEX if key == "dad" else MAYA_INDEX)
+            continue
         if cid == "dad" and pose == "seated":
             add_seated_dad(loc3, dad_m, dad_hair, DAD_INDEX, scale=scale)
         elif cid in {"daughter", "maya"} and pose == "seated":
             add_seated_maya(loc3, maya_m, maya_hair, MAYA_INDEX, scale=scale)
+
+
+def build_from_spec(loc: dict, character_ids: list[str], mesh_dir: Path | None = None) -> dict[str, bpy.types.Object]:
+    mats: dict[str, bpy.types.Material] = {}
+    for prim in loc["primitives"]:
+        key = tuple(prim["color"]) + (float(prim.get("roughness") or 0.55),)
+        if key not in mats:
+            mats[key] = mat(prim["name"], tuple(prim["color"]), roughness=float(prim.get("roughness") or 0.55))
+        add_cube(prim["name"], tuple(prim["scale"]), tuple(prim["loc"]), mats[key])
+
+    _place_characters(loc, character_ids, mesh_dir)
 
     for light in loc["lights"]:
         bpy.ops.object.light_add(type=str(light.get("kind") or "AREA"), location=tuple(light["location"]))
@@ -116,6 +129,7 @@ def main() -> None:
     parser.add_argument("--out-dir", required=True)
     parser.add_argument("--cameras", required=True)
     parser.add_argument("--characters", default="")
+    parser.add_argument("--mesh-dir", default="")
     parser.add_argument("--samples", type=int, default=32)
     args = parser.parse_args(_argv_after_double_dash())
     loc = json.loads(Path(args.location).read_text())
@@ -124,10 +138,11 @@ def main() -> None:
         if cam_id not in loc["cameras"]:
             raise SystemExit(f"unknown camera {cam_id} for {loc.get('id')}")
     character_ids = [c.strip() for c in args.characters.split(",") if c.strip()]
+    mesh_dir = Path(args.mesh_dir) if args.mesh_dir.strip() else None
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     wipe_scene()
-    cameras = build_from_spec(loc, character_ids)
+    cameras = build_from_spec(loc, character_ids, mesh_dir=mesh_dir)
     add_lineart_object()
     configure_view_layers()
     configure_cycles(args.samples)

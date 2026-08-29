@@ -123,6 +123,14 @@ Versioned location JSON (`data/v2b/specs/locations/`) + panel runfile (`himym_ep
 
 Maya gets the same SD 1.5 turntable LoRA recipe as Dad (`ce_maya`, rank 16, 250 steps on `--quick`). Panels are **two-pass**: (1) style + Dad LoRA on the full frame, (2) `VAEEncodeForInpaint` on the G object-index (Maya) with style + Maya LoRA only. Do not stack both character LoRAs globally. Prove: living-room cam_a and cam_c. cam_b is the hard crop — skip it. Writes `outputs/v2b/himym_ep01/b6/`. Bleed gate: DINOv2-small on R/G crops, own-sheet > other-sheet. Compass 0.85 is a hypothesis. InstantID stays off.
 
+### Layer 3.7 — Licensed meshes (G2)
+
+Block humanoids were a geometry stand-in. G2 swaps them for **pinned CC0 glTF** (Kenney Animated Characters Protagonists 1.1). Import in Blender, `--quick` standing turntable, **new** LoRAs `ce_dad_gltf` / `ce_maya_gltf` (do not overwrite `ce_dad_rohan` / `ce_maya`). Two-pass on living-room cam_a and cam_c. Sibling tree `outputs/v2b/himym_ep01/g2/`. G1/B4/B5/B6 stay frozen.
+
+Honesty: these are licensed cartoon stand-in bodies, **not** Indian-presenting Dad/Maya likenesses. Clothing follows Kenney UVs. Compass 0.85 is not claimed. Rollup of B2–B6 lives in `data/v2b/eval/himym_ep01_until_now.json`.
+
+**G3 (locked):** dashboard search box to query a catalog and drop a character into the spec. Do not wire Sketchfab/Mixamo in G2. Mixamo terms stay off-limits for LoRA training.
+
 ### Layer 4 — Eval + best-of-N (G1 prove-shot; B8 later)
 
 G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3 cameras). Hard gate is **mean** SSIM(depth) ≥ 0.53 (cam_b is often just under per-camera). Identity is log-only until B4. Preferences land in `data/v2b/eval/preferences.jsonl` for later B9. B8 is the same harness on more locations — do not mark B8 complete from G1. Diffusion-DPO (B9) is optional and cloud-only.
@@ -144,6 +152,7 @@ G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3
 - **B4 character:** block meshes + Dad SD 1.5 LoRA. Scorecard `data/v2b/eval/himym_ep01_b4.json`. Maya LoRA waits for B6. Do not InstantID.
 - **B5 locations:** spec-driven `living_room` ×3 + `grand_oriole_lobby` ×2. Scorecard `data/v2b/eval/himym_ep01_b5.json`. No Rohan/Elena LoRA. Do not InstantID.
 - **B6 multi-character:** Maya SD 1.5 LoRA + two-pass object-index inpaint on living-room cam_a / cam_c. Scorecard `data/v2b/eval/himym_ep01_b6.json`. No Rohan/Elena. Do not InstantID.
+- **G2 licensed meshes:** Kenney CC0 glTF stand-ins + new LoRAs `ce_dad_gltf` / `ce_maya_gltf`. Scorecard `data/v2b/eval/himym_ep01_g2.json`. Rollup `himym_ep01_until_now.json`. Catalog search is G3. Do not InstantID.
 
 ---
 
@@ -152,6 +161,7 @@ G1 ran the four-axis scorecard + pairwise VLM + N=4 seed BoN on HIMYM panel 1 (3
 - SDXL: CreativeML OpenRAIL++-M — commercial OK. Primary ship base.
 - FLUX.1-dev: non-commercial — avoid for a sellable product.
 - Train style/character LoRAs on our own or licensed art. B3 acquired `neonforestmist/sd15-storybook-anime-lora` (CreativeML OpenRAIL-M); SHA256 in `data/v2b/lora/registry.json`. Do not commit the `.safetensors`.
+- G2 characters: Kenney Animated Characters Protagonists 1.1, **CC0**. LICENSE + registry under `data/v2b/meshes/`. Not Mixamo. Not a likeness claim.
 - Invoke Blender as an external subprocess; do not redistribute Blender or ship a GPL addon unless we accept GPL on that addon.
 - InsightFace weights used by FaceID/InstantID/PuLID: non-commercial research terms — another reason LoRA-first.
 
@@ -171,11 +181,13 @@ When a gate passes: commit on that phase branch, update the living report only i
 | **B4** | Phase 3 character LoRA | Identity from 3D | Block humanoids; SD 1.5 Dad LoRA from stylized turntable; held-out Dad>Maya; mean SSIM ≥ 0.53 | `phase-v2b-b4: bootstrap character LoRA from stylized 3D turntable` |
 | **B5** | Phase 4 location reuse | Spec-driven panels | Versioned 3D locations; four-axis scorecard per panel | `phase-v2b-b5: spec-driven locations with four-axis scorecards` |
 | **B6** | Phase 5 multi-character | No identity bleed | Two+ LoRAs gated by object-index masks | `phase-v2b-b6: mask-driven multi-character LoRAs without bleed` |
+| **G2** | Licensed meshes | Stop using cubes | Pinned CC0 glTF + new LoRAs; B2–B6 rollup; not likeness | `phase-v2b-g2: licensed glTF characters replace block humanoids` |
+| **G3** | Catalog search (locked) | Pick any character | Dashboard search → import glTF into the spec | `phase-v2b-g3: dashboard catalog search for character meshes` |
 | **B7** | Phase 6 sequencing | Storyboard run | Ordered panels, cache hits skip unchanged renders | `phase-v2b-b7: multi-panel storyboard sequencing with cache` |
 | **B8** | Phase 7 best-of-N | Auto-select | N candidates, threshold+rank, human agreement floor on a labeled set | `phase-v2b-b8: pairwise VLM best-of-N panel selection` |
 | **B9** | Phase 8 RL (optional) | Later, maybe | Cloud Diffusion-DPO only after preference pairs exist | `phase-v2b-b9: optional cloud DPO from 2B preference pairs` |
 
-B0–B6 and G1 are complete. B7–B9 stay `locked` in `v2b_program.json` until that phase starts. B9 stays optional.
+B0–B6, G1 are complete. G2 is the licensed-mesh swap. G3 (catalog search) and B7–B9 stay `locked` until that phase starts. B9 stays optional.
 
 ## Non-goals for B0
 

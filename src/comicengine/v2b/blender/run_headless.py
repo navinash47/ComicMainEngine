@@ -105,6 +105,7 @@ def render_turntable(
     character: str = "dad",
     quick: bool = False,
     samples: int | None = None,
+    mesh: Path | None = None,
 ) -> Path:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -120,6 +121,8 @@ def render_turntable(
         "--character",
         character,
     ]
+    if mesh is not None:
+        cmd.extend(["--mesh", str(Path(mesh).resolve())])
     if quick:
         cmd.append("--quick")
     if samples is not None:
@@ -144,6 +147,7 @@ def render_from_spec(
     cameras: tuple[str, ...],
     characters: tuple[str, ...] = (),
     samples: int | None = None,
+    mesh_dir: Path | None = None,
 ) -> dict[str, Path]:
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -163,6 +167,8 @@ def render_from_spec(
         "--characters",
         ",".join(characters),
     ]
+    if mesh_dir is not None:
+        cmd.extend(["--mesh-dir", str(Path(mesh_dir).resolve())])
     if samples is not None:
         cmd.extend(["--samples", str(samples)])
     proc = _run(cmd)

@@ -25,7 +25,7 @@
 Consistent, Cost-Aware AI History Comics}\\[0.4em]
 \large Technical Report on the \emph{onceuponatime} System\\[0.3em]
 \normalsize Living Phase Log (updated after each phase gate)\\[0.2em]
-\normalsize Snapshot: 27~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--B6 + G1
+\normalsize Snapshot: 29~August~2026 · Phases~0--11 + Romance HIMYM Ep1 + Version~2B B0--G2 + G1
 \vspace{-0.6em}}
 
 \author{
@@ -551,6 +551,23 @@ cam\_c & 0.647 & 0.067 & 0.984 & yes \\
 \end{tabular}
 \end{center}
 
+\paragraph{G2 licensed meshes (2026-08-29).}
+Block humanoids are replaced by pinned Kenney Animated Characters Protagonists 1.1 (\textbf{CC0}) glTF stand-ins --- cartoon skaters, not Indian-presenting Dad/Maya likenesses. New SD~1.5 LoRAs \texttt{ce\_dad\_gltf} / \texttt{ce\_maya\_gltf} (rank 16, 250 steps, SHA256 \texttt{7b71b798\ldots f3c4} / \texttt{2681efe4\ldots ce57}). B4/B6 weights \texttt{ce\_dad\_rohan} / \texttt{ce\_maya} are untouched. Prove: living-room cam\_a and cam\_c two-pass (style+Dad globally, Maya G-index inpaint). Sibling tree \texttt{outputs/v2b/himym\_ep01/g2/}. Rollup of B2--B6 is \texttt{data/v2b/eval/himym\_ep01\_until\_now.json}. Local API spend \$0. Never OmniRoute. No InstantID.
+Maya holdout DINOv2-small $4/4$ --- pass. Structure mean SSIM(depth) $0.5808$ (floor $0.53$) --- pass. cam\_a $0.523$ fails per-camera (same honesty as B4 cam\_b); the hard gate is the mean. Restage MAE vs beauty $0.074$--$0.081$.
+Bleed: Dad R-crop vs pass1 $0.990$ / $0.979$ (floor $0.90$) --- the mask held. Maya G-crop own $>$ other both cameras (narrow). Seated dad\_own vs Maya sheet is log-only. Compass $0.85$ not claimed. \textbf{G3} dashboard catalog search stays locked. B8 stays locked.
+
+\begin{center}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Camera & SSIM(depth) & MAE vs beauty & Dad vs pass1 & Maya own$>$cross \\
+\midrule
+cam\_a & 0.523 & 0.074 & 0.990 & yes \\
+cam\_c & 0.639 & 0.081 & 0.979 & yes \\
+\bottomrule
+\end{tabular}
+\end{center}
+
 \section{Dashboard Surfaces}
 \textbf{Local} (\texttt{http://127.0.0.1:8765}): usage KPIs, TaskObserver, Stories, Library, ROI, Analytics, Images, admin console, public \texttt{/review}, Report PDF (\texttt{/report}).
 
@@ -566,6 +583,7 @@ cam\_c & 0.647 & 0.067 & 0.984 & yes \\
   \item Vercel serverless session UX needs HttpOnly cookies (Bearer-only + aggressive \texttt{/me} clears caused login loops); CSS \texttt{display} on \texttt{.btn} overrides HTML \texttt{[hidden]}.
   \item Version~2B B5: DINOv2 background cosine separates living-room cameras ($0.825$) from Grand Oriole lobby ($0.476$ cross); Compass $0.9$ is still a hypothesis.
   \item Version~2B B6: two-pass G-index inpaint keeps Dad vs pass1 at $0.966$+; Maya holdout $4/4$. Seated dad\_own vs Maya sheet on block two-shots is log-only.
+  \item Version~2B G2: Kenney CC0 glTF stand-ins beat cubes for ControlNet silhouettes; they are not a likeness. New LoRAs must not overwrite block adapters. glTF hashed-alpha imports render invisible until Alpha is forced opaque.
 \end{enumerate}
 
 \section{Risks and Ethics}
@@ -580,7 +598,7 @@ Public beta URLs expose comics widely --- keep admin password private; Upstash h
   \item Human style lock: clear \texttt{human\_judge\_pending} (manhwa vs painterly).
   \item Collect panel/story ratings from beta readers; harvest admin live people analytics for Version~2 priorities.
   \item Re-run \texttt{prepare\_admin\_site.py} (+ redeploy) whenever ledger/ROI snapshot must refresh.
-  \item Version~2B B7: storyboard sequencing with cache. B8 stays locked.
+  \item Version~2B G3 (locked): dashboard search to pick/edit a licensed character mesh. B7 sequencing. B8 stays locked.
 \end{itemize}
 
 \section{Conclusion}
@@ -618,6 +636,7 @@ python scripts/build_report.py
 \item[2026-08-27 e] Version~2B B4: block humanoids; Dad SD~1.5 LoRA (250 steps, SHA256 \texttt{bfd7f7d8\ldots}); mean SSIM $0.549$; DINOv2 $3/4$ Dad$>$Maya; B8 still locked.
 \item[2026-08-27 f] Version~2B B5: spec-driven living room $\times 3$ + Grand Oriole lobby $\times 2$; living SSIM $0.549$; DINOv2 same-room $0.825$ $>$ cross $0.476$; no Rohan LoRA.
 \item[2026-08-27 g] Version~2B B6: Maya SD~1.5 LoRA (250 steps) + two-pass G-index inpaint on cam\_a/c; SSIM $0.592$; holdout $4/4$; Dad vs pass1 $0.966$+; B8 still locked.
+\item[2026-08-29 a] Version~2B G2: Kenney CC0 glTF stand-ins; new LoRAs \texttt{ce\_dad\_gltf}/\texttt{ce\_maya\_gltf} (250 steps); mean SSIM $0.581$; holdout $4/4$; Dad vs pass1 $0.990$+; G3 catalog search locked; B8 still locked.
 \end{description}
 
 \end{document}

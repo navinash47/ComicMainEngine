@@ -1,0 +1,18 @@
+{
+  "character": "maya",
+  "pose": "standing",
+  "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/maya_standing.glb",
+  "bytes": 96700,
+  "bbox_min": [
+    -0.4092,
+    -0.2621,
+    0.0
+  ],
+  "bbox_max": [
+    0.3933,
+    0.4887,
+    1.4
+  ],
+  "target_height": 1.4,
+  "skin": "Skins/skaterFemaleA.png"
+}

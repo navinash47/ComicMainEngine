@@ -103,7 +103,7 @@ function render(data) {
 }
 
 function highlightPipeline(activeId, phases) {
-  const order = ["b1", "b2", "b3", "g1", "b4", "b5", "b6", "b8"];
+  const order = ["b1", "b2", "b3", "g1", "b4", "b5", "b6", "g2", "b8"];
   const activeIdx = order.indexOf(activeId);
   document.querySelectorAll("#pipelineFlow .v2a-node").forEach((el) => {
     const id = el.getAttribute("data-phase");
@@ -141,6 +141,7 @@ async function load() {
     await loadB4();
     await loadB5();
     await loadB6();
+    await loadG2();
   } catch (err) {
     $("updated").textContent = `error ${err}`;
     $("lede").textContent = "Could not load data/v2b_program.json.";
@@ -229,5 +230,30 @@ async function loadB6() {
     ].join("");
   } catch {
     /* optional until B6 PNGs exist */
+  }
+}
+
+async function loadG2() {
+  const el = $("g2Compare");
+  if (!el) return;
+  try {
+    const res = await fetch("/api/v2b/g2/gallery");
+    if (!res.ok) return;
+    const g = await res.json();
+    const fig = (src, cap) =>
+      src
+        ? `<figure style="margin:0;background:var(--bg1);border:1px solid var(--line);padding:0.4rem"><img src="${esc(src)}" alt="${esc(cap)}" style="width:100%;height:auto;display:block;background:#111"/><figcaption class="muted small">${esc(cap)}</figcaption></figure>`
+        : "";
+    el.style.display = "grid";
+    el.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+    el.style.gap = "0.75rem";
+    el.innerHTML = [
+      fig(g.beauty_a, "G2 beauty cam_a (Kenney CC0)"),
+      fig(g.cam_a, "cam_a two-pass (ce_maya_gltf mask)"),
+      fig(g.cam_c, "cam_c two-pass"),
+      fig(g.stylized, "stylized standing Dad"),
+    ].join("");
+  } catch {
+    /* optional until G2 PNGs exist */
   }
 }

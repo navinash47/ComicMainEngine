@@ -373,6 +373,25 @@ def api_v2b_b6_gallery() -> dict[str, Any]:
     }
 
 
+@app.get("/api/v2b/g2/gallery")
+def api_v2b_g2_gallery() -> dict[str, Any]:
+    root = OUTPUTS / "v2b" / "himym_ep01" / "g2"
+
+    def url(path: Path) -> str | None:
+        if not path.is_file():
+            return None
+        rel = path.resolve().relative_to(OUTPUTS.resolve())
+        return "/media/" + str(rel).replace("\\", "/")
+
+    stylized = sorted((root / "dataset" / "dad_gltf").glob("*.png"))[:1]
+    return {
+        "beauty_a": url(root / "living_room" / "cam_a" / "beauty_01.png"),
+        "cam_a": url(root / "living_room" / "cam_a" / "panel_01.png"),
+        "cam_c": url(root / "living_room" / "cam_c" / "panel_01.png"),
+        "stylized": url(stylized[0]) if stylized else None,
+    }
+
+
 @app.get("/roi")
 def roi_page() -> FileResponse:
     return FileResponse(STATIC / "roi.html")
