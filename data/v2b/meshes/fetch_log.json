@@ -1,0 +1,33 @@
+{
+  "registry": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/registry.json",
+  "zip_sha256": "ec3787de70fa2200256848d74201b10f6b6c3126594e9857bf989753312c2b84",
+  "zip_bytes": 581441,
+  "baked": [
+    {
+      "character": "dad",
+      "pose": "standing",
+      "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/dad_standing.glb",
+      "reused": true
+    },
+    {
+      "character": "dad",
+      "pose": "seated",
+      "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/dad_seated.glb",
+      "reused": true
+    },
+    {
+      "character": "maya",
+      "pose": "standing",
+      "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/maya_standing.glb",
+      "reused": true
+    },
+    {
+      "character": "maya",
+      "pose": "seated",
+      "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/maya_seated.glb",
+      "reused": true
+    }
+  ],
+  "license": "CC0 1.0",
+  "note": "Pinned CC0 stand-in bodies for G2. Not Indian-presenting Dad/Maya likenesses. Clothing follows Kenney UVs, not HIMYM wardrobe. Dashboard catalog search is locked G3 \u2014 do not wire Sketchfab/Mixamo here."
+}

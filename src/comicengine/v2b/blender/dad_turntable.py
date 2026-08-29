@@ -29,6 +29,7 @@ from himym_p1 import (  # noqa: E402
     wipe_scene,
 )
 from humanoid import add_standing_dad, add_standing_maya  # noqa: E402
+from mesh_place import place_glb  # noqa: E402
 from turntable_views import view_specs  # noqa: E402
 
 SEED = 42
@@ -54,7 +55,7 @@ def orbit(azimuth: float, elevation: float) -> tuple[float, float, float]:
     return (x, y, z)
 
 
-def build_turntable(character: str) -> None:
+def build_turntable(character: str, mesh: Path | None = None) -> None:
     floor_m = mat("tt_floor", (0.42, 0.42, 0.40), roughness=0.85)
     dad_m = mat("dad", (0.20, 0.24, 0.32))
     maya_m = mat("maya", (0.55, 0.32, 0.16))
@@ -66,7 +67,10 @@ def build_turntable(character: str) -> None:
     floor.scale = (6.0, 6.0, 0.08)
     floor.data.materials.append(floor_m)
 
-    if character == "maya":
+    if mesh is not None:
+        idx = MAYA_INDEX if character == "maya" else DAD_INDEX
+        place_glb(mesh, name=f"{character}_mesh", loc=(0.0, 0.0, 0.0), scale=1.0, pass_index=idx)
+    elif character == "maya":
         add_standing_maya((0.0, 0.0, 0.0), maya_m, maya_hair, MAYA_INDEX, scale=0.86)
     else:
         add_standing_dad((0.0, 0.0, 0.0), dad_m, dad_hair, DAD_INDEX, scale=1.0)
@@ -126,6 +130,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out-dir", required=True)
     parser.add_argument("--character", choices=("dad", "maya"), default="dad")
+    parser.add_argument("--mesh", default="")
     parser.add_argument("--quick", action="store_true")
     parser.add_argument("--samples", type=int, default=SAMPLES)
     args = parser.parse_args(_argv_after_double_dash())
@@ -136,7 +141,8 @@ def main() -> None:
         __import__("json").dumps({"character": args.character, "views": views}, indent=2) + "\n"
     )
     wipe_scene()
-    build_turntable(args.character)
+    mesh = Path(args.mesh) if args.mesh.strip() else None
+    build_turntable(args.character, mesh=mesh)
     add_lineart_object()
     configure_view_layers()
     configure_cycles(args.samples)

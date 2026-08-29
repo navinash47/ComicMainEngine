@@ -1,0 +1,9 @@
+{
+  "id": "himym_ep01_g2",
+  "location_id": "living_room",
+  "cameras": ["a", "c"],
+  "characters": ["dad", "daughter"],
+  "mesh_dir": "data/v2b/meshes",
+  "dad_lora": "dad_gltf",
+  "maya_lora": "maya_gltf"
+}

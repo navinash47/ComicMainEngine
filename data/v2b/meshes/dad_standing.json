@@ -1,0 +1,18 @@
+{
+  "character": "dad",
+  "pose": "standing",
+  "glb": "/Users/avinashnandyala/Desktop/ComicMainEngine/data/v2b/meshes/dad_standing.glb",
+  "bytes": 98328,
+  "bbox_min": [
+    -0.4735,
+    -0.3033,
+    0.0
+  ],
+  "bbox_max": [
+    0.4551,
+    0.5655,
+    1.62
+  ],
+  "target_height": 1.62,
+  "skin": "Skins/skaterMaleA.png"
+}

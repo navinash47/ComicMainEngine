@@ -40,12 +40,14 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--manifest", required=True)
     parser.add_argument("--out", required=True)
+    parser.add_argument("--dad-meta", default=str(DAD_META))
+    parser.add_argument("--maya-meta", default=str(MAYA_META))
     args = parser.parse_args()
     import torch
     from transformers import AutoImageProcessor, AutoModel
 
-    dad_meta = json.loads(DAD_META.read_text())
-    maya_meta = json.loads(MAYA_META.read_text())
+    dad_meta = json.loads(Path(args.dad_meta).read_text())
+    maya_meta = json.loads(Path(args.maya_meta).read_text())
     dad_sheet = _sheet(dad_meta)
     maya_sheet = _sheet(maya_meta)
     holdout = [Path(r["png"]) for r in maya_meta.get("holdout") or [] if Path(r["png"]).is_file()]

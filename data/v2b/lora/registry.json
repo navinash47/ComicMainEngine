@@ -51,6 +51,34 @@
       "trained": true,
       "notes": "B6: SD 1.5 LoRA from stylized 3D turntable. Weights gitignored.",
       "steps": 250
+    },
+    "dad_gltf": {
+      "id": "dad_gltf",
+      "filename": "ce_dad_gltf.safetensors",
+      "trigger": "ce_dad_gltf",
+      "base_model": "sd1.5",
+      "rank": 16,
+      "alpha": 16,
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "sha256": "7b71b79802d25fab7080e96b9f056fe3b6ea6e452f5fb4abaaf855b232bdf3c4",
+      "trained": true,
+      "notes": "G2: SD 1.5 LoRA from Kenney CC0 glTF turntable. Does not overwrite ce_dad_rohan. Weights gitignored.",
+      "steps": 250
+    },
+    "maya_gltf": {
+      "id": "maya_gltf",
+      "filename": "ce_maya_gltf.safetensors",
+      "trigger": "ce_maya_gltf",
+      "base_model": "sd1.5",
+      "rank": 16,
+      "alpha": 16,
+      "strength_model": 0.8,
+      "strength_clip": 0.8,
+      "sha256": "2681efe4c931c70c178ddef4cf2a2b6781a93ab9182b7397a345b5560c47ce57",
+      "trained": true,
+      "notes": "G2: SD 1.5 LoRA from Kenney CC0 glTF turntable. Does not overwrite ce_maya. Weights gitignored.",
+      "steps": 250
     }
   }
 }

@@ -1,0 +1,26 @@
+{
+  "id": "kenney_animated_characters_protagonists_1.1",
+  "license": "CC0 1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "source_page": "https://kenney.nl/assets/animated-characters-protagonists",
+  "download_url": "https://kenney.nl/media/pages/assets/animated-characters-protagonists/608191acc4-1774773108/kenney_animated-characters-protagonists.zip",
+  "attribution": "Kenney (www.kenney.nl)",
+  "note": "Pinned CC0 stand-in bodies for G2. Not Indian-presenting Dad/Maya likenesses. Clothing follows Kenney UVs, not HIMYM wardrobe. Dashboard catalog search is locked G3 — do not wire Sketchfab/Mixamo here.",
+  "fbx": "Model/characterMedium.fbx",
+  "characters": {
+    "dad": {
+      "skin": "Skins/skaterMaleA.png",
+      "standing": "dad_standing.glb",
+      "seated": "dad_seated.glb",
+      "target_height": 1.62,
+      "lora_id": "dad_gltf"
+    },
+    "maya": {
+      "skin": "Skins/skaterFemaleA.png",
+      "standing": "maya_standing.glb",
+      "seated": "maya_seated.glb",
+      "target_height": 1.40,
+      "lora_id": "maya_gltf"
+    }
+  }
+}

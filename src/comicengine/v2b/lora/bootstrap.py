@@ -9,7 +9,7 @@ from typing import Any
 from comicengine.config import OUTPUTS, ROOT
 from comicengine.v2b.blender.turntable_views import view_specs
 from comicengine.v2b.comfy.stylize import stylize_controlnet
-from comicengine.v2b.lora.registry import load_character, load_style
+from comicengine.v2b.lora.registry import StyleLoraError, load_character, load_style
 
 B4_ROOT = OUTPUTS / "v2b" / "himym_ep01" / "b4"
 META_PATH = ROOT / "data" / "v2b" / "lora" / "dad" / "metadata.json"
@@ -25,6 +25,22 @@ MAYA_PROMPT = (
     "storybook anime illustration, cel shaded comic character, standing turntable, "
     "plain grey floor, no sofa, no text"
 )
+DAD_GLTF_PROMPT = (
+    "ce_dad_gltf, indian man late 30s, curly hair greying at temples, navy sweater, "
+    "storybook anime illustration, cel shaded comic character, standing turntable, "
+    "plain grey floor, no sofa, no living room, no text"
+)
+MAYA_GLTF_PROMPT = (
+    "ce_maya_gltf, indian teen girl, oversized hoodie, ponytail, pajama pants, "
+    "storybook anime illustration, cel shaded comic character, standing turntable, "
+    "plain grey floor, no sofa, no text"
+)
+PROMPTS = {
+    "dad": DAD_PROMPT,
+    "maya": MAYA_PROMPT,
+    "dad_gltf": DAD_GLTF_PROMPT,
+    "maya_gltf": MAYA_GLTF_PROMPT,
+}
 NEG = "photoreal, 3d render, cgi, watermark, text, letters, extra limbs, blurry, deformed, sofa, living room"
 
 
@@ -34,7 +50,7 @@ def _view_dir(character: str, view_id: str, turntable_root: Path | None = None) 
 
 
 def caption_for(character: str, view: dict[str, object]) -> str:
-    base = DAD_PROMPT if character == "dad" else MAYA_PROMPT
+    base = PROMPTS.get(character) or MAYA_PROMPT
     return f"{base}, azimuth {view['azimuth']} degrees, elevation {view['elevation']} degrees"
 
 
@@ -49,10 +65,11 @@ def stylize_character(
 ) -> list[dict[str, Any]]:
     style = load_style()
     trigger = ""
-    if character == "dad":
-        trigger = str(load_character("dad")["trigger"])
-    elif full:
-        trigger = str(load_character(character)["trigger"])
+    if not (character == "maya" and not full):
+        try:
+            trigger = str(load_character(character)["trigger"])
+        except StyleLoraError:
+            trigger = ""
     rows: list[dict[str, Any]] = []
     dest_root = Path(dest_root) if dest_root else B4_ROOT / "dataset" / character
     dest_root.mkdir(parents=True, exist_ok=True)
