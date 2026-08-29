@@ -73,7 +73,7 @@ Do not batch two phases. One gate per B-phase commit.
 
 ## G2 — Licensed character meshes
 
-- `phase-v2b-g2: licensed glTF characters replace block humanoids`
+- `3bbbc42` phase-v2b-g2: licensed glTF characters replace block humanoids
 - Kenney Animated Characters Protagonists 1.1 (CC0). Stand-in cartoon skaters, not Indian-presenting Dad/Maya. LICENSE + registry under `data/v2b/meshes/`. Zip cache gitignored.
 - New LoRAs (do not overwrite B4/B6): `ce_dad_gltf` SHA256 `7b71b79802d25fab7080e96b9f056fe3b6ea6e452f5fb4abaaf855b232bdf3c4`, `ce_maya_gltf` SHA256 `2681efe4c931c70c178ddef4cf2a2b6781a93ab9182b7397a345b5560c47ce57`. Rank 16, 250 steps `--quick`.
 - Two-pass on living-room cam_a and cam_c. Sibling tree `outputs/v2b/himym_ep01/g2/`. G1/B4/B5/B6 frozen.
