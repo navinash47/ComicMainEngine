@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-09T15:25:50.144690+00:00",
+  "updated_at": "2026-09-01T22:09:48.569645+00:00",
   "recommendations": [
     {
       "category": "image",
@@ -807,6 +807,40 @@
         "samples": 1,
         "avg_cost_usd": 0.021276,
         "avg_latency_ms": 20721,
+        "avg_quality": null
+      },
+      "best_quality": null,
+      "reason": "lowest avg cost among successful calls",
+      "note": "Recommendation only \u2014 scripts do not auto-switch yet."
+    },
+    {
+      "category": "text",
+      "purpose": "v2b_g1_judge",
+      "optimal": {
+        "model_key": "google::gemini-3.6-flash",
+        "provider": "google",
+        "model": "gemini-3.6-flash",
+        "samples": 46,
+        "avg_cost_usd": 0.000939,
+        "avg_latency_ms": 5567,
+        "avg_quality": null
+      },
+      "cheapest": {
+        "model_key": "google::gemini-3.6-flash",
+        "provider": "google",
+        "model": "gemini-3.6-flash",
+        "samples": 46,
+        "avg_cost_usd": 0.000939,
+        "avg_latency_ms": 5567,
+        "avg_quality": null
+      },
+      "fastest": {
+        "model_key": "google::gemini-3.6-flash",
+        "provider": "google",
+        "model": "gemini-3.6-flash",
+        "samples": 46,
+        "avg_cost_usd": 0.000939,
+        "avg_latency_ms": 5567,
         "avg_quality": null
       },
       "best_quality": null,
